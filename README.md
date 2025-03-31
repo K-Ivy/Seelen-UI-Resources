@@ -35,9 +35,14 @@ INSTALLTION GUIDE:
 - Window Manager > Border offset = 0 | Width = 2
 - Dock/Taskbar > Item Size = 44 | Zoomed Size = 70 | Space between Items = 8
 
-IF YOU want to do it make your own themes, here are the default seelen stuff: Make your edits in a .yml and place it in the themes folder
+IF YOU want to make your own themes, here are the default seelen stuff: Make your edits in a .yml and place it in the themes folder
 > https://github.com/eythaann/Seelen-UI/tree/master/static/themes/default
 
 -----------------------------------------------------------
 
 **Other Tweaks**
+
+> Get Winero Tweaker
+- Appearance > Inactive Title Bars Color > Click to change > Define Custom Colors > Red: 105, Green: 126, Blue: 71 > OK
+- Windows Settings > Personalaization > Colors > Accent Color = Manual > View Colors > Set Red: 105, Green: 126, Blue: 71
+- > Toggle "Show accent color on title bars and window borders. Makes the border of windows for some green to match (sadly doesn't effect all windows but better than nothing
