@@ -45,4 +45,6 @@ IF YOU want to make your own themes, here are the default seelen stuff: Make you
 > Get Winero Tweaker
 - Appearance > Inactive Title Bars Color > Click to change > Define Custom Colors > Red: 105, Green: 126, Blue: 71 > OK
 - Windows Settings > Personalaization > Colors > Accent Color = Manual > View Colors > Set Red: 105, Green: 126, Blue: 71
-- > Toggle "Show accent color on title bars and window borders. Makes the border of windows for some green to match (sadly doesn't effect all windows but better than nothing
+- > Toggle "Show accent color on title bars and window borders. Makes the border of windows green to match (sadly doesn't effect all windows but better than nothing
+
+![image](https://github.com/user-attachments/assets/f3b548ed-393d-45d6-a599-1627c21eeb21)
