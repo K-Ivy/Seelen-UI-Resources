@@ -1,7 +1,7 @@
 **Seelen UI** (https://github.com/eythaann/Seelen-UI) - https://discord.com/invite/ABfASx5ZAJ
 Currently being worked on theme: *Everforest* :
 
-![fZDZbq7 - Imgur](https://github.com/user-attachments/assets/6f4c8f8d-0ed1-4fe7-8738-c81d69d4068f)
+![image](https://github.com/user-attachments/assets/afc64a75-ccf1-48d6-a70b-f1fa012d6ccd)
 
 Currently Uploaded Standalones:
 > User menu: (Toolbar not included - WIP)
