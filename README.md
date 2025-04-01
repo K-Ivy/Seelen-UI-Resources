@@ -48,3 +48,7 @@ IF YOU want to make your own themes, here are the default seelen stuff: Make you
 - > Toggle "Show accent color on title bars and window borders. Makes the border of windows green to match (sadly doesn't effect all windows but better than nothing
 
 ![image](https://github.com/user-attachments/assets/f3b548ed-393d-45d6-a599-1627c21eeb21)
+
+Everforest Themes for Software:
+- https://github.com/pbaekgaard/Everforest-Discord
+- https://github.com/talwat/everforest-BD/tree/main
