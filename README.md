@@ -61,4 +61,6 @@ IF YOU want to make your own themes, here are the default seelen stuff: Make you
 - Currently Using: https://github.com/talwat/everforest-BD/tree/main
 - Other: https://github.com/pbaekgaard/Everforest-Discord
 
+> Sublime Text
+- https://github.com/avelican/everforest-sublime
 -----------------------------------------------------------
