@@ -1,5 +1,8 @@
 **Seelen UI** (https://github.com/eythaann/Seelen-UI) - https://discord.com/invite/ABfASx5ZAJ
-Currently being worked on theme: *Everforest* :
+
+-----------------------------------------------------------
+
+- Currently being worked on theme: **Everforest** :
 
 ![image](https://github.com/user-attachments/assets/afc64a75-ccf1-48d6-a70b-f1fa012d6ccd)
 
@@ -14,7 +17,8 @@ https://github.com/user-attachments/assets/b8c7c038-f716-417a-8f4a-a0861a47988c
 
 - Subtle pulse animation when a window is focused (it may be hard to see in the video due to the color palette) + Popup effect
 - Remove the popup effect as shown by removing that one line
-
+  
+-----------------------------------------------------------
 
 INSTALLTION GUIDE:
 - Get seelen UI (https://seelen.io/)
@@ -42,13 +46,19 @@ IF YOU want to make your own themes, here are the default seelen stuff: Make you
 
 **Other Tweaks**
 
-> Get Winero Tweaker
+> *Winero Tweaker*
 - Appearance > Inactive Title Bars Color > Click to change > Define Custom Colors > Red: 105, Green: 126, Blue: 71 > OK
 - Windows Settings > Personalaization > Colors > Accent Color = Manual > View Colors > Set Red: 105, Green: 126, Blue: 71
-- > Toggle "Show accent color on title bars and window borders. Makes the border of windows green to match (sadly doesn't effect all windows but better than nothing
+- > Toggle "Show accent color on title bars and window borders. Makes the border of windows green to match (Doesn't effect all windows but better than nothing if you want it)
 
 ![image](https://github.com/user-attachments/assets/f3b548ed-393d-45d6-a599-1627c21eeb21)
 
-Everforest Themes for Software:
-- https://github.com/pbaekgaard/Everforest-Discord
-- https://github.com/talwat/everforest-BD/tree/main
+-----------------------------------------------------------
+
+**Everforest Themes for Software** :
+
+> DISCORD:
+- Currently Using: https://github.com/talwat/everforest-BD/tree/main
+- Other: https://github.com/pbaekgaard/Everforest-Discord
+
+-----------------------------------------------------------
