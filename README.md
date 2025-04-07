@@ -2,7 +2,7 @@
 
 -----------------------------------------------------------
 
-- Currently being worked on theme: **Everforest** :
+- Currently being worked on theme: ----No longer doing attempt at everforest. Changing to Nord
 
 ![image](https://github.com/user-attachments/assets/afc64a75-ccf1-48d6-a70b-f1fa012d6ccd)
 
