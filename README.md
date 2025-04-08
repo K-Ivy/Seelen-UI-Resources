@@ -2,7 +2,9 @@
 
 -----------------------------------------------------------
 
-- Currently being worked on theme: ----No longer doing my attempt of everforest. Changing to Nord
+The below theme is palette is not being worked on anymore. It's being changed to a nord-like palette, WIP
+
+---
 
 ![image](https://github.com/user-attachments/assets/afc64a75-ccf1-48d6-a70b-f1fa012d6ccd)
 
