@@ -1,0 +1,56 @@
+metadata:
+  displayName: "Kay's Media Player Component"
+  author: "IriKay (@K-Ivy on Git)"
+  description: "Original by @FunTust"
+  tags: ['weg']
+styles:
+  weg: |
+    .weg-item {
+      /* Define the size of items - If you use the settings menu to set item size, remove the direct set values and uncomment the config-item-size values  */
+      width: 40px;
+      height: 40px;
+      /* width: var(--config-item-size); */
+      /* height: var(--config-item-size); */
+
+      &.media-session-container-horizontal {
+        top: 1.5px;
+        border: 1px solid rgba(55, 60, 77, 1.0); /* #373C4D */
+        border-radius: 11px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+        transition: width 300ms ease, filter 300ms ease;
+        filter: grayscale(46%) contrast(0.7);
+
+        /* .media-session-info { display: none !important; } */
+
+        /* .media-session-blurred-thumbnail { display: none; } */
+
+        .media-session-thumbnail {
+          object-fit: cover !important;
+        }
+
+        &:hover {
+          /* Adjust to change expanded media player size */
+          width: 130px;
+        }
+      }
+
+      &.media-session-container-vertical {
+        border: 1px solid rgba(55, 60, 77, 1.0); /* #373C4D */
+        border-radius: 11px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+        transition: height 300ms ease, filter 300ms ease;
+        filter: grayscale(46%) contrast(0.7);
+
+        /* .media-session-info { display: none !important; } */
+
+        /* .media-session-blurred-thumbnail { display: none; } */
+
+        .media-session-thumbnail {
+          object-fit: cover !important;
+        }
+
+        &:hover {
+          height: 130px;
+        }
+      }
+    }
