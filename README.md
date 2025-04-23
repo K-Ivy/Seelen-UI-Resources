@@ -15,10 +15,6 @@
 **WHAT is CURRENTLY available:**
 
 ---
-*The below is the original and is not being worked on anymore*. Files will be in the "old" folder
-
-![image](https://github.com/user-attachments/assets/afc64a75-ccf1-48d6-a70b-f1fa012d6ccd)
----
 
 **INSTALLTION GUIDE:**
 - Get seelen UI (https://seelen.io/)
