@@ -10,7 +10,7 @@
 
 ![Pale Glacier rotated](https://github.com/user-attachments/assets/2f29d24c-2c06-4e14-ab1e-46a809871f3d)
 
-**PREVIEWS:**
+**PREVIEW OF PALETTE (WIP):**
 
 ![seelen-ui_nsDRE7E4AP](https://github.com/user-attachments/assets/649b9c89-8e58-4e05-b863-70a1f0944254)
 
