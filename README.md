@@ -43,18 +43,4 @@ https://github.com/user-attachments/assets/08b08676-27bd-4ebb-8601-6e51b2565073
 
 **My Settings:**
 - General > Date Format = ddd, M/D/YY - hh:mm A
-- Fancy Toolbar > Height = 32
-- Window Manager > Space Between Containers = 9 | Padding = 10
-- Window Manager > Border offset = 0 | Width = 2
-- Dock/Taskbar > Item Size = 44 | Zoomed Size = 70 | Space between Items = 8
-
-
-
------------------------------------------------------------
-
 **Other Tweaks**
-
------------------------------------------------------------
-
-
------------------------------------------------------------
