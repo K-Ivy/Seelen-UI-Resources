@@ -7,12 +7,25 @@
 - **Feel free to ping in Seelen-UI Discord for Q's and whatever else if needed**
 
 **CURRENT PALETTE: 'Pale Glacier'**
+
 ![Pale Glacier rotated](https://github.com/user-attachments/assets/2f29d24c-2c06-4e14-ab1e-46a809871f3d)
 
 **PREVIEWS:**
+
 ![seelen-ui_nsDRE7E4AP](https://github.com/user-attachments/assets/649b9c89-8e58-4e05-b863-70a1f0944254)
 
-**WHAT is CURRENTLY available:**
+**WHAT IS CURRENTLY available:**
+
+Seelen **MEDIA PLAYER** Component:
+
+**Horizontal:**
+
+https://github.com/user-attachments/assets/262504ef-ca2c-444a-a5f3-68bead4785ba
+
+**Vertical:**
+
+https://github.com/user-attachments/assets/08b08676-27bd-4ebb-8601-6e51b2565073
+
 
 ---
 
