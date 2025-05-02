@@ -16,15 +16,15 @@
 
 **WHAT IS CURRENTLY available:**
 ---
-Seelen **MEDIA PLAYER** Component:
+Seelen **MEDIA PLAYER** Component: (UPDATED 5/2/25)
 
 **Horizontal:**
 
-https://github.com/user-attachments/assets/262504ef-ca2c-444a-a5f3-68bead4785ba
+https://github.com/user-attachments/assets/503908fb-4b04-4b75-b0d5-24837d325128
 
 **Vertical:**
 
-https://github.com/user-attachments/assets/08b08676-27bd-4ebb-8601-6e51b2565073
+https://github.com/user-attachments/assets/0c4d6448-0e97-47bf-a041-b18bac8cbdf9
 
 ---
 
