@@ -1,0 +1,38 @@
+id: "@k-ivy/dock-comp-media"
+metadata:
+  displayName: "Compact Media Player Component (Dock)"
+  author: "IriKay (@K-Ivy on Git)"
+  description: "Make the dock's media player a compact item always. It will expand to reveal the contents only when you hover over it."
+  tags: ['weg']
+styles:
+  weg: |
+    .weg-item {
+      &.media-session-container-horizontal {
+        width: var(--config-item-size) !important;
+        filter: grayscale(26%) contrast(0.7) !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,1.0) !important;
+        transition: width 400ms ease !important;
+        /* .media-session-info { display: none !important; } */
+        /* .media-session-blurred-thumbnail { display: none; } */
+        .media-session-thumbnail {
+          object-fit: cover !important;
+        }
+        &:hover {
+          width: calc(var(--config-item-size) + 106px) !important;
+        }
+      }
+      &.media-session-container-vertical {
+        height: var(--config-item-size) !important;
+        filter: grayscale(26%) contrast(0.7) !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,1.0) !important;
+        transition: height 400ms ease !important;
+        /* .media-session-info { display: none !important; } */
+        /* .media-session-blurred-thumbnail { display: none; } */
+        .media-session-thumbnail {
+          object-fit: cover !important;
+        }
+        &:hover {
+          height: calc(var(--config-item-size) + 106px) !important;
+        }
+      }
+    }
