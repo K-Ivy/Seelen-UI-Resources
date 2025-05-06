@@ -1,36 +1,35 @@
 id: "@k-ivy/dock-comp-media"
 metadata:
-  displayName: "Compact Media Player (Dock) + Full-Fill Player Thumbnails"
+  displayName: "Compact Media Player (Dock) + Thumbnail Fill"
+  description: "Dock's player stays at set icon size until hovered + fills the thumbnails of it and the media module player's to the available space."
   author: "IriKay (@K-Ivy on Git)"
-  description: "1. Make the dock's media player a compact item - It will expand only when hovered & the thumbnail will cover the whole area instead of leaving gaps. 2. The thumbnail of the toolbar's media module is updated to do the same with a lighter filter applied."
   tags: ['weg', 'toolbar']
 styles:
   weg: |
     .weg-item {
       &.media-session-container-horizontal {
         width: var(--config-item-size) !important;
-        filter: grayscale(26%) contrast(0.76) !important;
-        box-shadow: 0 2px 6px rgba(0,0,0,1.0) !important;
+        filter: grayscale(26%) contrast(0.76);
         transition: width 400ms ease !important;
-        /* .media-session-info { display: none !important; } */
-        /* .media-session-blurred-thumbnail { display: none; } */
+
         .media-session-thumbnail {
           object-fit: cover !important;
         }
+
         &:hover {
           width: calc(var(--config-item-size) + 106px) !important;
         }
       }
+
       &.media-session-container-vertical {
         height: var(--config-item-size) !important;
-        filter: grayscale(26%) contrast(0.76) !important;
-        box-shadow: 0 2px 6px rgba(0,0,0,1.0) !important;
+        filter: grayscale(26%) contrast(0.76);
         transition: height 400ms ease !important;
-        /* .media-session-info { display: none !important; } */
-        /* .media-session-blurred-thumbnail { display: none; } */
+
         .media-session-thumbnail {
           object-fit: cover !important;
         }
+
         &:hover {
           height: calc(var(--config-item-size) + 106px) !important;
         }
@@ -39,8 +38,9 @@ styles:
 
   toolbar: |
     .media-session {
-      filter: grayscale(18%) contrast(0.88) !important;
-    .media-session-thumbnail {
-      object-fit: cover !important;
+      filter: grayscale(18%) contrast(0.88);
+
+      .media-session-thumbnail {
+        object-fit: cover !important;
       }
     }
