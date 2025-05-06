@@ -1,0 +1,75 @@
+id: "@k-ivy/win-grid-tray-hl"
+metadata:
+  displayName: "Windows Style (Grid) Tray Menu - Hover for Label"
+  author: "IriKay (@K-Ivy on Git)"
+  description: "Animated grid-based tray menu"
+  tags: ['toolbar']
+styles:
+  toolbar: |
+    @keyframes fadeInLabel {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(3px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(4px);
+      }
+    }
+
+    @keyframes fadeOutLabel {
+      from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(4px);
+      }
+      to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(3px);
+      }
+    }
+
+    .tray-list {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(54px, 1fr)) !important;
+      padding: 6px !important;
+
+      .tray-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative !important;
+        height: 48px !important;
+      }
+
+      .tray-item-icon {
+        object-fit: contain;
+        position: absolute !important;
+        height: 1.4rem !important;
+        top: 56% !important;
+        left: 50% !important;
+        transform: translate(-50%, -60%) scale(1) !important;
+        transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1) !important;
+      }
+
+      .tray-item:hover .tray-item-icon {
+        transform: translate(-50%, -60%) scale(1.16) !important;
+      }
+
+      .tray-item-label {
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 51% !important;
+        max-width: 15ch !important;
+        font-size: 0.6rem;
+        text-overflow: clip !important;
+        opacity: 0;
+      }
+
+      .tray-item:hover .tray-item-label {
+        animation: fadeInLabel 0.5s forwards;
+      }
+
+      .tray-item:not(:hover) .tray-item-label {
+        animation: fadeOutLabel 0.4s forwards;
+      }
+    }
