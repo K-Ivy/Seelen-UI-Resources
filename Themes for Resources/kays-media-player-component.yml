@@ -9,7 +9,7 @@ styles:
     .weg-item {
       &.media-session-container-horizontal {
         width: var(--config-item-size) !important;
-        filter: grayscale(26%) contrast(0.7) !important;
+        filter: grayscale(26%) contrast(0.76) !important;
         box-shadow: 0 2px 6px rgba(0,0,0,1.0) !important;
         transition: width 400ms ease !important;
         /* .media-session-info { display: none !important; } */
@@ -23,7 +23,7 @@ styles:
       }
       &.media-session-container-vertical {
         height: var(--config-item-size) !important;
-        filter: grayscale(26%) contrast(0.7) !important;
+        filter: grayscale(26%) contrast(0.76) !important;
         box-shadow: 0 2px 6px rgba(0,0,0,1.0) !important;
         transition: height 400ms ease !important;
         /* .media-session-info { display: none !important; } */
@@ -39,7 +39,7 @@ styles:
 
   toolbar: |
     .media-session {
-      filter: grayscale(26%) contrast(0.9) !important;
+      filter: grayscale(18%) contrast(0.88) !important;
     .media-session-thumbnail {
       object-fit: cover !important;
       }
