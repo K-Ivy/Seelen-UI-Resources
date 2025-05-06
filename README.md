@@ -36,7 +36,12 @@ https://github.com/user-attachments/assets/fe48692f-3b1d-4471-ae25-298a26b87369
 
 ![seelen-ui_Equ0Yd8gDC](https://github.com/user-attachments/assets/a63ec150-7236-4957-bcdd-d848598977b9)
 
+—→ **Hide Media Player App Icons**
+
+![hide-app-icon-showcase](https://github.com/user-attachments/assets/eaffa276-b2ca-4408-bb8c-3103edb40e22)
+
 ---
+
 
 → **THEME WIP PREVIEWS**
 - Working on a FULL theme that was inspired by the nord palette and has now, diverted a bit.
