@@ -1,9 +1,9 @@
 id: "@k-ivy/dock-comp-media"
 metadata:
-  displayName: "Compact Media Player Component (Dock)"
+  displayName: "Compact Media Player (Dock) + Full-Fill Player Thumbnails"
   author: "IriKay (@K-Ivy on Git)"
-  description: "Make the dock's media player a compact item always. It will expand to reveal the contents only when you hover over it."
-  tags: ['weg']
+  description: "1. Make the dock's media player a compact item - It will expand only when hovered & the thumbnail will cover the whole area instead of leaving gaps. 2. The thumbnail of the toolbar's media module is updated to do the same with a lighter filter applied."
+  tags: ['weg', 'toolbar']
 styles:
   weg: |
     .weg-item {
@@ -34,5 +34,13 @@ styles:
         &:hover {
           height: calc(var(--config-item-size) + 106px) !important;
         }
+      }
+    }
+
+  toolbar: |
+    .media-session {
+      filter: grayscale(26%) contrast(0.9) !important;
+    .media-session-thumbnail {
+      object-fit: cover !important;
       }
     }
