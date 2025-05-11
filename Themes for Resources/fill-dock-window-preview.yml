@@ -1,0 +1,16 @@
+metadata:
+  displayName: "Nicely Fill Window Preview V1"
+  author: "IriKay (@K-Ivy on Git)"
+  description: "Fill previews to full space in a nice way"
+  tags: ['weg']
+styles:
+  weg: |
+    .weg-item-preview-image-container {
+      overflow: hidden;
+    }
+
+    .weg-item-preview-image {
+      object-fit: fill !important; /* Better than cover (keeps image pixel clarity) but apparent stretching - trying make it a better cover */
+      transform: scaleX(1.0) scaleY(1.49) !important; /* X shouldn't be adjusted much if at all. Height needs to be played with to balance the stretching */
+      margin-top: 61px; /* Move stretched preview down to show from the top (more natural). To see more, setting a few px off from true top */
+    }
