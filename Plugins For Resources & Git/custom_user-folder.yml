@@ -5,6 +5,6 @@ plugin:
   type: user
   withUserFolder: true
   template: |-
-    return ['@IriKay'];
+    return ['@K-Ivy'];
   style:
     flexShrink: 0
