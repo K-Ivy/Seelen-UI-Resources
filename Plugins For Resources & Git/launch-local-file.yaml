@@ -1,0 +1,15 @@
+id: '@launch/example-module-name'
+target: '@seelen/fancy-toolbar'
+plugin:
+  type: text
+  withMediaControls: false
+  template: >-
+    return 'EXAMPLE-TOOLBAR-NAME';
+  onClickV2: >-
+    : Remove these comments before use! Otherwise wont work!
+    : ENSURE "file:///" is intact & "\" is not used, only "/"
+    : You can run file directly or via .ink
+    : To make one to launch websites, use this tool: https://1developpeur.github.io/shortcut.html
+    open('file:///S:/EXAMPLE/PATH/TO/THE/FILE.ahk');
+  style:
+     flexShrink: 0

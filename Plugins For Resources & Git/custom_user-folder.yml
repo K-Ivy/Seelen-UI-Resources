@@ -1,0 +1,10 @@
+id: "@custom/example-module-name"
+icon: FaRegCircleUser
+target: "@seelen/fancy-toolbar"
+plugin:
+  type: user
+  withUserFolder: true
+  template: |-
+    return ['@IriKay'];
+  style:
+    flexShrink: 0
