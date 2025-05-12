@@ -3,6 +3,7 @@ This is a repo for my **[Seelen UI](https://github.com/eythaann/Seelen-UI) Resou
 🎨 Download my uploaded resources from the official page: https://seelen.io/profile/k-ivy
 - **Feel free to ping me in Seelen-UI Discord for Q's** and If anyone wants to **contribute**, you are more than welcome to.
 - If you encounter a **Problem** with a resource, have a **Suggestion**, or have a **Request**, create a post in issues and mark it.
+- If you would like to share a edit, make sure to **credit**.
 
 ----------------
 
