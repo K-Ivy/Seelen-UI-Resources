@@ -1,44 +1,124 @@
 id: "@k-ivy/dock-comp-media"
 metadata:
-  displayName: "Compact Media Player (Dock) + Thumbnail Fill"
-  description: "Dock's player stays at set icon size until hovered + fills the thumbnails of it and the media module player's to the available space."
+  displayName: "Compact Dock Player & Customizable Player Filters"
+  description: "Dock's player stays at set icon size until hovered + fills the thumbnails of it and the toolbar's media module player's to the available space. Filters applied (fully customizable) to change the color balance."
   author: "IriKay (@K-Ivy on Git)"
   tags: ['weg', 'toolbar']
+  appTargetVersion:
+    - 2
+    - 3
+    - 3
+settings:
+  - syntax: <length>
+    label: Expand extra length (D = 106px)
+    name: '--dock-mediapl-added-size'
+    initialValue: 106
+    initialValueUnit: 'px'
+  - syntax: <number>
+    label: Expand transition duration (D = 400ms)
+    name: '--dock-mediapl-transition-duration'
+    initialValue: 400
+  - syntax: <number>
+    label: Dock media player grayscale (PD = 0.26, D = 0.18)
+    name: '--dock-mediapl-grayscale'
+    initialValue: 0.18
+  - syntax: <number>
+    label: Dock media player contrast (PD = 0.76, D = 0.88)
+    name: '--dock-mediapl-contrast'
+    initialValue: 0.88
+  - syntax: <number>
+    label: Dock media player sepia (D = 0)
+    name: '--dock-mediapl-sepia'
+    initialValue: 0
+  - syntax: <number>
+    label: Dock media player saturation (D = 1.0)
+    name: '--dock-mediapl-saturate'
+    initialValue: 1.0
+  - syntax: <number>
+    label: Dock media player brightness (D = 1.0)
+    name: '--dock-mediapl-brightness'
+    initialValue: 1.0
+  - syntax: <number>
+    label: Dock media player opacity (D = 1.0)
+    name: '--dock-mediapl-opacity'
+    initialValue: 1.0
+  - syntax: <number>
+    label: Toolbar media player grayscale (D = 0.18)
+    name: '--toolbar-mediapl-grayscale'
+    initialValue: 0.18
+  - syntax: <number>
+    label: Toolbar media player contrast (D = 0.88)
+    name: '--toolbar-mediapl-contrast'
+    initialValue: 0.88
+  - syntax: <number>
+    label: Toolbar media player sepia (D = 0)
+    name: '--toolbar-mediapl-sepia'
+    initialValue: 0
+  - syntax: <number>
+    label: Toolbar media player saturation (D = 1.0)
+    name: '--toolbar-mediapl-saturate'
+    initialValue: 1.0
+  - syntax: <number>
+    label: Toolbar media player brightness (D = 1.0)
+    name: '--toolbar-mediapl-brightness'
+    initialValue: 1.0
+  - syntax: <number>
+    label: Toolbar media player opacity (D = 1.0)
+    name: '--toolbar-mediapl-opacity'
+    initialValue: 1.0
 styles:
   weg: |
     .weg-item {
       &.media-session-container-horizontal {
         width: var(--config-item-size) !important;
-        filter: grayscale(26%) contrast(0.76);
-        transition: width 400ms ease !important;
+        filter:
+          grayscale(var(--dock-mediapl-grayscale))
+          contrast(var(--dock-mediapl-contrast))
+          opacity(var(--dock-mediapl-opacity))
+          sepia(var(--dock-mediapl-sepia))
+          saturate(var(--dock-mediapl-saturate))
+          brightness(var(--dock-mediapl-brightness));
+        transition: width calc(var(--dock-mediapl-transition-duration) * 1ms) ease !important;
 
         .media-session-thumbnail {
           object-fit: cover !important;
         }
 
         &:hover {
-          width: calc(var(--config-item-size) + 106px) !important;
+          width: calc(var(--config-item-size) + var(--dock-mediapl-added-size)) !important;
         }
       }
 
       &.media-session-container-vertical {
         height: var(--config-item-size) !important;
-        filter: grayscale(26%) contrast(0.76);
-        transition: height 400ms ease !important;
+        filter:
+          grayscale(var(--dock-mediapl-grayscale))
+          contrast(var(--dock-mediapl-contrast))
+          opacity(var(--dock-mediapl-opacity))
+          sepia(var(--dock-mediapl-sepia))
+          saturate(var(--dock-mediapl-saturate))
+          brightness(var(--dock-mediapl-brightness));
+        transition: height calc(var(--dock-mediapl-transition-duration) * 1ms) ease !important;
 
         .media-session-thumbnail {
           object-fit: cover !important;
         }
 
         &:hover {
-          height: calc(var(--config-item-size) + 106px) !important;
+          height: calc(var(--config-item-size) + var(--dock-mediapl-added-size)) !important;
         }
       }
     }
 
   toolbar: |
     .media-session {
-      filter: grayscale(18%) contrast(0.88);
+      filter:
+       grayscale(var(--toolbar-mediapl-grayscale))
+       contrast(var(--toolbar-mediapl-contrast))
+       opacity(var(--toolbar-mediapl-opacity))
+       sepia(var(--toolbar-mediapl-sepia))
+       saturate(var(--toolbar-mediapl-saturate))
+       brightness(var(--toolbar-mediapl-brightness));
 
       .media-session-thumbnail {
         object-fit: cover !important;
