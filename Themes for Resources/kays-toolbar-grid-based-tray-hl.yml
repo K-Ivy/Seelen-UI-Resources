@@ -1,37 +1,70 @@
 id: "@k-ivy/win-grid-tray-hl"
 metadata:
-  displayName: "Windows Style (Grid) Tray Menu - Hover for Label"
+  displayName: "Windows Style (Grid) Tray Menu - Hover for Label v1.2"
   author: "IriKay (@K-Ivy on Git)"
-  description: "Animated grid-based tray menu"
+  description: "Animated grid-based tray menu."
   tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 3
+    - 3
+settings:
+  - syntax: <number>
+    label: Max character length of label (D = 15ch)
+    name: '--tray-hl-ch-length'
+    initialValue: 15
+  - syntax: <length>
+    label: Font size of label (D = 0.6rem)
+    name: '--tray-hl-font-size'
+    initialValue: 0.6
+    initialValueUnit: 'rem'
+  - syntax: <length>
+    label: Adjust tray padding (D = 6px)
+    name: '--tray-hl-list-padding'
+    initialValue: 6
+    initialValueUnit: 'px'
+  - syntax: <length>
+    label: Adjust label start height on hover (D = 3px)
+    name: '--tray-hl-label-start'
+    initialValue: 3
+    initialValueUnit: 'px'
+  - syntax: <length>
+    label: Adjust label end height on hover (D = 4px)
+    name: '--tray-hl-label-end'
+    initialValue: 4
+    initialValueUnit: 'px'
+  - syntax: <number>
+    label: Icon scale on hover (D = 1.16)
+    name: '--tray-hl-hover-scale'
+    initialValue: 1.16
 styles:
   toolbar: |
     @keyframes fadeInLabel {
       from {
         opacity: 0;
-        transform: translateX(-50%) translateY(3px);
+        transform: translateX(-50%) translateY(var(--tray-hl-label-start));
       }
       to {
         opacity: 1;
-        transform: translateX(-50%) translateY(4px);
+        transform: translateX(-50%) translateY(var(--tray-hl-label-end));
       }
     }
 
     @keyframes fadeOutLabel {
       from {
         opacity: 1;
-        transform: translateX(-50%) translateY(4px);
+        transform: translateX(-50%) translateY(var(--tray-hl-label-end));
       }
       to {
         opacity: 0;
-        transform: translateX(-50%) translateY(3px);
+        transform: translateX(-50%) translateY(var(--tray-hl-label-start));
       }
     }
 
     .tray-list {
       display: grid !important;
       grid-template-columns: repeat(auto-fit, minmax(54px, 1fr)) !important;
-      padding: 6px !important;
+      padding: var(--tray-hl-list-padding) !important;
 
       .tray-item {
         display: flex;
@@ -52,15 +85,15 @@ styles:
       }
 
       .tray-item:hover .tray-item-icon {
-        transform: translate(-50%, -60%) scale(1.16) !important;
+        transform: translate(-50%, -60%) scale(var(--tray-hl-hover-scale)) !important;
       }
 
       .tray-item-label {
         position: absolute !important;
         bottom: 0 !important;
         left: 51% !important;
-        max-width: 15ch !important;
-        font-size: 0.6rem;
+        max-width: calc(var(--tray-hl-ch-length) * 1ch) !important;
+        font-size: var(--tray-hl-font-size);
         text-overflow: clip !important;
         opacity: 0;
       }
