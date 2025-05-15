@@ -1,9 +1,13 @@
 id: "@k-ivy/window-preview-ff"
 metadata:
-  displayName: "Nicely Fill Window Preview V1"
+  displayName: "Nicely Fill Window Preview v1"
   author: "IriKay (@K-Ivy on Git)"
   description: "Fill previews to full space in a nice way"
   tags: ['weg']
+  appTargetVersion:
+    - 2
+    - 3
+    - 3
 styles:
   weg: |
     .weg-item-preview-image-container {
