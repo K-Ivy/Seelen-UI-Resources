@@ -4,6 +4,10 @@ metadata:
   author: "IriKay (@K-Ivy on Git)"
   description: "Removes the source app icon in the media player — applies to both the dock's player and the toolbar's media module."
   tags: ['weg', 'toolbar']
+  appTargetVersion:
+    - 2
+    - 3
+    - 3
 styles:
   weg: |
     .media-session-container-horizontal .media-session-app-icon,
