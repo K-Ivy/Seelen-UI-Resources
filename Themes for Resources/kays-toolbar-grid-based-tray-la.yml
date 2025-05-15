@@ -1,15 +1,38 @@
 id: "@k-ivy/win-grid-tray-la"
 metadata:
-  displayName: "Windows Style (Grid) Tray Menu - Label Always"
+  displayName: "Windows Style (Grid) Tray Menu - Label Always v1.2"
   author: "IriKay (@K-Ivy on Git)"
   description: "Animated grid-based tray menu"
   tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 3
+    - 3
+settings:
+  - syntax: <number>
+    label: Max character length of label (D = 15ch)
+    name: '--tray-la-ch-length'
+    initialValue: 15
+  - syntax: <length>
+    label: Font size of label (D = 0.6rem)
+    name: '--tray-la-font-size'
+    initialValue: 0.6
+    initialValueUnit: 'rem'
+  - syntax: <length>
+    label: Adjust tray padding (D = 6px)
+    name: '--tray-la-list-padding'
+    initialValue: 6
+    initialValueUnit: 'px'
+  - syntax: <number>
+    label: Icon scale on hover (D = 1.12)
+    name: '--tray-la-hover-scale'
+    initialValue: 1.12
 styles:
   toolbar: |
     .tray-list {
       display: grid !important;
       grid-template-columns: repeat(auto-fit, minmax(54px, 1fr)) !important;
-      padding: 6px !important;
+      padding: var(--tray-la-list-padding) !important;
 
       .tray-item {
         display: flex;
@@ -30,15 +53,15 @@ styles:
       }
 
       .tray-item:hover .tray-item-icon {
-        transform: translate(-50%, -60%) scale(1.12) !important;
+        transform: translate(-50%, -60%) scale(var(--tray-la-hover-scale)) !important;
       }
 
       .tray-item-label {
         position: absolute !important;
         bottom: 0 !important;
         left: 51% !important;
-        max-width: 15ch !important;
-        font-size: 0.6rem;
+        max-width: calc(var(--tray-la-ch-length) * 1ch) !important;
+        font-size: var(--tray-la-font-size);
         text-overflow: clip !important;
         opacity: 1 !important;
         transform: translateX(-50%) translateY(4px) !important;
