@@ -15,6 +15,11 @@ This is a repo for my **[Seelen UI](https://github.com/eythaann/Seelen-UI) Resou
 <details>
 <summary>↳ Click to Expand</summary>
 
+
+—→ **Indiviually Color Each Toolbar Module**:
+
+![196ffa988ed](https://github.com/user-attachments/assets/61e8d0fa-ff49-4432-b16b-9eb2f85a0508)
+
 —→ **Fully Customize the User Module**:
 
 https://github.com/user-attachments/assets/9edd4aa1-0e86-4f4e-9a06-16e491103a80
