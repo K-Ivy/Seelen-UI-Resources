@@ -15,6 +15,15 @@ This is a repo for my **[Seelen UI](https://github.com/eythaann/Seelen-UI) Resou
 <details>
 <summary>↳ Click to Expand</summary>
 
+—→ **Fully Customizable Dock**:
+
+▶ **Short Demo:**
+
+https://github.com/user-attachments/assets/59b9aa1d-aeac-4f38-94b7-0dc890586350
+
+▶ **Extended Demo:**
+
+https://www.youtube.com/watch?v=YjHyuYDQbD0
 
 —→ **Indiviually Color Each Toolbar Module**:
 
