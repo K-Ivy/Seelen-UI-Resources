@@ -1,0 +1,10 @@
+id: "@custom/example-module-name-pfp"
+icon: FaRegCircleUser
+target: "@seelen/fancy-toolbar"
+plugin:
+  type: user
+  withUserFolder: true
+  template: |-
+    return [Image({ path: user.profilePicturePath }), ' ', '@K-Ivy'];
+  style:
+    flexShrink: 0
