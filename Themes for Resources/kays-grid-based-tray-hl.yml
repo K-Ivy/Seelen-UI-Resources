@@ -1,0 +1,171 @@
+id: "@k-ivy/win-grid-tray-hl"
+metadata:
+  displayName: "Grid Style Tray Menu - Hover for Label"
+  author: "IriKay (@K-Ivy on Git)"
+  description: "V2.0"
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 3
+    - 8
+settings:
+  - syntax: <number>
+    label: "♦ Maximum Character Length of names (D = 15ch)"
+    name: '--tray-hl-ch-length'
+    initialValue: 15
+
+  - syntax: <length>
+    label: "↳ Font Size of names (D = 10px)"
+    name: '--tray-hl-font-size'
+    initialValue: 10
+    initialValueUnit: 'px'
+
+  - syntax: <string>
+    label: " ➙ Allow names to go beyond the tray (visible | hidden)"
+    name: '--tray-hl-m-overflowxy-et'
+    initialValue: 'visible'
+
+  - syntax: <string>
+    label: " ➙ Text overflow style at the end (clip | ellipsis)"
+    name: '--tray-hl-m-txt-overflow'
+    initialValue: 'clip'
+
+  - syntax: <length>
+    label: "↳ Start Height of names on hover (D = 3px)"
+    name: '--tray-hl-label-start'
+    initialValue: 3
+    initialValueUnit: 'px'
+
+  - syntax: <length>
+    label: "↳ End Height of names on hover (D = 4px)"
+    name: '--tray-hl-label-end'
+    initialValue: 4
+    initialValueUnit: 'px'
+
+  - syntax: <length>
+    label: "♦ App Icon Size (D = 22px)"
+    name: '--tray-hl-icon-height'
+    initialValue: 22
+    initialValueUnit: 'px'
+
+  - syntax: <number>
+    label: "↳ App Icon Size on hover (D = 1.16)"
+    name: '--tray-hl-app-hover-scale'
+    initialValue: 1.16
+
+  - syntax: <string>
+    label: "↳ Hovered App Icon Transition Control"
+    name: '--tray-hl-app-hover-transition'
+    initialValue: 'transform 0.3s cubic-bezier(0.33, 1, 0.68, 1)'
+
+  - syntax: <length>
+    label: "Tray Vertical Padding (D = 6px)"
+    name: '--tray-hl-padding-y'
+    initialValue: 6
+    initialValueUnit: 'px'
+
+  - syntax: <length>
+    label: "Tray Horizontal Padding (D = 6px)"
+    name: '--tray-hl-padding-x'
+    initialValue: 6
+    initialValueUnit: 'px'
+
+  - syntax: <length>
+    label: "Tray Item Gap (D = 8px)"
+    name: '--tray-hl-item-gap'
+    initialValue: 8
+    initialValueUnit: 'px'
+
+  - syntax: <length>
+    label: "Column Minimum Width (D = 54px)"
+    name: '--tray-hl-col-min'
+    initialValue: 54
+    initialValueUnit: 'px'
+
+  - syntax: <length>
+    label: "Row Height (D = 48px)"
+    name: '--tray-hl-row-height'
+    initialValue: 48
+    initialValueUnit: 'px'
+
+  - syntax: <string>
+    label: "Visibility of Tooltip Popup when hovering names (visible | none)"
+    name: '--tray-hl-pointer-events'
+    initialValue: 'visible'
+
+styles:
+  toolbar: |
+    @keyframes fadeInLabel {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(var(--tray-hl-label-start));
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(var(--tray-hl-label-end));
+      }
+    }
+    @keyframes fadeOutLabel {
+      from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(var(--tray-hl-label-end));
+      }
+      to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(var(--tray-hl-label-start));
+      }
+    }
+
+    .tray-list {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(var(--tray-hl-col-min), 1fr)) !important;
+      padding: var(--tray-hl-padding-y) var(--tray-hl-padding-x) !important;
+      gap: var(--tray-hl-item-gap) !important;
+      overflow-x: var(--tray-hl-m-overflowxy-et, visible) !important;
+      overflow-y: var(--tray-hl-m-overflowxy-et, visible) !important;
+    }
+
+    .tray-item {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      position: relative !important;
+      height: var(--tray-hl-row-height) !important;
+    }
+
+    .tray-item-icon {
+      position: absolute !important;
+      height: var(--tray-hl-icon-height) !important;
+      will-change: transform;
+      transform: translate(-50%, -60%) scale(1) !important;
+      top: 56% !important;
+      left: 50% !important;
+      object-fit: contain;
+      transition: var(--tray-hl-app-hover-transition, transform 0.3s cubic-bezier(0.33, 1, 0.68, 1)) !important;
+    }
+
+    .tray-item-icon:hover {
+      transform: translate(-50%, -60%) scale(var(--tray-hl-app-hover-scale)) !important;
+    }
+
+    .tray-item-label {
+       /* Force showing label for themes that hide it */
+      display: block !important;
+      position: absolute !important;
+      bottom: 0 !important;
+      left: 50% !important;
+      transform: translateX(-50%);
+      max-width: calc(var(--tray-hl-ch-length) * 1ch) !important;
+      font-size: var(--tray-hl-font-size);
+      /* Hides hover tooltips */
+      pointer-events: var(--tray-hl-pointer-events, visible) !important;
+      text-overflow: var(--tray-hl-m-txt-overflow, clip) !important;
+    }
+
+    .tray-item:hover .tray-item-label {
+      animation: fadeInLabel 0.5s forwards;
+    }
+
+    .tray-item:not(:hover) .tray-item-label {
+      animation: fadeOutLabel 0.4s forwards;
+    }

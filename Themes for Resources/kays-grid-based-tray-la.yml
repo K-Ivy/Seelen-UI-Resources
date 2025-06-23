@@ -1,0 +1,130 @@
+id: "@k-ivy/win-grid-tray-la"
+metadata:
+  displayName: "Grid Style Tray Menu - Always Show Label"
+  author: "IriKay (@K-Ivy on Git)"
+  description: "V2.0"
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 3
+    - 8
+settings:
+  - syntax: <length>
+    label: "♦ Maximum Label Length per line (D = 62px)"
+    name: '--tray-la-max-length-per'
+    initialValue: 62
+    initialValueUnit: 'px'
+
+  - syntax: <number>
+    label: "↳ Maximum Number of lines (D = 2)"
+    name: '--tray-la-webline-count'
+    initialValue: 2
+
+  - syntax: <string>
+    label: " ➙ Break Words (normal | break-word)"
+    name: '--tray-la-word-break'
+    initialValue: 'break-word'
+
+  - syntax: <length>
+    label: "↳ Label Font Size (D = 10px)"
+    name: '--tray-la-font-size'
+    initialValue: 10
+    initialValueUnit: 'px'
+
+  - syntax: <length>
+    label: "♦ App Icon Size (D = 22px)"
+    name: '--tray-la-icon-height'
+    initialValue: 22
+    initialValueUnit: 'px'
+
+  - syntax: <number>
+    label: "↳ App Icon Size on hover (D = 1.16)"
+    name: '--tray-la-app-hover-scale'
+    initialValue: 1.16
+
+  - syntax: <string>
+    label: "↳ Hovered App Icon Transition Control"
+    name: '--tray-la-app-hover-transition'
+    initialValue: 'transform 0.3s cubic-bezier(0.33, 1, 0.68, 1)'
+
+  - syntax: <length>
+    label: " ➙ App Icon Vertical Position"
+    name: '--tray-la-app-vert-pos'
+    initialValue: -2
+    initialValueUnit: 'px'
+
+  - syntax: <length>
+    label: "Vertical Position Adjustment (D = -4px)"
+    name: '--tray-la-app-bot-pos'
+    initialValue: -4
+    initialValueUnit: 'px'
+
+  - syntax: <length>
+    label: "Tray Vertical Padding (D = 4px)"
+    name: '--tray-la-padding-y'
+    initialValue: 4
+    initialValueUnit: 'px'
+
+  - syntax: <length>
+    label: "Tray Horizontal Padding (D = 3px)"
+    name: '--tray-la-padding-x'
+    initialValue: 3
+    initialValueUnit: 'px'
+
+  - syntax: <length>
+    label: "Tray Item Gap (D = 8px)"
+    name: '--tray-la-item-gap'
+    initialValue: 8
+    initialValueUnit: 'px'
+
+  - syntax: <length>
+    label: "Column Minimum Width (D = 54px)"
+    name: '--tray-la-col-min'
+    initialValue: 54
+    initialValueUnit: 'px'
+
+  - syntax: <string>
+    label: "Visibility of Tooltip Popup when Hovering Names (visible | none)"
+    name: '--tray-la-pointers-events'
+    initialValue: 'visible'
+
+styles:
+  toolbar: |
+    .tray-list {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(var(--tray-la-col-min, 54px), 1fr)) !important;
+      padding: var(--tray-la-padding-y) var(--tray-la-padding-x) !important;
+      gap: var(--tray-la-item-gap) !important;
+    }
+
+    .tray-item {
+      bottom: var(--tray-la-app-bot-pos) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      position: relative !important;
+    }
+
+    .tray-item-icon {
+      position: relative !important;
+      height: var(--tray-la-icon-height) !important;
+      bottom: var(--tray-la-app-vert-pos) !important;
+      object-fit: contain;
+      will-change: transform;
+      transition: var(--tray-la-app-hover-transition, transform 0.3s cubic-bezier(0.33, 1, 0.68, 1)) !important;
+    }
+
+    .tray-item-icon:hover {
+      transform: scale(var(--tray-la-app-hover-scale)) !important;
+    }
+
+    .tray-item-label {
+      display: -webkit-box !important;
+      -webkit-box-orient: vertical !important;
+      -webkit-line-clamp: var(--tray-la-webline-count) !important;
+      white-space: normal !important; /* allows wrapping */
+      word-break: var(--tray-la-word-break, break-word) !important;
+      text-align: center !important;
+      width: var(--tray-la-max-length-per) !important;
+      font-size: var(--tray-la-font-size) !important;
+      pointer-events: var(--tray-la-pointers-events, visible) !important;
+    }
