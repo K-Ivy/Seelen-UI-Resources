@@ -15,62 +15,60 @@ This is a repo for my **[Seelen UI](https://github.com/eythaann/Seelen-UI) Resou
 <details>
 <summary>↳ Click to Expand</summary>
 
-—→ **Fully Customizable Dock**:
+---
+—→ **Fully Customizable Dock**: (Extended Demo: https://www.youtube.com/watch?v=YjHyuYDQbD0)
+- All from within Seelen Settings, EXTENSIVELY customize the Dock, it's Context Menus, and the Window Previews.
 
 ▶ **Short Demo:**
 
 https://github.com/user-attachments/assets/59b9aa1d-aeac-4f38-94b7-0dc890586350
 
-▶ **Extended Demo:**
+---
+—→ **Media Player Customization**: (Both Horizontal and Vertical Docks Supported!)
+- This theme allows to customize the behavior of the dock's player and add filters to it and the toolbar media module's player. And makes coveres fully take the space.
 
-https://www.youtube.com/watch?v=YjHyuYDQbD0
+  - **Compact Mode**: Unless hovered, the Media Player stays at your set item size. (***Default***)
+  - **Always Expanded Mode**: By matching hovered and unhovered state values, you can make the Media Player always expanded like default, if you wish to use the other features, but not the above.
+  - **Smart Player Mode**: You can set it so the Media Player hides when no media is playing. Along with this, you can set the relevant seperator (left or right) to follow the same logic so it is fully clean.
 
+![medoa-bg](https://github.com/user-attachments/assets/00f662f6-04a1-4b5b-b1d5-8b421ac8ba68)
+
+▶ **Demo:**
+
+https://github.com/user-attachments/assets/a1e4e777-e4ba-4232-ae1a-1d0dfeb6cf1e
+
+---
 —→ **Indiviually Color Each Toolbar Module**:
+- This theme allows to indiviually color each module of the toolbar. That includes coloring every Workspace Dot/Number/Name, diffrently.
+- And you can make Plugin Modules able to be colored from this theme's settings by swaping the ID of your plugin with a pre-defined one (20 Slots).
+  - Wiki ( https://github.com/K-Ivy/Kays-SeelenUI-Themes/wiki/Toolbar-Coloring-User-Guide )
 
 ![196ffa988ed](https://github.com/user-attachments/assets/61e8d0fa-ff49-4432-b16b-9eb2f85a0508)
 
-—→ **Fully Customize the User Module**:
-
-https://github.com/user-attachments/assets/9edd4aa1-0e86-4f4e-9a06-16e491103a80
-
-—→ Seelen **Media Player** Component:
-
-▶ **Horizontal:**
-
-https://github.com/user-attachments/assets/503908fb-4b04-4b75-b0d5-24837d325128
-
-▶ **Vertical:**
-
-https://github.com/user-attachments/assets/0c4d6448-0e97-47bf-a041-b18bac8cbdf9
-
-+ & Fills Thumbnails of Dock & Toolbar Media Module Players
-+ & You can fully customize the filters used via settings
-
 ---
+—→ Grid Style Tray - Hover for Label**:
+- Changes the tray menu to be grid-based, the names of apps revealed when you hover over an icon - with settings to customize this theme.
 
-—→ Seelen **TOOLBAR TRAY MENU** Module:
-
-- Just a note for below: Recording with sharex causes the wrong names seen
-
-▶ **Windows Style (Grid) Tray Menu - Hover for Label**
-  
 ![seelen-ui_MUxd43yKkO](https://github.com/user-attachments/assets/d9339138-cb48-4225-9aec-b6b020e48600)
 
-▶ **Windows Style (Grid) Tray Menu - Always show Label**
+—→ Grid Style Tray - Always Show Label:
+- Changes the tray menu to be grid-based, the names of apps always shown - with settings to customize this theme.
 
-![seelen-ui_Equ0Yd8gDC](https://github.com/user-attachments/assets/a63ec150-7236-4957-bcdd-d848598977b9)
-
----
-
-—→ **Hide Media Player App Icons**
-
-![hide-app-icon-showcase](https://github.com/user-attachments/assets/eaffa276-b2ca-4408-bb8c-3103edb40e22)
+OLD: ![seelen-ui_Equ0Yd8gDC](https://github.com/user-attachments/assets/a63ec150-7236-4957-bcdd-d848598977b9)
 
 ---
-
 —→ **Nicely Fill Window Preview**
 
 https://github.com/user-attachments/assets/2d56ec88-e229-43d5-a0ad-33ca00ff59a2
+
+—→ **Toolbar User Module Customization**:
+
+https://github.com/user-attachments/assets/9edd4aa1-0e86-4f4e-9a06-16e491103a80
+
+---
+—→ **Hide Media Player App Icons**
+
+![hide-app-icon-showcase](https://github.com/user-attachments/assets/eaffa276-b2ca-4408-bb8c-3103edb40e22)
 
 </details> 
 
