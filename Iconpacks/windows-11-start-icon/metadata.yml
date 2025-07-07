@@ -1,0 +1,14 @@
+id: '@k-ivy/win-start'
+metadata:
+  displayName: Start Icon Changer
+  description: For FAQ
+  appTargetVersion:
+    - 2
+    - 3
+    - 10
+entries:
+  - type: custom
+    key: '@seelen/weg::start-menu'
+    icon:
+      base: win.png
+      mask: null
