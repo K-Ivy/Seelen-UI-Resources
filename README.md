@@ -46,6 +46,45 @@ https://github.com/user-attachments/assets/a1e4e777-e4ba-4232-ae1a-1d0dfeb6cf1e
 ![196ffa988ed](https://github.com/user-attachments/assets/61e8d0fa-ff49-4432-b16b-9eb2f85a0508)
 
 ---
+—→ **Animated WinXP Start Icon**:
+- This theme overrides the default start icon and those of custom icon packs with a WinXP start icon, allowing mixing.
+
+  - In addition, you can select from **7 available animations** to apply to the icon on hover. View them all here (with video demos): <https://github.com/K-Ivy/Seelen-UI-Resources/wiki/Documentation-of-%22Animated-Start-Icon%22-Themes>
+
+▶ **Demo:**
+
+https://github.com/user-attachments/assets/3100e7a3-6702-4d01-8f0d-219859593878
+
+---
+—→ **Animated Vista Start Icon**:
+- This theme overrides the default start icon and those of custom icon packs with a Vista/Win7 start icon, allowing mixing.
+
+  - In addition, you can select from **7 available animations** to apply to the icon on hover. View them all here (with video demos): <https://github.com/K-Ivy/Seelen-UI-Resources/wiki/Documentation-of-%22Animated-Start-Icon%22-Themes>
+
+▶ **Demo:**
+
+https://github.com/user-attachments/assets/d5d9f349-af41-4f9f-ab00-ac01af6916c3
+
+---
+—→ **Animated Windows 10 Start Icon**:
+- This theme overrides the default start icon and those of custom icon packs with a Win10 start icon, allowing mixing.
+
+  - In addition, you can select from **7 available animations** to apply to the icon on hover. View them all here (with video demos): <https://github.com/K-Ivy/Seelen-UI-Resources/wiki/Documentation-of-%22Animated-Start-Icon%22-Themes>
+
+▶ **Demo:**
+
+https://github.com/user-attachments/assets/26a028d4-1d06-4226-a514-0640c3cb5159
+
+---
+—→ **Animated Whiteout Windows 7 Start Icon**:
+- This theme overrides the default start icon and those of custom icon packs with a Win10 start icon, allowing mixing.
+
+  - In addition, you can select from **7 available animations** to apply to the icon on hover. View them all here (with video demos): <https://github.com/K-Ivy/Seelen-UI-Resources/wiki/Documentation-of-%22Animated-Start-Icon%22-Themes>
+
+▶ **Demo:**
+
+https://github.com/user-attachments/assets/b061c862-b76b-4ada-84df-8fdbcac06544
+
 —→ Grid Style Tray - Hover for Label**:
 - Changes the tray menu to be grid-based, the names of apps revealed when you hover over an icon - with settings to customize this theme.
 
