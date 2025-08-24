@@ -1,135 +1,64 @@
-This is a repo for my **[Seelen UI](https://github.com/eythaann/Seelen-UI) Resources (Plugins, Themes, Etc.):**
+<div align="center">
+	<h1> ≽ Seelen Resources ≼</h1>
+</div>
+
+***
+
+<table align="right">
+	<tr>
+	    <td colspan="2" align="center"><h3>Wiki Navigation</h3></td>
+	</tr>
+	<tr>
+	    <td colspan="2" align="center"> Guide (WIP) - <a href="https://github.com/K-Ivy/Seelen-UI-Resources/wiki/How-to-Theme-Seelen-UI">How To Create Themes</a></td>
+	</tr>
+	<tr>
+	    <td colspan="2" align="center">1 - <a href="https://github.com/K-Ivy/Seelen-UI-Resources/wiki/%22Fully-Cusomizable-Toolbar%22-Theme">Fully Customizable Toolbar</a></td>
+	</tr>
+	<tr>
+	    <td colspan="2" align="center">2 - <a href="https://github.com/K-Ivy/Seelen-UI-Resources/wiki/%22Fully-Customizable-Dock%22-Theme">Fully Customizable Dock</a></td>
+	</tr>
+	<tr>
+	    <td colspan="2" align="center">3 - <a href="https://github.com/K-Ivy/Seelen-UI-Resources/wiki/%22Individual-Coloring-of-Toolbar-Modules%22-Theme">Indiviual Coloring of Modules</a></td>
+	</tr>
+	<tr>
+	    <td colspan="2" align="center">4 - <a href="https://github.com/K-Ivy/Seelen-UI-Resources/wiki/%22Animated-Start-Icon%22-Themes">Animated Start Icons</a></td>
+	</tr>
+</table>
+<div align="left">
+	<p>
+	This Repo contains resources I make for Seelen UI for public use. Aside from that, any guides I make will also reside here.
+	</p>
 
 🎨 Download my uploaded resources from the official page: https://seelen.io/profile/k-ivy
-- Note for Git: *As I update themes, the related zip in releases will be updated. So check as needed.*
   
-  → If you encounter a **Problem** with any of my themes, have a **Suggestion**, or have a **Request**, create a post in issues and mark it.
+- If you encounter a **Problem** with any of my resources, have a **Suggestion**, or have a **Request**, create a post in issues and mark it.
 
-  → **Contributions** on language translations appreicated & welcomce. o7
+- **Contributions** welcome. Especially language translations as they are currently none-existent.
 
-- If you make a edit of a theme, **make sure to credit** if you share.
+- If you make a edit of something and share, credit if relevant.
 
 ----------------
 
-**∘ CURRENTLY AVAILABLE THEMES**
-<details>
-<summary>↳ Click to Expand</summary>
+**Previews of Resources that will stay on Github:**
 
----
-—→ **Fully Customizable Dock**: (Extended Demo: https://www.youtube.com/watch?v=YjHyuYDQbD0)
-- All from within Seelen Settings, EXTENSIVELY customize the Dock, it's Context Menus, and the Window Previews.
-
-▶ **Short Demo:**
-
-https://github.com/user-attachments/assets/59b9aa1d-aeac-4f38-94b7-0dc890586350
-
----
-—→ **Media Player Customization**: (Both Horizontal and Vertical Docks Supported!)
-- This theme allows to customize the behavior of the dock's player and add filters to it and the toolbar media module's player. And makes coveres fully take the space.
-
-  - **Compact Mode**: Unless hovered, the Media Player stays at your set item size. (***Default***)
-  - **Always Expanded Mode**: By matching hovered and unhovered state values, you can make the Media Player always expanded like default, if you wish to use the other features, but not the above.
-  - **Smart Player Mode**: You can set it so the Media Player hides when no media is playing. Along with this, you can set the relevant seperator (left or right) to follow the same logic so it is fully clean.
-
-![medoa-bg](https://github.com/user-attachments/assets/00f662f6-04a1-4b5b-b1d5-8b421ac8ba68)
-
-▶ **Demo:**
-
-https://github.com/user-attachments/assets/a1e4e777-e4ba-4232-ae1a-1d0dfeb6cf1e
-
----
-—→ **Indiviually Color Each Toolbar Module**:
-- This theme allows to indiviually color each module of the toolbar. That includes coloring every Workspace Dot/Number/Name, diffrently.
-- And you can make Plugin Modules able to be colored from this theme's settings by swaping the ID of your plugin with a pre-defined one (20 Slots).
-  - Wiki ( https://github.com/K-Ivy/Kays-SeelenUI-Themes/wiki/Toolbar-Coloring-User-Guide )
-
-![196ffa988ed](https://github.com/user-attachments/assets/61e8d0fa-ff49-4432-b16b-9eb2f85a0508)
-
----
-—→ **Animated WinXP Start Icon**:
-- This theme overrides the default start icon and those of custom icon packs with a WinXP start icon, allowing mixing.
-
-  - In addition, you can select from **7 available animations** to apply to the icon on hover. View them all here (with video demos): <https://github.com/K-Ivy/Seelen-UI-Resources/wiki/Documentation-of-%22Animated-Start-Icon%22-Themes>
-
-▶ **Demo:**
-
-https://github.com/user-attachments/assets/3100e7a3-6702-4d01-8f0d-219859593878
-
----
-—→ **Animated Vista Start Icon**:
-- This theme overrides the default start icon and those of custom icon packs with a Vista/Win7 start icon, allowing mixing.
-
-  - In addition, you can select from **7 available animations** to apply to the icon on hover. View them all here (with video demos): <https://github.com/K-Ivy/Seelen-UI-Resources/wiki/Documentation-of-%22Animated-Start-Icon%22-Themes>
-
-▶ **Demo:**
-
-https://github.com/user-attachments/assets/d5d9f349-af41-4f9f-ab00-ac01af6916c3
-
----
-—→ **Animated Windows 10 Start Icon**:
-- This theme overrides the default start icon and those of custom icon packs with a Win10 start icon, allowing mixing.
-
-  - In addition, you can select from **7 available animations** to apply to the icon on hover. View them all here (with video demos): <https://github.com/K-Ivy/Seelen-UI-Resources/wiki/Documentation-of-%22Animated-Start-Icon%22-Themes>
-
-▶ **Demo:**
-
-https://github.com/user-attachments/assets/26a028d4-1d06-4226-a514-0640c3cb5159
-
----
-—→ **Animated Whiteout Windows 7 Start Icon**:
-- This theme overrides the default start icon and those of custom icon packs with a Win10 start icon, allowing mixing.
-
-  - In addition, you can select from **7 available animations** to apply to the icon on hover. View them all here (with video demos): <https://github.com/K-Ivy/Seelen-UI-Resources/wiki/Documentation-of-%22Animated-Start-Icon%22-Themes>
-
-▶ **Demo:**
-
-https://github.com/user-attachments/assets/b061c862-b76b-4ada-84df-8fdbcac06544
-
-—→ Grid Style Tray - Hover for Label**:
-- Changes the tray menu to be grid-based, the names of apps revealed when you hover over an icon - with settings to customize this theme.
-
-![seelen-ui_MUxd43yKkO](https://github.com/user-attachments/assets/d9339138-cb48-4225-9aec-b6b020e48600)
-
-—→ Grid Style Tray - Always Show Label:
-- Changes the tray menu to be grid-based, the names of apps always shown - with settings to customize this theme.
-
-OLD: ![seelen-ui_Equ0Yd8gDC](https://github.com/user-attachments/assets/a63ec150-7236-4957-bcdd-d848598977b9)
-
----
-—→ **Nicely Fill Window Preview**
-
-https://github.com/user-attachments/assets/2d56ec88-e229-43d5-a0ad-33ca00ff59a2
-
-—→ **Toolbar User Module Customization**:
-
-https://github.com/user-attachments/assets/9edd4aa1-0e86-4f4e-9a06-16e491103a80
-
----
-—→ **Hide Media Player App Icons**
-
-![hide-app-icon-showcase](https://github.com/user-attachments/assets/eaffa276-b2ca-4408-bb8c-3103edb40e22)
-
-</details> 
-
----
-
-→ **CURRENTLY AVAILABLE PLUGINS**
 <details>
 <summary>↳ Click to Expand</summary>
   
-—→ **TOOLBAR MODULE TO LAUNCH LOCAL FILE**
+—→ **Plugin - Toolbar Module To Launch Local File**
 
 ![1](https://github.com/user-attachments/assets/54cbb057-8d52-4817-857c-0390068c32fb)
 
-—→ **TOOLBAR MODULE TO MAKE CUSTOM USER FOLDER**
+—→ **Plugin - Custom User Folder Toolbar Module**
 
 ![2](https://github.com/user-attachments/assets/2c3ad081-1149-4680-a04c-8c38f1b8af27)
 
-—→ **Resource**: [Toolbar Website Shortcut Builder by 1Developer](https://1developpeur.github.io/shortcut.html)
+—→ Good **Resource**: [Toolbar Website Shortcut Builder by 1Developer](https://1developpeur.github.io/shortcut.html)
 
 </details> 
 
----
+**Extra:**
 
-Settings note:
+<details>
+<summary>↳ Notes </summary>
 - M/D/YY - h:mm A
+</details> 
