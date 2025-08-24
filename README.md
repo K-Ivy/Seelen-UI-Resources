@@ -1,8 +1,6 @@
-<div align="center">
-	<h1> ≽ Seelen Resources ≼</h1>
+<div align="left">
+	<h1> ≽ Info ≼</h1>
 </div>
-
-***
 
 <table align="right">
 	<tr>
