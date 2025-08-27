@@ -4,6 +4,7 @@
 > "https://seelen.io/resources/eythaann/resource-creator-tool"
 
 - **However** note that MTL, as to be expected will break any special structure in place and any special struture will also throw off the translation. As such, if you use this to aid you, I would recommand you:
+
   -  Copy any special structure somewhere and remove it from the default translation & then let the tool handle the translation.
   -  After, copy paste the special structure into the lines and make your adjustments.
 
