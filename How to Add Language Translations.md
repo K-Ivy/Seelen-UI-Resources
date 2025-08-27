@@ -13,6 +13,8 @@
     - Enclose translations in quotes.
     - Maintain proper indentation.
 
+https://github.com/user-attachments/assets/812cf83c-ace8-4a5a-93b3-e7d4e2aa1cf5
+
 # Structure Template for Reference:
 ```
 id: '@default/theme'
