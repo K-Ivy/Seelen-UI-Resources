@@ -1,24 +1,18 @@
 # Adding Translations:
 
-Following the below you can directly do it here or download the raw yml of whatever resource and edit it and give it to me via Seelen Ui Discord (*I'm K. a mod*)
+1. The **simplest and recommanded way** is to use the Seelen **Resource Creator Tool** which gives you a easy menu to add your own translations or generate machine translations (MTL) without needing to go into the code yourself to add the lines or navigate it. 
+> "https://seelen.io/resources/eythaann/resource-creator-tool"
 
-**1. Add your language code to the appropriate block** and provide your translation.
-- Enclose translations in quotes.
-- Maintain proper indentation.
+- **However** note that MTL, as to be expected will break any special structure in place and any special struture will also throw off the translation. As such, if you use this to aid you, I would recommand you:
+  -  Copy any special structure somewhere and remove it from the default translation & then let the tool handle the translation.
+  -  After, copy paste the special structure into the lines and make your adjustments.
 
-**2. You can use the Seelen Resource Creator Tool** for adding Machine Translations (MTL): 
-- "https://seelen.io/resources/eythaann/resource-creator-tool"
-- Depending on the number of options, this is very useful. However as to be expected, it will break any special structure in place and any special struture will also throw off the translation. 
+2. The other way is this: **download** the related .yml from the repo and then go through the yml section of the resource and add your lanague(s) and the translation(s).
 
-   As such, if you use this to aid you, I would recommand you:
-  -  Copy any special structure somewhere and remove it from the default translation &
-  -  Let the tool now handle the translation.
-  -  Reapply the special structure after the translation is complete and make your adjustments.
+    - Enclose translations in quotes.
+    - Maintain proper indentation.
 
-  FYI this is why I have yet to use it to provide base translations for my major resources. It's a lot of work to correct.
-
-
-# Structure and Template:
+# Structure Template for Reference:
 ```
 id: '@default/theme'
 metadata:
