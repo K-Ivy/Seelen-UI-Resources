@@ -24,14 +24,14 @@
 </table>
 <div align="left">
 	<p>
-	This Repo contains resources I make for Seelen UI for public use. Aside from that, any guides I make will also reside here.
+	This Repo contains the yaw files for resources I make for Seelen UI for public use. Aside from that, any guides I make will also reside here.
 	</p>
 
-🎨 Download my uploaded resources from the official page: https://seelen.io/profile/k-ivy
+🎨 Official page to download those uploaded: https://seelen.io/profile/k-ivy
   
-- If you encounter a **Problem** with any of my resources, have a **Suggestion**, or have a **Request**, create a post in issues and mark it.
+- If you encounter a **Problem** with any of my resources, have a **Suggestion** or have a **Request**, create a post in issues and mark it.
 
-- **Contributions** welcome. Especially language translations as they are currently none-existent.
+- **Contributions** welcome. Especially language translations as they are currently non-existent.
 
 - If you make a edit of something and share, credit if relevant.
 
