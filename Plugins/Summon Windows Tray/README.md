@@ -1,5 +1,7 @@
 Seelen v2.4.4+ removes the seelen tray module (because it cannot be properly implemented). As such, this adds a custom tray module that is to launch a autohotkey script that brings up the native windows tray menu.
 
+<img width="550" height="417" alt="seelen-ui_mjsCqzzDdI" src="https://github.com/user-attachments/assets/e9ca5018-2fc1-4f57-a674-a5d22d1b7f80" />
+
 **1.** Place the plugin, the **.yml**, at "**C:\Users\YOUR-USER\AppData\Roaming\com.seelen.seelen-ui\plugins**".
 
 **2.** Download the **.exe** or **.ahk** and the **.ini** file, that is the settings!
