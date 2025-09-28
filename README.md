@@ -35,28 +35,40 @@
 
 - If you make a edit of something and share, credit if relevant.
 
+<details>
+<summary>↳ Note for myself </summary>
+- M/D/YY - h:mm A
+</details>
+
 ----------------
 
-**Previews of Resources that will stay on Github:**
+The following are **plugins that cannot be uploaded to the site** as they require editing of the file itself (plugins do not have settings capability):
 
 <details>
 <summary>↳ Click to Expand</summary>
+
+→ **Summon Windows Tray** (Why? Seelen 2.4.4+ removes the Tray Module as it cannot be properly implemented.)
+
+> Instructions are within the plugins folder readme.
+
+https://github.com/user-attachments/assets/75bf09d7-5f70-4cc4-8e11-953dc84ce7d6
   
-—→ **Plugin - Toolbar Module To Launch Local File**
+→ **Toolbar Module To Launch Local File**
 
 ![1](https://github.com/user-attachments/assets/54cbb057-8d52-4817-857c-0390068c32fb)
 
-—→ **Plugin - Custom User Folder Toolbar Module**
+→ **Custom User Folder Toolbar Module**
 
 ![2](https://github.com/user-attachments/assets/2c3ad081-1149-4680-a04c-8c38f1b8af27)
 
-—→ Good **Resource**: [Toolbar Website Shortcut Builder by 1Developer](https://1developpeur.github.io/shortcut.html)
-
 </details> 
 
-**Extra:**
+---
 
+**Mentions:**
 <details>
-<summary>↳ Notes </summary>
-- M/D/YY - h:mm A
-</details> 
+<summary>↳ Click to Expand</summary>
+	
+ → **Resource**: [Toolbar Website Shortcut Builder by 1Developer](https://1developpeur.github.io/shortcut.html)
+ 
+</details>
