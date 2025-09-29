@@ -66,7 +66,7 @@ HideTray() {
 }
 
 MoveWindow(hwnd, x, y) {
-    static rect := Buffer(16)
+    rect := Buffer(16)
     if !DllCall("GetWindowRect", "Ptr", hwnd, "Ptr", rect.Ptr)
         return false
     w := NumGet(rect, 8, "Int") - NumGet(rect, 0, "Int")
@@ -74,14 +74,14 @@ MoveWindow(hwnd, x, y) {
     return DllCall("MoveWindow", "Ptr", hwnd, "Int", x, "Int", y, "Int", w, "Int", h, "Int", true) != 0
 }
 
-SUMMON_MSG := "summon"
 SendSummonMessage(hwnd) {
+    summonMsg := "summon"
     CDS := Buffer(A_PtrSize*3, 0)
-    NumPut("UPtr", StrPtr(SUMMON_MSG), CDS, A_PtrSize)
-    NumPut("UInt", StrLen(SUMMON_MSG) * 2, CDS, A_PtrSize*2)
+    NumPut("UPtr", StrPtr(summonMsg), CDS, A_PtrSize)
+    NumPut("UInt", StrLen(summonMsg) * 2, CDS, A_PtrSize*2)
     DllCall("SendMessage", "Ptr", hwnd, "UInt", 0x4A, "Ptr", 0, "Ptr", CDS.Ptr)
 }
 ReceiveMessage(wParam, lParam, msg, hwnd) {
-    if (StrGet(NumGet(lParam + A_PtrSize, "UPtr"), "UTF-16") = SUMMON_MSG)
+    if (StrGet(NumGet(lParam + A_PtrSize, "UPtr"), "UTF-16") = "summon")
         SummonTray()
 }
