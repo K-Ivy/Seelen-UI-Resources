@@ -16,6 +16,7 @@ ReadSettings(file) {
     s.TrayMoveX      := IniRead(file, "Settings", "TrayMoveX", 500) + 0
     s.TrayMoveY      := IniRead(file, "Settings", "TrayMoveY", 50) + 0
     s.SummonHotkey   := Trim(IniRead(file, "Settings", "SummonHotkey", "!s"))
+    s.HideHotkey     := Trim(IniRead(file, "Settings", "HideHotkey", "Esc"))
     s.WindowsVersion := IniRead(file, "Settings", "WindowsVersion", 11) + 0
     s.TrayWinWait    := IniRead(file, "Settings", "TrayWinWait", 4) + 0
     s.ShortcutWait   := IniRead(file, "Settings", "ShortcutWait", 50) + 0
@@ -47,7 +48,7 @@ SummonTray() ; Summon on first launch
 
 ; -------------------------------------------------------------
 Hotkey(settings.SummonHotkey, (*) => SummonTray())
-Esc::HideTray()
+Hotkey(settings.HideHotkey, (*) => HideTray())
 ; -------------------------------------------------------------
 SummonTray() {
     s := settings
