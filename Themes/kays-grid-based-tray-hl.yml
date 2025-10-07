@@ -10,86 +10,116 @@ metadata:
     - 8
 settings:
   - syntax: <number>
-    label: "♦ Maximum Character Length of names (D = 15ch)"
+    label: 
+      en: "♦ Maximum Character Length of names (D = 15ch)"
+      zh: "♦ 名称最大字符长度 (D = 15ch)"
     name: '--tray-hl-ch-length'
     initialValue: 15
 
   - syntax: <length>
-    label: "↳ Font Size of names (D = 10px)"
+    label: 
+      en: "↳ Font Size of names (D = 10px)"
+      zh: "↳ 名称字体大小 (D = 10px)"
     name: '--tray-hl-font-size'
     initialValue: 10
     initialValueUnit: 'px'
 
   - syntax: <string>
-    label: " ➙ Allow names to go beyond the tray (visible | hidden)"
+    label: 
+      en: " ➙ Allow names to go beyond the tray (visible | hidden)"
+      zh: " ➙ 允许名称超出托盘 (visible | hidden)"
     name: '--tray-hl-m-overflowxy-et'
     initialValue: 'visible'
 
   - syntax: <string>
-    label: " ➙ Text overflow style at the end (clip | ellipsis)"
+    label: 
+      en: " ➙ Text overflow style at the end (clip | ellipsis)"
+      zh: " ➙ 文本溢出样式 (clip | ellipsis)"
     name: '--tray-hl-m-txt-overflow'
     initialValue: 'clip'
 
   - syntax: <length>
-    label: "↳ Start Height of names on hover (D = 3px)"
+    label: 
+      en: "↳ Start Height of names on hover (D = 3px)"
+      zh: "↳ 悬停时名称起始高度 (D = 3px)"
     name: '--tray-hl-label-start'
     initialValue: 3
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "↳ End Height of names on hover (D = 4px)"
+    label: 
+      en: "↳ End Height of names on hover (D = 4px)"
+      zh: "↳ 悬停时名称结束高度 (D = 4px)"
     name: '--tray-hl-label-end'
     initialValue: 4
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "♦ App Icon Size (D = 22px)"
+    label: 
+      en: "♦ App Icon Size (D = 22px)"
+      zh: "♦ 应用图标大小 (D = 22px)"
     name: '--tray-hl-icon-height'
     initialValue: 22
     initialValueUnit: 'px'
 
   - syntax: <number>
-    label: "↳ App Icon Size on hover (D = 1.16)"
+    label: 
+      en: "↳ App Icon Size on hover (D = 1.16)"
+      zh: "↳ 悬停时应用图标大小 (D = 1.16)"
     name: '--tray-hl-app-hover-scale'
     initialValue: 1.16
 
   - syntax: <string>
-    label: "↳ Hovered App Icon Transition Control"
+    label: 
+      en: "↳ Hovered App Icon Transition Control"
+      zh: "↳ 悬停时应用图标过渡控制"
     name: '--tray-hl-app-hover-transition'
     initialValue: 'transform 0.3s cubic-bezier(0.33, 1, 0.68, 1)'
 
   - syntax: <length>
-    label: "Tray Vertical Padding (D = 6px)"
+    label: 
+      en: "Tray Vertical Padding (D = 6px)"
+      zh: "托盘垂直内边距 (D = 6px)"
     name: '--tray-hl-padding-y'
     initialValue: 6
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "Tray Horizontal Padding (D = 6px)"
+    label: 
+      en: "Tray Horizontal Padding (D = 6px)"
+      zh: "托盘水平内边距 (D = 6px)"
     name: '--tray-hl-padding-x'
     initialValue: 6
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "Tray Item Gap (D = 8px)"
+    label: 
+      en: "Tray Item Gap (D = 8px)"
+      zh: "托盘项目间距 (D = 8px)"
     name: '--tray-hl-item-gap'
     initialValue: 8
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "Column Minimum Width (D = 54px)"
+    label: 
+      en: "Column Minimum Width (D = 54px)"
+      zh: "列最小宽度 (D = 54px)"
     name: '--tray-hl-col-min'
     initialValue: 54
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "Row Height (D = 48px)"
+    label: 
+      en: "Row Height (D = 48px)"
+      zh: "行高度 (D = 48px)"
     name: '--tray-hl-row-height'
     initialValue: 48
     initialValueUnit: 'px'
 
   - syntax: <string>
-    label: "Visibility of Tooltip Popup when hovering names (visible | none)"
+    label: 
+      en: "Visibility of Tooltip Popup when hovering names (visible | none)"
+      zh: "悬停时名称的工具提示弹出可见性 (visible | none)"
     name: '--tray-hl-pointer-events'
     initialValue: 'visible'
 

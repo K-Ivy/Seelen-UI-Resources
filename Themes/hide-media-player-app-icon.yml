@@ -1,8 +1,12 @@
 id: "@k-ivy/hide-media-app-icon"
 metadata:
-  displayName: "Hide Media Player App Icon"
+  displayName: 
+    en: "Hide Media Player App Icon"
+    zh: "隐藏媒体播放器应用图标"
   author: "IriKay (@K-Ivy on Git)"
-  description: "Removes the source app icon in the media player — applies to both the dock's player and the toolbar's media module."
+  description: 
+    en: "Removes the source app icon in the media player — applies to both the dock's player and the toolbar's media module."
+    zh: "移除媒体播放器中的源应用图标 — 适用于 Dock 的媒体播放器和工具栏的媒体模块。"
   tags: ['weg', 'toolbar']
   appTargetVersion:
     - 2

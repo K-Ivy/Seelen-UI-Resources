@@ -10,81 +10,109 @@ metadata:
     - 8
 settings:
   - syntax: <length>
-    label: "♦ Maximum Label Length per line (D = 62px)"
+    label: 
+      en: "♦ Maximum Label Length per line (D = 62px)"
+      zh: "♦ 每行最大标签长度 (D = 62px)"
     name: '--tray-la-max-length-per'
     initialValue: 62
     initialValueUnit: 'px'
 
   - syntax: <number>
-    label: "↳ Maximum Number of lines (D = 2)"
+    label: 
+      en: "↳ Maximum Number of lines (D = 2)"
+      zh: "↳ 最大行数 (D = 2)"
     name: '--tray-la-webline-count'
     initialValue: 2
 
   - syntax: <string>
-    label: " ➙ Break Words (normal | break-word)"
+    label: 
+      en: " ➙ Break Words (normal | break-word)"
+      zh: " ➙ 断词 (normal | break-word)"
     name: '--tray-la-word-break'
     initialValue: 'break-word'
 
   - syntax: <length>
-    label: "↳ Label Font Size (D = 10px)"
+    label: 
+      en: "↳ Label Font Size (D = 10px)"
+      zh: "↳ 标签字体大小 (D = 10px)"
     name: '--tray-la-font-size'
     initialValue: 10
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "♦ App Icon Size (D = 22px)"
+    label: 
+      en: "♦ App Icon Size (D = 22px)"
+      zh: "♦ 应用图标大小 (D = 22px)"
     name: '--tray-la-icon-height'
     initialValue: 22
     initialValueUnit: 'px'
 
   - syntax: <number>
-    label: "↳ App Icon Size on hover (D = 1.16)"
+    label: 
+      en: "↳ App Icon Size on hover (D = 1.16)"
+      zh: "↳ 悬停时应用图标大小 (D = 1.16)"
     name: '--tray-la-app-hover-scale'
     initialValue: 1.16
 
   - syntax: <string>
-    label: "↳ Hovered App Icon Transition Control"
+    label: 
+      en: "↳ Hovered App Icon Transition Control"
+      zh: "↳ 悬停时应用图标过渡控制"
     name: '--tray-la-app-hover-transition'
     initialValue: 'transform 0.3s cubic-bezier(0.33, 1, 0.68, 1)'
 
   - syntax: <length>
-    label: " ➙ App Icon Vertical Position"
+    label: 
+      en: " ➙ App Icon Vertical Position"
+      zh: " ➙ 应用图标垂直位置"
     name: '--tray-la-app-vert-pos'
     initialValue: -2
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "Vertical Position Adjustment (D = -4px)"
+    label: 
+      en: "Vertical Position Adjustment (D = -4px)"
+      zh: "垂直位置调整 (D = -4px)"
     name: '--tray-la-app-bot-pos'
     initialValue: -4
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "Tray Vertical Padding (D = 4px)"
+    label: 
+      en: "Tray Vertical Padding (D = 4px)"
+      zh: "托盘垂直内边距 (D = 4px)"
     name: '--tray-la-padding-y'
     initialValue: 4
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "Tray Horizontal Padding (D = 3px)"
+    label: 
+      en: "Tray Horizontal Padding (D = 3px)"
+      zh: "托盘水平内边距 (D = 3px)"
     name: '--tray-la-padding-x'
     initialValue: 3
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "Tray Item Gap (D = 8px)"
+    label: 
+      en: "Tray Item Gap (D = 8px)"
+      zh: "托盘项目间距 (D = 8px)"
     name: '--tray-la-item-gap'
     initialValue: 8
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "Column Minimum Width (D = 54px)"
+    label: 
+      en: "Column Minimum Width (D = 54px)"
+      zh: "列最小宽度 (D = 54px)"
     name: '--tray-la-col-min'
     initialValue: 54
     initialValueUnit: 'px'
 
   - syntax: <string>
-    label: "Visibility of Tooltip Popup when Hovering Names (visible | none)"
+    label: 
+      en: "Visibility of Tooltip Popup when Hovering Names (visible | none)"
+      zh: "悬停时名称的工具提示弹出可见性 (visible | none)"
     name: '--tray-la-pointers-events'
     initialValue: 'visible'
 

@@ -5,6 +5,7 @@ metadata:
   author: "IriKay (@K-Ivy on Git)"
   description:
     en: "Customize the toolbar's User Folder Module all from theme settings!"
+    zh: "完全从主题设置中定制工具栏的用户文件夹模块！"
   tags: ['toolbar']
   appTargetVersion:
     - 2
@@ -14,79 +15,93 @@ settings:
   - syntax: <string>
     label:
       en: "Profile Picture -> Blank = Default | Custom = url('https://.png')"
+      zh: "头像 -> 空白 = 默认 | 自定义 = url('https://.png')"
     name: '--user-folder-custom-avater-img'
     initialValue: ''
   - syntax: <string>
     label:
       en: "Username -> MUST Have Quotes around name!"
+      zh: "用户名 -> 必须有引号围绕名称！"
     name: '--user-folder-custom-name'
     initialValue: '"Keep-Quotes"'
   - syntax: <string>
     label:
       en: "Username Font (D = inherit)"
+      zh: "用户名字体 (D = inherit)"
     name: '--user-folder-custom-font'
     initialValue: 'inherit'
   - syntax: <length>
     label:
       en: "Username Font Size (D = 15px)"
+      zh: "用户名字体大小 (D = 15px)"
     name: '--user-folder-custom-font-size'
     initialValue: 15
     initialValueUnit: 'px'
   - syntax: <number>
     label:
       en: "Username Font Style (D = 400 | R: 100=Thin, 400=Normal, 900=Thick)"
+      zh: "用户名字体样式 (D = 400 | R: 100=细, 400=正常, 900=粗)"
     name: '--user-folder-custom-font-weight'
     initialValue: 400
   - syntax: <length>
     label:
       en: "Username Horizontal Position (D = -9px)"
+      zh: "用户名水平位置 (D = -9px)"
     name: '--user-folder-custom-name-x-pos'
     initialValue: -9
     initialValueUnit: 'px'
   - syntax: <length>
     label:
       en: "Username Vertical Position (D = -0.5px)"
+      zh: "用户名垂直位置 (D = -0.5px)"
     name: '--user-folder-custom-name-y-pos'
     initialValue: -0.5
     initialValueUnit: 'px'
   - syntax: <length>
     label:
       en: "Profile Picture Width (D = 16px)"
+      zh: "头像宽度 (D = 16px)"
     name: '--user-folder-custom-pfp-width'
     initialValue: 16
     initialValueUnit: 'px'
   - syntax: <length>
     label:
       en: "Profile Picture Height (D = 16px)"
+      zh: "头像高度 (D = 16px)"
     name: '--user-folder-custom-pfp-height'
     initialValue: 16
     initialValueUnit: 'px'
   - syntax: <length>
     label:
       en: "Profile Picture Rounding (D = 50%)"
+      zh: "头像圆角 (D = 50%)"
     name: '--user-folder-custom-pfp-rounding'
     initialValue: 50
     initialValueUnit: '%'
   - syntax: <length>
     label:
       en: "Profile Picture Border Width (D = 1px)"
+      zh: "头像边框宽度 (D = 1px)"
     name: '--user-folder-custom-pfp-border-width'
     initialValue: 1
     initialValueUnit: 'px'
   - syntax: <color>
     label:
       en: "Profile Picture Border Color (D = #777777)"
+      zh: "头像边框颜色 (D = #777777)"
     name: '--user-folder-custom-pfp-border-color'
     initialValue: '#777777'
   - syntax: <length>
     label:
       en: "Profile Picture Horizontal Position (D = -0.5px)"
+      zh: "头像水平位置 (D = -0.5px)"
     name: '--user-folder-custom-pfp-x-pos'
     initialValue: -0.5
     initialValueUnit: 'px'
   - syntax: <length>
     label:
       en: "Profile Picture Vertical Position (D = 0px)"
+      zh: "头像垂直位置 (D = 0px)"
     name: '--user-folder-custom-pfp-y-pos'
     initialValue: 0
     initialValueUnit: 'px'
