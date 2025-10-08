@@ -1,7 +1,11 @@
 id: "@k-ivy/dock-comp-media"
 metadata:
-  displayName: "Media Player Customization"
-  description: "Allows to customize the behavior of the dock's player, and add filters to it and the toolbar media module's player."
+  displayName: 
+    en: "Media Player Customization"
+    zh: "自定义媒体播放器"
+  description: 
+    en: "Allows to customize the behavior of the dock's player, and add filters to it and the toolbar media module's player."
+    zh: "允许定制 Dock 的媒体播放器的行为，并为其添加滤镜以及工具栏媒体模块的媒体播放器。"
   author: "IriKay (@K-Ivy on Git)"
   tags: ['weg', 'toolbar']
   appTargetVersion:
@@ -12,83 +16,111 @@ settings:
   - syntax: <string>
     label:
       en: "✦ To make the Dock Player ALWAYS expanded, use the same value for the Unhovered State and Hovered State."
+      zh: "✦ 要使 Dock 媒体播放器始终展开，请为未悬停状态和悬停状态使用相同的值。"
     name: '--header-tempa-xyu-terma'
     initialValue: 'https://github.com/K-Ivy/Seelen-UI-Resources'
 
   - syntax: <length>
-    label: "↳ Unhovered State Width"
+    label:
+      en: "↳ Unhovered State Width"
+      zh: "↳ 未悬停状态宽度"
     name: '--dock-mediapl-standard-size-cal'
     initialValue: 0
     initialValueUnit: 'px'
 
   - syntax: <length>
-    label: "↳ Hovered State Width (D = 106px)"
+    label:
+      en: "↳ Hovered State Width (D = 106px)"
+      zh: "↳ 悬停状态宽度 (D = 106px)"
     name: '--dock-mediapl-added-size'
     initialValue: 106
     initialValueUnit: 'px'
 
   - syntax: <number>
-    label: " ➙ Expand Transition Duration (D = 400ms)"
+    label:
+      en: " ➙ Expand Transition Duration (D = 400ms)"
+      zh: " ➙ 展开过渡时长 (D = 400ms)"
     name: '--dock-mediapl-transition-duration'
     initialValue: 400
 
 
 
   - syntax: <string>
-    label: "♦ Hide Dock Media Player when No Media is playing —— block = (dont hide player) | none = (hide player)"
+    label:
+      en: "♦ Hide Dock Media Player when No Media is playing —— block = (dont hide player) | none = (hide player)"
+      zh: "♦ 当没有媒体播放时是否隐藏 Dock 媒体播放器 —— block = (不隐藏播放器) | none = (隐藏播放器)"
     name: '--dock-mediapl-no-media-hide'
     initialValue: 'block'
 
   - syntax: <string>
     label:
       en: " ↳ Below, choose which separator to hide alongside the Media Player:"
+      zh: " ↳ 下面，选择要与媒体播放器一起隐藏的分割线："
     name: "--header-rttam-xv-tecs"
     initialValue: '——————————'
 
   - syntax: <string>
-    label: "  ➙ Hide the seperator on the Left —— block = (dont hide) | none = (hide)"
+    label:
+      en: "  ➙ Hide the seperator on the Left —— block = (dont hide) | none = (hide)"
+      zh: "  ➙ 是否隐藏左侧分割线 —— block = (不隐藏) | none = (隐藏)"
     name: '--dock-medpl-hide-sep-left'
     initialValue: 'block'
 
   - syntax: <string>
-    label: "  ➙ Hide the seperator on the Right —— block = (dont hide) | none = (hide)"
+    label:
+      en: "  ➙ Hide the seperator on the Right —— block = (dont hide) | none = (hide)"
+      zh: "  ➙ 是否隐藏右侧分割线 —— block = (不隐藏) | none = (隐藏)"
     name: '--dock-medpl-hide-sep-right'
     initialValue: 'block'
 
 
 
   - syntax: <number>
-    label: "Dock Media Player Grayscale (D = 0.18)"
+    label:
+      en: "Dock Media Player Grayscale (D = 0.18)"
+      zh: "Dock 媒体播放器灰度 (D = 0.18)"
     name: '--dock-mediapl-grayscale'
     initialValue: 0.18
 
   - syntax: <number>
-    label: "Dock Media Player Contrast (D = 0.88)"
+    label:
+      en: "Dock Media Player Contrast (D = 0.88)"
+      zh: "Dock 媒体播放器对比度 (D = 0.88)"
     name: '--dock-mediapl-contrast'
     initialValue: 0.88
 
   - syntax: <number>
-    label: "Dock Media Player Sepia (D = 0)"
+    label:
+      en: "Dock Media Player Sepia (D = 0)"
+      zh: "Dock 媒体播放器褐色（怀旧感） (D = 0)"
     name: '--dock-mediapl-sepia'
     initialValue: 0
 
   - syntax: <number>
-    label: "Dock Media Player Saturation (D = 1.0)"
+    label:
+      en: "Dock Media Player Saturation (D = 1.0)"
+      zh: "Dock 媒体播放器饱和度 (D = 1.0)"
     name: '--dock-mediapl-saturate'
     initialValue: 1.0
 
   - syntax: <number>
-    label: "Dock Media Player Brightness (D = 1.0)"
+    label:
+      en: "Dock Media Player Brightness (D = 1.0)"
+      zh: "Dock 媒体播放器亮度 (D = 1.0)"
     name: '--dock-mediapl-brightness'
     initialValue: 1.0
 
   - syntax: <number>
-    label: "Dock Media Player Opacity (D = 1.0)"
+    label:
+      en: "Dock Media Player Opacity (D = 1.0)"
+      zh: "Dock 媒体播放器透明度 (D = 1.0)"
     name: '--dock-mediapl-opacity'
     initialValue: 1.0
 
   - syntax: <string>
-    label: "Dock Media Player Drop Shadow Filter (D = 0px 0px 0px rgba(0, 0, 0, 0.445))"
+    label:
+      en: "Dock Media Player Drop Shadow Filter (D = 0px 0px 0px rgba(0, 0, 0, 0.445))"
+      zh: "Dock 媒体播放器阴影滤镜 (D = 0px 0px 0px rgba(0, 0, 0, 0.445))"
     name: '--dock-mediapl-drop-shadow'
     initialValue: '0px 0px 0px rgba(0, 0, 0, 0.445)'
 
@@ -97,43 +129,58 @@ settings:
   - syntax: <string>
     label:
       en: "—— Toolbar Media Module —————————————"
+      zh: "—— 工具栏媒体模块 —————————————"
     name: '--main-sepra-mma-ta-bba'
     initialValue: '——————————'
 
 
 
   - syntax: <number>
-    label: "Toolbar Media Player Grayscale (D = 0.18)"
+    label:
+      en: "Toolbar Media Player Grayscale (D = 0.18)"
+      zh: "工具栏媒体播放器灰度 (D = 0.18)"
     name: '--toolbar-mediapl-grayscale'
     initialValue: 0.18
 
   - syntax: <number>
-    label: "Toolbar Media Player Contrast (D = 0.88)"
+    label:
+      en: "Toolbar Media Player Contrast (D = 0.88)"
+      zh: "工具栏媒体播放器对比度 (D = 0.88)"
     name: '--toolbar-mediapl-contrast'
     initialValue: 0.88
 
   - syntax: <number>
-    label: "Toolbar Media Player Sepia (D = 0)"
+    label:
+      en: "Toolbar Media Player Sepia (D = 0)"
+      zh: "工具栏媒体播放器褐色（怀旧感） (D = 0)"
     name: '--toolbar-mediapl-sepia'
     initialValue: 0
 
   - syntax: <number>
-    label: "Toolbar Media Player Saturation (D = 1.0)"
+    label:
+      en: "Toolbar Media Player Saturation (D = 1.0)"
+      zh: "工具栏媒体播放器饱和度 (D = 1.0)"
     name: '--toolbar-mediapl-saturate'
     initialValue: 1.0
 
   - syntax: <number>
-    label: "Toolbar Media Player Brightness (D = 1.0)"
+    label:
+      en: "Toolbar Media Player Brightness (D = 1.0)"
+      zh: "工具栏媒体播放器亮度 (D = 1.0)"
     name: '--toolbar-mediapl-brightness'
     initialValue: 1.0
 
   - syntax: <number>
-    label: "Toolbar Media Player Opacity (D = 1.0)"
+    label:
+      en: "Toolbar Media Player Opacity (D = 1.0)"
+      zh: "工具栏媒体播放器透明度 (D = 1.0)"
     name: '--toolbar-mediapl-opacity'
     initialValue: 1.0
 
   - syntax: <string>
-    label: "Toolbar Media Player Drop Shadow Filter (D = 0px 0px 0px rgba(0, 0, 0, 0.445))"
+    label:
+      en: "Toolbar Media Player Drop Shadow Filter (D = 0px 0px 0px rgba(0, 0, 0, 0.445))"
+      zh: "工具栏媒体播放器阴影滤镜 (D = 0px 0px 0px rgba(0, 0, 0, 0.445))"
     name: '--dock-mediapl-tbrmedia-drop-shadow'
     initialValue: '0px 0px 0px rgba(0, 0, 0, 0.445)'
 

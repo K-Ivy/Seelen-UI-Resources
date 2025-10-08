@@ -5,6 +5,7 @@ metadata:
   author: "IriKay (@K-Ivy on Git)"
   description: 
     en: "Color every toolbar Module indiviually, including coloring every vertical desktop Dot, Number, or Name, diffrently. And add non-default modules and color them."
+    zh: "单独为每个工具栏模块着色，包括单独为垂直桌面点、数字或名称着色，以及添加非默认模块并为其着色。"
   tags: ['toolbar']
   appTargetVersion:
     - 2
@@ -14,72 +15,84 @@ settings:
   - syntax: <color>
     label:
       en: "Bluetooth Color (D = #e06c75)"
+      zh: "蓝牙颜色 (D = #e06c75)"
     name: '--custom-bluetooth-color'
     initialValue: '#e06c75'
 
   - syntax: <color>
     label:
       en: "Date Color (D = #61afef)"
+      zh: "日期颜色 (D = #61afef)"
     name: '--custom-date-color'
     initialValue: '#61afef'
 
   - syntax: <color>
     label:
       en: "Focused App Color (D = #c678dd)"
+      zh: "焦点应用颜色 (D = #c678dd)"
     name: '--custom-focused-app-color'
     initialValue: '#c678dd'
 
   - syntax: <color>
     label:
       en: "Focused App Title Color (D = #98c379)"
+      zh: "焦点应用标题颜色 (D = #98c379)"
     name: '--custom-focused-app-title-color'
     initialValue: '#98c379'
 
   - syntax: <color>
     label:
       en: "Keyboard Color (D = #e5c07b)"
+      zh: "键盘颜色 (D = #e5c07b)"
     name: '--custom-keyboard-color'
     initialValue: '#e5c07b'
 
   - syntax: <color>
     label:
       en: "Media Color (D = #80baca)"
+      zh: "媒体颜色 (D = #80baca)"
     name: '--custom-media-color'
     initialValue: '#80baca'
 
   - syntax: <color>
     label:
       en: "Network Color (D = #c58950)"
+      zh: "网络颜色 (D = #c58950)"
     name: '--custom-network-color'
     initialValue: '#c58950'
 
   - syntax: <color>
     label:
       en: "Notifications Color (D = #4d7db8)"
+      zh: "通知颜色 (D = #4d7db8)"
     name: '--custom-notifications-color'
     initialValue: '#4d7db8'
 
   - syntax: <color>
     label:
       en: "Power Color (D = #be5046)"
+      zh: "电源颜色 (D = #be5046)"
     name: '--custom-power-color'
     initialValue: '#be5046'
 
   - syntax: <color>
     label:
       en: "Quick Settings Color (D = #cc3fcc)"
+      zh: "快速设置颜色 (D = #cc3fcc)"
     name: '--custom-quick-settings-color'
     initialValue: '#cc3fcc'
 
   - syntax: <color>
     label:
       en: "System Tray Color (D = #60dfb9)"
+      zh: "系统托盘颜色 (D = #60dfb9)"
     name: '--custom-system-tray-color'
     initialValue: '#60dfb9'
 
   - syntax: <color>
     label:
       en: "User Folder Color (D = #eb7ab8)"
+      zh: "用户文件夹颜色 (D = #eb7ab8)"
     name: '--custom-user-folder-color'
     initialValue: '#eb7ab8'
 
@@ -87,6 +100,7 @@ settings:
   - syntax: <color>
     label:
       en: "Seperators Color (D = #99badf)"
+      zh: "分隔符颜色 (D = #99badf)"
     name: '--custom-seperator-color-workaround'
     initialValue: '#99badf'
 
@@ -94,60 +108,70 @@ settings:
   - syntax: <color>
     label:
       en: "Workspace 1 Color (D = #BF616A)"
+      zh: "工作区1颜色 (D = #BF616A)"
     name: '--custom-workspace-one-color'
     initialValue: '#BF616A'
 
   - syntax: <color>
     label:
       en: "Workspace 2 Color (D = #D08770)"
+      zh: "工作区2颜色 (D = #D08770)"
     name: '--custom-workspace-two-color'
     initialValue: '#D08770'
 
   - syntax: <color>
     label:
       en: "Workspace 3 Color (D = #EBCB8B)"
+      zh: "工作区3颜色 (D = #EBCB8B)"
     name: '--custom-workspace-three-color'
     initialValue: '#EBCB8B'
 
   - syntax: <color>
     label:
       en: "Workspace 4 Color (D = #A3BE8C)"
+      zh: "工作区4颜色 (D = #A3BE8C)"
     name: '--custom-workspace-four-color'
     initialValue: '#A3BE8C'
 
   - syntax: <color>
     label:
       en: "Workspace 5 Color (D = #8FBCBB)"
+      zh: "工作区5颜色 (D = #8FBCBB)"
     name: '--custom-workspace-five-color'
     initialValue: '#8FBCBB'
 
   - syntax: <color>
     label:
       en: "Workspace 6 Color (D = #88C0D0)"
+      zh: "工作区6颜色 (D = #88C0D0)"
     name: '--custom-workspace-six-color'
     initialValue: '#88C0D0'
 
   - syntax: <color>
     label:
       en: "Workspace 7 Color (D = #81A1C1)"
+      zh: "工作区7颜色 (D = #81A1C1)"
     name: '--custom-workspace-seven-color'
     initialValue: '#81A1C1'
 
   - syntax: <color>
     label:
       en: "Workspace 8 Color (D = #5E81AC)"
+      zh: "工作区8颜色 (D = #5E81AC)"
     name: '--custom-workspace-eight-color'
     initialValue: '#5E81AC'
 
   - syntax: <color>
     label:
       en: "Workspace 9 Color (D = #b697b0)"
+      zh: "工作区9颜色 (D = #b697b0)"
     name: '--custom-workspace-nine-color'
     initialValue: '#b697b0'
 
   - syntax: <color>
     label:
       en: "Workspace 10 Color (D = #a7c4ac)"
+      zh: "工作区10颜色 (D = #a7c4ac)"
     name: '--custom-workspace-ten-color'
     initialValue: '#a7c4ac'
 
@@ -156,126 +180,147 @@ settings:
   - syntax: <string>
     label:
       en: "!! Use the below Slots to color Plugin Modules. Please see this wiki for instructions:"
+      zh: "!! 使用下面的插槽为插件模块着色。请参阅此Wiki以获取说明:"
     name: '--custom-pda-term-xterm'
     initialValue: 'https://github.com/K-Ivy/Kays-SeelenUI-Themes/wiki/Toolbar-Coloring-User-Guide'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 1"
+      zh: "额外颜色插槽1"
     name: '--custom-color-extra-one'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 2"
+      zh: "额外颜色插槽2"
     name: '--custom-color-extra-two'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 3"
+      zh: "额外颜色插槽3"
     name: '--custom-color-extra-three'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 4"
+      zh: "额外颜色插槽4"
     name: '--custom-color-extra-four'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 5"
+      zh: "额外颜色插槽5"
     name: '--custom-color-extra-five'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 6"
+      zh: "额外颜色插槽6"
     name: '--custom-color-extra-six'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 7"
+      zh: "额外颜色插槽7"
     name: '--custom-color-extra-seven'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 8"
+      zh: "额外颜色插槽8"
     name: '--custom-color-extra-eigth'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 9"
+      zh: "额外颜色插槽9"
     name: '--custom-color-extra-nine'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 10"
+      zh: "额外颜色插槽10"
     name: '--custom-color-extra-ten'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 11"
+      zh: "额外颜色插槽11"
     name: '--custom-color-extra-eleven'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 12"
+      zh: "额外颜色插槽12"
     name: '--custom-color-extra-twelve'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 13"
+      zh: "额外颜色插槽13"
     name: '--custom-color-extra-thirteen'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 14"
+      zh: "额外颜色插槽14"
     name: '--custom-color-extra-fourteen'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 15"
+      zh: "额外颜色插槽15"
     name: '--custom-color-extra-fifthteen'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 16"
+      zh: "额外颜色插槽16"
     name: '--custom-color-extra-sixteen'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 17"
+      zh: "额外颜色插槽17"
     name: '--custom-color-extra-seventeen'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 18"
+      zh: "额外颜色插槽18"
     name: '--custom-color-extra-eighteen'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 19"
+      zh: "额外颜色插槽19"
     name: '--custom-color-extra-nineteen'
     initialValue: '#9dd7d7'
 
   - syntax: <color>
     label:
       en: "Extra Color Slot 20"
+      zh: "额外颜色插槽20"
     name: '--custom-color-extra-twenty'
     initialValue: '#9dd7d7'
 

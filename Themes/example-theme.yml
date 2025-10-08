@@ -12,12 +12,14 @@ settings:
   - syntax: <color>
     label:
       en: "Dock and Toolbar Background Color"
+      zh: "Dock 和工具栏背景颜色"
     name: '--example-color-var'
     initialValue: '#def8ffdc'
 
   - syntax: <length>
     label:
       en: "Dock and Toolbar Border Thickness"
+      zh: "Dock 和工具栏边框粗细"
     name: '--example-length-var'
     initialValue: 2
     initialValueUnit: 'px'
@@ -25,12 +27,14 @@ settings:
   - syntax: <number>
     label:
       en: "Toolbar Font Thickness"
+      zh: "工具栏字体粗细"
     name: '--example-number-var'
     initialValue: 600
 
   - syntax: <string>
     label:
       en: "Icon Filters"
+      zh: "图标滤镜"
     name: '--example-string-var'
     initialValue: 'blur(0px) brightness(1.0) contrast(1.0) grayscale(0%) hue-rotate(0deg) invert(0%) opacity(1.0) saturate(1.0) sepia(0%)'
 

@@ -12,16 +12,19 @@ settings:
   - syntax: <number>
     label:
       en: Preview image Scale X (D = 1.0)
+      zh: "预览图片缩放 X 轴(D = 1.0)"
     name: '--weg-preview-scale-x'
     initialValue: 1.0
   - syntax: <number>
     label:
       en: Preview image Scale Y (D = 1.49)
+      zh: "预览图片缩放 Y 轴 (D = 1.49)"
     name: '--weg-preview-scale-y'
     initialValue: 1.49
   - syntax: <length>
     label:
       en: Preview image top margin (D = 61px)
+      zh: "预览图片顶部边距 (D = 61px)"
     name: '--weg-preview-margin-top'
     initialValue: 61
     initialValueUnit: 'px'
