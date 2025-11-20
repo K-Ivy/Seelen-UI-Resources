@@ -24,21 +24,16 @@
 </table>
 <div align="left">
 	<p>
-	This Repo contains the yaw files for resources I make for Seelen UI for public use. Aside from that, any guides I make will also reside here.
+	This Repo contains the base files for resources I make for Seelen UI for public use. Aside from that, any related works will also be here.
 	</p>
 
 🎨 Official page to download those uploaded: https://seelen.io/profile/k-ivy
   
 - If you encounter a **Problem** with any of my resources, have a **Suggestion** or have a **Request**, create a post in issues and mark it.
 
-- **Contributions** welcome. Especially language translations as they are currently non-existent.
+- **Contributions** welcome. Especially language translations.
 
 - If you make a edit of something and share, credit if relevant.
-
-<details>
-<summary>↳ Note for myself </summary>
-- M/D/YY - h:mm A
-</details>
 
 ----------------
 
@@ -46,13 +41,6 @@ The following are **plugins that cannot be uploaded to the site** as they requir
 
 <details>
 <summary>↳ Click to Expand</summary>
-
-→ **Summon Windows Tray** (Why? Seelen 2.4.4+ removes the Tray Module as it cannot be properly implemented.)
-
-> Instructions are within the plugins folder readme.
-
-https://github.com/user-attachments/assets/75bf09d7-5f70-4cc4-8e11-953dc84ce7d6
-  
 → **Toolbar Module To Launch Local File**
 
 ![1](https://github.com/user-attachments/assets/54cbb057-8d52-4817-857c-0390068c32fb)
