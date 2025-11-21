@@ -1,0 +1,51 @@
+id: '@k-ivy/custom-pref-user'
+metadata:
+  displayName: "Custom Username"
+  author: "K-Ivy"
+  description: "Replace the toolbar and user menu username with a custom one."
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 4
+    - 7
+settings:
+  - group:
+      header: "✦ Custom User"
+      items:
+        - syntax: <string>
+          name: '--usr-custom-username'
+          label: "● Username (Inside Quotes)"
+          tip: 'Example: "My Name"'
+          initialValue: '"Replace Me"'
+
+        - syntax: <length>
+          name: '--ftbr-toolbar-username-dist-pfp'
+          label: "╰─ Distance from Profile Picture (Toolbar)"
+          initialValue: 0
+          initialValueUnit: 'px'
+
+        - syntax: <string>
+          name: '--win-username-visibility'
+          label: "╰・Window's Username Visibility"
+          description: " none = hide name | block = show name"
+          initialValue: 'none'
+styles:
+  '@seelen/fancy-toolbar': |
+    /* Hide windows usernames on toolbar and menu */
+    #\@default\/user-folder > div > span:nth-child(3),
+    .userhome-profile-name > span {
+      display: var(--win-username-visibility, none) !important;
+    }
+    /* Insert custom username on toolbar and menu */
+    #\@default\/user-folder .ft-bar-item-content::after,
+    .userhome-profile-name::before {
+      content: var(--usr-custom-username, "");
+    }
+    /* Toolbar distance from pfp */
+    #\@default\/user-folder .ft-bar-item-content::after {
+      margin-left: var(--ftbr-toolbar-username-dist-pfp, 0px);
+    }
+    /* Properly center toolbar content */
+    #\@default\/user-folder .ft-bar-item-content {
+      transform: translateX(-1px) !important;
+    }
