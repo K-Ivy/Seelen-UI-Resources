@@ -1,11 +1,10 @@
 id: '@k-ivy/dots-start'
 metadata:
-  displayName: Dots Start Icon
-  description: For FAQ
+  displayName: "Dots Start Icon"
   appTargetVersion:
     - 2
-    - 3
-    - 10
+    - 4
+    - 7
 entries:
   - type: custom
     key: '@seelen/weg::start-menu'

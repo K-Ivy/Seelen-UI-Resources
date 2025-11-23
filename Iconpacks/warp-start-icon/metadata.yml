@@ -1,11 +1,10 @@
 id: '@k-ivy/warp-start'
 metadata:
-  displayName: Warp Start Icon
-  description: For FAQ
+  displayName: "Warp Start Icon"
   appTargetVersion:
     - 2
-    - 3
-    - 10
+    - 4
+    - 7
 entries:
   - type: custom
     key: '@seelen/weg::start-menu'

@@ -1,11 +1,10 @@
 id: '@k-ivy/nixos-start'
 metadata:
-  displayName: NixOS Start Icon
-  description: For FAQ
+  displayName: "NixOS Start Icon"
   appTargetVersion:
     - 2
-    - 3
-    - 10
+    - 4
+    - 7
 entries:
   - type: custom
     key: '@seelen/weg::start-menu'

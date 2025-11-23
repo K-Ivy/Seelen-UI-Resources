@@ -15,7 +15,6 @@ settings:
         - syntax: <string>
           name: '--usr-custom-username'
           label: "● Username (Inside Quotes)"
-          tip: 'Example: "My Name"'
           initialValue: '"Replace Me"'
 
         - syntax: <length>
@@ -31,21 +30,20 @@ settings:
           initialValue: 'none'
 styles:
   '@seelen/fancy-toolbar': |
-    /* Hide windows usernames on toolbar and menu */
+    /* Hide window's username on toolbar and menu */
     #\@default\/user-folder > div > span:nth-child(3),
     .userhome-profile-name > span {
       display: var(--win-username-visibility, none) !important;
     }
-    /* Insert custom username on toolbar and menu */
     #\@default\/user-folder .ft-bar-item-content::after,
     .userhome-profile-name::before {
       content: var(--usr-custom-username, "");
     }
-    /* Toolbar distance from pfp */
+    /* Name distance from pfp */
     #\@default\/user-folder .ft-bar-item-content::after {
       margin-left: var(--ftbr-toolbar-username-dist-pfp, 0px);
     }
-    /* Properly center toolbar content */
+    /* Center toolbar content */
     #\@default\/user-folder .ft-bar-item-content {
       transform: translateX(-1px) !important;
     }

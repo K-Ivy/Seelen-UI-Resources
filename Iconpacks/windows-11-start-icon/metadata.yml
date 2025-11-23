@@ -1,11 +1,10 @@
 id: '@k-ivy/win-start'
 metadata:
-  displayName: Start Icon Changer
-  description: For FAQ
+  displayName: "Windows 11 Start Icon"
   appTargetVersion:
     - 2
-    - 3
-    - 10
+    - 4
+    - 7
 entries:
   - type: custom
     key: '@seelen/weg::start-menu'

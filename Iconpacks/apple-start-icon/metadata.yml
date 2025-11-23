@@ -1,11 +1,10 @@
 id: '@k-ivy/apple-start'
 metadata:
-  displayName: Apple Start Icon
-  description: For FAQ
+  displayName: "Apple Start Icon"
   appTargetVersion:
     - 2
-    - 3
-    - 10
+    - 4
+    - 7
 entries:
   - type: custom
     key: '@seelen/weg::start-menu'

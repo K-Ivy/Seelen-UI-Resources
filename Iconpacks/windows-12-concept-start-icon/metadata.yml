@@ -1,11 +1,10 @@
 id: '@k-ivy/win-start-alt'
 metadata:
-  displayName: Windows Start Icon ALT
-  description: For FAQ
+  displayName: "Windows Concept Start Icon"
   appTargetVersion:
     - 2
-    - 3
-    - 10
+    - 4
+    - 7
 entries:
   - type: custom
     key: '@seelen/weg::start-menu'
