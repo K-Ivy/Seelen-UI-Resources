@@ -1,0 +1,15 @@
+id: '@k-ivy/simple-od-rmr'
+metadata:
+  displayName: "Remove Onedrive from User Menu"
+  author: "@K-Ivy"
+  description: "Remove Onedrive"
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 4
+    - 7
+styles:
+  toolbar: |
+    div.userhome-profile-container > div.userhome-profile-information > button {
+      display: none !important;
+    }

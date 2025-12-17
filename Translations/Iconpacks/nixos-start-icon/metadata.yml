@@ -1,0 +1,13 @@
+id: '@k-ivy/nixos-start'
+metadata:
+  displayName: "NixOS Start Icon"
+  appTargetVersion:
+    - 2
+    - 4
+    - 7
+entries:
+  - type: custom
+    key: '@seelen/weg::start-menu'
+    icon:
+      base: nixos.ico
+      mask: null

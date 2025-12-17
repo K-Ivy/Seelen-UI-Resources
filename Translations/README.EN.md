@@ -1,0 +1,180 @@
+English | [Other](./README.*.md)
+
+### For resource translations, ONLY modify the files within this folder, do not touch the base files.
+
+### For readme translations, make sure to add the link to the top.
+
+---
+
+**Supported Seelen UI Languages**: https://seelen.crowdin.com/seelen-ui
+
+---
+
+**Seelen UI has a built in CLI command** to give MTL Translations to a resource:
+
+-  `seelen-ui.exe resource bundle <KIND> <PATH>` in a terminal.
+
+   - KIND: `theme`, `widget`, `plugin`, `icon-pack`, `wallpaper`, `sound-pack`.
+   - Quotes need to be put around the path if there are spaces.
+
+I will use the above command to give all my resources MTL translations when they are all in there final forms (more or less).
+
+At that time, you can just correct the translations as possible.
+
+But until then...
+
+# Adding Manual Translations:
+
+https://github.com/user-attachments/assets/812cf83c-ace8-4a5a-93b3-e7d4e2aa1cf5
+
+You can of course use the CLI command to get a full example, but here is a quick one:
+
+```
+id: '@default/theme'
+metadata:
+  displayName:
+    en: "Default"
+    af: "Versuim"
+    az: "Defolt"
+    ca: "No pagar"
+    cs: "Výchozí"
+    cy: "Diofyn"
+    da: "Standard"
+    et: "Vaikimisi"
+    de: "Standard"
+    es: "Por defecto"
+    bs: "Podrazumevano"
+    fr: "Défaut"
+    tl: "Default"
+    id: "Default"
+    it: "Predefinito"
+    hr: "Zadano"
+    sw: "Chaguo-msingi"
+    lv: "Noklusējuma"
+    ku: "Destçûnî"
+    eu: "Ez ordaindu"
+    lt: "Numatytoji"
+    zu: "Phutha"
+    hu: "Alapértelmezett"
+    is: "Sjálfgefið"
+    nl: "Standaard"
+    mt: "Default"
+    'no': "Misligholde"
+    pl: "Domyślne"
+    lb: "Asofbild"
+    uz: "Bajarilish"
+    pt: "Padrão"
+    ro: "Implicit"
+    ms: "Lalai"
+    sk: "Predvolené nastavenie"
+    fi: "Oletusarvo"
+    sv: "Standard"
+    so: "Fulin la'aan"
+    tr: "Varsayılan"
+    vi: "Mặc định"
+    el: "Προεπιλογή"
+    bg: "По подразбиране"
+    yo: "Aiyipada"
+    mk: "Стандардно"
+    ru: "По умолчанию"
+    mn: "Үл хүрэлцэх"
+    uk: "За замовчуванням"
+    sr: "Подразумевано"
+    ka: "ვალდებულების შეუსრულებლობა"
+    ar: "افتراضي"
+    he: "בְּרִירַת מֶחדָל"
+    ur: "پہلے سے طے شدہ"
+    ps: "ډیفالټ"
+    tg: "Иьро накардани ӯҳдадорӣ"
+    am: "ነባሪ"
+    ne: "पुरा नगर्नु"
+    fa: "پیش فرض"
+    hi: "गलती करना"
+    hy: "Թերություն"
+    bn: "ডিফল্ট"
+    pa: "ਮੂਲ"
+    ta: "இயல்புநிலை"
+    te: "డిఫాల్ట్"
+    ko: "기본값"
+    th: "ค่าเริ่มต้น"
+    km: "ការមិនកោរបតាមសន្យា"
+    gu: "ચૂક"
+    zh: "默认值"
+    ja: "デフォルト"
+    lo: "ໃນຕອນຕົ້ນ"
+    si: "පෙරනිමි"
+
+  description:
+    en: "Default Seelen Theme"
+    af: "Standaard Seelen -tema"
+    az: "Defolt Seelen tema"
+    bs: "Default Seelen Theme"
+    cs: "Výchozí téma Seelen"
+    ca: "Tema de Seelen per defecte"
+    da: "Standard Seelen-tema"
+    de: "Standard-Seelen-Theme"
+    et: "Vaikimisi Seelen teema"
+    fr: "Thème Seelen par défaut"
+    id: "Tema Seelen Default"
+    it: "Tema Seelen predefinito"
+    zu: "Ingqikithi ye-Seelen ezenzakalelayo"
+    is: "Sjálfgefið Seelen þema"
+    tl: "Default na tema ng Seelen"
+    lv: "Noklusējuma Seelen tēma"
+    lt: "Numatytoji 'Seelen' tema"
+    hu: "Alapértelmezett Seelen téma"
+    nl: "Standaard Seelen Thema"
+    ku: "Mijara Default Seelen"
+    hr: "Zadana tema Seelen"
+    sw: "Mada ya Seelen Default"
+    mt: "Tema Seelen Default"
+    'no': "Standard Seelen -tema"
+    lb: "Standardvires Themen"
+    pl: "Domyślny motyw Seelen"
+    pt: "Tema padrão da Seelen"
+    ro: "Tema Seelen implicită"
+    sk: "Predvolená téma Seelen"
+    ms: "Tema Seelen lalai"
+    fi: "Oletus Seelen-teema"
+    sv: "Standardtema för Seelen"
+    uz: "Standart Sayelen mavzusida"
+    vi: "Chủ đề Seelen mặc định"
+    el: "Προεπιλεγμένο θέμα Seelen"
+    bg: "Тема по подразбиране на Seelen"
+    so: "Mowduuca caadiga ah ee selen"
+    tr: "Varsayılan Seelen Teması"
+    ru: "Тема Seelen по умолчанию"
+    mk: "Стандардна тема на Селен"
+    mn: "Үндсэн Seelen сэдэв"
+    sr: "Подразумевано Сеелен Тхеме"
+    uk: "Тема за замовчуванням"
+    ar: "سمة سيلين الافتراضية"
+    he: "נושא סילן ברירת מחדל"
+    ur: "پہلے سے طے شدہ سیلن تھیم"
+    fa: "موضوع پیش فرض Seelen"
+    hi: "डिफ़ॉल्ट सेलेन थीम"
+    ko: "기본 Seelen 테마"
+    zh: "默认 Seelen 主题"
+    ja: "デフォルトのシーレン・テーマ"
+    ta: "இயல்புநிலை சீலன் தீம்"
+    th: "ธีม Seelen เริ่มต้น"
+    si: "පෙරනිමි සොලන්නා තේමාව"
+  tags: ["------"]
+settings:
+  - syntax: "-----"
+    name: "------"
+    label:
+      en: "Default"
+      si: "අන්‍ය භාෂාව"
+      ru: "Другая Язык"
+    tip:
+      en: "Default Hover Tooltip"
+      si: "පෙරනිමි මවුසය මත යොමු කිරීමේ උපදෙස්"
+      ru: "Подсказка при наведении"
+    description:
+      en: "Default Description"
+      si: "පෙරනිමි විස්තරය"
+      ru: "Описание по умолчанию"
+    initialValue: "-----"
+    initialValueUnit: "-----"
+```

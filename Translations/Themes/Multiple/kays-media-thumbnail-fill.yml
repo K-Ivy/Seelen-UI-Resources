@@ -1,0 +1,10 @@
+id: "@k-ivy/media-thumb-fill"
+metadata:
+  displayName: "Filled Media Thumbnails"
+  description: "Makes thumnails of media fill their container."
+  author: "K-Ivy"
+  tags: ['weg', 'toolbar']
+  appTargetVersion:
+    - 2
+    - 4
+    - 7

@@ -1,0 +1,36 @@
+id: '@k-ivy/window-prev-ff'
+metadata:
+  displayName: "Filled Window Previews"
+  author: "K-Ivy"
+  description: "Makes window previews fit into their containers."
+  tags: ['weg']
+  appTargetVersion:
+    - 2
+    - 4
+    - 7
+settings:
+  - group:
+      header: "✦ Control"
+      items:
+        - syntax: <length>
+          label: "Corner Rounding of the Image Container"
+          description: "Other themes can override this as long they are below this theme."
+          name: '--weg-prev-cr-image-rounding'
+          initialValue: 10
+          initialValueUnit: 'px'
+
+        - syntax: <number>
+          label: "╰─ Preview image Horizontal Scale"
+          name: '--weg-preview-scale-x'
+          initialValue: 1.0
+
+        - syntax: <number>
+          label: "╰─ Preview image Vertical Scale"
+          name: '--weg-preview-scale-y'
+          initialValue: 1.49
+
+        - syntax: <length>
+          label: "╰─ Preview Image Vertical Position"
+          name: '--weg-preview-margin-top'
+          initialValue: 61
+          initialValueUnit: 'px'

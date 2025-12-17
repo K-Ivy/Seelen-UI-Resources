@@ -1,0 +1,59 @@
+id: '@k-ivy/wp-anim-blur'
+metadata:
+  displayName: "Blur - Wallpaper Switch Animation"
+  author: "K-Ivy"
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 4
+    - 7
+settings:
+  - group:
+      header: "✦ Blur Reveal"
+      items:
+        - syntax: <string>
+          name: '--wp-blur-reveal-transition'
+          label: "╰ Transition"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: '600ms ease'
+
+  - group:
+      header: "✦ Blur Fade"
+      items:
+        - syntax: <string>
+          name: '--wp-blur-fade-transition'
+          label: "╰ Transition"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: '600ms ease'
+styles:
+  "@seelen/wallpaper-manager": |
+    .wallpaper-container {
+      &.rendering {
+        animation: BlurReveal var(--wp-blur-reveal-transition, 600ms ease) !important;
+      }
+      &.will-unrender {
+        animation: BlurFade var(--wp-blur-fade-transition, 600ms ease) !important;
+      }
+    }
+
+    @keyframes BlurReveal {
+      from {
+        opacity: 0;
+        filter: blur(12px);
+      }
+      to {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+
+    @keyframes BlurFade {
+      from {
+        opacity: 1;
+        filter: blur(0);
+      }
+      to {
+        opacity: 0;
+        filter: blur(12px);
+      }
+    }

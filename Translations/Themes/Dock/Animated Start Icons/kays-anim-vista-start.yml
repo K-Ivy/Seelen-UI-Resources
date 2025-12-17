@@ -1,0 +1,538 @@
+id: "@k-ivy/anim-vista-syn"
+metadata:
+  displayName:
+    en: "Animated Vista Start Icon"
+  author: "IriKay (@K-Ivy on Git)"
+  description: 
+    en: "Animated Start Icon."
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 3
+    - 11
+settings:
+  - syntax: <string>
+    label:
+      en: The size of the icon
+      af: Die grootte van die ikoon
+      az: Nişanın ölçüsü
+      bs: Veličina ikone
+      ca: La mida de la icona
+      cs: Velikost ikony
+      cy: Maint yr eicon
+      da: Størrelsen på ikonet
+      de: Die Größe des Symbols
+      et: Ikooni suurus
+      es: El tamaño del icono
+      eu: Ikonoaren tamaina
+      tl: Ang laki ng icon
+      fr: La taille de l'icône
+      hr: Veličina ikone
+      id: Ukuran ikon
+      zu: Usayizi wesithonjana
+      is: Stærð táknsins
+      it: La dimensione dell'icona
+      sw: Saizi ya ikoni
+      ku: Mezinahiya îkonê
+      lv: Ikonas izmērs
+      lb: D'Gréisst vun der Ikon
+      lt: Piktogramos dydis
+      hu: Az ikon mérete
+      ms: Saiz ikon
+      mt: Id-daqs tal-ikona
+      nl: De grootte van het pictogram
+      'no': Størrelsen på ikonet
+      uz: Belgi o'lchami
+      pl: Rozmiar ikony
+      pt: O tamanho do ícone
+      ro: Dimensiunea pictogramei
+      sk: Veľkosť ikony
+      so: Cabirka sumadda
+      fi: Kuvakkeen koko
+      sv: Storleken på ikonen
+      vi: Kích thước của biểu tượng
+      tr: Simgenin boyutu
+      yo: Iwọn aami aami
+      el: Το μέγεθος του εικονιδίου
+      bg: Размерът на иконата
+      mk: Големината на иконата
+      mn: Дүрсийн хэмжээ
+      ru: Размер значка
+      sr: Величина иконе
+      tg: Андозаи нишона
+      uk: Розмір значка
+      ka: ხატის ზომა
+      hy: Պատկերակի չափը
+      he: גודל הסמל
+      ur: آئیکن کا سائز
+      ar: حجم الرمز
+      ps: د نښه کول
+      fa: اندازه نماد
+      am: የአዶው መጠን
+      ne: आइकन को आकार
+      hi: आइकन का आकार
+      bn: আইকনের আকার
+      pa: ਆਈਕਾਨ ਦਾ ਆਕਾਰ
+      gu: ચિહ્નનું કદ
+      ta: ஐகானின் அளவு
+      te: ఐకాన్ యొక్క పరిమాణం
+      si: අයිකනයේ ප්රමාණය
+      th: ขนาดของไอคอน
+      lo: ຂະຫນາດຂອງໄອຄອນ
+      km: ទំហំរូបតំណាង
+      ko: 아이콘의 크기
+      zh: 图标的大小
+      ja: アイコンのサイズ
+    name: '--anim-icon-vista-size'
+    initialValue: '1.2'
+
+  - syntax: <string>
+    label:
+      en: Set the animation duration and easing
+      af: Stel die animasie -duur en verligting
+      az: Animasiya müddəti və asanlaşdırılması seçin
+      bs: Podesite trajanje i ublažavanje animacije
+      ca: Configureu la durada de l'animació i la facilitació
+      cs: Nastavte dobu trvání a uvolnění animace
+      cy: Gosodwch hyd yr animeiddiad a lleddfu
+      da: Indstil animationsvarigheden og lette
+      de: Stellen Sie die Animationsdauer und Lockerung fest
+      et: Seadke animatsiooni kestus ja leevendamine
+      es: Establezca la duración de la animación y la facilidad
+      eu: Ezarri animazioaren iraupena eta arintzea
+      tl: Itakda ang tagal ng animation at pag -easing
+      fr: Définir la durée et l'assouplissement de l'animation
+      hr: Postavite trajanje animacije i ublažavanje
+      id: Atur durasi animasi dan pelonggaran
+      zu: Setha ubude be-animation bese unweba
+      is: Stilltu lengd fjörsins og slökun
+      it: Imposta la durata dell'animazione e l'allentamento
+      sw: Weka muda wa uhuishaji na uwe rahisi
+      ku: Demjimêrê anîmasyonê bicîh bikin û hêsan bikin
+      lv: Iestatiet animācijas ilgumu un atvieglojot
+      lb: Set d'Animatioun Dauer an erliichtert
+      lt: Nustatykite animacijos trukmę ir palengvinkite
+      hu: Állítsa be az animáció időtartamát és enyhítését
+      ms: Tetapkan tempoh animasi dan pelonggaran
+      mt: Issettja t-tul tal-animazzjoni u ttaffi
+      nl: Stel de animatieduur in en versoepeling
+      'no': Angi animasjonsvarigheten og lettelse
+      uz: Animatsiya davomiyligini o'rnating va engillashtiring
+      pl: Ustaw czas trwania animacji i łagodzenie
+      pt: Defina a duração da animação e a flexibilização
+      ro: Setați durata de animație și ușurarea
+      sk: Nastavte trvanie animácie a uvoľnenie
+      so: Deji muddada animation iyo fududeynta
+      fi: Aseta animaation kesto ja keventäminen
+      sv: Ställ in animationens varaktighet och lättnad
+      vi: Đặt thời lượng hoạt hình và giảm bớt
+      tr: Animasyon süresini ayarlayın ve hafifletme
+      yo: Ṣeto akoko Iṣẹju ati irọrun
+      el: Ρυθμίστε τη διάρκεια και τη χαλάρωση του κινούμενου κινούμενου
+      bg: Задайте продължителността на анимацията и облекчаването
+      mk: Поставете го времетраењето на анимацијата и олеснувањето
+      mn: Хөдөлгөөнт хугацааг тохируулаад хөнгөвчлөх
+      ru: Установите продолжительность анимации и смягчение
+      sr: Подесите трајање анимације и ублажавање
+      tg: Давомнокии аниматсияро насб кунед ва осон
+      uk: Встановіть тривалість анімації та послаблення
+      ka: დააყენეთ ანიმაციის ხანგრძლივობა და შემსუბუქება
+      hy: Սահմանեք անիմացիայի տեւողությունը եւ թեթեւացումը
+      he: הגדר את משך האנימציה והקלות
+      ur: حرکت پذیری کی مدت اور نرمی طے کریں
+      ar: حدد مدة الرسوم المتحركة والتخفيف
+      ps: د انیمیشن موده او اسانه کړئ
+      fa: مدت زمان انیمیشن و تسکین را تنظیم کنید
+      am: እነማውን ቆይታ እና መቃኘት ያዘጋጁ
+      ne: एनिमेसन अवधि सेट र सजिलो सेट गर्नुहोस्
+      hi: एनीमेशन अवधि और सहजता निर्धारित करें
+      bn: অ্যানিমেশন সময়কাল এবং স্বাচ্ছন্দ্য নির্ধারণ করুন
+      pa: ਐਨੀਮੇਸ਼ਨ ਅੰਤਰਾਲ ਅਤੇ ਆਸਾਨ ਨਿਰਧਾਰਤ ਕਰੋ
+      gu: એનિમેશન અવધિ અને સરળતા સેટ કરો
+      ta: அனிமேஷன் காலத்தை அமைத்து எளிதாக்குகிறது
+      te: యానిమేషన్ వ్యవధి మరియు సడలింపును సెట్ చేయండి
+      si: සජීවිකරණ කාලසීමාව සහ ලිහිල් කිරීම සකසන්න
+      th: กำหนดระยะเวลาการเคลื่อนไหวและการผ่อนคลาย
+      lo: ກໍານົດໄລຍະເວລາທີ່ມີຊີວິດແລະການນ້ໍາຕົກ
+      km: កំណត់រយៈពេលចលនានិងការធូរស្បើយ
+      ko: 애니메이션 지속 시간과 완화를 설정하십시오
+      zh: 设置动画持续时间和放松
+      ja: アニメーションの期間と緩和を設定します
+    name: '--main-el-vista-trans-dur'
+    initialValue: '1.4s ease'
+
+  - syntax: <string>
+    label:
+      en: Set which animation to use when hovering the icon (none = no animation)
+      af: >-
+        Stel watter animasie u moet gebruik wanneer u die ikoon hou (none = no
+        animation)
+      az: >-
+        Simgəni hovering edərkən hansı animasiyanı istifadə edin (none = no
+        animation)
+      bs: >-
+        Podesite koja animacija za upotrebu prilikom lebdeći ikone (none = no
+        animation)
+      ca: >-
+        Estableix quina animació utilitzarà quan es mou la icona (none = no
+        animation)
+      cs: >-
+        Nastavte, kterou animaci použijte při vznášení ikony (none = no
+        animation)
+      cy: >-
+        Gosod pa animeiddiad i'w ddefnyddio wrth hofran yr eicon (none = no
+        animation)
+      da: >-
+        Indstil hvilken animation der skal bruges, når jeg svæver ikonet (none =
+        no animation)
+      de: >-
+        Legen Sie fest, welche Animation Sie verwenden sollen, wenn Sie das
+        Symbol schweben (none = no animation)
+      et: >-
+        Seadke, millist animatsiooni ikooni hõljumisel kasutada (none = no
+        animation)
+      es: Establezca qué animación usar al pasar el icono (none = no animation)
+      eu: Ezarri zein animazio erabili ikonoa pasatzean (none = no animation)
+      tl: >-
+        Itakda kung aling animation ang gagamitin kapag nag -hover ng icon (none
+        = no animation)
+      fr: >-
+        Définissez quelle animation à utiliser lors de la volonté de l'icône
+        (none = no animation)
+      hr: >-
+        Postavite koja animacija koristiti prilikom lebdenja ikone (none = no
+        animation)
+      id: >-
+        Atur animasi mana yang akan digunakan saat mengarahkan ikon (none = no
+        animation)
+      zu: >-
+        Setha ukuthi yiziphi izithombe ongazisebenzisa lapho uzulazula
+        isithonjana (none = no animation)
+      is: Settu hvaða fjör á að nota þegar þú sveif táknið (none = no animation)
+      it: >-
+        Imposta quale animazione utilizzare quando si librano l'icona (none = no
+        animation)
+      sw: >-
+        Weka uhuishaji gani wa kutumia wakati wa kusonga ikoni (none = no
+        animation)
+      ku: >-
+        Dema ku îkonê li ser bikar bînin, kîjan anîmasyon bikar bînin (none = no
+        animation)
+      lv: >-
+        Iestatiet, kuru animāciju izmantot, lidinot ar ikonu (none = no
+        animation)
+      lb: >-
+        Set deen Animatioun fir ze benotzen wann Dir d'Ikon Hover (none = no
+        animation)
+      lt: >-
+        Nustatykite, kurią animaciją naudoti, kai užvesta piktograma (none = no
+        animation)
+      hu: >-
+        Állítsa be, hogy melyik animációt kell használni az ikon lebegésekor
+        (none = no animation)
+      ms: >-
+        Tetapkan animasi mana yang hendak digunakan semasa melayang ikon (none =
+        no animation)
+      mt: >-
+        Issettja liema animazzjoni tuża meta tittajjar l-ikona (none = no
+        animation)
+      nl: >-
+        Stel welke animatie in te gebruiken bij het zweven van het pictogram
+        (none = no animation)
+      'no': >-
+        Angi hvilken animasjon du vil bruke når du svever ikonet (none = no
+        animation)
+      uz: >-
+        Belgilarni qidirishda qaysi animatsiyadan foydalanish uchun (none = no
+        animation)
+      pl: >-
+        Ustaw, której animacji użyć podczas unoszenia ikonę (none = no
+        animation)
+      pt: Defina qual animação usar ao pairar o ícone (none = no animation)
+      ro: >-
+        Setați ce animație să folosiți atunci când treceți pictograma (none = no
+        animation)
+      sk: >-
+        Nastavte, ktorá animácia sa má použiť pri vznášaní sa ikony (none = no
+        animation)
+      so: >-
+        Deji animation si aad u isticmaasho goorta aad ku mashquulsan tahay
+        sumadda (none = no animation)
+      fi: Aseta mitä animaatio käytetään kuvaketta leijuessa (none = no animation)
+      sv: >-
+        Ställ in vilken animation som ska användas när du svävar ikonen (none =
+        no animation)
+      vi: >-
+        Đặt hoạt hình nào sẽ sử dụng khi di chuột vào biểu tượng (none = no
+        animation)
+      tr: >-
+        Simgeyi havaya uçururken hangi animasyonu kullanacağını ayarlayın (none
+        = no animation)
+      yo: Ṣeto iru iwara lati lo nigbati o n yọ aami naa (none = no animation)
+      el: >-
+        Ορίστε ποια κινούμενα σχέδια θα χρησιμοποιήσετε όταν αιωρείται το
+        εικονίδιο (none = no animation)
+      bg: >-
+        Задайте коя анимация да използвате, когато задвижвате иконата (none = no
+        animation)
+      mk: >-
+        Поставете која анимација да ја користите кога лебдите на иконата (none =
+        no animation)
+      mn: Дүрсийг харах үед аль анимацийг ашиглах вэ (none = no animation)
+      ru: >-
+        Установите, какую анимацию использовать при падении значка (none = no
+        animation)
+      sr: >-
+        Подесите коју анимацију за употребу приликом лебдења иконе (none = no
+        animation)
+      tg: >-
+        Таъин кардани кадом аниматсия ҳангоми истифодаи нишона (none = no
+        animation)
+      uk: >-
+        Встановіть, яку анімацію використовувати при наведенні значка (none = no
+        animation)
+      ka: >-
+        დააყენეთ რომელი ანიმაცია გამოიყენოთ ხატის გადაქცევისას (none = no
+        animation)
+      hy: >-
+        Սահմանեք, թե որ անիմացիան է օգտագործել պատկերակը սավառնելիս (none = no
+        animation)
+      he: הגדר באיזה אנימציה להשתמש בעת ריחוף הסמל (none = no animation)
+      ur: >-
+        آئیکن کو منڈلاؤ جب استعمال کرنے کے لئے کون سا حرکت پذیری مرتب کریں (none
+        = no animation)
+      ar: تعيين أي الرسوم المتحركة لاستخدامها عند تحوم الرمز (none = no animation)
+      ps: هغه چې د کارولو پرمهال کوم متحرک وکاروئ (none = no animation)
+      fa: در هنگام شناور نماد از کدام انیمیشن استفاده کنید (none = no animation)
+      am: አዶውን በሚያሽከረክሩበት ጊዜ የትኛውን እነማ ሊጠቀሙበት ይገባል (none = no animation)
+      ne: >-
+        कुन एनिमेसन प्रयोग गर्नको लागि प्रयोग गर्न सेट गर्नुहोस् जब आइकन होभर
+        गर्दै (none = no animation)
+      hi: आइकन को मंडराते समय किस एनीमेशन का उपयोग करना है (none = no animation)
+      bn: >-
+        আইকনটি ঘোরাঘুরি করার সময় কোন অ্যানিমেশনটি ব্যবহার করবেন সেট করুন (none
+        = no animation)
+      pa: ਆਈਕਾਨ ਨੂੰ ਘੁੰਮਣ ਵੇਲੇ ਕਿਹੜਾ ਐਨੀਮੇਸ਼ਨ ਵਰਤਣਾ ਹੈ (none = no animation)
+      gu: >-
+        આયકન હોવર કરતી વખતે કયા એનિમેશનનો ઉપયોગ કરવો તે સેટ કરો (none = no
+        animation)
+      ta: >-
+        ஐகானை வட்டமிடும்போது எந்த அனிமேஷனைப் பயன்படுத்த வேண்டும் (none = no
+        animation)
+      te: >-
+        ఐకాన్ హోవర్ చేసేటప్పుడు ఏ యానిమేషన్ ఉపయోగించాలో సెట్ చేయండి (none = no
+        animation)
+      si: අයිකනය සැරිසරන විට භාවිතා කළ යුතු සජීවිකරණය සකසන්න (none = no animation)
+      th: ตั้งค่าแอนิเมชั่นที่จะใช้เมื่อโฮเวอร์ไอคอน (none = no animation)
+      lo: ຕັ້ງພາບເຄື່ອນໄຫວໃດທີ່ຈະໃຊ້ໃນເວລາທີ່ສະແດງໄອຄອນ (none = no animation)
+      km: កំណត់ចលនាណាដែលត្រូវប្រើនៅពេលដាក់រូបតំណាង (none = no animation)
+      ko: 아이콘을 호버링 할 때 사용할 애니메이션을 설정하십시오 (none = no animation)
+      zh: 设置悬停图标时要使用的动画 (none = no animation)
+      ja: アイコンをホバリングするときに使用するアニメーションを設定します (none = no animation)
+    name: '--main-el-vista-anim'
+    initialValue: 'pop-weak'
+
+  - syntax: <string>
+    label:
+      en: >-
+          ⬑ To see the list of available animations with video demonstrations,
+        please visit the following link 
+      af: >-
+          ⬑ Besoek die volgende skakel om die lys van beskikbare animasies met
+        video -demonstrasies te sien
+      az: >-
+          ⬑ Video nümayişləri ilə mövcud animasiyaların siyahısını görmək üçün
+        aşağıdakı linki ziyarət edin
+      bs: >-
+          ⬑ Da biste pogledali popis dostupnih animacija sa video
+        demonstracijama, posetite sledeću vezu
+      ca: >-
+          ⬑ Per veure la llista d’animacions disponibles amb demostracions de
+        vídeo, visiteu l’enllaç següent
+      cs: >-
+          ⬑ Chcete -li zobrazit seznam dostupných animací s demonstracemi videa,
+        navštivte následující odkaz
+      cy: >-
+          ⬑ I weld y rhestr o animeiddiadau sydd ar gael gydag arddangosiadau
+        fideo, ewch i'r ddolen ganlynol
+      da: >-
+          ⬑ Besøg følgende link for at se listen over tilgængelige animationer
+        med videodemonstrationer
+      de: >-
+          ⬑ Um die Liste der verfügbaren Animationen mit Videovorführungen
+        anzuzeigen, besuchen Sie bitte den folgenden Link
+      et: >-
+          ⬑ Video demonstratsioonidega saadaolevate animatsioonide loendi
+        nägemiseks külastage järgmist linki
+      es: >-
+          ⬑ Para ver la lista de animaciones disponibles con demostraciones de
+        video, visite el siguiente enlace
+      eu: >-
+          ⬑ Bideo-manifestazioekin egindako animazioen zerrenda ikusteko,
+        bisitatu esteka hau
+      tl: >-
+          ⬑ Upang makita ang listahan ng mga magagamit na mga animation na may
+        mga demonstrasyong video, mangyaring bisitahin ang sumusunod na link
+      fr: >-
+          ⬑ Pour voir la liste des animations disponibles avec des
+        démonstrations vidéo, veuillez visiter le lien suivant
+      hr: >-
+          ⬑ Da biste vidjeli popis dostupnih animacija s video demonstracijama,
+        posjetite sljedeću vezu
+      id: >-
+          ⬑ Untuk melihat daftar animasi yang tersedia dengan demonstrasi video,
+        silakan kunjungi tautan berikut
+      zu: >-
+          ⬑ Ukubona uhlu lwezithombe ezitholakalayo ezinemibukiso yevidiyo,
+        sicela uvakashele isixhumanisi esilandelayo
+      is: >-
+          ⬑ Til að sjá listann yfir tiltæk hreyfimyndir með myndsýningum,
+        vinsamlegast farðu á eftirfarandi hlekk
+      it: >-
+          ⬑ Per vedere l'elenco delle animazioni disponibili con le
+        dimostrazioni video, visitare il seguente link
+      sw: >-
+          ⬑ Ili kuona orodha ya michoro zinazopatikana na maonyesho ya video,
+        tafadhali tembelea kiunga kifuatacho
+      ku: >-
+          ⬑ Ji bo dîtina navnîşa anîmasyonên heyî bi xwepêşandanên vîdyoyê re,
+        ji kerema xwe zencîreya jêrîn biçin
+      lv: >-
+          ⬑ Lai redzētu pieejamo animāciju sarakstu ar video demonstrācijām,
+        lūdzu, apmeklējiet šo saiti
+      lb: >-
+          ⬑ Fir d'Lëscht vun verfügbaren Animatiounen mat Videodonstatiounen ze
+        gesinn, besicht de folgende Link
+      lt: >-
+          ⬑ Norėdami pamatyti galimų animacijų su vaizdo demonstracijomis
+        sąrašą, apsilankykite šioje nuorodoje
+      hu: >-
+          ⬑ A rendelkezésre álló animációk listájának megtekintéséhez video
+        demonstrációkkal látogasson el a következő linkre
+      ms: >-
+          ⬑ Untuk melihat senarai animasi yang ada dengan demonstrasi video,
+        sila lawati pautan berikut
+      mt: >-
+          ⬑ Biex tara l-lista ta 'animazzjonijiet disponibbli
+        b'dimostrazzjonijiet tal-vidjow, jekk jogħġbok żur il-link li ġej
+      nl: >-
+          ⬑ Ga naar de volgende link om de lijst met beschikbare animaties met
+        videodemonstraties te bekijken
+      'no': >-
+          ⬑ For å se listen over tilgjengelige animasjoner med
+        videodemonstrasjoner, besøk følgende lenke
+      uz: >-
+          ⬑ Video namoyishlar bilan mavjud animatsiyalar ro'yxatini ko'rish
+        uchun quyidagi havolani ko'ring
+      pl: >-
+          ⬑ Aby zobaczyć listę dostępnych animacji z demonstracjami wideo,
+        odwiedź następujący link
+      pt: >-
+          ⬑ Para ver a lista de animações disponíveis com demonstrações de
+        vídeo, visite o seguinte link
+      ro: >-
+          ⬑ Pentru a vedea lista de animații disponibile cu demonstrații video,
+        vizitați următorul link
+      sk: >-
+          ⬑ Ak si chcete prezrieť zoznam dostupných animácií s ukážkami videa,
+        navštívte nasledujúci odkaz
+      so: >-
+          ⬑ Si aad u aragto liiska animations-ka oo leh banaanbaxyo fiidiyow ah,
+        fadlan booqo isku xirka soo socda
+      fi: >-
+          ⬑ Jos haluat nähdä luettelon käytettävissä olevista animaatioista
+        videoesityksillä, käy seuraavassa linkissä
+      sv: >-
+          ⬑ För att se listan över tillgängliga animationer med
+        videodemonstrationer, besök följande länk
+      vi: >-
+          ⬑ Để xem danh sách các hình ảnh động có sẵn với các cuộc biểu diễn
+        video, vui lòng truy cập liên kết sau
+      tr: >-
+          ⬑ Video gösterileri ile mevcut animasyonların listesini görmek için
+        lütfen aşağıdaki bağlantıyı ziyaret edin
+      yo: >-
+          ⬑ Lati wo atokọ ti awọn ere idaraya ti o wa pẹlu awọn ifihan fidio,
+        jọwọ lọsi ọna asopọ wọnyi
+      el: >-
+          ⬑ Για να δείτε τη λίστα των διαθέσιμων κινούμενων σχεδίων με
+        διαδηλώσεις βίντεο, επισκεφθείτε τον παρακάτω σύνδεσμο
+      bg: >-
+          ⬑ За да видите списъка с налични анимации с видео демонстрации, моля,
+        посетете следната връзка
+      mk: >-
+          ⬑ За да го видите списокот на достапни анимации со видео демонстрации,
+        посетете ја следната врска
+      mn: >-
+          ⬑ Видео жагсаалтай боломжтой алдааны жагсаалтыг үзэхийн тулд дараах
+        холбоос дээр зочилно уу
+      ru: >-
+          ⬑ Чтобы увидеть список доступных анимаций с видео демонстрации,
+        посетите следующую ссылку
+      sr: >-
+          ⬑ Да бисте видели листу доступних анимација са видео демонстрацијама,
+        посетите следећу везу
+      tg: >-
+          ⬑ Барои дидани рӯйхати аниматсияҳои мавҷуда бо намоишҳои видеоӣ,
+        лутфан ба истиноди зерин ташриф оред
+      uk: >-
+          ⬑ Щоб переглянути список доступних анімацій із відеодемонстраціями,
+        відвідайте наступне посилання
+      ka: >-
+          ⬑ ვიდეო დემონსტრაციებით ხელმისაწვდომი ანიმაციების ჩამონათვალის
+        სანახავად ეწვიეთ შემდეგ ბმულს
+      hy: >-
+          ⬑ Տեսանյութերի ցուցադրություններով մատչելի անիմացիաների ցանկը տեսնելու
+        համար կարող եք այցելել հետեւյալ հղումը
+      he:   ⬑ לצפייה ברשימת האנימציות הזמינות עם הפגנות וידאו, בקר בקישור הבא
+      ur: >-
+          ⬑ ویڈیو مظاہرے کے ساتھ دستیاب متحرک تصاویر کی فہرست دیکھنے کے لئے ،
+        براہ کرم مندرجہ ذیل لنک ملاحظہ کریں
+      ar: >-
+          ⬑ للاطلاع على قائمة الرسوم المتحركة المتاحة مع مظاهرات الفيديو ، يرجى
+        زيارة الرابط التالي
+      ps: >-
+          ⬑ د ویډیو مظاهرو سره د موجوده شخړو لیست لیدلو لپاره، مهرباني وکړئ
+        لاندې لینک څخه لیدنه وکړئ
+      fa: >-
+          ⬑ برای دیدن لیست انیمیشن های موجود با تظاهرات ویدیویی ، لطفاً به لینک
+        زیر مراجعه کنید
+      am:   ⬑ የቪዲዮ ሠርቶ ማሳያዎች ጋር የሚገኙትን እነማዎች ዝርዝር ለማየት እባክዎን የሚከተሉትን አገናኝ ይጎብኙ
+      ne: >-
+          ⬑ भिडियो प्रदर्शनहरूका साथ उपलब्ध एनिमेसनहरूको सूची हेर्न, कृपया निम्न
+        लिंक भ्रमण गर्नुहोस्
+      hi: >-
+          ⬑ वीडियो प्रदर्शनों के साथ उपलब्ध एनिमेशन की सूची देखने के लिए, कृपया
+        निम्नलिखित लिंक पर जाएं
+      bn: >-
+          ⬑ ভিডিও বিক্ষোভ সহ উপলভ্য অ্যানিমেশনগুলির তালিকা দেখতে, দয়া করে
+        নিম্নলিখিত লিঙ্কটি দেখুন
+      pa: >-
+          ⬑ ਵੀਡੀਓ ਪ੍ਰਦਰਸ਼ਨਾਂ ਨਾਲ ਉਪਲਬਧ ਐਨੀਮੇਸ਼ਨਾਂ ਦੀ ਸੂਚੀ ਨੂੰ ਵੇਖਣ ਲਈ, ਕਿਰਪਾ
+        ਕਰਕੇ ਹੇਠ ਦਿੱਤੇ ਲਿੰਕ ਤੇ ਜਾਓ
+      gu: >-
+          ⬑ વિડિઓ પ્રદર્શન સાથે ઉપલબ્ધ એનિમેશનની સૂચિ જોવા માટે, કૃપા કરીને
+        નીચેની લિંકની મુલાકાત લો
+      ta: >-
+          ⬑ வீடியோ ஆர்ப்பாட்டங்களுடன் கிடைக்கக்கூடிய அனிமேஷன்களின் பட்டியலைக்
+        காண, பின்வரும் இணைப்பைப் பார்வையிடவும்
+      te: >-
+          ⬑ వీడియో ప్రదర్శనలతో అందుబాటులో ఉన్న యానిమేషన్ల జాబితాను చూడటానికి,
+        దయచేసి ఈ క్రింది లింక్‌ను సందర్శించండి
+      si: >-
+          ⬑ වීඩියෝ නිරූපණ සමඟ පවතින සජීවිකරණ ලැයිස්තුව බැලීමට කරුණාකර පහත
+        සබැඳියට පිවිසෙන්න
+      th: >-
+          ⬑
+        หากต้องการดูรายการภาพเคลื่อนไหวที่มีอยู่พร้อมการสาธิตวิดีโอโปรดไปที่ลิงค์ต่อไปนี้
+      lo: >-
+          ⬑ ເພື່ອເບິ່ງລາຍຊື່ພາບເຄື່ອນໄຫວທີ່ມີຢູ່ກັບການປະທ້ວງວິດີໂອ,
+        ກະລຸນາເຂົ້າເບິ່ງລິ້ງຕໍ່ໄປນີ້
+      km: >-
+          ⬑
+        ដើម្បីមើលបញ្ជីគំនូរជីវចលដែលមានជាមួយការបង្ហាញវីដេអូសូមទស្សនាតំណដូចខាងក្រោម
+      ko:   ⬑ 비디오 데모와 함께 사용 가능한 애니메이션 목록을 보려면 다음 링크를 방문하십시오.
+      zh:   ⬑ 要查看带有视频演示的可用动画列表，请访问以下链接
+      ja:   ⬑ ビデオデモンストレーション付きの利用可能なアニメーションのリストを表示するには、次のリンクをご覧ください
+    name: '--mir-vis-el-altor-ema'
+    initialValue: 'https://github.com/K-Ivy/Seelen-UI-Resources/wiki/Documentation-of-%22Animated-Start-Icon%22-Themes'

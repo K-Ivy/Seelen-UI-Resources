@@ -1,4 +1,6 @@
-id: "@custom/example-module-name"
+id: "@custom/pref-usr-folder"
+metadata:
+  displayName: "Custom Userhome Module"
 icon: FaRegCircleUser
 target: "@seelen/fancy-toolbar"
 plugin:

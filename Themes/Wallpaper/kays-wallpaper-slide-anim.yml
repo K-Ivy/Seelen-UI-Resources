@@ -1,0 +1,75 @@
+id: '@k-ivy/wp-anim-slide'
+metadata:
+  displayName: "Slide - Wallpaper Switch Animation"
+  author: "K-Ivy"
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 4
+    - 7
+settings:
+  - group:
+      header: "✦ Slide"
+      items:
+        - syntax: <string>
+          name: '--wp-slide-dir-choice'
+          label: "╰─ Direction"
+          description: " SUp, SDown, SRight, SLeft"
+          initialValue: 'SDown'
+
+        - syntax: <string>
+          name: '--wp-slide-dir-transition'
+          label: "╰・Transition"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: '600ms ease'
+styles:
+  "@seelen/wallpaper-manager": |
+    .wallpaper-container {
+      &.rendering {
+        animation: var(--wp-slide-dir-choice, SDown) var(--wp-slide-dir-transition, 600ms ease) !important;
+      }
+      &.will-unrender {
+        animation: none !important;
+      }
+    }
+
+    @keyframes SUp {
+      from {
+        opacity: 0;
+        clip-path: inset(100% 0% 0% 0%);
+      }
+      to {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+      }
+    }
+    @keyframes SRight {
+      from {
+        opacity: 0;
+        clip-path: inset(0% 100% 0% 0%);
+      }
+      to {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+      }
+    }
+    @keyframes SDown {
+      from {
+        opacity: 0;
+        clip-path: inset(0% 0% 100% 0%);
+      }
+      to {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+      }
+    }
+    @keyframes SLeft {
+      from {
+        opacity: 0;
+        clip-path: inset(0% 0% 0% 100%);
+      }
+      to {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+      }
+    }

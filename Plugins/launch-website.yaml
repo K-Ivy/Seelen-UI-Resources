@@ -1,0 +1,14 @@
+id: '@launch/site-ex'
+metadata:
+  displayName: "Custom Website Module"
+icon: 'TiPin'
+target: '@seelen/fancy-toolbar'
+plugin:
+  type: text
+  withMediaControls: false
+  template: >-
+    return [Icon({ name: 'TiPin' }), ' ', 'Site'];
+  onClickV2: >-
+    open('https://example-site.com');
+  style:
+    flexShrink: 0

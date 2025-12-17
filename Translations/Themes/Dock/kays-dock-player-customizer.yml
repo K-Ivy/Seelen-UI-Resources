@@ -1,0 +1,217 @@
+id: "@k-ivy/dock-comp-media"
+metadata:
+  displayName: "Dock Player Customizer"
+  description: "Change the behavior of the dock player and add filters to it."
+  author: "K-Ivy"
+  tags: ['weg', 'toolbar']
+  appTargetVersion:
+    - 2
+    - 4
+    - 7
+settings:
+  - syntax: <url>
+    name: '--ykiosdr-sorsas-ksaorlsd'
+    label: "v1.3"
+    description: "Please report any bugs/issues on my github page or in #resources post in the Seelen UI Discord."
+    initialValue: 'https://github.com/K-Ivy/Seelen-UI-Resources/tree/main'
+
+  - group:
+      header: "✦ Compact Mode (Default)"
+      items:
+        - group:
+            header: "∷ If you wish to keep the Dock Player always expanded, make the base value the same as the hover value."
+            items:
+              - syntax: <length>
+                name: '--dock-mediapl-standard-size-cal'
+                label: "● Base Player Width"
+                initialValue: 0
+                initialValueUnit: 'px'
+
+              - syntax: <length>
+                name: '--dock-mediapl-added-size'
+                label: "╰─ Width on Hover"
+                initialValue: 106
+                initialValueUnit: 'px'
+
+              - syntax: <string>
+                name: '--dock-mediapl-width-transition'
+                label: "╰・Expand Transition"
+                tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                initialValue: '400ms ease'
+
+  - group:
+      header: "✦ Smart Mode"
+      items:
+        - group:
+            header: "╰ Hide the Dock Player when no media is playing."
+            items:
+              - syntax: <string>
+                label: "● Enable Hiding"
+                description: "Set value to: none"
+                name: '--dock-mediapl-no-media-hide'
+                initialValue: ''
+
+        - group:
+            header: "∷ Seperator"
+            items:
+              - group:
+                  header: "╰ When player hides, group seperators will remain unless you choose to hide the relevant one (based on dock orientation), assuming you do not have other items in the group."
+                  items:
+                    - syntax: <string>
+                      label: "● Left / Top Seperator"
+                      description: "Set value to: none"
+                      name: '--dock-medpl-hide-sep-left-top'
+                      initialValue: ''
+
+                    - syntax: <string>
+                      label: "╰─ Remove leftover space"
+                      description: " Set value to: 0px"
+                      name: '--dock-medpl-left-top-emptspc'
+                      initialValue: ''
+
+                    - syntax: <string>
+                      label: "● Right / Bottom Seperator"
+                      description: "Set value to: none"
+                      name: '--dock-medpl-hide-sep-right-bot'
+                      initialValue: ''
+
+                    - syntax: <string>
+                      label: "╰─ Remove leftover space"
+                      description: " Set value to: 0px"
+                      name: '--dock-medpl-right-bot-emptspc'
+                      initialValue: ''
+
+  - group:
+      header: "✦ Buttons"
+      items:
+        - syntax: <length>
+          name: '--dock-mediapl-btn-base-size'
+          label: "● Base Size"
+          initialValue: 1
+          initialValueUnit: 'em'
+
+        - syntax: <string>
+          name: '--dock-mediapl-btn-scale-hover'
+          label: "╰─ Button Scale on Hover"
+          initialValue: '1.10'
+
+        - syntax: <length>
+          name: '--dock-mediapl-btn-pos-curr'
+          label: "╰─ Position on Hover"
+          tip: "Y-Pos"
+          initialValue: -1
+          initialValueUnit: 'px'
+
+        - syntax: <string>
+          name: '--dock-mediapl-btn-transition'
+          label: "╰・Scale Transition"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: '0.2s ease'
+
+  - group:
+      header: "✦ Filter Effects"
+      items:
+        - syntax: <string>
+          name: '--dock-mediapl-grayscale'
+          label: "● Grayscale"
+          tip: "0 = full color, 1 = fully grayscaled"
+          initialValue: '0'
+
+        - syntax: <string>
+          name: '--dock-mediapl-grayscale-hover'
+          label: "╰・Grayscale on Hover"
+          initialValue: '0'
+
+        - syntax: <string>
+          name: '--dock-mediapl-brightness'
+          label: "● Brightness"
+          tip: "lower than 1 = dimmer, higher than 1 = brighter"
+          initialValue: '1'
+
+        - syntax: <string>
+          name: '--dock-mediapl-brightness-hover'
+          label: "╰・Brightness on Hover"
+          initialValue: '1'
+
+        - syntax: <string>
+          name: '--dock-mediapl-contrast'
+          label: "● Contrast"
+          tip: "lower than 1 = less, higher than 1 = greater"
+          initialValue: '1'
+
+        - syntax: <string>
+          name: '--dock-mediapl-contrast-hover'
+          label: "╰・Contrast on Hover"
+          initialValue: '1'
+
+        - syntax: <string>
+          name: '--dock-mediapl-hue-rotate'
+          label: "● Color Hue"
+          tip: "Rotate color from 0 to 360 degrees"
+          initialValue: '0deg'
+
+        - syntax: <string>
+          name: '--dock-mediapl-hue-rotate-hover'
+          label: "╰・Hue on Hover"
+          initialValue: '0deg'
+
+        - syntax: <string>
+          name: '--dock-mediapl-invert'
+          label: "● Color Invert"
+          tip: "0 = normal, 1 = fully inverted"
+          initialValue: '0'
+
+        - syntax: <string>
+          name: '--dock-mediapl-invert-hover'
+          label: "╰・Invert on Hover"
+          initialValue: '0'
+
+        - syntax: <string>
+          name: '--dock-mediapl-saturate'
+          label: "● Saturation"
+          tip: "lower than 1 = desaturated, higher than 1 = saturated"
+          initialValue: '1'
+
+        - syntax: <string>
+          name: '--dock-mediapl-saturate-hover'
+          label: "╰・Saturation on Hover"
+          initialValue: '1'
+
+        - syntax: <string>
+          name: '--dock-mediapl-sepia'
+          label: "● Sepia"
+          tip: "0 = none, 1 = full sepia"
+          initialValue: '0'
+
+        - syntax: <string>
+          name: '--dock-mediapl-sepia-hover'
+          label: "╰・Sepia on Hover"
+          initialValue: '0'
+
+        - syntax: <string>
+          name: '--dock-mediapl-opacity'
+          label: "● Opacity"
+          tip: "1 = fully visible, 0 = transparent"
+          initialValue: '1'
+
+        - syntax: <string>
+          name: '--dock-mediapl-opacity-hover'
+          label: "╰・Opacity on Hover"
+          initialValue: '1'
+
+        - syntax: <string>
+          label: "● Drop Shadow"
+          tip: "<offset-x> <offset-y> <blur-radius> <color> — e.g. rgba(0,0,0,0.4)"
+          name: '--dock-mediapl-drop-shadow'
+          initialValue: '0px 0px 0px rgba(0, 0, 0, 0.445)'
+
+        - syntax: <string>
+          name: '--dock-mediapl-drop-shadow-hover'
+          label: "╰・Shadow on Hover"
+          initialValue: '0px 0px 0px rgba(0, 0, 0, 0.445)'
+
+        - syntax: <string>
+          name: '--dock-mediapl-filter-transition'
+          label: "● Filter Transition"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: '0.4s ease'

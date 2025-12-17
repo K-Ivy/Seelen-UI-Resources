@@ -1,4 +1,6 @@
-id: "@custom/example-module-name-pfp"
+id: "@custom/pref-usr-folder-pfp"
+metadata:
+  displayName: "Custom Userhome Module with PFP"
 icon: FaRegCircleUser
 target: "@seelen/fancy-toolbar"
 plugin:

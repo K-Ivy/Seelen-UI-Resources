@@ -1,0 +1,24 @@
+id: '@k-ivy/wp-anim-slide'
+metadata:
+  displayName: "Slide - Wallpaper Switch Animation"
+  author: "K-Ivy"
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 4
+    - 7
+settings:
+  - group:
+      header: "✦ Slide"
+      items:
+        - syntax: <string>
+          name: '--wp-slide-dir-choice'
+          label: "╰─ Direction"
+          description: " SUp, SDown, SRight, SLeft"
+          initialValue: 'SDown'
+
+        - syntax: <string>
+          name: '--wp-slide-dir-transition'
+          label: "╰・Transition"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: '600ms ease'

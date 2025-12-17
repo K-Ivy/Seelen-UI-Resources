@@ -1,0 +1,82 @@
+id: '@k-ivy/wp-anim-zm-fade'
+metadata:
+  displayName: "Zoom Fade - Wallpaper Switch Animation"
+  author: "K-Ivy"
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 4
+    - 7
+settings:
+  - group:
+      header: "✦ Zoom Fade"
+      items:
+        - syntax: <string>
+          name: '--wp-zoom-lvl-choice'
+          label: "╰─ Amount"
+          description: " ZLow, ZMid, ZHigh"
+          initialValue: 'ZLow'
+
+        - syntax: <string>
+          name: '--wp-slide-dir-transition'
+          label: "╰・Transition"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: '600ms ease'
+
+  - group:
+      header: "✦ Fade Out"
+      items:
+        - syntax: <string>
+          name: '--wp-zoom-uop-transition'
+          label: "╰ Transition"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: '600ms ease'
+styles:
+  "@seelen/wallpaper-manager": |
+    .wallpaper-container {
+      &.rendering {
+        animation: var(--wp-zoom-lvl-choice, ZLow) var(--wp-zoom-op-transition, 600ms ease) !important;
+      }
+      &.will-unrender {
+        animation: FadeOut var(--wp-zoom-uop-transition, 600ms ease) !important;
+      }
+    }
+
+    @keyframes ZLow {
+      from {
+        transform: scale(1.2);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    @keyframes ZMid {
+      from {
+        transform: scale(1.4);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    @keyframes ZHigh {
+      from {
+        transform: scale(2.0);
+        opacity: 0; }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes FadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }

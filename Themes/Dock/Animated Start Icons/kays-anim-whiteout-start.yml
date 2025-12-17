@@ -1,0 +1,624 @@
+id: '@k-ivy/anim-whiteout-syn'
+metadata:
+  displayName: Animated Whiteout Win 7 Start Icon
+  author: IriKay (@K-Ivy on Git)
+  description: Animated Start Icon
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 3
+    - 11
+settings:
+  - syntax: <string>
+    label:
+      en: The size of the icon
+      af: Die grootte van die ikoon
+      az: Nişanın ölçüsü
+      bs: Veličina ikone
+      ca: La mida de la icona
+      cs: Velikost ikony
+      cy: Maint yr eicon
+      da: Størrelsen på ikonet
+      de: Die Größe des Symbols
+      et: Ikooni suurus
+      es: El tamaño del icono
+      eu: Ikonoaren tamaina
+      tl: Ang laki ng icon
+      fr: La taille de l'icône
+      hr: Veličina ikone
+      id: Ukuran ikon
+      zu: Usayizi wesithonjana
+      is: Stærð táknsins
+      it: La dimensione dell'icona
+      sw: Saizi ya ikoni
+      ku: Mezinahiya îkonê
+      lv: Ikonas izmērs
+      lb: D'Gréisst vun der Ikon
+      lt: Piktogramos dydis
+      hu: Az ikon mérete
+      ms: Saiz ikon
+      mt: Id-daqs tal-ikona
+      nl: De grootte van het pictogram
+      'no': Størrelsen på ikonet
+      uz: Belgi o'lchami
+      pl: Rozmiar ikony
+      pt: O tamanho do ícone
+      ro: Dimensiunea pictogramei
+      sk: Veľkosť ikony
+      so: Cabirka sumadda
+      fi: Kuvakkeen koko
+      sv: Storleken på ikonen
+      vi: Kích thước của biểu tượng
+      tr: Simgenin boyutu
+      yo: Iwọn aami aami
+      el: Το μέγεθος του εικονιδίου
+      bg: Размерът на иконата
+      mk: Големината на иконата
+      mn: Дүрсийн хэмжээ
+      ru: Размер значка
+      sr: Величина иконе
+      tg: Андозаи нишона
+      uk: Розмір значка
+      ka: ხატის ზომა
+      hy: Պատկերակի չափը
+      he: גודל הסמל
+      ur: آئیکن کا سائز
+      ar: حجم الرمز
+      ps: د نښه کول
+      fa: اندازه نماد
+      am: የአዶው መጠን
+      ne: आइकन को आकार
+      hi: आइकन का आकार
+      bn: আইকনের আকার
+      pa: ਆਈਕਾਨ ਦਾ ਆਕਾਰ
+      gu: ચિહ્નનું કદ
+      ta: ஐகானின் அளவு
+      te: ఐకాన్ యొక్క పరిమాణం
+      si: අයිකනයේ ප්රමාණය
+      th: ขนาดของไอคอน
+      lo: ຂະຫນາດຂອງໄອຄອນ
+      km: ទំហំរូបតំណាង
+      ko: 아이콘의 크기
+      zh: 图标的大小
+      ja: アイコンのサイズ
+    name: '--anim-icon-whiteout-size'
+    initialValue: '1.1'
+
+  - syntax: <string>
+    label:
+      en: Set the animation duration and easing
+      af: Stel die animasie -duur en verligting
+      az: Animasiya müddəti və asanlaşdırılması seçin
+      bs: Podesite trajanje i ublažavanje animacije
+      ca: Configureu la durada de l'animació i la facilitació
+      cs: Nastavte dobu trvání a uvolnění animace
+      cy: Gosodwch hyd yr animeiddiad a lleddfu
+      da: Indstil animationsvarigheden og lette
+      de: Stellen Sie die Animationsdauer und Lockerung fest
+      et: Seadke animatsiooni kestus ja leevendamine
+      es: Establezca la duración de la animación y la facilidad
+      eu: Ezarri animazioaren iraupena eta arintzea
+      tl: Itakda ang tagal ng animation at pag -easing
+      fr: Définir la durée et l'assouplissement de l'animation
+      hr: Postavite trajanje animacije i ublažavanje
+      id: Atur durasi animasi dan pelonggaran
+      zu: Setha ubude be-animation bese unweba
+      is: Stilltu lengd fjörsins og slökun
+      it: Imposta la durata dell'animazione e l'allentamento
+      sw: Weka muda wa uhuishaji na uwe rahisi
+      ku: Demjimêrê anîmasyonê bicîh bikin û hêsan bikin
+      lv: Iestatiet animācijas ilgumu un atvieglojot
+      lb: Set d'Animatioun Dauer an erliichtert
+      lt: Nustatykite animacijos trukmę ir palengvinkite
+      hu: Állítsa be az animáció időtartamát és enyhítését
+      ms: Tetapkan tempoh animasi dan pelonggaran
+      mt: Issettja t-tul tal-animazzjoni u ttaffi
+      nl: Stel de animatieduur in en versoepeling
+      'no': Angi animasjonsvarigheten og lettelse
+      uz: Animatsiya davomiyligini o'rnating va engillashtiring
+      pl: Ustaw czas trwania animacji i łagodzenie
+      pt: Defina a duração da animação e a flexibilização
+      ro: Setați durata de animație și ușurarea
+      sk: Nastavte trvanie animácie a uvoľnenie
+      so: Deji muddada animation iyo fududeynta
+      fi: Aseta animaation kesto ja keventäminen
+      sv: Ställ in animationens varaktighet och lättnad
+      vi: Đặt thời lượng hoạt hình và giảm bớt
+      tr: Animasyon süresini ayarlayın ve hafifletme
+      yo: Ṣeto akoko Iṣẹju ati irọrun
+      el: Ρυθμίστε τη διάρκεια και τη χαλάρωση του κινούμενου κινούμενου
+      bg: Задайте продължителността на анимацията и облекчаването
+      mk: Поставете го времетраењето на анимацијата и олеснувањето
+      mn: Хөдөлгөөнт хугацааг тохируулаад хөнгөвчлөх
+      ru: Установите продолжительность анимации и смягчение
+      sr: Подесите трајање анимације и ублажавање
+      tg: Давомнокии аниматсияро насб кунед ва осон
+      uk: Встановіть тривалість анімації та послаблення
+      ka: დააყენეთ ანიმაციის ხანგრძლივობა და შემსუბუქება
+      hy: Սահմանեք անիմացիայի տեւողությունը եւ թեթեւացումը
+      he: הגדר את משך האנימציה והקלות
+      ur: حرکت پذیری کی مدت اور نرمی طے کریں
+      ar: حدد مدة الرسوم المتحركة والتخفيف
+      ps: د انیمیشن موده او اسانه کړئ
+      fa: مدت زمان انیمیشن و تسکین را تنظیم کنید
+      am: እነማውን ቆይታ እና መቃኘት ያዘጋጁ
+      ne: एनिमेसन अवधि सेट र सजिलो सेट गर्नुहोस्
+      hi: एनीमेशन अवधि और सहजता निर्धारित करें
+      bn: অ্যানিমেশন সময়কাল এবং স্বাচ্ছন্দ্য নির্ধারণ করুন
+      pa: ਐਨੀਮੇਸ਼ਨ ਅੰਤਰਾਲ ਅਤੇ ਆਸਾਨ ਨਿਰਧਾਰਤ ਕਰੋ
+      gu: એનિમેશન અવધિ અને સરળતા સેટ કરો
+      ta: அனிமேஷன் காலத்தை அமைத்து எளிதாக்குகிறது
+      te: యానిమేషన్ వ్యవధి మరియు సడలింపును సెట్ చేయండి
+      si: සජීවිකරණ කාලසීමාව සහ ලිහිල් කිරීම සකසන්න
+      th: กำหนดระยะเวลาการเคลื่อนไหวและการผ่อนคลาย
+      lo: ກໍານົດໄລຍະເວລາທີ່ມີຊີວິດແລະການນ້ໍາຕົກ
+      km: កំណត់រយៈពេលចលនានិងការធូរស្បើយ
+      ko: 애니메이션 지속 시간과 완화를 설정하십시오
+      zh: 设置动画持续时间和放松
+      ja: アニメーションの期間と緩和を設定します
+    name: '--main-el-whiteout-trans-dur'
+    initialValue: 1.4s ease
+
+  - syntax: <string>
+    label:
+      en: Set which animation to use when hovering the icon (none = no animation)
+      af: >-
+        Stel watter animasie u moet gebruik wanneer u die ikoon hou (none = no
+        animation)
+      az: >-
+        Simgəni hovering edərkən hansı animasiyanı istifadə edin (none = no
+        animation)
+      bs: >-
+        Podesite koja animacija za upotrebu prilikom lebdeći ikone (none = no
+        animation)
+      ca: >-
+        Estableix quina animació utilitzarà quan es mou la icona (none = no
+        animation)
+      cs: >-
+        Nastavte, kterou animaci použijte při vznášení ikony (none = no
+        animation)
+      cy: >-
+        Gosod pa animeiddiad i'w ddefnyddio wrth hofran yr eicon (none = no
+        animation)
+      da: >-
+        Indstil hvilken animation der skal bruges, når jeg svæver ikonet (none =
+        no animation)
+      de: >-
+        Legen Sie fest, welche Animation Sie verwenden sollen, wenn Sie das
+        Symbol schweben (none = no animation)
+      et: >-
+        Seadke, millist animatsiooni ikooni hõljumisel kasutada (none = no
+        animation)
+      es: Establezca qué animación usar al pasar el icono (none = no animation)
+      eu: Ezarri zein animazio erabili ikonoa pasatzean (none = no animation)
+      tl: >-
+        Itakda kung aling animation ang gagamitin kapag nag -hover ng icon (none
+        = no animation)
+      fr: >-
+        Définissez quelle animation à utiliser lors de la volonté de l'icône
+        (none = no animation)
+      hr: >-
+        Postavite koja animacija koristiti prilikom lebdenja ikone (none = no
+        animation)
+      id: >-
+        Atur animasi mana yang akan digunakan saat mengarahkan ikon (none = no
+        animation)
+      zu: >-
+        Setha ukuthi yiziphi izithombe ongazisebenzisa lapho uzulazula
+        isithonjana (none = no animation)
+      is: Settu hvaða fjör á að nota þegar þú sveif táknið (none = no animation)
+      it: >-
+        Imposta quale animazione utilizzare quando si librano l'icona (none = no
+        animation)
+      sw: >-
+        Weka uhuishaji gani wa kutumia wakati wa kusonga ikoni (none = no
+        animation)
+      ku: >-
+        Dema ku îkonê li ser bikar bînin, kîjan anîmasyon bikar bînin (none = no
+        animation)
+      lv: >-
+        Iestatiet, kuru animāciju izmantot, lidinot ar ikonu (none = no
+        animation)
+      lb: >-
+        Set deen Animatioun fir ze benotzen wann Dir d'Ikon Hover (none = no
+        animation)
+      lt: >-
+        Nustatykite, kurią animaciją naudoti, kai užvesta piktograma (none = no
+        animation)
+      hu: >-
+        Állítsa be, hogy melyik animációt kell használni az ikon lebegésekor
+        (none = no animation)
+      ms: >-
+        Tetapkan animasi mana yang hendak digunakan semasa melayang ikon (none =
+        no animation)
+      mt: >-
+        Issettja liema animazzjoni tuża meta tittajjar l-ikona (none = no
+        animation)
+      nl: >-
+        Stel welke animatie in te gebruiken bij het zweven van het pictogram
+        (none = no animation)
+      'no': >-
+        Angi hvilken animasjon du vil bruke når du svever ikonet (none = no
+        animation)
+      uz: >-
+        Belgilarni qidirishda qaysi animatsiyadan foydalanish uchun (none = no
+        animation)
+      pl: >-
+        Ustaw, której animacji użyć podczas unoszenia ikonę (none = no
+        animation)
+      pt: Defina qual animação usar ao pairar o ícone (none = no animation)
+      ro: >-
+        Setați ce animație să folosiți atunci când treceți pictograma (none = no
+        animation)
+      sk: >-
+        Nastavte, ktorá animácia sa má použiť pri vznášaní sa ikony (none = no
+        animation)
+      so: >-
+        Deji animation si aad u isticmaasho goorta aad ku mashquulsan tahay
+        sumadda (none = no animation)
+      fi: Aseta mitä animaatio käytetään kuvaketta leijuessa (none = no animation)
+      sv: >-
+        Ställ in vilken animation som ska användas när du svävar ikonen (none =
+        no animation)
+      vi: >-
+        Đặt hoạt hình nào sẽ sử dụng khi di chuột vào biểu tượng (none = no
+        animation)
+      tr: >-
+        Simgeyi havaya uçururken hangi animasyonu kullanacağını ayarlayın (none
+        = no animation)
+      yo: Ṣeto iru iwara lati lo nigbati o n yọ aami naa (none = no animation)
+      el: >-
+        Ορίστε ποια κινούμενα σχέδια θα χρησιμοποιήσετε όταν αιωρείται το
+        εικονίδιο (none = no animation)
+      bg: >-
+        Задайте коя анимация да използвате, когато задвижвате иконата (none = no
+        animation)
+      mk: >-
+        Поставете која анимација да ја користите кога лебдите на иконата (none =
+        no animation)
+      mn: Дүрсийг харах үед аль анимацийг ашиглах вэ (none = no animation)
+      ru: >-
+        Установите, какую анимацию использовать при падении значка (none = no
+        animation)
+      sr: >-
+        Подесите коју анимацију за употребу приликом лебдења иконе (none = no
+        animation)
+      tg: >-
+        Таъин кардани кадом аниматсия ҳангоми истифодаи нишона (none = no
+        animation)
+      uk: >-
+        Встановіть, яку анімацію використовувати при наведенні значка (none = no
+        animation)
+      ka: >-
+        დააყენეთ რომელი ანიმაცია გამოიყენოთ ხატის გადაქცევისას (none = no
+        animation)
+      hy: >-
+        Սահմանեք, թե որ անիմացիան է օգտագործել պատկերակը սավառնելիս (none = no
+        animation)
+      he: הגדר באיזה אנימציה להשתמש בעת ריחוף הסמל (none = no animation)
+      ur: >-
+        آئیکن کو منڈلاؤ جب استعمال کرنے کے لئے کون سا حرکت پذیری مرتب کریں (none
+        = no animation)
+      ar: تعيين أي الرسوم المتحركة لاستخدامها عند تحوم الرمز (none = no animation)
+      ps: هغه چې د کارولو پرمهال کوم متحرک وکاروئ (none = no animation)
+      fa: در هنگام شناور نماد از کدام انیمیشن استفاده کنید (none = no animation)
+      am: አዶውን በሚያሽከረክሩበት ጊዜ የትኛውን እነማ ሊጠቀሙበት ይገባል (none = no animation)
+      ne: >-
+        कुन एनिमेसन प्रयोग गर्नको लागि प्रयोग गर्न सेट गर्नुहोस् जब आइकन होभर
+        गर्दै (none = no animation)
+      hi: आइकन को मंडराते समय किस एनीमेशन का उपयोग करना है (none = no animation)
+      bn: >-
+        আইকনটি ঘোরাঘুরি করার সময় কোন অ্যানিমেশনটি ব্যবহার করবেন সেট করুন (none
+        = no animation)
+      pa: ਆਈਕਾਨ ਨੂੰ ਘੁੰਮਣ ਵੇਲੇ ਕਿਹੜਾ ਐਨੀਮੇਸ਼ਨ ਵਰਤਣਾ ਹੈ (none = no animation)
+      gu: >-
+        આયકન હોવર કરતી વખતે કયા એનિમેશનનો ઉપયોગ કરવો તે સેટ કરો (none = no
+        animation)
+      ta: >-
+        ஐகானை வட்டமிடும்போது எந்த அனிமேஷனைப் பயன்படுத்த வேண்டும் (none = no
+        animation)
+      te: >-
+        ఐకాన్ హోవర్ చేసేటప్పుడు ఏ యానిమేషన్ ఉపయోగించాలో సెట్ చేయండి (none = no
+        animation)
+      si: අයිකනය සැරිසරන විට භාවිතා කළ යුතු සජීවිකරණය සකසන්න (none = no animation)
+      th: ตั้งค่าแอนิเมชั่นที่จะใช้เมื่อโฮเวอร์ไอคอน (none = no animation)
+      lo: ຕັ້ງພາບເຄື່ອນໄຫວໃດທີ່ຈະໃຊ້ໃນເວລາທີ່ສະແດງໄອຄອນ (none = no animation)
+      km: កំណត់ចលនាណាដែលត្រូវប្រើនៅពេលដាក់រូបតំណាង (none = no animation)
+      ko: 아이콘을 호버링 할 때 사용할 애니메이션을 설정하십시오 (none = no animation)
+      zh: 设置悬停图标时要使用的动画 (none = no animation)
+      ja: アイコンをホバリングするときに使用するアニメーションを設定します (none = no animation)
+    name: '--main-el-whiteout-anim'
+    initialValue: pop-weak
+
+  - syntax: <string>
+    label:
+      en: >-
+          ⬑ To see the list of available animations with video demonstrations,
+        please visit the following link 
+      af: >-
+          ⬑ Besoek die volgende skakel om die lys van beskikbare animasies met
+        video -demonstrasies te sien
+      az: >-
+          ⬑ Video nümayişləri ilə mövcud animasiyaların siyahısını görmək üçün
+        aşağıdakı linki ziyarət edin
+      bs: >-
+          ⬑ Da biste pogledali popis dostupnih animacija sa video
+        demonstracijama, posetite sledeću vezu
+      ca: >-
+          ⬑ Per veure la llista d’animacions disponibles amb demostracions de
+        vídeo, visiteu l’enllaç següent
+      cs: >-
+          ⬑ Chcete -li zobrazit seznam dostupných animací s demonstracemi videa,
+        navštivte následující odkaz
+      cy: >-
+          ⬑ I weld y rhestr o animeiddiadau sydd ar gael gydag arddangosiadau
+        fideo, ewch i'r ddolen ganlynol
+      da: >-
+          ⬑ Besøg følgende link for at se listen over tilgængelige animationer
+        med videodemonstrationer
+      de: >-
+          ⬑ Um die Liste der verfügbaren Animationen mit Videovorführungen
+        anzuzeigen, besuchen Sie bitte den folgenden Link
+      et: >-
+          ⬑ Video demonstratsioonidega saadaolevate animatsioonide loendi
+        nägemiseks külastage järgmist linki
+      es: >-
+          ⬑ Para ver la lista de animaciones disponibles con demostraciones de
+        video, visite el siguiente enlace
+      eu: >-
+          ⬑ Bideo-manifestazioekin egindako animazioen zerrenda ikusteko,
+        bisitatu esteka hau
+      tl: >-
+          ⬑ Upang makita ang listahan ng mga magagamit na mga animation na may
+        mga demonstrasyong video, mangyaring bisitahin ang sumusunod na link
+      fr: >-
+          ⬑ Pour voir la liste des animations disponibles avec des
+        démonstrations vidéo, veuillez visiter le lien suivant
+      hr: >-
+          ⬑ Da biste vidjeli popis dostupnih animacija s video demonstracijama,
+        posjetite sljedeću vezu
+      id: >-
+          ⬑ Untuk melihat daftar animasi yang tersedia dengan demonstrasi video,
+        silakan kunjungi tautan berikut
+      zu: >-
+          ⬑ Ukubona uhlu lwezithombe ezitholakalayo ezinemibukiso yevidiyo,
+        sicela uvakashele isixhumanisi esilandelayo
+      is: >-
+          ⬑ Til að sjá listann yfir tiltæk hreyfimyndir með myndsýningum,
+        vinsamlegast farðu á eftirfarandi hlekk
+      it: >-
+          ⬑ Per vedere l'elenco delle animazioni disponibili con le
+        dimostrazioni video, visitare il seguente link
+      sw: >-
+          ⬑ Ili kuona orodha ya michoro zinazopatikana na maonyesho ya video,
+        tafadhali tembelea kiunga kifuatacho
+      ku: >-
+          ⬑ Ji bo dîtina navnîşa anîmasyonên heyî bi xwepêşandanên vîdyoyê re,
+        ji kerema xwe zencîreya jêrîn biçin
+      lv: >-
+          ⬑ Lai redzētu pieejamo animāciju sarakstu ar video demonstrācijām,
+        lūdzu, apmeklējiet šo saiti
+      lb: >-
+          ⬑ Fir d'Lëscht vun verfügbaren Animatiounen mat Videodonstatiounen ze
+        gesinn, besicht de folgende Link
+      lt: >-
+          ⬑ Norėdami pamatyti galimų animacijų su vaizdo demonstracijomis
+        sąrašą, apsilankykite šioje nuorodoje
+      hu: >-
+          ⬑ A rendelkezésre álló animációk listájának megtekintéséhez video
+        demonstrációkkal látogasson el a következő linkre
+      ms: >-
+          ⬑ Untuk melihat senarai animasi yang ada dengan demonstrasi video,
+        sila lawati pautan berikut
+      mt: >-
+          ⬑ Biex tara l-lista ta 'animazzjonijiet disponibbli
+        b'dimostrazzjonijiet tal-vidjow, jekk jogħġbok żur il-link li ġej
+      nl: >-
+          ⬑ Ga naar de volgende link om de lijst met beschikbare animaties met
+        videodemonstraties te bekijken
+      'no': >-
+          ⬑ For å se listen over tilgjengelige animasjoner med
+        videodemonstrasjoner, besøk følgende lenke
+      uz: >-
+          ⬑ Video namoyishlar bilan mavjud animatsiyalar ro'yxatini ko'rish
+        uchun quyidagi havolani ko'ring
+      pl: >-
+          ⬑ Aby zobaczyć listę dostępnych animacji z demonstracjami wideo,
+        odwiedź następujący link
+      pt: >-
+          ⬑ Para ver a lista de animações disponíveis com demonstrações de
+        vídeo, visite o seguinte link
+      ro: >-
+          ⬑ Pentru a vedea lista de animații disponibile cu demonstrații video,
+        vizitați următorul link
+      sk: >-
+          ⬑ Ak si chcete prezrieť zoznam dostupných animácií s ukážkami videa,
+        navštívte nasledujúci odkaz
+      so: >-
+          ⬑ Si aad u aragto liiska animations-ka oo leh banaanbaxyo fiidiyow ah,
+        fadlan booqo isku xirka soo socda
+      fi: >-
+          ⬑ Jos haluat nähdä luettelon käytettävissä olevista animaatioista
+        videoesityksillä, käy seuraavassa linkissä
+      sv: >-
+          ⬑ För att se listan över tillgängliga animationer med
+        videodemonstrationer, besök följande länk
+      vi: >-
+          ⬑ Để xem danh sách các hình ảnh động có sẵn với các cuộc biểu diễn
+        video, vui lòng truy cập liên kết sau
+      tr: >-
+          ⬑ Video gösterileri ile mevcut animasyonların listesini görmek için
+        lütfen aşağıdaki bağlantıyı ziyaret edin
+      yo: >-
+          ⬑ Lati wo atokọ ti awọn ere idaraya ti o wa pẹlu awọn ifihan fidio,
+        jọwọ lọsi ọna asopọ wọnyi
+      el: >-
+          ⬑ Για να δείτε τη λίστα των διαθέσιμων κινούμενων σχεδίων με
+        διαδηλώσεις βίντεο, επισκεφθείτε τον παρακάτω σύνδεσμο
+      bg: >-
+          ⬑ За да видите списъка с налични анимации с видео демонстрации, моля,
+        посетете следната връзка
+      mk: >-
+          ⬑ За да го видите списокот на достапни анимации со видео демонстрации,
+        посетете ја следната врска
+      mn: >-
+          ⬑ Видео жагсаалтай боломжтой алдааны жагсаалтыг үзэхийн тулд дараах
+        холбоос дээр зочилно уу
+      ru: >-
+          ⬑ Чтобы увидеть список доступных анимаций с видео демонстрации,
+        посетите следующую ссылку
+      sr: >-
+          ⬑ Да бисте видели листу доступних анимација са видео демонстрацијама,
+        посетите следећу везу
+      tg: >-
+          ⬑ Барои дидани рӯйхати аниматсияҳои мавҷуда бо намоишҳои видеоӣ,
+        лутфан ба истиноди зерин ташриф оред
+      uk: >-
+          ⬑ Щоб переглянути список доступних анімацій із відеодемонстраціями,
+        відвідайте наступне посилання
+      ka: >-
+          ⬑ ვიდეო დემონსტრაციებით ხელმისაწვდომი ანიმაციების ჩამონათვალის
+        სანახავად ეწვიეთ შემდეგ ბმულს
+      hy: >-
+          ⬑ Տեսանյութերի ցուցադրություններով մատչելի անիմացիաների ցանկը տեսնելու
+        համար կարող եք այցելել հետեւյալ հղումը
+      he:   ⬑ לצפייה ברשימת האנימציות הזמינות עם הפגנות וידאו, בקר בקישור הבא
+      ur: >-
+          ⬑ ویڈیو مظاہرے کے ساتھ دستیاب متحرک تصاویر کی فہرست دیکھنے کے لئے ،
+        براہ کرم مندرجہ ذیل لنک ملاحظہ کریں
+      ar: >-
+          ⬑ للاطلاع على قائمة الرسوم المتحركة المتاحة مع مظاهرات الفيديو ، يرجى
+        زيارة الرابط التالي
+      ps: >-
+          ⬑ د ویډیو مظاهرو سره د موجوده شخړو لیست لیدلو لپاره، مهرباني وکړئ
+        لاندې لینک څخه لیدنه وکړئ
+      fa: >-
+          ⬑ برای دیدن لیست انیمیشن های موجود با تظاهرات ویدیویی ، لطفاً به لینک
+        زیر مراجعه کنید
+      am:   ⬑ የቪዲዮ ሠርቶ ማሳያዎች ጋር የሚገኙትን እነማዎች ዝርዝር ለማየት እባክዎን የሚከተሉትን አገናኝ ይጎብኙ
+      ne: >-
+          ⬑ भिडियो प्रदर्शनहरूका साथ उपलब्ध एनिमेसनहरूको सूची हेर्न, कृपया निम्न
+        लिंक भ्रमण गर्नुहोस्
+      hi: >-
+          ⬑ वीडियो प्रदर्शनों के साथ उपलब्ध एनिमेशन की सूची देखने के लिए, कृपया
+        निम्नलिखित लिंक पर जाएं
+      bn: >-
+          ⬑ ভিডিও বিক্ষোভ সহ উপলভ্য অ্যানিমেশনগুলির তালিকা দেখতে, দয়া করে
+        নিম্নলিখিত লিঙ্কটি দেখুন
+      pa: >-
+          ⬑ ਵੀਡੀਓ ਪ੍ਰਦਰਸ਼ਨਾਂ ਨਾਲ ਉਪਲਬਧ ਐਨੀਮੇਸ਼ਨਾਂ ਦੀ ਸੂਚੀ ਨੂੰ ਵੇਖਣ ਲਈ, ਕਿਰਪਾ
+        ਕਰਕੇ ਹੇਠ ਦਿੱਤੇ ਲਿੰਕ ਤੇ ਜਾਓ
+      gu: >-
+          ⬑ વિડિઓ પ્રદર્શન સાથે ઉપલબ્ધ એનિમેશનની સૂચિ જોવા માટે, કૃપા કરીને
+        નીચેની લિંકની મુલાકાત લો
+      ta: >-
+          ⬑ வீடியோ ஆர்ப்பாட்டங்களுடன் கிடைக்கக்கூடிய அனிமேஷன்களின் பட்டியலைக்
+        காண, பின்வரும் இணைப்பைப் பார்வையிடவும்
+      te: >-
+          ⬑ వీడియో ప్రదర్శనలతో అందుబాటులో ఉన్న యానిమేషన్ల జాబితాను చూడటానికి,
+        దయచేసి ఈ క్రింది లింక్‌ను సందర్శించండి
+      si: >-
+          ⬑ වීඩියෝ නිරූපණ සමඟ පවතින සජීවිකරණ ලැයිස්තුව බැලීමට කරුණාකර පහත
+        සබැඳියට පිවිසෙන්න
+      th: >-
+          ⬑
+        หากต้องการดูรายการภาพเคลื่อนไหวที่มีอยู่พร้อมการสาธิตวิดีโอโปรดไปที่ลิงค์ต่อไปนี้
+      lo: >-
+          ⬑ ເພື່ອເບິ່ງລາຍຊື່ພາບເຄື່ອນໄຫວທີ່ມີຢູ່ກັບການປະທ້ວງວິດີໂອ,
+        ກະລຸນາເຂົ້າເບິ່ງລິ້ງຕໍ່ໄປນີ້
+      km: >-
+          ⬑
+        ដើម្បីមើលបញ្ជីគំនូរជីវចលដែលមានជាមួយការបង្ហាញវីដេអូសូមទស្សនាតំណដូចខាងក្រោម
+      ko:   ⬑ 비디오 데모와 함께 사용 가능한 애니메이션 목록을 보려면 다음 링크를 방문하십시오.
+      zh:   ⬑ 要查看带有视频演示的可用动画列表，请访问以下链接
+      ja:   ⬑ ビデオデモンストレーション付きの利用可能なアニメーションのリストを表示するには、次のリンクをご覧ください
+    name: '--mir-sol-whiteout-tokma'
+    initialValue: >-
+      https://github.com/K-Ivy/Seelen-UI-Resources/wiki/Documentation-of-%22Animated-Start-Icon%22-Themes
+
+styles:
+  weg: >
+    /* Hide the default start icon */
+    .weg-item-start-icon * {
+      display: none !important;
+    }
+
+    /* Making it so animations can overlap and go out od dock bounds */
+    .weg-items-container {
+      overflow: visible !important;
+    }
+
+    .weg-item-start-icon {
+      width: 100% !important;
+      background-size: contain !important;
+      background-repeat: no-repeat;
+      transition: background-image 0.2s linear;
+      scale: var(--anim-icon-whiteout-size, 1.1) !important;
+    }
+
+    .weg-item-start-icon:hover {
+      animation: var(--main-el-whiteout-anim, pop-weak) var(--main-el-whiteout-trans-dur, 1.4s ease);
+    }
+
+    @keyframes swing {
+      0%, 100% { transform: rotate(0deg); }
+      30% { transform: rotate(-15deg); }
+      60% { transform: rotate(15deg); }
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      20% { transform: rotate(-7deg); }
+      40% { transform: rotate(7deg); }
+      60% { transform: rotate(-5deg); }
+      80% { transform: rotate(5deg); }
+    }
+
+    @keyframes lift-swing {
+      0%, 100% { transform: translateY(0); }
+      30% { transform: translateX(-5%) translateY(-10%) rotate(-5deg); }
+      60% { transform: translateX(5%) translateY(-10%) rotate(5deg); }
+    }
+
+    @keyframes full-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pop {
+      0%, 100% { transform: scale(1); }
+      40% { transform: scale(1.12); }
+      60% { transform: scale(1.12); }
+    }
+
+    @keyframes pop-weak {
+      0%, 100% { transform: scale(1); }
+      40% { transform: scale(1.08); }
+      60% { transform: scale(1.08); }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.1); }
+      40% { transform: scale(0.95); }
+      60% { transform: scale(1.05); }
+      80% { transform: scale(0.97); }
+    }
+
+    /* png to base64 (do data url)
+    https://base64.guru/converter/encode/image/png */
+
+    /* Default State: */
+    .weg-item-start-icon {
+      background-image: url('data:image/png;base64,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');
+    }
+
+    /* Hover State: */
+    .weg-item-start-icon:hover {
+      background-image: url('data:image/png;base64,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');
+    }
+
+    /* Pressed/Held State: */
+    .weg-item-start-icon:active {
+      background-image: url('data:image/png;base64,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');
+    }

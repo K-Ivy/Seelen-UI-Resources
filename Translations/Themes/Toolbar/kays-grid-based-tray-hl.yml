@@ -1,0 +1,94 @@
+id: "@k-ivy/win-grid-tray-hl"
+metadata:
+  displayName: "Grid Style Tray - Hover for Label"
+  author: "K-Ivy"
+  description: "~ Tray Module"
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 4
+    - 7
+settings:
+  - syntax: <url>
+    name: '--ytrit-ouhsd-dorkad'
+    label: "V2.0 - For Seelen v2.4.5+ Only"
+    description: "> Please report any bugs/issues on my github page or in #resources post in the Seelen UI Discord."
+    initialValue: 'https://github.com/K-Ivy/Seelen-UI-Resources/tree/main'
+
+  - group:
+      header: "✦ App Names"
+      items:
+        - syntax: <string>
+          label: "╰ Visibility"
+          description: " > block (show) | none (hide)"
+          name: '--tray-hl-label-visibility'
+          initialValue: 'block'
+
+        - syntax: <number>
+          label: "● Maximum Character Length"
+          name: '--tray-hl-label-length'
+          initialValue: 15
+
+        - syntax: <string>
+          label: "╰─ Cut-off Style"
+          tip: "When a app name hits the character limit set, how should the end be?"
+          description: " > clip | ellipsis"
+          name: '--tray-hl-m-txt-overflow'
+          initialValue: 'clip'
+
+        - syntax: <length>
+          label: "● Font Size"
+          name: '--tray-hl-label-font-size'
+          initialValue: 10
+          initialValueUnit: 'px'
+
+        - group:
+            header: "Animation (On Hover)"
+            items:
+              - syntax: <length>
+                label: "∷ Start Height"
+                name: '--tray-hl-label-starty'
+                initialValue: -10
+                initialValueUnit: 'px'
+
+              - syntax: <length>
+                label: "∷ End Height"
+                name: '--tray-hl-label-endy'
+                initialValue: -12
+                initialValueUnit: 'px'
+
+  - group:
+      header: "✦ App Icons"
+      items:
+        - syntax: <length>
+          label: "● Size"
+          name: '--tray-hl-app-icon-size'
+          initialValue: 18
+          initialValueUnit: 'px'
+
+        - syntax: <number>
+          label: "╰─ Scale on Hover"
+          tip: "When hovering an app icon, the icon will be scaled up by the value set here."
+          name: '--tray-hl-app-icon-size-hover'
+          initialValue: 1.16
+
+        - syntax: <string>
+          label: "╰・Scale Transition"
+          name: '--tray-hl-app-icon-transition'
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: 'transform 0.3s cubic-bezier(0.33, 1, 0.68, 1)'
+
+  - group:
+      header: "✦ Base"
+      items:
+        - syntax: <length>
+          label: "● Tray Padding"
+          name: '--tray-hl-padding'
+          initialValue: 12
+          initialValueUnit: 'px'
+
+        - syntax: <number>
+          label: "● Tray Mode"
+          description: "0 = Compact | 1 = Soft"
+          name: '--tray-hl-spacing-choice'
+          initialValue: 1
