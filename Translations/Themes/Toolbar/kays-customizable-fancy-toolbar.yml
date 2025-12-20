@@ -2,6 +2,78 @@ id: "@k-ivy/kivy-custom-ftbr"
 metadata:
   displayName: "Fully Customizable Toolbar"
   author: "K-Ivy"
+  description:
+    en: >
+      **This theme allows you to EXTENSIVELY customize the fancy toolbar all
+      through nicely formatted settings that is clear and broken up for a good
+      experience.** [Video](https://youtu.be/GM13rujEB8s)!
+
+      **The theme is lightweight** (*as it does not add heavy modifications such
+      as additional animations*).
+
+      ╰─ But note that when in the theme settings, your usage will go up -
+      **that is expected**. It will go back to normal once you leave the theme
+      settings, so modify what you want, save, and enjoy.
+
+      ---
+
+      Also, **If you need help starting or want the ready made light mode
+      theme**, dont forget to check out the **presets** on the wiki (*more will
+      be added over time*): 
+
+      https://github.com/K-Ivy/Seelen-UI-Resources/wiki/%22Fully-Cusomizable-Toolbar%22-Theme
+
+      * Anyone who wishes to is **more than welcome to share presets to be added
+      to the list** here:
+      https://github.com/K-Ivy/Seelen-UI-Resources/discussions/6 *or message it
+      to me on the Seelen UI Discord.*
+
+      *And if you wish to ever check out this theme's changelogs,* they will
+      live
+      [here](https://github.com/K-Ivy/Seelen-UI-Resources/blob/main/Update%20Logs/Fully%20Customizable%20Toolbar.md)!
+
+      ---
+
+      ### Warning
+
+      **It should be obvious** but **ANY** other theme that also is for
+      customizing the look of the toolbar is fully incompatible.
+
+      Of course though, resources like [Indiviual Coloring of Toolbar
+      Modules](https://seelen.io/resources/k-ivy/ftbr-mod-color) or [Custom
+      Username](https://seelen.io/resources/k-ivy/custom-pref-user) **will work
+      perfectly fine.**
+
+      You just have to **make sure** that they are below this theme in **YOUR**
+      theme list so that they take priority.
+
+      ---
+
+      If you encounter some issue or have feedback, you can report it to me in
+      the following ways:
+
+      * In the #resources post on the Seelen-UI Discord.
+
+      * Create a issue post on my GitHub page:
+      https://github.com/K-Ivy/Kays-SeelenUI-Themes
+
+      Enjoy!
+
+      ---
+
+       
+
+      ### Note for users of the OLD Version:
+
+      * **ALL** options for customizing the module menus and tooltip and context
+      menus have been removed.
+
+      * Those options will be split into a secondary theme called **Fully
+      Customizable Toolbar Menus**.
+
+      Why? User side, the combined options are absurdly long so this helps
+      reduce confusion and give a faster experience. And on my side, this
+      splitting will help in future updating and development.
   description: "Extensively customize the fancy toolbar with ease by simply adjusting theme settings. Get the Fully Customizable Toolbar Menus in addition for full control!"
   tags: ['toolbar']
   appTargetVersion:
