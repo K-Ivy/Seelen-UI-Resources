@@ -12,9 +12,8 @@ English | [Other](./README.*.md)
 
 **Seelen UI has a built in CLI command** to give MTL Translations to a resource:
 
--  `seelen-ui.exe resource bundle <KIND> <PATH>` in a terminal.
+-  `seelen-ui resource translate <PATH>` in a terminal.
 
-   - KIND: `theme`, `widget`, `plugin`, `icon-pack`, `wallpaper`, `sound-pack`.
    - Quotes need to be put around the path if there are spaces.
 
 I will use the above command to give all my resources MTL translations when they are all in there final forms (more or less).

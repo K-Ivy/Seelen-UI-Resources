@@ -11,4 +11,6 @@
 - Base layer and group background images now properly fade in/out and filter options have been added for those previously missing them.
 - All code for the module menus, tooltip menus, and context menus have been removed from this. They will be split into a seperate theme.
 - Default theme updated and various variables overridden.
-- Various other undocumented smaller changes.
+- Introduced option menus for any viable settings.
+- Removed "Graphic" Size option and made it 'cover' by default as it makes no sense to use the others for the toolbar. In kind, changed "Graphic Position" (renamed to 'Image Position') to only control Y-Position to control what part is shown.
+- Various other undocumented changes.
