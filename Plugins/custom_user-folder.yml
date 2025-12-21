@@ -7,6 +7,6 @@ plugin:
   type: user
   withUserFolder: true
   template: |-
-    return ['@K-Ivy'];
+    return [Image({ path: user.profilePicturePath }), ' ', '@K-Ivy'];
   style:
     flexShrink: 0

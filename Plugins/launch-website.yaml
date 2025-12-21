@@ -5,10 +5,9 @@ icon: 'TiPin'
 target: '@seelen/fancy-toolbar'
 plugin:
   type: text
-  withMediaControls: false
-  template: >-
+  template: |-
     return [Icon({ name: 'TiPin' }), ' ', 'Site'];
-  onClickV2: >-
+  onClickV2: |-
     open('https://example-site.com');
   style:
     flexShrink: 0
