@@ -842,7 +842,7 @@ const sanitizeUrl = url => {
 };
 
 const sanitizePath = path => {
-  const clean = path.trim().replace(/\\/g, '/').replace(/\/+/g, '/');
+  const clean = path.trim().replace(/["']/g, '').replace(/\\/g, '/').replace(/\/+/g, '/');
   return /^[A-Za-z]:/.test(clean) ? clean : null;
 };
 
@@ -1086,6 +1086,8 @@ ${styleSection}`;
 };
 
 const toggleEdit = () => {
+  const scrollPos = window.scrollY;
+  
   if (!state.isEditing) {
     const content = el.preview.textContent;
     el.preview.innerHTML = `<textarea>${content}</textarea>`;
@@ -1107,6 +1109,8 @@ const toggleEdit = () => {
     el.editBtn.textContent = 'Edit Code';
     state.isEditing = false;
   }
+  
+  window.scrollTo(0, scrollPos);
 };
 
 document.querySelectorAll('.modal').forEach(m => {
