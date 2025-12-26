@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shortcut Module Creator</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css">
+<style>
+:root {
+  --bg-main: #272e33;
+  --bg-surface: #2d353b;
+  --bg-dark: #242b2f;
+  --border: #3d484d;
+  --text: #d3c6aa;
+  --text-muted: #9da9a0;
+  --accent: #a7c080;
+  --accent-text: #1e2a23;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-main);
+  color: var(--text);
+  padding: 24px;
+}
+
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+h1:hover {
+  color: #b8d292;
+}
+
+.container {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.modal-content.dropdown-modal {
+  width: fit-content;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.modal-content.alert-modal {
+  width: fit-content;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.modal-content.color-modal {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-title {
+  text-align: center;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.btn {
+  background: var(--accent);
+  color: var(--accent-text);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+.btn-toggle {
+  background: var(--bg-surface);
+  border: 2px solid var(--border);
+  color: var(--text);
+}
+
+.btn-toggle:hover {
+  filter: none;
+  border-color: var(--accent);
+}
+
+.btn-toggle.active {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+}
+
+.btn-anim {
+  animation: scale-effect 0.3s ease-in-out;
+}
+
+@keyframes scale-effect {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.field-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.field-header label {
+  margin-bottom: 0;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--bg-dark);
+  border: 2px solid var(--border);
+  color: inherit;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.switch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background: var(--border);
+  border-radius: 10px;
+}
+
+.switch.active {
+  background: var(--accent);
+}
+
+.switch-handle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.switch.active .switch-handle {
+  transform: translateX(20px);
+}
+
+.card-surface {
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--bg-dark);
+  border: 2px solid var(--border);
+}
+
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text);
+}
+
+.btn-icon:hover {
+  color: var(--accent);
+  filter: none;
+}
+
+.btn-icon i {
+  font-size: 32px;
+  line-height: 1;
+  transform: translate(-8px, -4px);
+}
+
+.field-with-action {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.field-with-action > .card-surface {
+  flex: 1;
+  height: 44px;
+}
+
+.icon-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-preview {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.icon-display {
+  color: #f8f8f8;
+}
+
+.icon-label {
+  flex: 1;
+  color: var(--text-muted);
+}
+
+.icon-label small {
+  display: block;
+  font-size: 11px;
+  margin-top: 2px;
+  opacity: 0.7;
+}
+
+.color-preview {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.dropdown-item:hover {
+  background: var(--bg-dark);
+}
+
+.color-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.color-gradient {
+  width: 240px;
+  height: 180px;
+  position: relative;
+  border-radius: 8px;
+  cursor: crosshair;
+}
+
+.color-gradient::before, .color-gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.color-gradient::before {
+  background: linear-gradient(to right, white, transparent);
+}
+
+.color-gradient::after {
+  background: linear-gradient(to bottom, transparent, black);
+}
+
+.picker-cursor {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+.hue-bar {
+  width: 240px;
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+  position: relative;
+}
+
+.hue-bar .picker-cursor {
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-color: #666;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.hex-input {
+  width: 240px;
+  padding: 8px 10px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.code-block {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 10px 0;
+  font-family: Consolas, monospace;
+  font-size: 13px;
+  position: relative;
+}
+
+.code-block pre {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.code-block textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  resize: none;
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: auto;
+}
+
+.code-block textarea:focus {
+  outline: none;
+}
+
+.icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 8px;
+}
+
+.icon-tile {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+.icon-tile:hover {
+  background: var(--bg-dark);
+}
+
+.custom-icon {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.custom-icon label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.custom-icon small {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.custom-icon a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.custom-icon input {
+  text-align: center;
+}
+
+.preview-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.toolbar-preview {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.shortcut-bubble {
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  font-size: 13px;
+}
+
+.shortcut-bubble .icon {
+  font-size: 16px;
+  display: block;
+  line-height: 1;
+  white-space: nowrap;
+  transform: translateY(-1px);
+}
+
+.shortcut-bubble .text {
+  color: var(--text);
+  display: block;
+  line-height: 1;
+  transform: translateY(-0.6px);
+}
+
+.hidden {
+  display: none;
+}
+
+.toggle-container {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.alert-message {
+  margin-bottom: 18px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#previewCard {
+  text-align: center;
+}
+
+#previewCard .code-block {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+#editBtn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+#downloadBtn,
+#createBtn {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  display: block;
+  font-size: 15px;
+  padding: 12px 24px;
+}
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="subtitle">Seelen UI</div>
+      <h1>Shortcut Module Creator</h1>
+    </header>
+
+    <div class="container toggle-container">
+      <button class="btn btn-toggle active" data-mode="website">Launch Website</button>
+      <button class="btn btn-toggle" data-mode="local">Launch Local File</button>
+    </div>
+
+    <div class="container preview-area">
+      <div class="preview-label">Live Preview</div>
+      <div class="toolbar-preview">
+        <div class="shortcut-bubble" id="livePreview">
+          <i class="typcn typcn-pin icon icon-display"></i>
+          <span class="text">My Shortcut</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="field">
+        <div class="field-header">
+          <label id="titleLabel">Title</label>
+          <div style="display: flex; gap: 16px;">
+            <div class="toggle-switch">
+              <span>Icon Only</span>
+              <div class="switch" id="iconOnlyToggle">
+                <div class="switch-handle"></div>
+              </div>
+            </div>
+            <div class="toggle-switch">
+              <span>No Icon</span>
+              <div class="switch" id="noIconsToggle">
+                <div class="switch-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <input id="titleInput" placeholder="~ Used for id, list name, and module text">
+      </div>
+
+      <div class="hidden" id="advancedFields">
+        <div class="field" id="fontField">
+          <label>Font</label>
+          <input id="fontInput" placeholder="~ All system installed fonts are useable, just type in the full name (Ex: Comic Sans MS)">
+          <small class="custom-icon">
+            <a href="https://support.microsoft.com/en-us/windows/manage-fonts-in-windows-f12d0657-2fc8-7613-c76f-88d043b334b8" target="_blank">
+              > Learn how to manage windows fonts
+            </a>
+          </small>
+        </div>
+
+        <div class="field" id="thicknessField">
+          <label>Line Thickness</label>
+          <div class="card-surface icon-select" id="thicknessBtn">
+            <div class="icon-label" id="thicknessLabel">600</div>
+          </div>
+        </div>
+
+        <div class="field" id="spacingField">
+          <label>Letter Spacing</label>
+          <div class="card-surface icon-select" id="spacingBtn">
+            <div class="icon-label" id="spacingLabel">0</div>
+          </div>
+        </div>
+
+        <div class="field" id="colorField">
+          <label>Color</label>
+          <div class="field-with-action">
+            <div class="card-surface icon-select" id="colorBtn">
+              <div class="color-preview" id="colorPreview"></div>
+              <div class="icon-label" id="colorLabel">#f8f8f8</div>
+            </div>
+            <button class="btn btn-icon" id="colorResetBtn" title="Reset to default">
+              <i class="typcn typcn-refresh"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Tooltip</label>
+        <input id="tooltipInput" placeholder="~ To be shown when hovering the module">
+      </div>
+
+      <div class="field" id="iconPickerField">
+        <label>Icon Picker</label>
+        <div class="card-surface icon-select" id="iconBtn">
+          <div class="icon-preview" id="iconPreview"></div>
+          <div class="icon-label" id="iconLabel"></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label id="urlLabel">Url</label>
+        <input id="urlInput" placeholder="e.g., https://google.com">
+      </div>
+
+      <button class="btn" id="createBtn">Create</button>
+    </div>
+
+    <div class="container hidden" id="previewCard">
+      <div class="code-block">
+        <pre id="preview"></pre>
+        <button class="btn btn-toggle hidden" id="editBtn">Edit Code</button>
+      </div>
+      <div style="display: flex; gap: 8px; justify-content: center;">
+        <button class="btn" id="downloadBtn">Download</button>
+      </div>
+    </div>
+
+    <div class="container hidden" id="infoCard">
+      <p>After downloading, move the file to:</p>
+      <div class="code-block"><span style="color: var(--accent)">C:\Users\USER\AppData\Roaming\com.seelen.seelen-ui\plugins</span></div>
+      <p>Then right click the toolbar and hover the "Modules" option. From the list that appears, select the new module.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="iconModal">
+    <div class="modal-content">
+      <div class="modal-title">Select a Typicon</div>
+      <div class="icons-grid" id="iconGrid"></div>
+      <div class="custom-icon">
+        <label>Other Icon Name</label>
+        <input id="customIcon" placeholder="e.g., FcAbout, Gi3dGlasses">
+        <small>
+          Find at: <a href="https://react-icons.github.io/react-icons" target="_blank">react-icons.github.io/react-icons</a>
+        </small>
+      </div>
+      <div class="custom-icon">
+        <label>Emoji Icon</label>
+        <div class="icons-grid" id="emojiGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="alertModal">
+    <div class="modal-content alert-modal">
+      <div class="alert-message" id="alertMessage"></div>
+      <div style="display: flex; gap: 8px; justify-content: center;">
+        <button class="btn" id="alertBtn">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="dropdownModal">
+    <div class="modal-content dropdown-modal">
+      <div class="modal-title" id="dropdownTitle"></div>
+      <div class="dropdown-menu" id="dropdownMenu"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="colorModal">
+    <div class="modal-content color-modal">
+      <div class="color-modal-content">
+        <div class="color-gradient" id="colorArea">
+          <div class="picker-cursor" id="colorCursor"></div>
+        </div>
+        <div class="hue-bar" id="hueSlider">
+          <div class="picker-cursor" id="hueHandle"></div>
+        </div>
+        <input type="text" class="hex-input" id="hexInput" maxlength="7" placeholder="#000000">
+      </div>
+    </div>
+  </div>
+
+<script>
+const TYPICONS = [
+  'TiPin','TiFolder','TiDocument','TiClipboard','TiArchive','TiDownload','TiUpload','TiDatabase','TiDropbox',
+  'TiCog','TiSpanner','TiPlug','TiPower','TiPrinter','TiKeyboard','TiMicrophone','TiCamera','TiVideo',
+  'TiCode','TiHtml5','TiCss3','TiPi','TiPlus','TiMinus','TiTick','TiTimes','TiCancel','TiDelete','TiEdit',
+  'TiBackspace','TiRefresh','TiExport','TiEquals','TiDivide','TiMail','TiMessage','TiMessages','TiPhone',
+  'TiContacts','TiMap','TiLocation','TiCompass','TiGlobe','TiWorld','TiKey','TiEye','TiStopwatch',
+  'TiWatch','TiThermometer','TiWarning','TiInfo','TiUser','TiGroup','TiHome','TiBookmark','TiBriefcase',
+  'TiCalendar','TiCalculator','TiBell','TiGift','TiTag','TiTags','TiTicket','TiPen','TiPencil','TiBrush',
+  'TiFeather','TiLeaf','TiCoffee','TiBeer','TiWine','TiFilm','TiImage','TiHeart','TiStar','TiStarburst',
+  'TiInfinity','TiPlane','TiTree','TiTrash','TiSupport','TiZoom'
+];
+
+const EMOJIS = [
+  '📌','📂','📁','🌐','💡','⭐','✨','💫','🔥','🚀','🔗','💻','💾','💿','📖','📰',
+  '📆','📈','📎','🔍','🔎','🛠️','🪟','🔒','🔴','🟠','🟡','🟢','🔵','🟣','⚫','⚪',
+  '💖','🩷','🧡','💛','💚','💙','🩵','💜','🖤','🤍','😄','😂','🫠','😇','🥰','💀',
+  '👻','😺','💬','💭','💤','🫶','💅','💪','🧠','🫆','🪶','🌸','☕','🍵','🍾','🍷',
+  '🍺','🥂','🌍','🏠','🏢','🏥','🏦','🏭','⛺','⌛','🕓','🌡','🚂','🚄','🚕','🚦',
+  '🛫','⛅','🎉','🎲','🔔','🎵','🎥','🎬','📷','❓'
+];
+
+const DEFAULTS = { font: '', lineThickness: 600, letterSpacing: 0, color: '#f8f8f8' };
+
+const state = {
+  iconType: 'typicon',
+  iconValue: 'TiPin',
+  isLocalMode: false,
+  iconOnlyMode: false,
+  noIconsMode: false,
+  isEditing: false,
+  ...DEFAULTS
+};
+
+const colorState = { h: 0, s: 0, b: 0.97 };
+
+const $ = id => document.getElementById(id);
+const el = {
+  titleLabel: $('titleLabel'),
+  titleInput: $('titleInput'),
+  iconOnlyToggle: $('iconOnlyToggle'),
+  noIconsToggle: $('noIconsToggle'),
+  advancedFields: $('advancedFields'),
+  fontField: $('fontField'),
+  fontInput: $('fontInput'),
+  thicknessField: $('thicknessField'),
+  thicknessBtn: $('thicknessBtn'),
+  thicknessLabel: $('thicknessLabel'),
+  spacingField: $('spacingField'),
+  spacingBtn: $('spacingBtn'),
+  spacingLabel: $('spacingLabel'),
+  colorField: $('colorField'),
+  colorBtn: $('colorBtn'),
+  colorPreview: $('colorPreview'),
+  colorLabel: $('colorLabel'),
+  tooltipInput: $('tooltipInput'),
+  iconPickerField: $('iconPickerField'),
+  iconBtn: $('iconBtn'),
+  iconPreview: $('iconPreview'),
+  iconLabel: $('iconLabel'),
+  urlLabel: $('urlLabel'),
+  urlInput: $('urlInput'),
+  createBtn: $('createBtn'),
+  previewCard: $('previewCard'),
+  preview: $('preview'),
+  editBtn: $('editBtn'),
+  downloadBtn: $('downloadBtn'),
+  livePreview: $('livePreview'),
+  infoCard: $('infoCard'),
+  iconModal: $('iconModal'),
+  iconGrid: $('iconGrid'),
+  customIcon: $('customIcon'),
+  emojiGrid: $('emojiGrid'),
+  alertModal: $('alertModal'),
+  alertMessage: $('alertMessage'),
+  alertBtn: $('alertBtn'),
+  dropdownModal: $('dropdownModal'),
+  dropdownTitle: $('dropdownTitle'),
+  dropdownMenu: $('dropdownMenu'),
+  colorModal: $('colorModal'),
+  colorArea: $('colorArea'),
+  colorCursor: $('colorCursor'),
+  hueSlider: $('hueSlider'),
+  hueHandle: $('hueHandle'),
+  hexInput: $('hexInput'),
+  colorResetBtn: $('colorResetBtn'),
+  previewArea: document.querySelector('.preview-area')
+};
+
+const clamp = (v, min, max) => Math.max(min, Math.min(v, max));
+const sanitize = t => t.replace(/["'\\]/g, '');
+const toKebab = n => n.replace(/^Ti/, '').toLowerCase();
+const slugify = s => s.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+const debounce = (fn, delay) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+};
+
+const sanitizeUrl = url => {
+  let clean = url.replace(/[\x00-\x1F\x7F\s]/g, '');
+  if (!clean.match(/^(\w+):\/\//)) clean = `https://${clean}`;
+  return clean.match(/^(\w+):\/\/.+/) ? clean.replace(/ /g, '%20') : null;
+};
+
+const sanitizePath = path => {
+  const clean = path.trim().replace(/\\/g, '/').replace(/\/+/g, '/');
+  return /^[A-Za-z]:/.test(clean) ? clean : null;
+};
+
+const hexToHsb = hex => {
+  const r = parseInt(hex.slice(1, 3), 16) / 255;
+  const g = parseInt(hex.slice(3, 5), 16) / 255;
+  const b = parseInt(hex.slice(5, 7), 16) / 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b), delta = max - min;
+  let h = 0;
+  if (delta) {
+    if (max === r) h = ((g - b) / delta + (g < b ? 6 : 0)) / 6;
+    else if (max === g) h = ((b - r) / delta + 2) / 6;
+    else h = ((r - g) / delta + 4) / 6;
+  }
+  return { h, s: max ? delta / max : 0, b: max };
+};
+
+const hsbToHex = (h, s, b) => {
+  const i = ~~(h * 6), f = h * 6 - i;
+  const p = b * (1 - s), q = b * (1 - f * s), t = b * (1 - (1 - f) * s);
+  const rgb = [[b, t, p], [q, b, p], [p, b, t], [p, q, b], [t, p, b], [b, p, q]][i % 6];
+  return '#' + rgb.map(v => (~~(v * 255)).toString(16).padStart(2, '0')).join('');
+};
+
+const openModal = m => m.classList.add('show');
+const closeModal = m => m.classList.remove('show');
+const showAlert = msg => {
+  el.alertMessage.textContent = msg;
+  openModal(el.alertModal);
+};
+
+const getIconData = () => {
+  const { iconType, iconValue } = state;
+  const iconName = toKebab(iconValue);
+  
+  if (iconType === 'typicon') {
+    return {
+      preview: `<i class="typcn typcn-${iconName} icon-display"></i>`,
+      label: iconValue,
+      showPreview: true,
+      liveIcon: `<i class="typcn typcn-${iconName} icon icon-display"></i>`,
+      templateCode: `Icon({ name: '${iconValue}' })`,
+      metaIcon: iconValue
+    };
+  }
+  
+  if (iconType === 'emoji') {
+    return {
+      preview: iconValue,
+      label: 'Emoji',
+      showPreview: true,
+      liveIcon: `<span class="icon icon-display">${iconValue}</span>`,
+      templateCode: `'${iconValue}'`,
+      metaIcon: 'TiPin'
+    };
+  }
+  
+  return {
+    preview: '',
+    label: `${iconValue}<br><small>~ Preview not available. But as long as the name is correct, it will work.</small>`,
+    showPreview: false,
+    liveIcon: null,
+    templateCode: `Icon({ name: '${iconValue}' })`,
+    metaIcon: iconValue
+  };
+};
+
+const updateUI = () => {
+  const iconData = getIconData();
+  
+  el.iconPreview.className = iconData.showPreview ? 'icon-preview' : 'icon-preview hidden';
+  el.iconPreview.innerHTML = iconData.preview;
+  el.iconLabel.innerHTML = iconData.label;
+  
+  if (!iconData.showPreview) {
+    el.previewArea.classList.add('hidden');
+    return;
+  }
+  
+  el.previewArea.classList.remove('hidden');
+  const title = el.titleInput.value.trim() || 'My Shortcut';
+  const titleSpan = `<span class="text" style="font-family:${state.font || 'inherit'};font-weight:${state.lineThickness};letter-spacing:${state.letterSpacing}px;color:${state.color}">${title}</span>`;
+  
+  if (state.noIconsMode) el.livePreview.innerHTML = titleSpan;
+  else if (state.iconOnlyMode) el.livePreview.innerHTML = iconData.liveIcon;
+  else el.livePreview.innerHTML = iconData.liveIcon + titleSpan;
+};
+
+const updateColor = hex => {
+  state.color = hex;
+  el.colorLabel.textContent = hex;
+  el.colorPreview.style.background = hex;
+  el.hexInput.value = hex;
+  updateUI();
+};
+
+const updateColorPicker = () => {
+  const { h, s, b } = colorState;
+  el.colorArea.style.background = hsbToHex(h, 1, 1);
+  el.colorCursor.style.left = s * 240 + 'px';
+  el.colorCursor.style.top = (1 - b) * 180 + 'px';
+  el.hueHandle.style.left = h * 240 + 'px';
+};
+
+const toggleAdvancedFields = () => {
+  const hasTitle = el.titleInput.value.trim();
+  const shouldShowTextStyling = hasTitle && !state.iconOnlyMode;
+  
+  el.advancedFields.classList.toggle('hidden', !hasTitle);
+  el.iconPickerField.classList.toggle('hidden', state.noIconsMode);
+  
+  [el.fontField, el.thicknessField, el.spacingField, el.colorField].forEach(f => 
+    f.classList.toggle('hidden', !shouldShowTextStyling)
+  );
+};
+
+const resetAdvancedFields = () => {
+  Object.assign(state, DEFAULTS);
+  el.fontInput.value = '';
+  el.thicknessLabel.textContent = DEFAULTS.lineThickness;
+  el.spacingLabel.textContent = DEFAULTS.letterSpacing;
+  el.colorLabel.textContent = DEFAULTS.color;
+  el.colorPreview.style.background = DEFAULTS.color;
+};
+
+const showDropdown = (title, values, labels, callback) => {
+  el.dropdownTitle.textContent = title;
+  el.dropdownMenu.innerHTML = values.map((v, i) => 
+    `<div class="dropdown-item" data-value="${v}">${labels[i]}</div>`
+  ).join('');
+  openModal(el.dropdownModal);
+  
+  el.dropdownMenu.onclick = e => {
+    const item = e.target.closest('.dropdown-item');
+    if (item) {
+      callback(item.dataset.value);
+      closeModal(el.dropdownModal);
+    }
+  };
+};
+
+const setupDrag = (element, handler) => {
+  element.addEventListener('mousedown', e => {
+    handler(e);
+    const onMove = me => handler(me);
+    const onUp = () => {
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
+    };
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+  });
+};
+
+setupDrag(el.colorArea, e => {
+  const rect = el.colorArea.getBoundingClientRect();
+  colorState.s = clamp(e.clientX - rect.left, 0, 240) / 240;
+  colorState.b = 1 - clamp(e.clientY - rect.top, 0, 180) / 180;
+  updateColor(hsbToHex(colorState.h, colorState.s, colorState.b));
+  updateColorPicker();
+});
+
+setupDrag(el.hueSlider, e => {
+  const rect = el.hueSlider.getBoundingClientRect();
+  colorState.h = clamp(e.clientX - rect.left, 0, 240) / 240;
+  updateColor(hsbToHex(colorState.h, colorState.s, colorState.b));
+  updateColorPicker();
+});
+
+const createPlugin = () => {
+  const title = el.titleInput.value.trim();
+  const url = el.urlInput.value.trim();
+  
+  if (!title || !url) {
+    showAlert('Missing fields');
+    return;
+  }
+  
+  const pluginId = slugify(title);
+  if (pluginId.length < 3) {
+    showAlert('Title must be at least 3 valid characters long');
+    return;
+  }
+  
+  let path;
+  if (state.isLocalMode) {
+    const cleanPath = sanitizePath(url);
+    if (!cleanPath) {
+      showAlert('Invalid path format. Path must start with a drive letter (e.g., C:/, D:/)');
+      return;
+    }
+    path = `file:///${cleanPath}`;
+  } else {
+    path = sanitizeUrl(url);
+    if (!path) {
+      showAlert('Invalid URL format. Please enter a valid web address.');
+      return;
+    }
+  }
+  
+  const iconData = getIconData();
+  const safeTitle = sanitize(title);
+  
+  let template;
+  if (state.noIconsMode) template = `return ['${safeTitle}'];`;
+  else if (state.iconOnlyMode) template = `return [${iconData.templateCode}];`;
+  else template = `return [${iconData.templateCode}, ' ', '${safeTitle}'];`;
+  
+  const styleLines = [
+    state.font && `    fontFamily: "${sanitize(state.font)}"`,
+    state.lineThickness !== DEFAULTS.lineThickness && `    fontWeight: ${state.lineThickness}`,
+    state.letterSpacing !== DEFAULTS.letterSpacing && `    letterSpacing: ${state.letterSpacing}`,
+    state.color !== DEFAULTS.color && `    color: "${state.color}"`
+  ].filter(Boolean);
+  
+  const styleSection = styleLines.length ? `  style:\n    flexShrink: 0\n${styleLines.join('\n')}` : `  style:\n    flexShrink: 0`;
+  const tooltip = el.tooltipInput.value.trim();
+  const tooltipSection = tooltip ? `  tooltip: |-\n    return ['${sanitize(tooltip)}'];\n` : '';
+  
+  el.preview.textContent = `id: '@shortcut/${pluginId}'
+metadata:
+  displayName: "${safeTitle}"
+icon: '${iconData.metaIcon}'
+target: '@seelen/fancy-toolbar'
+plugin:
+  type: text
+  template: |-
+    ${template}
+${tooltipSection}  onClickV2: |-
+    open('${path}');
+${styleSection}`;
+  
+  el.previewCard.classList.remove('hidden');
+  el.infoCard.classList.remove('hidden');
+  el.downloadBtn.dataset.filename = `${pluginId}.yaml`;
+  el.editBtn.textContent = 'Edit Code';
+  el.editBtn.classList.remove('hidden');
+  state.isEditing = false;
+  el.createBtn.classList.add('btn-anim');
+  setTimeout(() => el.createBtn.classList.remove('btn-anim'), 300);
+};
+
+const toggleEdit = () => {
+  if (!state.isEditing) {
+    const content = el.preview.textContent;
+    el.preview.innerHTML = `<textarea>${content}</textarea>`;
+    const textarea = el.preview.querySelector('textarea');
+    
+    const autoResize = () => {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    };
+    
+    autoResize();
+    textarea.addEventListener('input', autoResize);
+    
+    el.editBtn.textContent = 'Save Changes';
+    state.isEditing = true;
+  } else {
+    const textarea = el.preview.querySelector('textarea');
+    el.preview.textContent = textarea.value;
+    el.editBtn.textContent = 'Edit Code';
+    state.isEditing = false;
+  }
+};
+
+document.querySelectorAll('.modal').forEach(m => {
+  m.addEventListener('click', e => {
+    if (e.target === m) closeModal(m);
+  });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal.show').forEach(closeModal);
+  } else if (e.key === 'Enter' && e.target === el.customIcon) {
+    e.preventDefault();
+    const value = e.target.value.trim();
+    if (value) {
+      state.iconType = 'custom';
+      state.iconValue = value;
+      updateUI();
+      closeModal(el.iconModal);
+    }
+  }
+});
+
+el.titleInput.addEventListener('input', debounce(() => {
+  toggleAdvancedFields();
+  updateUI();
+}, 300));
+
+el.fontInput.addEventListener('input', debounce(() => {
+  state.font = el.fontInput.value.trim();
+  updateUI();
+}, 300));
+
+el.thicknessBtn.addEventListener('click', () => {
+  const values = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+  const labels = values.map(v => v === DEFAULTS.lineThickness ? `${v} (default)` : v.toString());
+  showDropdown('Line Thickness', values, labels, v => {
+    state.lineThickness = parseInt(v);
+    el.thicknessLabel.textContent = v;
+    updateUI();
+  });
+});
+
+el.spacingBtn.addEventListener('click', () => {
+  const values = Array.from({ length: 31 }, (_, i) => (i / 10).toFixed(1));
+  const defaultStr = DEFAULTS.letterSpacing.toFixed(1);
+  const labels = values.map(v => v === defaultStr ? `${v} (default)` : v);
+  showDropdown('Letter Spacing', values, labels, v => {
+    state.letterSpacing = parseFloat(v);
+    el.spacingLabel.textContent = v;
+    updateUI();
+  });
+});
+
+el.colorBtn.addEventListener('click', () => {
+  Object.assign(colorState, hexToHsb(state.color));
+  updateColorPicker();
+  openModal(el.colorModal);
+});
+
+el.hexInput.addEventListener('input', debounce(e => {
+  let value = e.target.value.trim();
+  if (!value.startsWith('#')) value = '#' + value;
+  if (/^#[0-9A-Fa-f]{6}$/.test(value)) {
+    Object.assign(colorState, hexToHsb(value));
+    updateColor(value);
+    updateColorPicker();
+  }
+}, 300));
+
+el.colorResetBtn.addEventListener('click', () => {
+  Object.assign(colorState, hexToHsb(DEFAULTS.color));
+  updateColor(DEFAULTS.color);
+  updateColorPicker();
+});
+
+el.iconBtn.addEventListener('click', () => openModal(el.iconModal));
+
+el.iconModal.addEventListener('click', e => {
+  const tile = e.target.closest('#iconGrid .icon-tile') || e.target.closest('#emojiGrid .icon-tile');
+  if (tile) {
+    if (tile.dataset.icon) {
+      state.iconType = 'typicon';
+      state.iconValue = tile.dataset.icon;
+    } else {
+      state.iconType = 'emoji';
+      state.iconValue = tile.textContent;
+    }
+    updateUI();
+    closeModal(el.iconModal);
+  }
+});
+
+document.querySelector('.toggle-container').addEventListener('click', e => {
+  if (!e.target.classList.contains('btn-toggle')) return;
+  
+  state.isLocalMode = e.target.dataset.mode === 'local';
+  document.querySelectorAll('.btn-toggle').forEach(btn => 
+    btn.classList.toggle('active', btn.dataset.mode === e.target.dataset.mode)
+  );
+  
+  el.urlLabel.textContent = state.isLocalMode ? 'Path' : 'Url';
+  el.urlInput.placeholder = state.isLocalMode 
+    ? 'e.g., C:\\Program Files\\App\\program.exe' 
+    : 'e.g., https://google.com';
+});
+
+el.iconOnlyToggle.addEventListener('click', () => {
+  state.iconOnlyMode = !state.iconOnlyMode;
+  el.iconOnlyToggle.classList.toggle('active');
+  
+  if (state.iconOnlyMode && state.noIconsMode) {
+    state.noIconsMode = false;
+    el.noIconsToggle.classList.remove('active');
+  }
+  
+  el.titleLabel.textContent = state.iconOnlyMode ? 'Menu Displayname' : 'Title';
+  el.titleInput.placeholder = state.iconOnlyMode 
+    ? '~ Used for id and list name' 
+    : '~ Used for id, list name, and module text';
+  
+  if (state.iconOnlyMode) resetAdvancedFields();
+  toggleAdvancedFields();
+  updateUI();
+});
+
+el.noIconsToggle.addEventListener('click', () => {
+  state.noIconsMode = !state.noIconsMode;
+  el.noIconsToggle.classList.toggle('active');
+  
+  if (state.noIconsMode && state.iconOnlyMode) {
+    state.iconOnlyMode = false;
+    el.iconOnlyToggle.classList.remove('active');
+  }
+  
+  el.titleLabel.textContent = 'Title';
+  el.titleInput.placeholder = '~ Used for id, list name, and module text';
+  toggleAdvancedFields();
+  updateUI();
+});
+
+el.createBtn.addEventListener('click', createPlugin);
+
+el.editBtn.addEventListener('click', toggleEdit);
+
+el.downloadBtn.addEventListener('click', () => {
+  const content = state.isEditing 
+    ? el.preview.querySelector('textarea').value 
+    : el.preview.textContent;
+  const blob = new Blob([content], { type: 'text/yaml' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = el.downloadBtn.dataset.filename || 'shortcut.yaml';
+  link.click();
+  URL.revokeObjectURL(link.href);
+  el.downloadBtn.classList.add('btn-anim');
+  setTimeout(() => el.downloadBtn.classList.remove('btn-anim'), 300);
+});
+
+el.alertBtn.addEventListener('click', () => closeModal(el.alertModal));
+
+el.iconGrid.innerHTML = TYPICONS.map(name => 
+  `<div class="icon-tile" data-icon="${name}"><i class="typcn typcn-${toKebab(name)} icon-display"></i></div>`
+).join('');
+
+el.emojiGrid.innerHTML = EMOJIS.map(emoji => 
+  `<div class="icon-tile icon-display">${emoji}</div>`
+).join('');
+
+el.colorPreview.style.background = DEFAULTS.color;
+updateUI();
+
+document.querySelector('h1').addEventListener('click', () => {
+  window.location.href = '../index.html';
+});
+</script>
+</body>
+</html>

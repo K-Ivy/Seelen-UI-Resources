@@ -1,5 +1,3 @@
-English | [Other](./README.*.md)
-
 <div align="left">
 	<h1> ≽ Info ≼</h1> 
 </div>
@@ -17,13 +15,13 @@ English | [Other](./README.*.md)
 </table>
 <div align="left">
 	<p>
-	This Repo contains the base files and resources for anything I make for Seelen UI for public use.
+	This Repo contains the base files for resources I make for Seelen UI.
 	</p>
 	<p>
-    ● You are welcome to suggest resources to be made.
+    - You are welcome to suggest resources to be made.
 	</p>
 	<p>
-    ● You may also contribute resources of your own or improve/update mine if required or if beneficial.
+    - You may also contribute resources of your own or help with mine.
 	</p>
 
 - If you would like to aid in language translations, go to the [translations folder](./Translations/README.EN.md) for instructions.

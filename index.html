@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seelen UI Resources</title>
+  <style>
+    :root {
+      --bg-main: #272e33;
+      --bg-surface: #2d353b;
+      --bg-dark: #242b2f;
+      --border-color: #3d484d;
+      --text-primary: #d3c6aa;
+      --text-secondary: #9da9a0;
+      --accent-color: #a7c080;
+      --accent-text: #1e2a23;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 260px;
+      padding: 20px;
+      background: var(--bg-dark);
+      border-right: 1px solid var(--border-color);
+    }
+
+    .sidebar-header {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .nav-button {
+      display: block;
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      background: var(--accent-color);
+      color: var(--accent-text);
+      border: 2px solid var(--accent-color);
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      transition: filter 0.2s ease;
+    }
+
+    .nav-button:hover {
+      filter: brightness(1.05);
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 170px);
+      gap: 14px;
+    }
+
+    .resource-card {
+      padding: 10px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    .card-image-wrapper {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      margin-bottom: 8px;
+      background: var(--bg-dark);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .card-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .card-description {
+      font-size: 11px;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">Seelen UI Resources</div>
+    <nav id="navigation"></nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="resource-grid" id="resourceGrid"></div>
+  </main>
+
+  <script>
+    const navigationItems = [
+      { label: 'Shortcut Module Creator', url: './Web/shortcut-mod-creator.html' },
+      { label: 'Icon Pack Creator', url: null }
+    ];
+
+    const resources = [
+      {
+        title: 'Fully Customizable Toolbar',
+        description: 'Extensive Toolbar Themer',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/full-custom-toolbar-logo.png',
+        url: 'https://seelen.io/resources/k-ivy/kivy-custom-ftbr'
+      },
+      {
+        title: 'Fully Customizable Toolbar Menus',
+        description: 'Extensive Themer for the Toolbar Menus (WIP)',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/web-wip.png',
+        url: null
+      },
+      {
+        title: 'Fully Customizable Dock',
+        description: 'Extensive Dock Themer (WIP)',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/web-wip.png',
+        url: 'https://seelen.io/resources/review/k-ivy/usr-custom-dock'
+      },
+      {
+        title: 'Grid Style Tray (Hover for Label)',
+        description: 'Windows-like Tray',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/tray-hl-showcase-logo.png',
+        url: 'https://seelen.io/resources/k-ivy/win-grid-tray-hl'
+      },
+      {
+        title: 'Grid Style Tray (Always Show Label)',
+        description: 'Windows-like Tray',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/tray-la-showcase-logo.png',
+        url: 'https://seelen.io/resources/k-ivy/win-grid-tray-la'
+      },
+      {
+        title: 'Indiviual Coloring of Toolbar Modules',
+        description: 'Customizable Colorful Modules',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/toolvolr-logo.png',
+        url: 'https://seelen.io/resources/k-ivy/ftbr-mod-color'
+      },
+      {
+        title: 'Dock Player Customizer',
+        description: '~ Various Player Tweaks',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/LOGO.png',
+        url: 'https://seelen.io/resources/k-ivy/dock-comp-media'
+      },
+      {
+        title: 'Media Module Player Customizer',
+        description: '~ Various Menu Player Tweaks',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/LOGOtbr.png',
+        url: 'https://seelen.io/resources/k-ivy/tbr-media-custom'
+      },
+      {
+        title: 'Custom Username',
+        description: 'Overrides Windows Username',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/customusrlogo.png',
+        url: 'https://seelen.io/resources/k-ivy/custom-pref-user'
+      },
+      {
+        title: 'Filled Window Previews',
+        description: 'Makes Thumbnails Fully Fit',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/previre-ff.png',
+        url: 'https://seelen.io/resources/k-ivy/window-prev-ff'
+      },
+      {
+        title: 'Filled Media Thumbnails',
+        description: 'Makes Player Thumbnails Fully Fit',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/media-thumb-fill.png',
+        url: 'https://seelen.io/resources/k-ivy/media-thumb-fill'
+      },
+      {
+        title: 'Hide Media Source Icons',
+        description: 'Remove Player Source',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/LOGO-v2.png',
+        url: 'https://seelen.io/resources/k-ivy/hide-media-app-icon'
+      },
+      {
+        title: 'Slide - Wallpaper Switch Animation',
+        description: 'WP Anim',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/slidelogo.png',
+        url: 'https://seelen.io/resources/k-ivy/wp-anim-slide'
+      },
+      {
+        title: 'Zoom - Wallpaper Switch Animation',
+        description: 'WP Anim',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/zoomlogo.png',
+        url: 'https://seelen.io/resources/k-ivy/wp-anim-zm-fade'
+      },
+      {
+        title: 'Blur - Wallpaper Switch Animation',
+        description: 'WP Anim',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/blurlogo.png',
+        url: 'https://seelen.io/resources/k-ivy/wp-anim-blur'
+      },
+      {
+        title: 'Fade - Wallpaper Switch Animation',
+        description: 'WP Anim',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/fadelogo.png',
+        url: 'https://seelen.io/resources/k-ivy/wp-anim-fade'
+      },
+      {
+        title: 'Win 10 - Animated Start Icon',
+        description: '~ Win Key',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/win10anim.png',
+        url: 'https://seelen.io/resources/k-ivy/anim-win-ten-syn'
+      },
+      {
+        title: 'Win 7 Whiteout - Animated Start Icon',
+        description: '~ Win Key',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/win7whiteout.png',
+        url: 'https://seelen.io/resources/k-ivy/anim-whiteout-syn'
+      },
+      {
+        title: 'XP - Animated Start Icon',
+        description: '~ Win Key',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/xpanim.png',
+        url: 'https://seelen.io/resources/k-ivy/anim-winxp-syn'
+      },
+      {
+        title: 'Vista - Animated Start Icon',
+        description: '~ Win Key',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/vistaanim.png',
+        url: 'https://seelen.io/resources/k-ivy/anim-vista-syn'
+      },
+      {
+        title: 'Win 11 - Start Icon',
+        description: '~ Win Key',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/win11.png',
+        url: 'https://seelen.io/resources/k-ivy/start-icon-faq'
+      },
+      {
+        title: 'Win 12 Concept - Start Icon',
+        description: '~ Win Key',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/win12concept.png',
+        url: 'https://seelen.io/resources/k-ivy/win-start-alt'
+      },
+      {
+        title: 'Dots - Start Icon',
+        description: '~ Win Key',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/dots.png',
+        url: 'https://seelen.io/resources/k-ivy/dots-start'
+      },
+      {
+        title: 'NixOS - Start Icon',
+        description: '~ Win Key',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/nix.png',
+        url: 'https://seelen.io/resources/k-ivy/nixos-start'
+      },
+      {
+        title: 'Apple - Start Icon',
+        description: '~ Win Key',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/apple.png',
+        url: 'https://seelen.io/resources/k-ivy/apple-start'
+      },
+      {
+        title: 'Warp - Start Icon',
+        description: '~ Win Key',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/warp.png',
+        url: 'https://seelen.io/resources/k-ivy/warp-start'
+      }
+    ];
+
+    function buildNavigation() {
+      const nav = document.getElementById('navigation');
+      nav.innerHTML = navigationItems.map(item => 
+        `<button class="nav-button" data-url="${item.url || ''}">${item.label}</button>`
+      ).join('');
+
+      nav.addEventListener('click', (e) => {
+        if (e.target.classList.contains('nav-button')) {
+          const url = e.target.dataset.url;
+          if (url) window.location.href = url;
+        }
+      });
+    }
+
+    function buildResourceCards() {
+      const grid = document.getElementById('resourceGrid');
+      grid.innerHTML = resources.map(r => `
+        <div class="resource-card" data-url="${r.url || ''}">
+          <div class="card-image-wrapper">
+            <img src="${r.image}" alt="${r.title}" loading="lazy">
+          </div>
+          <div class="card-title">${r.title}</div>
+          <div class="card-description">${r.description}</div>
+        </div>
+      `).join('');
+
+      grid.addEventListener('click', (e) => {
+        const card = e.target.closest('.resource-card');
+        if (card) {
+          const url = card.dataset.url;
+          if (url) window.location.href = url;
+        }
+      });
+    }
+
+    buildNavigation();
+    buildResourceCards();
+  </script>
+</body>
+</html>
+
+
+
