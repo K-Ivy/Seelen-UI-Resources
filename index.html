@@ -14,6 +14,7 @@
       --text-secondary: #9da9a0;
       --accent-color: #a7c080;
       --accent-text: #1e2a23;
+      --warning-color: #e67e80;
     }
 
     * {
@@ -26,9 +27,8 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: var(--bg-main);
       color: var(--text-primary);
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
-      overflow: hidden;
     }
 
     .sidebar {
@@ -36,6 +36,13 @@
       padding: 20px;
       background: var(--bg-dark);
       border-right: 1px solid var(--border-color);
+      transition: width 0.3s ease, padding 0.3s ease;
+      overflow: hidden;
+    }
+
+    .sidebar.collapsed {
+      width: 60px;
+      padding: 20px 10px;
     }
 
     .sidebar-header {
@@ -44,10 +51,19 @@
       color: var(--accent-color);
       margin-bottom: 8px;
       text-align: center;
+      white-space: nowrap;
+      transition: opacity 0.2s ease;
+    }
+
+    .sidebar.collapsed .sidebar-header {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .nav-button {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       padding: 10px 12px;
       margin-bottom: 8px;
@@ -57,12 +73,67 @@
       border-radius: 10px;
       font-size: 14px;
       font-weight: 600;
-      text-align: center;
-      transition: filter 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: filter 0.2s ease, width 0.3s ease, height 0.3s ease, padding 0.3s ease;
     }
 
     .nav-button:hover {
       filter: brightness(1.05);
+    }
+
+    .sidebar.collapsed .nav-button {
+      padding: 10px;
+      width: 40px;
+      min-width: 40px;
+      height: 40px;
+    }
+
+    .nav-button .nav-text {
+      transition: opacity 0.2s ease;
+    }
+
+    .sidebar.collapsed .nav-button .nav-text {
+      opacity: 0;
+      position: absolute;
+    }
+
+    .nav-button .nav-number {
+      opacity: 0;
+      position: absolute;
+      transition: opacity 0.2s ease;
+    }
+
+    .sidebar.collapsed .nav-button .nav-number {
+      opacity: 1;
+      position: static;
+    }
+
+    .sidebar-toggle {
+      display: block;
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 8px;
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .sidebar-toggle:hover {
+      background: var(--accent-color);
+      color: var(--accent-text);
+      border-color: var(--accent-color);
+    }
+
+    .sidebar.collapsed .sidebar-toggle {
+      padding: 10px;
     }
 
     .main-content {
@@ -73,7 +144,7 @@
 
     .resource-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, 170px);
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
       gap: 14px;
     }
 
@@ -82,10 +153,17 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
       border-radius: 12px;
+      cursor: pointer;
       transition: all 0.2s ease;
     }
 
-    .resource-card:hover {
+    .resource-card.unavailable {
+      border: 2px solid var(--warning-color);
+      opacity: 0.85;
+      cursor: not-allowed;
+    }
+
+    .resource-card:hover:not(.unavailable) {
       transform: translateY(-4px);
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
     }
@@ -97,6 +175,11 @@
       background: var(--bg-dark);
       border-radius: 8px;
       overflow: hidden;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .resource-card:hover:not(.unavailable) .card-image-wrapper {
+      box-shadow: 0 0 15px rgba(167, 192, 128, 0.15);
     }
 
     .card-image-wrapper img {
@@ -117,18 +200,70 @@
       color: var(--text-secondary);
       text-align: center;
     }
+
+    .context-menu {
+      position: fixed;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 4px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      min-width: 180px;
+      display: none;
+    }
+
+    .context-menu.show {
+      display: block;
+    }
+
+    .context-menu-item {
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--text-primary);
+      transition: background 0.15s ease;
+    }
+
+    .context-menu-item:hover {
+      background: var(--bg-dark);
+    }
+
+    .context-menu-item.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .context-menu-item.disabled:hover {
+      background: transparent;
+    }
+
+    .context-menu-divider {
+      height: 1px;
+      background: var(--border-color);
+      margin: 4px 0;
+    }
   </style>
 </head>
 
 <body>
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">Seelen UI Resources</div>
     <nav id="navigation"></nav>
+    <button class="sidebar-toggle" id="sidebarToggle">‹</button>
   </aside>
 
   <main class="main-content">
     <div class="resource-grid" id="resourceGrid"></div>
   </main>
+
+  <div class="context-menu" id="contextMenu">
+    <div class="context-menu-item" id="contextOpen">Open</div>
+    <div class="context-menu-item" id="contextNewTab">Open in New Tab</div>
+    <div class="context-menu-divider"></div>
+    <div class="context-menu-item" id="contextCopyLink">Copy Link</div>
+    <div class="context-menu-item" id="contextCopyTitle">Copy Title</div>
+  </div>
 
   <script>
     const navigationItems = [
@@ -153,7 +288,7 @@
         title: 'Fully Customizable Dock',
         description: 'Extensive Dock Themer (WIP)',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/web-wip.png',
-        url: 'https://seelen.io/resources/review/k-ivy/usr-custom-dock'
+        url: null
       },
       {
         title: 'Grid Style Tray (Hover for Label)',
@@ -297,13 +432,17 @@
 
     function buildNavigation() {
       const nav = document.getElementById('navigation');
-      nav.innerHTML = navigationItems.map(item => 
-        `<button class="nav-button" data-url="${item.url || ''}">${item.label}</button>`
+      nav.innerHTML = navigationItems.map((item, index) => 
+        `<button class="nav-button" data-url="${item.url || ''}">
+          <span class="nav-text">${item.label}</span>
+          <span class="nav-number">${index + 1}</span>
+        </button>`
       ).join('');
 
       nav.addEventListener('click', (e) => {
-        if (e.target.classList.contains('nav-button')) {
-          const url = e.target.dataset.url;
+        const button = e.target.closest('.nav-button');
+        if (button) {
+          const url = button.dataset.url;
           if (url) window.location.href = url;
         }
       });
@@ -312,7 +451,7 @@
     function buildResourceCards() {
       const grid = document.getElementById('resourceGrid');
       grid.innerHTML = resources.map(r => `
-        <div class="resource-card" data-url="${r.url || ''}">
+        <div class="resource-card ${!r.url ? 'unavailable' : ''}" data-url="${r.url || ''}" data-title="${r.title}">
           <div class="card-image-wrapper">
             <img src="${r.image}" alt="${r.title}" loading="lazy">
           </div>
@@ -323,18 +462,82 @@
 
       grid.addEventListener('click', (e) => {
         const card = e.target.closest('.resource-card');
-        if (card) {
+        if (card && !card.classList.contains('unavailable')) {
           const url = card.dataset.url;
           if (url) window.location.href = url;
         }
       });
     }
 
+    const contextMenu = document.getElementById('contextMenu');
+    let currentCard = null;
+
+    document.addEventListener('contextmenu', (e) => {
+      const card = e.target.closest('.resource-card');
+      if (card) {
+        e.preventDefault();
+        currentCard = card;
+        const isUnavailable = card.classList.contains('unavailable');
+        
+        contextMenu.style.left = `${e.pageX}px`;
+        contextMenu.style.top = `${e.pageY}px`;
+        contextMenu.classList.add('show');
+        
+        document.getElementById('contextOpen').classList.toggle('disabled', isUnavailable);
+        document.getElementById('contextNewTab').classList.toggle('disabled', isUnavailable);
+        document.getElementById('contextCopyLink').classList.toggle('disabled', isUnavailable);
+      }
+    });
+
+    document.addEventListener('click', () => {
+      contextMenu.classList.remove('show');
+    });
+
+    document.getElementById('contextOpen').addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (currentCard && !currentCard.classList.contains('unavailable')) {
+        const url = currentCard.dataset.url;
+        if (url) window.location.href = url;
+      }
+      contextMenu.classList.remove('show');
+    });
+
+    document.getElementById('contextNewTab').addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (currentCard && !currentCard.classList.contains('unavailable')) {
+        const url = currentCard.dataset.url;
+        if (url) window.open(url, '_blank');
+      }
+      contextMenu.classList.remove('show');
+    });
+
+    document.getElementById('contextCopyLink').addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (currentCard && !currentCard.classList.contains('unavailable')) {
+        const url = currentCard.dataset.url;
+        if (url) navigator.clipboard.writeText(url);
+      }
+      contextMenu.classList.remove('show');
+    });
+
+    document.getElementById('contextCopyTitle').addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (currentCard) {
+        const title = currentCard.dataset.title;
+        if (title) navigator.clipboard.writeText(title);
+      }
+      contextMenu.classList.remove('show');
+    });
+
+    const sidebar = document.getElementById('sidebar');
+
+    document.getElementById('sidebarToggle').addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      document.getElementById('sidebarToggle').textContent = sidebar.classList.contains('collapsed') ? '›' : '‹';
+    });
+
     buildNavigation();
     buildResourceCards();
   </script>
 </body>
 </html>
-
-
-
