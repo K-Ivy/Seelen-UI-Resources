@@ -1,0 +1,30 @@
+  - syntax: <color>
+    name: '--example-color-var'
+    label:
+      en: "Example Color"
+    initialValue: '#def8ffdc'
+
+  - syntax: <length>
+    name: '--example-length-var'
+    label:
+      en: "Example Length"
+    initialValue: 2
+    initialValueUnit: 'px'
+
+  - syntax: <number>
+    name: '--example-number-var'
+    label:
+      en: "Example Number"
+    initialValue: 600
+
+  - syntax: <string>
+    name: '--example-string-var'
+    label:
+      en: "Example String"
+    initialValue: 'grayscale(0%) opacity(1.0) saturate(1.0)'
+
+  - syntax: <url>
+    name: '--example-url'
+    label:
+      en: "Example Url"
+    initialValue: ''

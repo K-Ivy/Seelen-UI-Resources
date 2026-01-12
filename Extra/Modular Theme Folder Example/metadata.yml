@@ -1,0 +1,17 @@
+isReorderDisabled: false
+left:
+  - '@custom/to-desktop'
+  - '@custom/pref-usr-folder'
+  - '@custom/dash1'
+  - '@seelen/tb-power-menu'
+  - '@utils/power-switch'
+  - '@default/network'
+  - '@shorts/toolbar-network-gateway'
+center:
+  - '@custom/system-tray-dotted'
+  - '@default/date'
+  - '@default/media'
+right:
+  - '@custom/focused-app'
+  - '@default/notifications'
+  - '@default/workspaces-dotted'
