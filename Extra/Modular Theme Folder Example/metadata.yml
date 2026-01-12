@@ -1,17 +1,16 @@
-isReorderDisabled: false
-left:
-  - '@custom/to-desktop'
-  - '@custom/pref-usr-folder'
-  - '@custom/dash1'
-  - '@seelen/tb-power-menu'
-  - '@utils/power-switch'
-  - '@default/network'
-  - '@shorts/toolbar-network-gateway'
-center:
-  - '@custom/system-tray-dotted'
-  - '@default/date'
-  - '@default/media'
-right:
-  - '@custom/focused-app'
-  - '@default/notifications'
-  - '@default/workspaces-dotted'
+id: "@yourname/theme-id"
+metadata:
+  displayName: "Theme Name"
+  description: "Theme Description"
+settings: !extend meta-split/settings.yml
+styles:
+  "@seelen/fancy-toolbar": !include styles/fancy-toolbar.scss
+  "@seelen/launcher": !include styles/launcher.css
+  "@seelen/power-menu": !include styles/power-menu.scss
+  "@seelen/task-switcher": !include styles/task-switcher.scss
+  "@seelen/wallpaper-manager": !include styles/wallpaper-manager.css
+  "@seelen/weg": !include styles/weg.css
+  "@seelen/window-manager": !include styles/window-manager.css
+  "@seelen/system-tray": !include styles/tray-menu.scss
+  "@seelen/quick-settings": !include styles/quick-settings.scss
+  "@seelen/bluetooth-popup": !include styles/bluetooth-popup.scss
