@@ -1,0 +1,2485 @@
+id: "@k-ivy/wm-usr-customs"
+metadata:
+  displayName: "Fully Customizable Window Manager"
+  author: "K-Ivy"
+  description: "Extensively customize the Standard and Tabbed mode of the Window Manager."
+  appTargetVersion:
+    - 2
+    - 4
+    - 11
+settings:
+  - group:
+      header: "✦ Unfocused Window"
+      items:
+        - group:
+            header: " Border Color"
+            items:
+              - group:
+                  header: "❯ Top"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-top-border-color"
+                      label: "● Color"
+                      initialValue: "#0091F8"
+
+                    - syntax: <string>
+                      name: "--wm-c-top-border-style"
+                      label: "╰・Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Bottom"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-bottom-border-color"
+                      label: "● Color"
+                      initialValue: "#0091F8"
+
+                    - syntax: <string>
+                      name: "--wm-c-bottom-border-style"
+                      label: "╰・Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Right"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-right-border-color"
+                      label: "● Color"
+                      initialValue: "#0091F8"
+
+                    - syntax: <string>
+                      name: "--wm-c-right-border-style"
+                      label: "╰・Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Left"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-left-border-color"
+                      label: "● Color"
+                      initialValue: "#0091F8"
+
+                    - syntax: <string>
+                      name: "--wm-c-left-border-style"
+                      label: "╰・Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+        - group:
+            header: " Border Graphic"
+            items:
+              - syntax: <string>
+                name: "--wm-c-border-image"
+                label: "● Graphic"
+                tip: "● Image: url('https://example.png')   ● Gradients: Linear, Radial, Conic >    ❖ Quick Overview - Refer to CSS Doc: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ • linear-gradient(direction, color, color, ...)                             ❯ direction = 'to top', 'to right',       'to bottom', 'to left'              • radial-gradient(shape at pos, color, color, ...)                             ❯ shape: circle, ellipse               ❯ pos: 'center', 'top', 'bottom', 'left',     'right'                          • conic-gradient(from angle at pos, color)  ➔  angle: '0deg', '45deg', etc"
+                description: "Set a image or gradiant as the border. Make the above colors transparent for no overlap."
+                initialValue: "none"
+
+              - syntax: <length>
+                name: "--wm-c-border-image-dist-from-win"
+                label: "● Offset"
+                tip: "Negative = outward, Positive = inward"
+                initialValue: -3
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Image Focal Position"
+                  items:
+                    - syntax: <string>
+                      name: "--wm-c-border-image-pos-vert"
+                      label: "● Vertical Area of Focus"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--wm-c-border-image-pos-hori"
+                      label: "● Horizontal Area of Focus"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+              - group:
+                  header: "❯ Filters for the Graphic"
+                  items:
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-grayscale"
+                      label: "● Grayscale"
+                      tip: "0 = none, 1 = grayscale"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-brightness"
+                      label: "● Brightness"
+                      tip: "0 = dim, 2 = bright"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-contrast"
+                      label: "● Contrast"
+                      tip: "0 = none, 2 = high contrast"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <string>
+                      name: "--wm-c-border-image-filter-hue-rotate"
+                      label: "● Color Hue"
+                      tip: "Rotate from 0 to 360 degrees"
+                      initialValue: "0deg"
+
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-invert"
+                      label: "● Color Invert"
+                      tip: "0 = none, 1 = inverted"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-saturate"
+                      label: "● Saturation"
+                      tip: "0 = desaturated, 2 = saturated"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-sepia"
+                      label: "● Sepia"
+                      tip: "0 = none, 1 = full sepia"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-opacity"
+                      label: "● Opacity"
+                      tip: "0 = transparent, 1 = opaque"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+        - group:
+            header: " Corner Rounding"
+            items:
+              - syntax: <length>
+                name: "--wm-c-top-left-border-radius"
+                label: "● Top Left"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-top-right-border-radius"
+                label: "● Top Right"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-bottom-left-border-radius"
+                label: "● Bottom Left"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-bottom-right-border-radius"
+                label: "● Bottom Right"
+                initialValue: 10
+                initialValueUnit: "px"
+
+        - group:
+            header: " Drop Shadow"
+            items:
+              - syntax: <color>
+                name: "--wm-c-shadow-color"
+                label: "● Color"
+                initialValue: "#00000000"
+
+              - syntax: <length>
+                name: "--wm-c-shadow-blur"
+                label: "● Blur"
+                tip: "0 = sharp, higher = blurred"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-shadow-spread"
+                label: "● Radius"
+                tip: "Negative = smaller, Positive = bigger"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Position"
+                  items:
+                    - syntax: <length>
+                      name: "--wm-c-shadow-x"
+                      label: "● Horizontal Offset"
+                      tip: "Negative = left, Positive = right"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-shadow-y"
+                      label: "● Vertical Offset"
+                      tip: "Negative = up, Positive = down"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+  - group:
+      header: "✦ Focused Window"
+      items:
+        - group:
+            header: " Border Color"
+            items:
+              - group:
+                  header: "❯ Top"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-top-border-color-state"
+                      label: "● Color"
+                      initialValue: "#4CC2FF"
+
+                    - syntax: <string>
+                      name: "--wm-c-top-border-style-state"
+                      label: "╰・Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Bottom"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-bottom-border-color-state"
+                      label: "● Color"
+                      initialValue: "#4CC2FF"
+
+                    - syntax: <string>
+                      name: "--wm-c-bottom-border-style-state"
+                      label: "╰・Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Right"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-right-border-color-state"
+                      label: "● Color"
+                      initialValue: "#4CC2FF"
+
+                    - syntax: <string>
+                      name: "--wm-c-right-border-style-state"
+                      label: "╰・Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Left"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-left-border-color-state"
+                      label: "● Color"
+                      initialValue: "#4CC2FF"
+
+                    - syntax: <string>
+                      name: "--wm-c-left-border-style-state"
+                      label: "╰・Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+        - group:
+            header: " Border Graphic"
+            items:
+              - syntax: <string>
+                name: "--wm-c-border-image-state"
+                label: "● Graphic"
+                tip: "● Image: url('https://example.png')   ● Gradients: Linear, Radial, Conic >    ❖ Quick Overview - Refer to CSS Doc: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ • linear-gradient(direction, color, color, ...)                             ❯ direction = 'to top', 'to right',       'to bottom', 'to left'              • radial-gradient(shape at pos, color, color, ...)                             ❯ shape: circle, ellipse               ❯ pos: 'center', 'top', 'bottom', 'left',     'right'                          • conic-gradient(from angle at pos, color)  ➔  angle: '0deg', '45deg', etc"
+                description: "Set a image or gradiant as the border. Make the above colors transparent for no overlap."
+                initialValue: "none"
+
+              - syntax: <length>
+                name: "--wm-c-border-image-dist-from-win-state"
+                label: "● Offset"
+                tip: "Negative = outward, Positive = inward"
+                initialValue: -3
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Image Focal Position"
+                  items:
+                    - syntax: <string>
+                      name: "--wm-c-border-image-pos-vert-state"
+                      label: "● Vertical Area of Focus"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--wm-c-border-image-pos-hori-state"
+                      label: "● Horizontal Area of Focus"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+              - group:
+                  header: "❯ Filters for the Graphic"
+                  items:
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-grayscale-state"
+                      label: "● Grayscale"
+                      tip: "0 = none, 1 = grayscale"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-brightness-state"
+                      label: "● Brightness"
+                      tip: "0 = dim, 2 = bright"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-contrast-state"
+                      label: "● Contrast"
+                      tip: "0 = none, 2 = high contrast"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <string>
+                      name: "--wm-c-border-image-filter-hue-rotate-state"
+                      label: "● Color Hue"
+                      tip: "Rotate from 0 to 360 degrees"
+                      initialValue: "0deg"
+
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-invert-state"
+                      label: "● Color Invert"
+                      tip: "0 = none, 1 = inverted"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-saturate-state"
+                      label: "● Saturation"
+                      tip: "0 = desaturated, 2 = saturated"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-sepia-state"
+                      label: "● Sepia"
+                      tip: "0 = none, 1 = full sepia"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-border-image-filter-opacity-state"
+                      label: "● Opacity"
+                      tip: "0 = transparent, 1 = opaque"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+        - group:
+            header: " Corner Rounding"
+            items:
+              - syntax: <length>
+                name: "--wm-c-top-left-border-radius-state"
+                label: "● Top Left"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-top-right-border-radius-state"
+                label: "● Top Right"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-bottom-left-border-radius-state"
+                label: "● Bottom Left"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-bottom-right-border-radius-state"
+                label: "● Bottom Right"
+                initialValue: 10
+                initialValueUnit: "px"
+
+        - group:
+            header: " Drop Shadow"
+            items:
+              - syntax: <color>
+                name: "--wm-c-shadow-color-state"
+                label: "● Color"
+                initialValue: "#00000080"
+
+              - syntax: <length>
+                name: "--wm-c-shadow-blur-state"
+                label: "● Blur"
+                tip: "0 = sharp, higher = blurred"
+                initialValue: 3
+                initialValueUnit: "px"
+ 
+              - syntax: <length>
+                name: "--wm-c-shadow-spread-state"
+                label: "● Radius"
+                tip: "Negative = smaller, Positive = bigger"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - group:
+                  header: " ❯ Position"
+                  items:
+                    - syntax: <length>
+                      name: "--wm-c-shadow-x-state"
+                      label: "● Horizontal Offset"
+                      tip: "Negative = left, Positive = right"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-shadow-y-state"
+                      label: "● Vertical Offset"
+                      tip: "Negative = up, Positive = down"
+                      initialValue: 2
+                      initialValueUnit: "px"
+
+  - group:
+      header: "✦ Window Transitions"
+      items:
+        - syntax: <string>
+          name: "--wm-c-border-color-transition"
+          label: "● Border Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--wm-c-border-image-background-image-transition"
+          label: "● Border Graphic"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--wm-c-border-image-filter-transition"
+          label: "● Graphic Filters"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--wm-c-border-radius-transition"
+          label: "● Corner Rounding"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "1.0s ease"
+
+        - syntax: <string>
+          name: "--wm-c-shadow-transition"
+          label: "● Drop Shadow"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+  - group:
+      header: "✦ Base of the Tab Bar"
+      items:
+        - group:
+            header: "╰ Of the single window mode (Default Toggle: Win + M)"
+            items:
+              - group:
+                  header: " Base"
+                  items:
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-height"
+                      label: "● Height"
+                      initialValue: 40
+                      initialValueUnit: "px"
+
+              - group:
+                  header: " Padding"
+                  items:
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-padding-left"
+                      label: "● Padding Left"
+                      initialValue: 4
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-padding-right"
+                      label: "● Padding Right"
+                      initialValue: 4
+                      initialValueUnit: "px"
+
+              - group:
+                  header: " Background"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-tab-bar-background-color"
+                      label: "● Color"
+                      initialValue: "#222222CC"
+
+                    - syntax: <color>
+                      name: "--wm-c-tab-bar-background-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#222222CC"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-bar-bg-image"
+                      label: "● Graphic"
+                      tip: "● Image: url('https://example.png')   ● Gradients: Linear, Radial, Conic >    ❖ Quick Overview - Refer to CSS Doc: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ • linear-gradient(direction, color, color, ...)                             ❯ direction = 'to top', 'to right',       'to bottom', 'to left'              • radial-gradient(shape at pos, color, color, ...)                             ❯ shape: circle, ellipse               ❯ pos: 'center', 'top', 'bottom', 'left',     'right'                          • conic-gradient(from angle at pos, color)  ➔  angle: '0deg', '45deg', etc"
+                      description: "Set a image or gradient as a background layer."
+                      initialValue: "none"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-bar-bg-image-state"
+                      label: "╰・Graphic on Hover"
+                      initialValue: "none"
+
+                    - group:
+                        header: "❯ Image Focal Position"
+                        items:
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-image-pos-vert"
+                            label: "● Vertical Area of Focus"
+                            initialValue: "50%"
+                            options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-image-pos-vert-state"
+                            label: "╰・Area on Hover"
+                            initialValue: "50%"
+                            options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-image-pos-hori"
+                            label: "● Horizontal Area of Focus"
+                            initialValue: "50%"
+                            options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-image-pos-hori-state"
+                            label: "╰・Area on Hover"
+                            initialValue: "50%"
+                            options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - group:
+                        header: "❯ Filters for the Graphic"
+                        items:
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-grayscale"
+                            label: "● Grayscale"
+                            tip: "0 = none, 1 = grayscale"
+                            initialValue: 0
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-grayscale-state"
+                            label: "╰・Grayscale on Hover"
+                            initialValue: 0
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-brightness"
+                            label: "● Brightness"
+                            tip: "0 = dim, 2 = bright"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-brightness-state"
+                            label: "╰・Brightness on Hover"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-contrast"
+                            label: "● Contrast"
+                            tip: "0 = none, 2 = high contrast"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-contrast-state"
+                            label: "╰・Contrast on Hover"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-filter-hue-rotate"
+                            label: "● Color Hue"
+                            tip: "Rotate from 0 to 360 degrees"
+                            initialValue: "0deg"
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-filter-hue-rotate-state"
+                            label: "╰・Hue on Hover"
+                            initialValue: "0deg"
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-invert"
+                            label: "● Color Invert"
+                            tip: "0 = none, 1 = inverted"
+                            initialValue: 0
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-invert-state"
+                            label: "╰・Invert on Hover"
+                            initialValue: 0
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-saturate"
+                            label: "● Saturation"
+                            tip: "0 = desaturated, 2 = saturated"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-saturate-state"
+                            label: "╰・Saturation on Hover"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-sepia"
+                            label: "● Sepia"
+                            tip: "0 = none, 1 = full sepia"
+                            initialValue: 0
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-sepia-state"
+                            label: "╰・Sepia on Hover"
+                            initialValue: 0
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-opacity"
+                            label: "● Opacity"
+                            tip: "0 = transparent, 1 = opaque"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--wm-c-tab-bar-filter-opacity-state"
+                            label: "╰・Opacity on Hover"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - group:
+                  header: " Border"
+                  items:
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-border-thickness"
+                      label: "● Thickness"
+                      initialValue: 3
+                      initialValueUnit: "px"
+
+                    - group:
+                        header: " ❯ Top"
+                        items:
+                          - syntax: <color>
+                            name: "--wm-c-tab-bar-top-border-color"
+                            label: "● Color"
+                            initialValue: "#0091f8"
+
+                          - syntax: <color>
+                            name: "--wm-c-tab-bar-top-border-color-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#4cc2ff"
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-top-border-style"
+                            label: "● Style"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, groove, ridge]
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-top-border-style-state"
+                            label: "╰・Style on Hover"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, groove, ridge]
+
+                    - group:
+                        header: "❯ Bottom"
+                        items:
+                          - syntax: <color>
+                            name: "--wm-c-tab-bar-bottom-border-color"
+                            label: "● Color"
+                            initialValue: "#0091f8"
+
+                          - syntax: <color>
+                            name: "--wm-c-tab-bar-bottom-border-color-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#4cc2ff"
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-bottom-border-style"
+                            label: "● Style"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, groove, ridge]
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-bottom-border-style-state"
+                            label: "╰・Style on Hover"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, groove, ridge]
+
+                    - group:
+                        header: "❯ Right"
+                        items:
+                          - syntax: <color>
+                            name: "--wm-c-tab-bar-right-border-color"
+                            label: "● Color"
+                            initialValue: "#0091f8"
+
+                          - syntax: <color>
+                            name: "--wm-c-tab-bar-right-border-color-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#4cc2ff"
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-right-border-style"
+                            label: "● Style"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, groove, ridge]
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-right-border-style-state"
+                            label: "╰・Style on Hover"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, groove, ridge]
+
+                    - group:
+                        header: "❯ Left"
+                        items:
+                          - syntax: <color>
+                            name: "--wm-c-tab-bar-left-border-color"
+                            label: "● Color"
+                            initialValue: "#0091f8"
+
+                          - syntax: <color>
+                            name: "--wm-c-tab-bar-left-border-color-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#4cc2ff"
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-left-border-style"
+                            label: "● Style"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, groove, ridge]
+
+                          - syntax: <string>
+                            name: "--wm-c-tab-bar-left-border-style-state"
+                            label: "╰・Style on Hover"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, groove, ridge]
+
+              - group:
+                  header: " Corner Rounding"
+                  items:
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-top-left-border-radius"
+                      label: "● Top Left"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-top-left-border-radius-state"
+                      label: "╰・Rounding on Hover"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-top-right-border-radius"
+                      label: "● Top Right"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-top-right-border-radius-state"
+                      label: "╰・Rounding on Hover"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-bottom-left-border-radius"
+                      label: "● Bottom Left"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-bottom-left-border-radius-state"
+                      label: "╰・Rounding on Hover"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-bottom-right-border-radius"
+                      label: "● Bottom Right"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-bottom-right-border-radius-state"
+                      label: "╰・Rounding on Hover"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+              - group:
+                  header: " Drop Shadow"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-tab-bar-shadow-color"
+                      label: "● Color"
+                      initialValue: "#00000000"
+
+                    - syntax: <color>
+                      name: "--wm-c-tab-bar-shadow-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#00000000"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-shadow-blur"
+                      label: "● Blur"
+                      tip: "0 = sharp, higher = blurred"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-shadow-blur-state"
+                      label: "╰・Blur on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-shadow-spread"
+                      label: "● Radius"
+                      tip: "Negative = shrinks, Positive = grows"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-bar-shadow-spread-state"
+                      label: "╰・Radius on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - group:
+                        header: " ❯ Position"
+                        items:
+                          - syntax: <length>
+                            name: "--wm-c-tab-bar-shadow-x"
+                            label: "● Horizontal Offset"
+                            tip: "Negative = left, Positive = right"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--wm-c-tab-bar-shadow-x-state"
+                            label: "╰・Offset on Hover"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--wm-c-tab-bar-shadow-y"
+                            label: "● Vertical Offset"
+                            tip: "Negative = up, Positive = down"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--wm-c-tab-bar-shadow-y-state"
+                            label: "╰・Offset on Hover"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+              - group:
+                  header: " ➔ Transitions"
+                  items:
+                    - syntax: <string>
+                      name: "--wm-c-tab-bar-background-color-transition"
+                      label: "● Background Color"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "0.4s ease"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-bar-background-image-transition"
+                      label: "● Background Graphic"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "0.4s ease"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-bar-filter-transition"
+                      label: "● Graphic Filters"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "0.4s ease"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-bar-border-color-transition"
+                      label: "● Border Color"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "0.4s ease"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-bar-border-radius-transition"
+                      label: "● Corner Rounding"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "1.0s ease"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-bar-shadow-transition"
+                      label: "● Drop Shadow"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "0.4s ease"
+
+  - group:
+      header: "✦ Base of the Tabs"
+      items:
+        - group:
+            header: " Padding"
+            items:
+              - syntax: <length>
+                name: "--wm-c-tab-item-padding-top"
+                label: "● Top"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-padding-bottom"
+                label: "● Bottom"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-padding-left"
+                label: "● Left"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-padding-right"
+                label: "● Right"
+                initialValue: 6
+                initialValueUnit: "px"
+
+        - group:
+            header: " Background"
+            items:
+              - syntax: <color>
+                name: "--wm-c-tab-item-background-color"
+                label: "● Color"
+                initialValue: "#3a3a3b"
+
+              - syntax: <color>
+                name: "--wm-c-tab-item-background-color-state"
+                label: "╰・Color on Hover"
+                initialValue: "#3e3d3d"
+
+              - syntax: <color>
+                name: "--wm-c-tab-item-background-color-active"
+                label: "╰・Color when Active"
+                initialValue: "#0091f8"
+
+              - syntax: <string>
+                name: "--wm-c-tab-item-bg-image"
+                label: "● Graphic"
+                tip: "● Image: url('https://example.png')   ● Gradients: Linear, Radial, Conic >    ❖ Quick Overview - Refer to CSS Doc: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ • linear-gradient(direction, color, color, ...)                             ❯ direction = 'to top', 'to right',       'to bottom', 'to left'              • radial-gradient(shape at pos, color, color, ...)                             ❯ shape: circle, ellipse               ❯ pos: 'center', 'top', 'bottom', 'left',     'right'                          • conic-gradient(from angle at pos, color)  ➔  angle: '0deg', '45deg', etc"
+                description: "Set a image or gradient as a background layer."
+                initialValue: "none"
+
+              - syntax: <string>
+                name: "--wm-c-tab-item-bg-image-state"
+                label: "╰・Graphic on Hover"
+                initialValue: "none"
+
+              - syntax: <string>
+                name: "--wm-c-tab-item-bg-image-active"
+                label: "╰・Graphic of Active"
+                initialValue: "none"
+
+              - group:
+                  header: "❯ Image Focal Position"
+                  items:
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-image-pos-vert"
+                      label: "● Vertical Area of Focus"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-image-pos-vert-state"
+                      label: "╰・Area on Hover"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-image-pos-vert-active"
+                      label: "╰・Area when Active"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-image-pos-hori"
+                      label: "● Horizontal Area of Focus"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-image-pos-hori-state"
+                      label: "╰・Area on Hover"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-image-pos-hori-active"
+                      label: "╰・Area when Active"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+              - group:
+                  header: "❯ Filters for the Graphic"
+                  items:
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-grayscale"
+                      label: "● Grayscale"
+                      tip: "0 = none, 1 = grayscale"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-grayscale-state"
+                      label: "╰・Grayscale on Hover"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-grayscale-active"
+                      label: "╰・Grayscale of Active"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-brightness"
+                      label: "● Brightness"
+                      tip: "0 = dim, 2 = bright"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-brightness-state"
+                      label: "╰・Brightness on Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-brightness-active"
+                      label: "╰・Brightness of Active"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-contrast"
+                      label: "● Contrast"
+                      tip: "0 = none, 2 = high contrast"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-contrast-state"
+                      label: "╰・Contrast on Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-contrast-active"
+                      label: "╰・Contrast of Active"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-filter-hue-rotate"
+                      label: "● Color Hue"
+                      tip: "Rotate from 0 to 360 degrees"
+                      initialValue: "0deg"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-filter-hue-rotate-state"
+                      label: "╰・Hue on Hover"
+                      initialValue: "0deg"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-filter-hue-rotate-active"
+                      label: "╰・Hue of Active"
+                      initialValue: "0deg"
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-invert"
+                      label: "● Color Invert"
+                      tip: "0 = none, 1 = inverted"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-invert-state"
+                      label: "╰・Invert on Hover"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-invert-active"
+                      label: "╰・Invert of Active"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-saturate"
+                      label: "● Saturation"
+                      tip: "0 = desaturated, 2 = saturated"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-saturate-state"
+                      label: "╰・Saturation on Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-saturate-active"
+                      label: "╰・Saturation of Active"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-sepia"
+                      label: "● Sepia"
+                      tip: "0 = none, 1 = full sepia"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-sepia-state"
+                      label: "╰・Sepia on Hover"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-sepia-active"
+                      label: "╰・Sepia of Active"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-opacity"
+                      label: "● Opacity"
+                      tip: "0 = transparent, 1 = opaque"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-opacity-state"
+                      label: "╰・Opacity on Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-item-filter-opacity-active"
+                      label: "╰・Opacity of Active"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+        - group:
+            header: " Border"
+            items:
+              - syntax: <length>
+                name: "--wm-c-tab-item-border-width"
+                label: "● Width"
+                initialValue: 2
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Top"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-tab-item-top-border-color"
+                      label: "● Color"
+                      initialValue: "#2e2e2e"
+
+                    - syntax: <color>
+                      name: "--wm-c-tab-item-top-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#363636"
+
+                    - syntax: <color>
+                      name: "--wm-c-tab-item-top-border-color-active"
+                      label: "╰・Color of Active"
+                      initialValue: "#00b4ff"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-top-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, groove, ridge]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-top-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, groove, ridge]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-top-border-style-active"
+                      label: "╰・Style of Active"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, groove, ridge]
+
+              - group:
+                  header: "❯ Bottom"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-tab-item-bottom-border-color"
+                      label: "● Color"
+                      initialValue: "#2e2e2e"
+
+                    - syntax: <color>
+                      name: "--wm-c-tab-item-bottom-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#363636"
+
+                    - syntax: <color>
+                      name: "--wm-c-tab-item-bottom-border-color-active"
+                      label: "╰・Color of Active"
+                      initialValue: "#00b4ff"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-bottom-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, groove, ridge]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-bottom-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, groove, ridge]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-bottom-border-style-active"
+                      label: "╰・Style of Active"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, groove, ridge]
+
+              - group:
+                  header: "❯ Right"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-tab-item-right-border-color"
+                      label: "● Color"
+                      initialValue: "#2e2e2e"
+
+                    - syntax: <color>
+                      name: "--wm-c-tab-item-right-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#363636"
+
+                    - syntax: <color>
+                      name: "--wm-c-tab-item-right-border-color-active"
+                      label: "╰・Color of Active"
+                      initialValue: "#00b4ff"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-right-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, groove, ridge]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-right-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, groove, ridge]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-right-border-style-active"
+                      label: "╰・Style of Active"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, groove, ridge]
+
+              - group:
+                  header: "❯ Left"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-tab-item-left-border-color"
+                      label: "● Color"
+                      initialValue: "#2e2e2e"
+
+                    - syntax: <color>
+                      name: "--wm-c-tab-item-left-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#363636"
+
+                    - syntax: <color>
+                      name: "--wm-c-tab-item-left-border-color-active"
+                      label: "╰・Color of Active"
+                      initialValue: "#00b4ff"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-left-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, groove, ridge]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-left-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, groove, ridge]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-item-left-border-style-active"
+                      label: "╰・Style of Active"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, groove, ridge]
+
+        - group:
+            header: " Corner Rounding"
+            items:
+              - syntax: <length>
+                name: "--wm-c-tab-item-top-left-border-radius"
+                label: "● Top Left"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-top-left-border-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-top-left-border-radius-active"
+                label: "╰・Rounding of Active"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-top-right-border-radius"
+                label: "● Top Right"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-top-right-border-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-top-right-border-radius-active"
+                label: "╰・Rounding of Active"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-bottom-left-border-radius"
+                label: "● Bottom Left"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-bottom-left-border-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-bottom-left-border-radius-active"
+                label: "╰・Rounding of Active"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-bottom-right-border-radius"
+                label: "● Bottom Right"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-bottom-right-border-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-bottom-right-border-radius-active"
+                label: "╰・Rounding of Active"
+                initialValue: 6
+                initialValueUnit: "px"
+
+        - group:
+            header: " Drop Shadow"
+            items:
+              - syntax: <color>
+                name: "--wm-c-tab-item-shadow-color"
+                label: "● Color"
+                initialValue: "#00000080"
+
+              - syntax: <color>
+                name: "--wm-c-tab-item-shadow-color-state"
+                label: "╰・Color on Hover"
+                initialValue: "#00000080"
+
+              - syntax: <color>
+                name: "--wm-c-tab-item-shadow-color-active"
+                label: "╰・Color of Active"
+                initialValue: "#00000080"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-shadow-blur"
+                label: "● Blur"
+                tip: "0 = sharp, higher = blurred"
+                initialValue: 3
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-shadow-blur-state"
+                label: "╰・Blur on Hover"
+                initialValue: 3
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-shadow-blur-active"
+                label: "╰・Blur of Active"
+                initialValue: 3
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-shadow-spread"
+                label: "● Radius"
+                tip: "Negative = shrinks, Positive = grows"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-shadow-spread-state"
+                label: "╰・Radius on Hover"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-item-shadow-spread-active"
+                label: "╰・Radius of Active"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Position"
+                  items:
+                    - syntax: <length>
+                      name: "--wm-c-tab-item-shadow-x"
+                      label: "● Horizontal Offset"
+                      tip: "Negative = left, Positive = right"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-item-shadow-x-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-item-shadow-x-active"
+                      label: "╰・Offset of Active"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-item-shadow-y"
+                      label: "● Vertical Offset"
+                      tip: "Negative = up, Positive = down"
+                      initialValue: 2
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-item-shadow-y-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 2
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-item-shadow-y-active"
+                      label: "╰・Offset of Active"
+                      initialValue: 2
+                      initialValueUnit: "px"
+
+        - group:
+            header: " ➔ Transitions"
+            items:
+              - syntax: <string>
+                name: "--wm-c-tab-item-background-color-transition"
+                label: "● Background Color"
+                tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                initialValue: "0.4s ease"
+
+              - syntax: <string>
+                name: "--wm-c-tab-item-background-image-transition"
+                label: "● Background Graphic"
+                tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                initialValue: "0.4s ease"
+
+              - syntax: <string>
+                name: "--wm-c-tab-item-filter-transition"
+                label: "● Graphic Filters"
+                tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                initialValue: "0.4s ease"
+
+              - syntax: <string>
+                name: "--wm-c-tab-item-border-color-transition"
+                label: "● Border Color"
+                tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                initialValue: "0.4s ease"
+
+              - syntax: <string>
+                name: "--wm-c-tab-item-border-radius-transition"
+                label: "● Corner Rounding"
+                tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                initialValue: "1.0s ease"
+
+              - syntax: <string>
+                name: "--wm-c-tab-item-shadow-transition"
+                label: "● Drop Shadow"
+                tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                initialValue: "0.4s ease"
+
+  - group:
+      header: "✦ Tab Title"
+      items:
+        - group:
+            header: " Base"
+            items:
+              - syntax: <length>
+                name: "--wm-c-tab-title-max-width"
+                label: "● Maximum Length"
+                initialValue: 120
+                initialValueUnit: "px"
+
+        - group:
+            header: " Font"
+            items:
+              - group:
+                  header: "╰ All fonts installed on your system are useable."
+                  items:
+                    - syntax: <string>
+                      name: '--teol-sodfgt-nuths-fs'
+                      label: "Font List > Replace the below field with full name (Ex: Comic Sans MS)"
+                      initialValue: 'https://support.microsoft.com/en-us/windows/manage-fonts-in-windows-f12d0657-2fc8-7613-c76f-88d043b334b8'
+
+                    - syntax: <string>
+                      name: '--wm-c-tab-title-font'
+                      label: "● Name"
+                      initialValue: 'inherit'
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-title-font-size"
+                      label: "● Size"
+                      initialValue: 0.85
+                      initialValueUnit: "rem"
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-title-letter-spacing"
+                      label: "╰・Letter Spacing"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-title-font-weight"
+                      label: "╰・Line Thickness"
+                      initialValue: 600
+                      options: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-title-font-weight-state"
+                      label: "  ╰・Thickness on Hover"
+                      initialValue: 600
+                      options: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+
+                    - syntax: <number>
+                      name: "--wm-c-tab-title-font-weight-active"
+                      label: "  ╰・Thickness when Active"
+                      initialValue: 600
+                      options: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+
+              - group:
+                  header: " Styling"
+                  items:
+                    - syntax: <color>
+                      name: "--wm-c-tab-title-color"
+                      label: "● Color"
+                      initialValue: "#cccccc"
+
+                    - syntax: <color>
+                      name: "--wm-c-tab-title-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#ffffff"
+
+                    - syntax: <color>
+                      name: "--wm-c-tab-title-color-active"
+                      label: "╰・Color when Active"
+                      initialValue: "#ffffff"
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-title-style"
+                      label: "● State"
+                      initialValue: "normal"
+                      options: [normal, italic]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-title-style-state"
+                      label: "╰・State on Hover"
+                      initialValue: "normal"
+                      options: [normal, italic]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-title-style-active"
+                      label: "╰・State when Active"
+                      initialValue: "normal"
+                      options: [normal, italic]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-title-case"
+                      label: "● Case"
+                      initialValue: "none"
+                      options: [none, uppercase, lowercase, capitalize]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-title-case-state"
+                      label: "╰・Case on Hover"
+                      initialValue: "none"
+                      options: [none, uppercase, lowercase, capitalize]
+
+                    - syntax: <string>
+                      name: "--wm-c-tab-title-case-active"
+                      label: "╰・Case when Active"
+                      initialValue: "none"
+                      options: [none, uppercase, lowercase, capitalize]
+
+        - group:
+            header: " Drop Shadow"
+            items:
+              - syntax: <color>
+                name: "--wm-c-tab-title-shadow-color"
+                label: "● Color"
+                initialValue: "#00000000"
+
+              - syntax: <color>
+                name: "--wm-c-tab-title-shadow-color-state"
+                label: "╰・Color on Hover"
+                initialValue: "#00000000"
+
+              - syntax: <color>
+                name: "--wm-c-tab-title-shadow-color-active"
+                label: "╰・Color when Active"
+                initialValue: "#00000080"
+
+              - syntax: <length>
+                name: "--wm-c-tab-title-shadow-blur"
+                label: "● Blur"
+                tip: "0 = sharp, higher = blurred"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-title-shadow-blur-state"
+                label: "╰・Blur on Hover"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--wm-c-tab-title-shadow-blur-active"
+                label: "╰・Blur when Active"
+                initialValue: 3
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Position"
+                  items:
+                    - syntax: <length>
+                      name: "--wm-c-tab-title-shadow-x"
+                      label: "● Horizontal Offset"
+                      tip: "Negative = left, Positive = right"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-title-shadow-x-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-title-shadow-x-active"
+                      label: "╰・Offset when Active"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-title-shadow-y"
+                      label: "● Vertical Offset"
+                      tip: "Negative = up, Positive = down"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-title-shadow-y-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--wm-c-tab-title-shadow-y-active"
+                      label: "╰・Offset when Active"
+                      initialValue: 2
+                      initialValueUnit: "px"
+
+        - group:
+            header: " ➔ Transitions"
+            items:
+              - syntax: <string>
+                name: "--wm-c-tab-title-color-transition"
+                label: "● Text Color"
+                tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                initialValue: "0.4s ease"
+
+              - syntax: <string>
+                name: "--wm-c-tab-title-shadow-transition"
+                label: "● Drop Shadow"
+                tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                initialValue: "0.4s ease"
+
+  - group:
+      header: "✦ Tab Icon"
+      items:
+        - group:
+            header: " Base"
+            items:
+              - syntax: <length>
+                name: "--wm-c-tab-icon-size"
+                label: "● Size"
+                initialValue: 1
+                initialValueUnit: "rem"
+
+        - group:
+            header: " Filters"
+            items:
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-grayscale"
+                label: "● Grayscale"
+                tip: "0 = none, 1 = grayscale"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-grayscale-state"
+                label: "╰・Grayscale on Hover"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-grayscale-active"
+                label: "╰・Grayscale of Active"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-brightness"
+                label: "● Brightness"
+                tip: "0 = dim, 2 = bright"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-brightness-state"
+                label: "╰・Brightness on Hover"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-brightness-active"
+                label: "╰・Brightness of Active"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-contrast"
+                label: "● Contrast"
+                tip: "0 = none, 2 = high contrast"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-contrast-state"
+                label: "╰・Contrast on Hover"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-contrast-active"
+                label: "╰・Contrast of Active"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+              - syntax: <string>
+                name: "--wm-c-tab-icon-filter-hue-rotate"
+                label: "● Color Hue"
+                tip: "Rotate from 0 to 360 degrees"
+                initialValue: "0deg"
+
+              - syntax: <string>
+                name: "--wm-c-tab-icon-filter-hue-rotate-state"
+                label: "╰・Hue on Hover"
+                initialValue: "0deg"
+
+              - syntax: <string>
+                name: "--wm-c-tab-icon-filter-hue-rotate-active"
+                label: "╰・Hue of Active"
+                initialValue: "0deg"
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-invert"
+                label: "● Color Invert"
+                tip: "0 = none, 1 = inverted"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-invert-state"
+                label: "╰・Invert on Hover"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-invert-active"
+                label: "╰・Invert of Active"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-saturate"
+                label: "● Saturation"
+                tip: "0 = desaturated, 2 = saturated"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-saturate-state"
+                label: "╰・Saturation on Hover"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-saturate-active"
+                label: "╰・Saturation of Active"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-sepia"
+                label: "● Sepia"
+                tip: "0 = none, 1 = full sepia"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-sepia-state"
+                label: "╰・Sepia on Hover"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-sepia-active"
+                label: "╰・Sepia of Active"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-opacity"
+                label: "● Opacity"
+                tip: "0 = transparent, 1 = opaque"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-opacity-state"
+                label: "╰・Opacity on Hover"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--wm-c-tab-icon-filter-opacity-active"
+                label: "╰・Opacity of Active"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+        - group:
+            header: " ➔ Transitions"
+            items:
+              - syntax: <string>
+                name: "--wm-c-tab-icon-filter-transition"
+                label: "● Filters"
+                tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                initialValue: "0.4s ease"
+
+  - group:
+      header: "✦ Tab Spacing"
+      items:
+        - syntax: <length>
+          name: "--wm-c-gap-btw-tabs"
+          label: "● Gap Between Tabs"
+          initialValue: 4
+          initialValueUnit: "px"
+
+        - syntax: <length>
+          name: "--wm-c-tab-item-gap"
+          label: "● Icon & Title Distance"
+          initialValue: 5
+          initialValueUnit: "px"
+
+styles:
+  '@seelen/window-manager': |
+    .wm-leaf {
+      &.wm-leaf-with-borders {
+        position: relative;
+        /* --- */
+        border-style:
+          var(--wm-c-top-border-style, solid)
+          var(--wm-c-right-border-style, solid)
+          var(--wm-c-bottom-border-style, solid)
+          var(--wm-c-left-border-style, solid);
+        border-color:
+          var(--wm-c-top-border-color, #0091F8)
+          var(--wm-c-right-border-color, #0091F8)
+          var(--wm-c-bottom-border-color, #0091F8)
+          var(--wm-c-left-border-color, #0091F8);
+        border-radius:
+          var(--wm-c-top-left-border-radius, 10px)
+          var(--wm-c-top-right-border-radius, 10px)
+          var(--wm-c-bottom-right-border-radius, 10px)
+          var(--wm-c-bottom-left-border-radius, 10px) !important;
+        /* --- */
+        box-shadow:
+          var(--wm-c-shadow-x, 0px)
+          var(--wm-c-shadow-y, 0px)
+          var(--wm-c-shadow-blur, 0px)
+          var(--wm-c-shadow-spread, 0px)
+          var(--wm-c-shadow-color, #00000000);
+        /* --- */
+        transition:
+          border-radius var(--wm-c-border-radius-transition, 1.0s ease),
+          border-color var(--wm-c-border-color-transition, 0.4s ease),
+          box-shadow var(--wm-c-shadow-transition, 0.4s ease);
+
+        /* Rounded Border Image */
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          background-size: cover;
+          background-repeat: repeat;
+          inset: var(--wm-c-border-image-dist-from-win-state, -3px);
+          /* --- */
+          border-style: solid;
+          border-width: var(--config-border-width, 3px);
+          border-color: transparent !important;
+          /* --- */
+          -webkit-mask:
+            linear-gradient(#fff 0 0) padding-box,
+            linear-gradient(#fff 0 0);
+          mask-composite: exclude;
+          /* --- */
+          transition:
+            opacity var(--wm-c-border-image-background-image-transition, 0.4s ease),
+            filter var(--wm-c-border-image-filter-transition, 0.4s ease);
+        }
+
+        &::before {
+          opacity: 1;
+          background-position:
+            var(--wm-c-border-image-pos-hori, 50%)
+            var(--wm-c-border-image-pos-vert, 50%);
+          background-image: var(--wm-c-border-image, none);
+          /* --- */
+          border-radius:
+            var(--wm-c-top-left-border-radius, 10px)
+            var(--wm-c-top-right-border-radius, 10px)
+            var(--wm-c-bottom-right-border-radius, 10px)
+            var(--wm-c-bottom-left-border-radius, 10px);
+          /* --- */
+          filter:
+            brightness(var(--wm-c-border-image-filter-brightness, 1))
+            contrast(var(--wm-c-border-image-filter-contrast, 1))
+            grayscale(var(--wm-c-border-image-filter-grayscale, 0))
+            hue-rotate(var(--wm-c-border-image-filter-hue-rotate, 0deg))
+            invert(var(--wm-c-border-image-filter-invert, 0))
+            opacity(var(--wm-c-border-image-filter-opacity, 1))
+            saturate(var(--wm-c-border-image-filter-saturate, 1))
+            sepia(var(--wm-c-border-image-filter-sepia, 0));
+        }
+
+        &::after {
+          opacity: 0;
+          background-position:
+            var(--wm-c-border-image-pos-hori-state, 50%)
+            var(--wm-c-border-image-pos-vert-state, 50%);
+          background-image: var(--wm-c-border-image-state, none);
+          /* --- */
+          border-radius:
+            var(--wm-c-top-left-border-radius-state, 10px)
+            var(--wm-c-top-right-border-radius-state, 10px)
+            var(--wm-c-bottom-right-border-radius-state, 10px)
+            var(--wm-c-bottom-left-border-radius-state, 10px);
+          filter:
+            brightness(var(--wm-c-border-image-filter-brightness-state, 1))
+            contrast(var(--wm-c-border-image-filter-contrast-state, 1))
+            grayscale(var(--wm-c-border-image-filter-grayscale-state, 0))
+            hue-rotate(var(--wm-c-border-image-filter-hue-rotate-state, 0deg))
+            invert(var(--wm-c-border-image-filter-invert-state, 0))
+            opacity(var(--wm-c-border-image-filter-opacity-state, 1))
+            saturate(var(--wm-c-border-image-filter-saturate-state, 1))
+            sepia(var(--wm-c-border-image-filter-sepia-state, 0));
+        }
+
+        /* Side note: "On Hover" adjustments doesn't seem possible */
+        &.wm-leaf-focused {
+          &::before {
+            opacity: 0;
+          }
+          &::after {
+            opacity: 1;
+          }
+          border-style:
+            var(--wm-c-top-border-style-state, solid)
+            var(--wm-c-right-border-style-state, solid)
+            var(--wm-c-bottom-border-style-state, solid)
+            var(--wm-c-left-border-style-state, solid);
+          border-color:
+            var(--wm-c-top-border-color-state, #4CC2FF)
+            var(--wm-c-right-border-color-state, #4CC2FF)
+            var(--wm-c-bottom-border-color-state, #4CC2FF)
+            var(--wm-c-left-border-color-state, #4CC2FF);
+          border-radius:
+            var(--wm-c-top-left-border-radius-state, 10px)
+            var(--wm-c-top-right-border-radius-state, 10px)
+            var(--wm-c-bottom-right-border-radius-state, 10px)
+            var(--wm-c-bottom-left-border-radius-state, 10px) !important;
+          /* --- */
+          box-shadow:
+            var(--wm-c-shadow-x-state, 0px)
+            var(--wm-c-shadow-y-state, 2px)
+            var(--wm-c-shadow-blur-state, 3px)
+            var(--wm-c-shadow-spread-state, 0px)
+            var(--wm-c-shadow-color-state, #00000080);
+        }
+      }
+    }
+
+    .wm-stack {
+      .wm-stack-bar {
+        overflow: hidden;
+        position: relative;
+        /* --- */
+        height: var(--wm-c-tab-bar-height, 40px);
+        padding: 0 var(--wm-c-tab-bar-padding-right, 4px) 0 var(--wm-c-tab-bar-padding-left, 4px);
+        gap: var(--wm-c-gap-btw-tabs, 4px);
+        /* --- */
+        background-color: var(--wm-c-tab-bar-background-color, #222222CC);
+        border-width: var(--wm-c-tab-bar-border-thickness, 3px);
+        /* --- */
+        border-style:
+          var(--wm-c-tab-bar-top-border-style, solid)
+          var(--wm-c-tab-bar-right-border-style, solid)
+          var(--wm-c-tab-bar-bottom-border-style, solid)
+          var(--wm-c-tab-bar-left-border-style, solid);
+        border-color:
+          var(--wm-c-tab-bar-top-border-color, #0091F8)
+          var(--wm-c-tab-bar-right-border-color, #0091F8)
+          var(--wm-c-tab-bar-bottom-border-color, #0091F8)
+          var(--wm-c-tab-bar-left-border-color, #0091F8);
+        border-radius:
+          var(--wm-c-tab-bar-top-left-border-radius, 10px)
+          var(--wm-c-tab-bar-top-right-border-radius, 10px)
+          var(--wm-c-tab-bar-bottom-right-border-radius, 10px)
+          var(--wm-c-tab-bar-bottom-left-border-radius, 10px);
+        /* --- */
+        box-shadow:
+          var(--wm-c-tab-bar-shadow-x, 0px)
+          var(--wm-c-tab-bar-shadow-y, 0px)
+          var(--wm-c-tab-bar-shadow-blur, 0px)
+          var(--wm-c-tab-bar-shadow-spread, 0px)
+          var(--wm-c-tab-bar-shadow-color, #00000000);
+        /* --- */
+        transition:
+          border-radius var(--wm-c-tab-bar-border-radius-transition, 1.0s ease),
+          background-color var(--wm-c-tab-bar-background-color-transition, 0.4s ease),
+          border-color var(--wm-c-tab-bar-border-color-transition, 0.4s ease),
+          box-shadow var(--wm-c-tab-bar-shadow-transition, 0.4s ease);
+
+        /* Image Layer */
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          background-size: cover;
+          background-repeat: no-repeat;
+          inset: 0;
+          /* --- */
+          transition:
+            opacity var(--wm-c-tab-bar-background-image-transition, 0.4s ease),
+            filter var(--wm-c-tab-bar-filter-transition, 0.4s ease);
+        }
+
+        &::before {
+          opacity: 1;
+          background-position:
+            var(--wm-c-tab-bar-image-pos-hori, 50%)
+            var(--wm-c-tab-bar-image-pos-vert, 50%);
+          background-image: var(--wm-c-tab-bar-bg-image, none);
+          /* --- */
+          filter:
+            brightness(var(--wm-c-tab-bar-filter-brightness, 1))
+            contrast(var(--wm-c-tab-bar-filter-contrast, 1))
+            grayscale(var(--wm-c-tab-bar-filter-grayscale, 0))
+            hue-rotate(var(--wm-c-tab-bar-filter-hue-rotate, 0deg))
+            invert(var(--wm-c-tab-bar-filter-invert, 0))
+            opacity(var(--wm-c-tab-bar-filter-opacity, 1))
+            saturate(var(--wm-c-tab-bar-filter-saturate, 1))
+            sepia(var(--wm-c-tab-bar-filter-sepia, 0));
+        }
+
+        &::after {
+          opacity: 0;
+          background-position:
+            var(--wm-c-tab-bar-image-pos-hori-state, 50%)
+            var(--wm-c-tab-bar-image-pos-vert-state, 50%);
+          background-image: var(--wm-c-tab-bar-bg-image-state, none);
+          /* --- */
+          filter:
+            brightness(var(--wm-c-tab-bar-filter-brightness-state, 1))
+            contrast(var(--wm-c-tab-bar-filter-contrast-state, 1))
+            grayscale(var(--wm-c-tab-bar-filter-grayscale-state, 0))
+            hue-rotate(var(--wm-c-tab-bar-filter-hue-rotate-state, 0deg))
+            invert(var(--wm-c-tab-bar-filter-invert-state, 0))
+            opacity(var(--wm-c-tab-bar-filter-opacity-state, 1))
+            saturate(var(--wm-c-tab-bar-filter-saturate-state, 1))
+            sepia(var(--wm-c-tab-bar-filter-sepia-state, 0));
+        }
+
+        /* Ensure tabs stay top level */
+        > * {
+          position: relative;
+          z-index: 2;
+        }
+
+        &:hover {
+          &::before {
+            opacity: 0;
+          }
+          &::after {
+            opacity: 1;
+          }
+          background-color: var(--wm-c-tab-bar-background-color-state, #222222CC);
+          /* --- */
+          border-style:
+            var(--wm-c-tab-bar-top-border-style-state, solid)
+            var(--wm-c-tab-bar-right-border-style-state, solid)
+            var(--wm-c-tab-bar-bottom-border-style-state, solid)
+            var(--wm-c-tab-bar-left-border-style-state, solid);
+          border-color:
+            var(--wm-c-tab-bar-top-border-color-state, #4CC2FF)
+            var(--wm-c-tab-bar-right-border-color-state, #4CC2FF)
+            var(--wm-c-tab-bar-bottom-border-color-state, #4CC2FF)
+            var(--wm-c-tab-bar-left-border-color-state, #4CC2FF);
+          border-radius:
+            var(--wm-c-tab-bar-top-left-border-radius-state, 10px)
+            var(--wm-c-tab-bar-top-right-border-radius-state, 10px)
+            var(--wm-c-tab-bar-bottom-right-border-radius-state, 10px)
+            var(--wm-c-tab-bar-bottom-left-border-radius-state, 10px);
+          /* --- */
+          box-shadow:
+            var(--wm-c-tab-bar-shadow-x-state, 0px)
+            var(--wm-c-tab-bar-shadow-y-state, 0px)
+            var(--wm-c-tab-bar-shadow-blur-state, 0px)
+            var(--wm-c-tab-bar-shadow-spread-state, 0px)
+            var(--wm-c-tab-bar-shadow-color-state, #00000000);
+        }
+
+        .wm-stack-bar-item {
+          overflow: hidden;
+          position: relative;
+          gap: var(--wm-c-tab-item-gap, 5px);
+          padding:
+            var(--wm-c-tab-item-padding-top, 0px)
+            var(--wm-c-tab-item-padding-right, 6px)
+            var(--wm-c-tab-item-padding-bottom, 0px)
+            var(--wm-c-tab-item-padding-left, 6px);
+          /* --- */
+          background-color: var(--wm-c-tab-item-background-color, #3a3a3b);
+          border-width: var(--wm-c-tab-item-border-width, 2px);
+          /* --- */
+          border-style:
+            var(--wm-c-tab-item-top-border-style, solid)
+            var(--wm-c-tab-item-right-border-style, solid)
+            var(--wm-c-tab-item-bottom-border-style, solid)
+            var(--wm-c-tab-item-left-border-style, solid);
+          border-color:
+            var(--wm-c-tab-item-top-border-color, #2e2e2e)
+            var(--wm-c-tab-item-right-border-color, #2e2e2e)
+            var(--wm-c-tab-item-bottom-border-color, #2e2e2e)
+            var(--wm-c-tab-item-left-border-color, #2e2e2e);
+          border-radius:
+            var(--wm-c-tab-item-top-left-border-radius, 6px)
+            var(--wm-c-tab-item-top-right-border-radius, 6px)
+            var(--wm-c-tab-item-bottom-right-border-radius, 6px)
+            var(--wm-c-tab-item-bottom-left-border-radius, 6px);
+          /* --- */
+          box-shadow:
+            var(--wm-c-tab-item-shadow-x, 0px)
+            var(--wm-c-tab-item-shadow-y, 2px)
+            var(--wm-c-tab-item-shadow-blur, 3px)
+            var(--wm-c-tab-item-shadow-spread, 0px)
+            var(--wm-c-tab-item-shadow-color, #00000080);
+          /* --- */
+          transition:
+            background-color var(--wm-c-tab-item-background-color-transition, 0.4s ease),
+            border-color var(--wm-c-tab-item-border-color-transition, 0.4s ease),
+            border-radius var(--wm-c-tab-item-border-radius-transition, 1.0s ease),
+            box-shadow var(--wm-c-tab-item-shadow-transition, 0.4s ease);
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            background-size: cover;
+            background-repeat: no-repeat;
+            inset: 0;
+            /* --- */
+            transition:
+              opacity var(--wm-c-tab-item-background-image-transition, 0.4s ease),
+              filter var(--wm-c-tab-item-filter-transition, 0.4s ease);
+          }
+
+          &::before {
+            opacity: 1;
+            background-position:
+              var(--wm-c-tab-item-image-pos-hori, 50%)
+              var(--wm-c-tab-item-image-pos-vert, 50%);
+            background-image: var(--wm-c-tab-item-bg-image, none);
+            /* --- */
+            filter:
+              brightness(var(--wm-c-tab-item-filter-brightness, 1))
+              contrast(var(--wm-c-tab-item-filter-contrast, 1))
+              grayscale(var(--wm-c-tab-item-filter-grayscale, 0))
+              hue-rotate(var(--wm-c-tab-item-filter-hue-rotate, 0deg))
+              invert(var(--wm-c-tab-item-filter-invert, 0))
+              opacity(var(--wm-c-tab-item-filter-opacity, 1))
+              saturate(var(--wm-c-tab-item-filter-saturate, 1))
+              sepia(var(--wm-c-tab-item-filter-sepia, 0));
+          }
+
+          &::after {
+            opacity: 0;
+            background-position:
+              var(--wm-c-tab-item-image-pos-hori-state, 50%)
+              var(--wm-c-tab-item-image-pos-vert-state, 50%);
+            background-image: var(--wm-c-tab-item-bg-image-state, none);
+            /* --- */
+            filter:
+              brightness(var(--wm-c-tab-item-filter-brightness-state, 1))
+              contrast(var(--wm-c-tab-item-filter-contrast-state, 1))
+              grayscale(var(--wm-c-tab-item-filter-grayscale-state, 0))
+              hue-rotate(var(--wm-c-tab-item-filter-hue-rotate-state, 0deg))
+              invert(var(--wm-c-tab-item-filter-invert-state, 0))
+              opacity(var(--wm-c-tab-item-filter-opacity-state, 1))
+              saturate(var(--wm-c-tab-item-filter-saturate-state, 1))
+              sepia(var(--wm-c-tab-item-filter-sepia-state, 0));
+          }
+
+          > * {
+            position: relative;
+            z-index: 2;
+          }
+
+          .wm-stack-bar-item-icon {
+            width: var(--wm-c-tab-icon-size, 1rem);
+            height: var(--wm-c-tab-icon-size, 1rem);
+            /* --- */
+            filter:
+              brightness(var(--wm-c-tab-icon-filter-brightness, 1))
+              contrast(var(--wm-c-tab-icon-filter-contrast, 1))
+              grayscale(var(--wm-c-tab-icon-filter-grayscale, 0))
+              hue-rotate(var(--wm-c-tab-icon-filter-hue-rotate, 0deg))
+              invert(var(--wm-c-tab-icon-filter-invert, 0))
+              opacity(var(--wm-c-tab-icon-filter-opacity, 1))
+              saturate(var(--wm-c-tab-icon-filter-saturate, 1))
+              sepia(var(--wm-c-tab-icon-filter-sepia, 0));
+            /* --- */
+            transition:
+              filter var(--wm-c-tab-icon-filter-transition, 0.4s ease);
+          }
+
+          .wm-stack-bar-item-title {
+            max-width: var(--wm-c-tab-title-max-width, 120px);
+            font-family: var(--wm-c-tab-title-font, inherit);
+            font-size: var(--wm-c-tab-title-font-size, 0.85rem);
+            letter-spacing: calc(var(--wm-c-tab-title-letter-spacing, 0) * 1px);
+            /* --- */
+            color: var(--wm-c-tab-title-color, #cccccc);
+            /* --- */
+            font-weight: var(--wm-c-tab-title-font-weight, 600);
+            text-transform: var(--wm-c-tab-title-case, none);
+            font-style: var(--wm-c-tab-title-style, normal);
+            /* --- */
+            text-shadow:
+              var(--wm-c-tab-title-shadow-x, 0px)
+              var(--wm-c-tab-title-shadow-y, 0px)
+              var(--wm-c-tab-title-shadow-blur, 0px)
+              var(--wm-c-tab-title-shadow-color, #00000000);
+            /* --- */
+            transition:
+              color var(--wm-c-tab-title-color-transition, 0.4s ease),
+              text-shadow var(--wm-c-tab-title-shadow-transition, 0.4s ease);
+          }
+
+          &:hover {
+            &::before {
+              opacity: 0;
+            }
+            &::after {
+              opacity: 1;
+            }
+            background-color: var(--wm-c-tab-item-background-color-state, #3e3d3d);
+            /* --- */
+            border-style:
+              var(--wm-c-tab-item-top-border-style-state, solid)
+              var(--wm-c-tab-item-right-border-style-state, solid)
+              var(--wm-c-tab-item-bottom-border-style-state, solid)
+              var(--wm-c-tab-item-left-border-style-state, solid);
+            border-color:
+              var(--wm-c-tab-item-top-border-color-state, #363636)
+              var(--wm-c-tab-item-right-border-color-state, #363636)
+              var(--wm-c-tab-item-bottom-border-color-state, #363636)
+              var(--wm-c-tab-item-left-border-color-state, #363636);
+            border-radius:
+              var(--wm-c-tab-item-top-left-border-radius-state, 6px)
+              var(--wm-c-tab-item-top-right-border-radius-state, 6px)
+              var(--wm-c-tab-item-bottom-right-border-radius-state, 6px)
+              var(--wm-c-tab-item-bottom-left-border-radius-state, 6px);
+            box-shadow:
+              var(--wm-c-tab-item-shadow-x-state, 0px)
+              var(--wm-c-tab-item-shadow-y-state, 2px)
+              var(--wm-c-tab-item-shadow-blur-state, 3px)
+              var(--wm-c-tab-item-shadow-spread-state, 0px)
+              var(--wm-c-tab-item-shadow-color-state, #00000080);
+
+            .wm-stack-bar-item-icon {
+              filter:
+                brightness(var(--wm-c-tab-icon-filter-brightness-state, 1))
+                contrast(var(--wm-c-tab-icon-filter-contrast-state, 1))
+                grayscale(var(--wm-c-tab-icon-filter-grayscale-state, 0))
+                hue-rotate(var(--wm-c-tab-icon-filter-hue-rotate-state, 0deg))
+                invert(var(--wm-c-tab-icon-filter-invert-state, 0))
+                opacity(var(--wm-c-tab-icon-filter-opacity-state, 1))
+                saturate(var(--wm-c-tab-icon-filter-saturate-state, 1))
+                sepia(var(--wm-c-tab-icon-filter-sepia-state, 0));
+            }
+
+            .wm-stack-bar-item-title {
+              color: var(--wm-c-tab-title-color-state, #ffffff);
+              /* --- */
+              font-weight: var(--wm-c-tab-title-font-weight-state, 600);
+              text-transform: var(--wm-c-tab-title-case-state, none);
+              font-style: var(--wm-c-tab-title-style-state, normal);
+              /* --- */
+              text-shadow:
+                var(--wm-c-tab-title-shadow-x-state, 0px)
+                var(--wm-c-tab-title-shadow-y-state, 0px)
+                var(--wm-c-tab-title-shadow-blur-state, 0px)
+                var(--wm-c-tab-title-shadow-color-state, #00000000);
+            }
+          }
+
+          &.wm-stack-bar-item-active {
+            &::before {
+              opacity: 0;
+            }
+            &::after {
+              opacity: 1;
+              background-position:
+                var(--wm-c-tab-item-image-pos-hori-active, 50%)
+                var(--wm-c-tab-item-image-pos-vert-active, 50%);
+              background-image: var(--wm-c-tab-item-bg-image-active, none);
+              /* --- */
+              filter:
+                brightness(var(--wm-c-tab-item-filter-brightness-active, 1))
+                contrast(var(--wm-c-tab-item-filter-contrast-active, 1))
+                grayscale(var(--wm-c-tab-item-filter-grayscale-active, 0))
+                hue-rotate(var(--wm-c-tab-item-filter-hue-rotate-active, 0deg))
+                invert(var(--wm-c-tab-item-filter-invert-active, 0))
+                opacity(var(--wm-c-tab-item-filter-opacity-active, 1))
+                saturate(var(--wm-c-tab-item-filter-saturate-active, 1))
+                sepia(var(--wm-c-tab-item-filter-sepia-active, 0));
+            }
+            /* --- */
+            background-color: var(--wm-c-tab-item-background-color-active, #0091f8);
+            /* --- */
+            border-style:
+              var(--wm-c-tab-item-top-border-style-active, solid)
+              var(--wm-c-tab-item-right-border-style-active, solid)
+              var(--wm-c-tab-item-bottom-border-style-active, solid)
+              var(--wm-c-tab-item-left-border-style-active, solid);
+            border-color:
+              var(--wm-c-tab-item-top-border-color-active, #00b4ff)
+              var(--wm-c-tab-item-right-border-color-active, #00b4ff)
+              var(--wm-c-tab-item-bottom-border-color-active, #00b4ff)
+              var(--wm-c-tab-item-left-border-color-active, #00b4ff);
+            border-radius:
+              var(--wm-c-tab-item-top-left-border-radius-active, 6px)
+              var(--wm-c-tab-item-top-right-border-radius-active, 6px)
+              var(--wm-c-tab-item-bottom-right-border-radius-active, 6px)
+              var(--wm-c-tab-item-bottom-left-border-radius-active, 6px);
+            /* --- */
+            box-shadow:
+              var(--wm-c-tab-item-shadow-x-active, 0px)
+              var(--wm-c-tab-item-shadow-y-active, 2px)
+              var(--wm-c-tab-item-shadow-blur-active, 3px)
+              var(--wm-c-tab-item-shadow-spread-active, 0px)
+              var(--wm-c-tab-item-shadow-color-active, #00000080);
+
+            .wm-stack-bar-item-icon {
+              filter:
+                brightness(var(--wm-c-tab-icon-filter-brightness-active, 1))
+                contrast(var(--wm-c-tab-icon-filter-contrast-active, 1))
+                grayscale(var(--wm-c-tab-icon-filter-grayscale-active, 0))
+                hue-rotate(var(--wm-c-tab-icon-filter-hue-rotate-active, 0deg))
+                invert(var(--wm-c-tab-icon-filter-invert-active, 0))
+                opacity(var(--wm-c-tab-icon-filter-opacity-active, 1))
+                saturate(var(--wm-c-tab-icon-filter-saturate-active, 1))
+                sepia(var(--wm-c-tab-icon-filter-sepia-active, 0));
+            }
+
+            .wm-stack-bar-item-title {
+              color: var(--wm-c-tab-title-color-active, #ffffff);
+              /* --- */
+              font-weight: var(--wm-c-tab-title-font-weight-active, 600);
+              text-transform: var(--wm-c-tab-title-case-active, none);
+              font-style: var(--wm-c-tab-title-style-active, normal);
+              /* --- */
+              text-shadow:
+                var(--wm-c-tab-title-shadow-x-active, 0px)
+                var(--wm-c-tab-title-shadow-y-active, 2px)
+                var(--wm-c-tab-title-shadow-blur-active, 3px)
+                var(--wm-c-tab-title-shadow-color-active, #00000080);
+            }
+          }
+        }
+      }
+    }

@@ -1,0 +1,13 @@
+id: '@k-ivy/blue-paw-start'
+metadata:
+  displayName: "Blue Paw Start Icon"
+  appTargetVersion:
+    - 2
+    - 5
+    - 0
+entries:
+  - type: custom
+    key: '@seelen/weg::start-menu'
+    icon:
+      base: paw-blue.svg
+      mask: null

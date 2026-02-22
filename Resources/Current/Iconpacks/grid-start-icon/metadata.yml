@@ -1,0 +1,13 @@
+id: '@k-ivy/grid-start'
+metadata:
+  displayName: "Grid Start Icon"
+  appTargetVersion:
+    - 2
+    - 5
+    - 0
+entries:
+  - type: custom
+    key: '@seelen/weg::start-menu'
+    icon:
+      base: grid.svg
+      mask: null

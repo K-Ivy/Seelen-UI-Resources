@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="duck.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="true"
+     inkscape:zoom="16"
+     inkscape:cx="3.53125"
+     inkscape:cy="20.90625"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1">
+    <inkscape:grid
+       id="grid5"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14902"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">.ColorScheme-Text { color:#ebdbb2; } .ColorScheme-Highlight { color:#458588; }</style>
+  </defs>
+  <path
+     class="ColorScheme-Text"
+     d="M 7.2009526,1.2327273 C 5.7126021,1.2342815 4.4442599,2.2608455 4.2029604,3.6596655 4.0427702,3.5994554 3.5903845,3.8762943 3.0441153,4.0273746 2.4756425,4.188012 1.9187276,4.1821232 1.7189966,4.2950715 1.6252946,4.3605042 1.6059509,4.4012621 1.6496896,4.4666176 1.8666563,4.8797956 3.2303017,5.9793511 4.7186522,5.7920694 5.0731999,6.2699273 5.3311267,6.3916603 5.3839489,6.4519959 5.742755,6.9174969 5.6431935,7.262906 4.8294674,7.78324 c -1.2470512,0.4670456 -2.06828,1.6121665 -2.0713216,2.888385 7.201e-4,1.063837 0.5729337,2.054306 1.5167386,2.624839 0.020855,0.774998 0.7501571,1.451915 1.647527,1.451915 0.6906434,0 1.6019033,-0.386341 2.0074484,-0.891808 l 0.1643471,0.0037 c 0.3479577,0.498034 1.0064616,0.888043 1.8655075,0.888043 0.8731376,0 1.5775696,-0.21798 1.6434716,-1.342828 2.16561,-1.056114 3.111544,-2.518648 2.692819,-5.4147561 C 14.224679,7.6086047 13.97248,7.5619774 13.77123,7.6174861 13.555378,7.6770301 13.373796,7.90729 13.179133,8.1472807 12.850438,6.9367077 12.47024,6.7310842 12.26828,6.5389756 12.086087,6.3805586 11.800989,6.4277651 11.737623,6.6841671 11.555433,7.5628462 10.999025,7.9005323 10.999025,7.9005323 10.143527,8.5529288 9.2267924,8.4265621 9.2267924,8.4265621 7.7323587,8.2111882 7.6553051,7.4206473 8.0050876,6.9205861 9.325137,6.5752735 10.239642,5.4329521 10.240656,4.1297037 c 0,-1.5996168 -1.3616186,-2.8961076 -3.0415891,-2.8961076 z m -0.8019655,2.081336 c 0.3295054,1.726e-4 0.5963541,0.2779298 0.59605,0.6203463 C 6.9943843,4.2760537 6.7277829,4.5526319 6.3989871,4.552825 6.0701914,4.5526533 5.8036469,4.2760537 5.8029372,3.9344096 5.802589,3.5920896 6.0694817,3.3142563 6.3989871,3.3140633 Z"
+     fill="currentColor"
+     id="path1"
+     style="fill:#ffdb4b;fill-opacity:1;stroke-width:0.989312" />
+</svg>

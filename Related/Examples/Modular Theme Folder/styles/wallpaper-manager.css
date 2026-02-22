@@ -1,0 +1,32 @@
+.wallpaper-container {
+  display: none;
+  overflow: hidden;
+  will-change: transform;
+
+  &.rendering {
+    display: block;
+    animation: ExpandOutCircle 600ms cubic-bezier(0.8, 0, 1, 1) forwards;
+  }
+
+  &.will-unrender {
+    animation: Vanish 600ms linear forwards;
+  }
+}
+
+@keyframes ExpandOutCircle {
+  0% {
+    clip-path: circle(0%);
+  }
+  100% {
+    clip-path: circle(100%);
+  }
+}
+
+@keyframes Vanish {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}

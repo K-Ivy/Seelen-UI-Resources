@@ -3,61 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seelen UI Resources</title>
+  <meta name="color-scheme" content="dark">
+  <title>K-Ivy Seelen UI Resources</title>
   <style>
     :root {
-      --bg-main: #272e33;
-      --bg-surface: #2d353b;
-      --bg-dark: #242b2f;
-      --border-color: #3d484d;
-      --text-primary: #d3c6aa;
-      --text-secondary: #9da9a0;
-      --accent-color: #a7c080;
+      --bg-page: #272E33;
+      --bg-surface: #242b2f;
+      --border: #313d43;
+      --text: #d3c6aa;
+      --text-dim: #9da9a0;
+      --accent: #a7c080;
       --accent-text: #1e2a23;
-      --warning-color: #e67e80;
+      --warning: #e67e80;
+      --selection: #543A48;
+      --hover: rgba(255,255,255,0.05);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    ::selection {
+      background: var(--selection);
+      color: var(--text);
+    }
+
+    *, *::before, *::after { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
     }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--bg-main);
-      color: var(--text-primary);
+      background: var(--bg-page);
+      color: var(--text);
       height: 100vh;
+      height: 100dvh;
       display: flex;
+      line-height: 1.6;
     }
 
     .sidebar {
-      width: 260px;
-      padding: 20px;
-      background: var(--bg-dark);
-      border-right: 1px solid var(--border-color);
-      transition: width 0.3s ease, padding 0.3s ease;
+      width: max-content;
+      min-width: 160px;
+      padding: 20px 16px;
+      background: var(--bg-surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
       overflow: hidden;
     }
 
-    .sidebar.collapsed {
-      width: 60px;
-      padding: 20px 10px;
-    }
-
     .sidebar-header {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 700;
-      color: var(--accent-color);
-      margin-bottom: 8px;
+      color: var(--accent);
+      margin-bottom: 12px;
       text-align: center;
       white-space: nowrap;
-      transition: opacity 0.2s ease;
-    }
-
-    .sidebar.collapsed .sidebar-header {
-      opacity: 0;
-      pointer-events: none;
     }
 
     .nav-button {
@@ -65,81 +66,29 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      padding: 10px 12px;
-      margin-bottom: 8px;
-      background: var(--accent-color);
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      background: var(--accent);
       color: var(--accent-text);
-      border: 2px solid var(--accent-color);
-      border-radius: 10px;
-      font-size: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
       font-weight: 600;
       cursor: pointer;
       white-space: nowrap;
-      overflow: hidden;
-      transition: filter 0.2s ease, width 0.3s ease, height 0.3s ease, padding 0.3s ease;
+      transition: filter 0.15s;
     }
 
-    .nav-button:hover {
-      filter: brightness(1.05);
-    }
-
-    .sidebar.collapsed .nav-button {
-      padding: 10px;
-      width: 40px;
-      min-width: 40px;
-      height: 40px;
-    }
-
-    .nav-button .nav-text {
-      transition: opacity 0.2s ease;
-    }
-
-    .sidebar.collapsed .nav-button .nav-text {
-      opacity: 0;
-      position: absolute;
-    }
-
-    .nav-button .nav-number {
-      opacity: 0;
-      position: absolute;
-      transition: opacity 0.2s ease;
-    }
-
-    .sidebar.collapsed .nav-button .nav-number {
-      opacity: 1;
-      position: static;
-    }
-
-    .sidebar-toggle {
-      display: block;
-      width: 100%;
-      padding: 10px 12px;
-      margin-top: 8px;
-      background: var(--bg-surface);
-      color: var(--text-primary);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 600;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .sidebar-toggle:hover {
-      background: var(--accent-color);
-      color: var(--accent-text);
-      border-color: var(--accent-color);
-    }
-
-    .sidebar.collapsed .sidebar-toggle {
-      padding: 10px;
+    .nav-button:hover { 
+      filter: brightness(1.07); 
     }
 
     .main-content {
       flex: 1;
       padding: 24px;
       overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
     }
 
     .resource-grid {
@@ -151,35 +100,35 @@
     .resource-card {
       padding: 10px;
       background: var(--bg-surface);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border);
       border-radius: 12px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .resource-card.unavailable {
-      border: 2px solid var(--warning-color);
+      border: 2px solid var(--warning);
       opacity: 0.85;
       cursor: not-allowed;
     }
 
     .resource-card:hover:not(.unavailable) {
       transform: translateY(-4px);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
     }
 
     .card-image-wrapper {
       width: 100%;
       aspect-ratio: 1 / 1;
       margin-bottom: 8px;
-      background: var(--bg-dark);
+      background: var(--bg-surface);
       border-radius: 8px;
       overflow: hidden;
       transition: box-shadow 0.2s ease;
     }
 
     .resource-card:hover:not(.unavailable) .card-image-wrapper {
-      box-shadow: 0 0 15px rgba(167, 192, 128, 0.15);
+      box-shadow: 0 0 15px rgba(167,192,128,0.15);
     }
 
     .card-image-wrapper img {
@@ -197,17 +146,17 @@
 
     .card-description {
       font-size: 11px;
-      color: var(--text-secondary);
+      color: var(--text-dim);
       text-align: center;
     }
 
     .context-menu {
       position: fixed;
       background: var(--bg-surface);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border);
       border-radius: 8px;
       padding: 4px 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       z-index: 1000;
       min-width: 180px;
       display: none;
@@ -221,17 +170,16 @@
       padding: 8px 16px;
       cursor: pointer;
       font-size: 13px;
-      color: var(--text-primary);
-      transition: background 0.15s ease;
+      color: var(--text);
+      transition: background 0.15s;
     }
 
     .context-menu-item:hover {
-      background: var(--bg-dark);
+      background: var(--hover);
     }
 
     .context-menu-item.disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
+      opacity: 0.5; cursor: not-allowed;
     }
 
     .context-menu-item.disabled:hover {
@@ -240,304 +188,278 @@
 
     .context-menu-divider {
       height: 1px;
-      background: var(--border-color);
+      background: var(--border);
       margin: 4px 0;
     }
   </style>
 </head>
-
 <body>
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-header">Seelen UI Resources</div>
+  <aside class="sidebar">
+    <div class="sidebar-header">K-Ivy Seelen Resources</div>
     <nav id="navigation"></nav>
-    <button class="sidebar-toggle" id="sidebarToggle">‹</button>
   </aside>
-
   <main class="main-content">
     <div class="resource-grid" id="resourceGrid"></div>
   </main>
-
-  <div class="context-menu" id="contextMenu">
-    <div class="context-menu-item" id="contextOpen">Open</div>
-    <div class="context-menu-item" id="contextNewTab">Open in New Tab</div>
-    <div class="context-menu-divider"></div>
-    <div class="context-menu-item" id="contextCopyLink">Copy Link</div>
-    <div class="context-menu-item" id="contextCopyTitle">Copy Title</div>
-  </div>
-
+  <div class="context-menu" id="contextMenu"></div>
   <script>
     const navigationItems = [
+      { label: 'Wiki',                    url: './Web/wiki.html' },
       { label: 'Shortcut Module Creator', url: './Web/shortcut-mod-creator.html' },
-      { label: 'Icon Pack Creator', url: null }
     ];
 
     const resources = [
+      // ── Fully Customizables
+      {
+        title: 'Fully Customizable Dock',
+        description: 'Allows to extensively customize the dock all through settings (WIP)',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/web-wip.png',
+        url: null,
+      },
+      {
+        title: 'Fully Customizable Dock Menus',
+        description: 'Allows to extensively customize the dock menus all through settings (WIP)',
+        image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/web-wip.png',
+        url: null,
+      },
       {
         title: 'Fully Customizable Toolbar',
-        description: 'Extensive Toolbar Themer',
+        description: 'Allows to extensively customize the toolbar all through settings',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/full-custom-toolbar-logo.png',
-        url: 'https://seelen.io/resources/k-ivy/kivy-custom-ftbr'
+        url: 'https://seelen.io/resources/k-ivy/kivy-custom-ftbr',
       },
       {
         title: 'Fully Customizable Toolbar Menus',
-        description: 'Extensive Themer for the Toolbar Menus (WIP)',
+        description: 'Allows to extensively customize the toolbar menus all through settings (WIP)',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/web-wip.png',
-        url: null
+        url: null,
       },
       {
-        title: 'Fully Customizable Dock',
-        description: 'Extensive Dock Themer (WIP)',
+        title: 'Fully Customizable Start Menus',
+        description: 'Allows to extensively customize the seelen start menu all through settings (WIP)',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/web-wip.png',
-        url: null
+        url: null,
       },
+      // ── Other
       {
         title: 'Grid Style Tray (Hover for Label)',
-        description: 'Windows-like Tray',
+        description: 'Changes the seelen tray menu to be windows-like, labels only shown on hover',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/tray-hl-showcase-logo.png',
-        url: 'https://seelen.io/resources/k-ivy/win-grid-tray-hl'
+        url: 'https://seelen.io/resources/k-ivy/win-grid-tray-hl',
       },
       {
         title: 'Grid Style Tray (Always Show Label)',
-        description: 'Windows-like Tray',
+        description: 'Changes the seelen tray menu to be windows-like, labels always shown',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/tray-la-showcase-logo.png',
-        url: 'https://seelen.io/resources/k-ivy/win-grid-tray-la'
+        url: 'https://seelen.io/resources/k-ivy/win-grid-tray-la',
       },
       {
         title: 'Indiviual Coloring of Toolbar Modules',
-        description: 'Customizable Colorful Modules',
+        description: 'Allows to customize each toolbar module indiviually',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/toolvolr-logo.png',
-        url: 'https://seelen.io/resources/k-ivy/ftbr-mod-color'
+        url: 'https://seelen.io/resources/k-ivy/ftbr-mod-color',
       },
       {
         title: 'Dock Player Customizer',
-        description: '~ Various Player Tweaks',
+        description: 'Allows to make various adjustments to the dock media player, like hide when no media',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/LOGO.png',
-        url: 'https://seelen.io/resources/k-ivy/dock-comp-media'
+        url: 'https://seelen.io/resources/k-ivy/dock-comp-media',
       },
       {
         title: 'Media Module Player Customizer',
-        description: '~ Various Menu Player Tweaks',
+        description: 'Allows to make some simple adjustments to the media players within toolbar menus',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/LOGOtbr.png',
-        url: 'https://seelen.io/resources/k-ivy/tbr-media-custom'
+        url: 'https://seelen.io/resources/k-ivy/tbr-media-custom',
       },
       {
         title: 'Custom Username',
         description: 'Overrides Windows Username',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/customusrlogo.png',
-        url: 'https://seelen.io/resources/k-ivy/custom-pref-user'
+        url: 'https://seelen.io/resources/k-ivy/custom-pref-user',
       },
       {
         title: 'Filled Window Previews',
-        description: 'Makes Thumbnails Fully Fit',
+        description: 'Makes window preview thumbnails fully fit the available space',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/previre-ff.png',
-        url: 'https://seelen.io/resources/k-ivy/window-prev-ff'
+        url: 'https://seelen.io/resources/k-ivy/window-prev-ff',
       },
       {
         title: 'Filled Media Thumbnails',
-        description: 'Makes Player Thumbnails Fully Fit',
+        description: 'Makes media player thumbnails fully fit the available space',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/media-thumb-fill.png',
-        url: 'https://seelen.io/resources/k-ivy/media-thumb-fill'
+        url: 'https://seelen.io/resources/k-ivy/media-thumb-fill',
       },
       {
         title: 'Hide Media Source Icons',
-        description: 'Remove Player Source',
+        description: 'Removes the media source icon from the player',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/LOGO-v2.png',
-        url: 'https://seelen.io/resources/k-ivy/hide-media-app-icon'
+        url: 'https://seelen.io/resources/k-ivy/hide-media-app-icon',
       },
       {
         title: 'Slide - Wallpaper Switch Animation',
-        description: 'WP Anim',
+        description: 'Sliding animation for wallpaper switching',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/slidelogo.png',
-        url: 'https://seelen.io/resources/k-ivy/wp-anim-slide'
+        url: 'https://seelen.io/resources/k-ivy/wp-anim-slide',
       },
       {
         title: 'Zoom - Wallpaper Switch Animation',
-        description: 'WP Anim',
+        description: 'Zoom animation for wallpaper switching',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/zoomlogo.png',
-        url: 'https://seelen.io/resources/k-ivy/wp-anim-zm-fade'
+        url: 'https://seelen.io/resources/k-ivy/wp-anim-zm-fade',
       },
       {
         title: 'Blur - Wallpaper Switch Animation',
-        description: 'WP Anim',
+        description: 'Blur animation for wallpaper switching',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/blurlogo.png',
-        url: 'https://seelen.io/resources/k-ivy/wp-anim-blur'
+        url: 'https://seelen.io/resources/k-ivy/wp-anim-blur',
       },
       {
         title: 'Fade - Wallpaper Switch Animation',
-        description: 'WP Anim',
+        description: 'Fade animation for wallpaper switching',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/fadelogo.png',
-        url: 'https://seelen.io/resources/k-ivy/wp-anim-fade'
+        url: 'https://seelen.io/resources/k-ivy/wp-anim-fade',
       },
       {
         title: 'Win 10 - Animated Start Icon',
-        description: '~ Win Key',
+        description: 'Win 10 icon animated',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/win10anim.png',
-        url: 'https://seelen.io/resources/k-ivy/anim-win-ten-syn'
+        url: 'https://seelen.io/resources/k-ivy/anim-win-ten-syn',
       },
       {
         title: 'Win 7 Whiteout - Animated Start Icon',
-        description: '~ Win Key',
+        description: 'Win 7 icon variant animated',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/win7whiteout.png',
-        url: 'https://seelen.io/resources/k-ivy/anim-whiteout-syn'
+        url: 'https://seelen.io/resources/k-ivy/anim-whiteout-syn',
       },
       {
         title: 'XP - Animated Start Icon',
-        description: '~ Win Key',
+        description: 'Win XP icon animated',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/xpanim.png',
-        url: 'https://seelen.io/resources/k-ivy/anim-winxp-syn'
+        url: 'https://seelen.io/resources/k-ivy/anim-winxp-syn',
       },
       {
         title: 'Vista - Animated Start Icon',
-        description: '~ Win Key',
+        description: 'Win Vista icon animated',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/vistaanim.png',
-        url: 'https://seelen.io/resources/k-ivy/anim-vista-syn'
+        url: 'https://seelen.io/resources/k-ivy/anim-vista-syn',
       },
       {
         title: 'Win 11 - Start Icon',
-        description: '~ Win Key',
+        description: 'Win 11 icon animated',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/win11.png',
-        url: 'https://seelen.io/resources/k-ivy/start-icon-faq'
+        url: 'https://seelen.io/resources/k-ivy/start-icon-faq',
       },
       {
         title: 'Win 12 Concept - Start Icon',
-        description: '~ Win Key',
+        description: 'Win 12 concept icon',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/win12concept.png',
-        url: 'https://seelen.io/resources/k-ivy/win-start-alt'
+        url: 'https://seelen.io/resources/k-ivy/win-start-alt',
       },
       {
         title: 'Dots - Start Icon',
-        description: '~ Win Key',
+        description: 'Dots icon',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/dots.png',
-        url: 'https://seelen.io/resources/k-ivy/dots-start'
+        url: 'https://seelen.io/resources/k-ivy/dots-start',
       },
       {
         title: 'NixOS - Start Icon',
-        description: '~ Win Key',
+        description: 'Nixos icon',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/nix.png',
-        url: 'https://seelen.io/resources/k-ivy/nixos-start'
+        url: 'https://seelen.io/resources/k-ivy/nixos-start',
       },
       {
         title: 'Apple - Start Icon',
-        description: '~ Win Key',
+        description: 'Apple icon',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/apple.png',
-        url: 'https://seelen.io/resources/k-ivy/apple-start'
+        url: 'https://seelen.io/resources/k-ivy/apple-start',
       },
       {
         title: 'Warp - Start Icon',
-        description: '~ Win Key',
+        description: 'Warp icon',
         image: 'https://raw.githubusercontent.com/K-Ivy/Seelen-UI-Resources/refs/heads/main/Assets/warp.png',
-        url: 'https://seelen.io/resources/k-ivy/warp-start'
-      }
+        url: 'https://seelen.io/resources/k-ivy/warp-start',
+      },
     ];
 
-    function buildNavigation() {
-      const nav = document.getElementById('navigation');
-      nav.innerHTML = navigationItems.map((item, index) => 
-        `<button class="nav-button" data-url="${item.url || ''}">
-          <span class="nav-text">${item.label}</span>
-          <span class="nav-number">${index + 1}</span>
-        </button>`
-      ).join('');
+    // ── Navigation ────────────────────────────────────────────────────────────
+    const nav = document.getElementById('navigation');
+    nav.innerHTML = navigationItems.map(item =>
+      `<button class="nav-button" data-url="${item.url}">${item.label}</button>`
+    ).join('');
 
-      nav.addEventListener('click', (e) => {
-        const button = e.target.closest('.nav-button');
-        if (button) {
-          const url = button.dataset.url;
-          if (url) window.location.href = url;
-        }
-      });
-    }
+    nav.addEventListener('click', e => {
+      const url = e.target.closest('.nav-button')?.dataset.url;
+      if (url) window.location.href = url;
+    });
 
-    function buildResourceCards() {
-      const grid = document.getElementById('resourceGrid');
-      grid.innerHTML = resources.map(r => `
-        <div class="resource-card ${!r.url ? 'unavailable' : ''}" data-url="${r.url || ''}" data-title="${r.title}">
-          <div class="card-image-wrapper">
-            <img src="${r.image}" alt="${r.title}" loading="lazy">
-          </div>
-          <div class="card-title">${r.title}</div>
-          <div class="card-description">${r.description}</div>
+    // ── Resource grid ─────────────────────────────────────────────────────────
+    const grid = document.getElementById('resourceGrid');
+    grid.innerHTML = resources.map(r =>
+      `<div class="resource-card${r.url ? '' : ' unavailable'}" data-url="${r.url || ''}" data-title="${r.title}">
+        <div class="card-image-wrapper">
+          <img src="${r.image}" alt="${r.title}" loading="lazy">
         </div>
-      `).join('');
+        <div class="card-title">${r.title}</div>
+        <div class="card-description">${r.description}</div>
+      </div>`
+    ).join('');
 
-      grid.addEventListener('click', (e) => {
-        const card = e.target.closest('.resource-card');
-        if (card && !card.classList.contains('unavailable')) {
-          const url = card.dataset.url;
-          if (url) window.location.href = url;
-        }
-      });
-    }
+    grid.addEventListener('click', e => {
+      const card = e.target.closest('.resource-card');
+      if (card && !card.classList.contains('unavailable'))
+        window.location.href = card.dataset.url;
+    });
+
+    // ── Context menu ──────────────────────────────────────────────────────────
+    const DIV  = '<div class="context-menu-divider"></div>';
+    const item = (id, label) => `<div class="context-menu-item" id="${id}">${label}</div>`;
+
+    const MENUS = {
+      card: unavailable => {
+        const d = unavailable ? ' disabled' : '';
+        return `<div class="context-menu-item${d}" id="ctxOpen">Open</div>`
+             + `<div class="context-menu-item${d}" id="ctxNewTab">Open in New Tab</div>`
+             + DIV
+             + `<div class="context-menu-item${d}" id="ctxCopyLink">Copy Link</div>`
+             + `<div class="context-menu-item" id="ctxCopyTitle">Copy Title</div>`;
+      },
+      page: () => item('pageRefresh', 'Refresh') + item('pageCopyUrl', 'Copy Page URL'),
+    };
 
     const contextMenu = document.getElementById('contextMenu');
     let currentCard = null;
 
-    document.addEventListener('contextmenu', (e) => {
+    const showMenu = (type, x, y, data) => {
+      currentCard = data ?? null;
+      contextMenu.innerHTML = MENUS[type](data?.classList.contains('unavailable'));
+      contextMenu.style.cssText = `left:${x}px;top:${y}px`;
+      contextMenu.classList.add('show');
+    };
+
+    document.addEventListener('contextmenu', e => {
+      contextMenu.classList.remove('show');
       const card = e.target.closest('.resource-card');
-      if (card) {
-        e.preventDefault();
-        currentCard = card;
-        const isUnavailable = card.classList.contains('unavailable');
-        
-        contextMenu.style.left = `${e.pageX}px`;
-        contextMenu.style.top = `${e.pageY}px`;
-        contextMenu.classList.add('show');
-        
-        document.getElementById('contextOpen').classList.toggle('disabled', isUnavailable);
-        document.getElementById('contextNewTab').classList.toggle('disabled', isUnavailable);
-        document.getElementById('contextCopyLink').classList.toggle('disabled', isUnavailable);
-      }
+      e.preventDefault();
+      showMenu(card ? 'card' : 'page', e.pageX, e.pageY, card);
     });
 
-    document.addEventListener('click', () => {
-      contextMenu.classList.remove('show');
-    });
+    document.addEventListener('click', () => contextMenu.classList.remove('show'));
 
-    document.getElementById('contextOpen').addEventListener('click', (e) => {
+    contextMenu.addEventListener('click', e => {
       e.stopPropagation();
-      if (currentCard && !currentCard.classList.contains('unavailable')) {
-        const url = currentCard.dataset.url;
-        if (url) window.location.href = url;
+      const it = e.target.closest('.context-menu-item');
+      if (!it || it.classList.contains('disabled')) { contextMenu.classList.remove('show'); return; }
+      const url = currentCard?.dataset.url;
+      switch (it.id) {
+        case 'ctxOpen':      window.location.href = url; break;
+        case 'ctxNewTab':    window.open(url, '_blank', 'noopener'); break;
+        case 'ctxCopyLink':  navigator.clipboard.writeText(url); break;
+        case 'ctxCopyTitle': navigator.clipboard.writeText(currentCard.dataset.title); break;
+        case 'pageRefresh':  location.reload(); break;
+        case 'pageCopyUrl':  navigator.clipboard.writeText(location.href); break;
       }
       contextMenu.classList.remove('show');
     });
-
-    document.getElementById('contextNewTab').addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (currentCard && !currentCard.classList.contains('unavailable')) {
-        const url = currentCard.dataset.url;
-        if (url) window.open(url, '_blank');
-      }
-      contextMenu.classList.remove('show');
-    });
-
-    document.getElementById('contextCopyLink').addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (currentCard && !currentCard.classList.contains('unavailable')) {
-        const url = currentCard.dataset.url;
-        if (url) navigator.clipboard.writeText(url);
-      }
-      contextMenu.classList.remove('show');
-    });
-
-    document.getElementById('contextCopyTitle').addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (currentCard) {
-        const title = currentCard.dataset.title;
-        if (title) navigator.clipboard.writeText(title);
-      }
-      contextMenu.classList.remove('show');
-    });
-
-    const sidebar = document.getElementById('sidebar');
-
-    document.getElementById('sidebarToggle').addEventListener('click', () => {
-      sidebar.classList.toggle('collapsed');
-      document.getElementById('sidebarToggle').textContent = sidebar.classList.contains('collapsed') ? '›' : '‹';
-    });
-
-    buildNavigation();
-    buildResourceCards();
   </script>
 </body>
 </html>

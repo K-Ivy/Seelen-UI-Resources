@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>K-Ivy Seelen UI Resources Wiki</title>
+<style>
+:root {
+  --bg-page: #272E33;
+  --bg-surface: #242b2f;
+  --border: #313d43;
+  --selection: #543A48;
+  --text: #d3c6aa;
+  --text-dim: #96a89f;
+  --text-muted: #6e7e77;
+  --accent: #a7c080;
+  --accent-bg: rgba(167, 192, 128, 0.10);
+  --accent-bg-faint: rgba(167, 192, 128, 0.05);
+  --accent-glow: rgba(167, 192, 128, 0.40);
+  --accent-underline: rgba(167, 192, 128, 0.30);
+  --accent-underline-hover: rgba(167, 192, 128, 0.65);
+  --error-text: #f0a0a2;
+  --error-bg: rgba(230, 126, 128, 0.07);
+  --error-border: rgba(230, 126, 128, 0.20);
+  --code-color: #e69875;
+  --hover: rgba(255, 255, 255, 0.05);
+  --hover-row: rgba(255, 255, 255, 0.02);
+  --shadow: rgba(0, 0, 0, 0.40);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--text);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-page);
+  color: var(--text);
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sidebar {
+  width: max-content;
+  min-width: 160px;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 0;
+  min-width: 0;
+  opacity: 0;
+  pointer-events: none;
+  border-right-color: transparent;
+}
+
+.sidebar-header {
+  padding: 18px 18px 6px;
+  flex-shrink: 0;
+}
+
+.sidebar-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+#navList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  padding: 6px 8px 8px;
+}
+#navList::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-item {
+  position: relative;
+  width: 100%;
+  padding: 7px 10px;
+  margin-bottom: 2px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--text-dim);
+  font-size: 13px;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+
+.nav-item:hover {
+  background: var(--hover);
+  color: var(--text);
+}
+
+.nav-item.active {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 55%;
+  background: var(--accent);
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 6px var(--accent-glow);
+}
+
+.sidebar-footer {
+  padding: 10px 8px;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.12s, background 0.12s;
+}
+
+.github-link:hover {
+  color: var(--accent);
+  background: var(--hover);
+}
+
+.github-icon {
+  width: 14px;
+  height: 14px;
+  opacity: 0.5;
+  flex-shrink: 0;
+  transition: opacity 0.12s;
+}
+
+.github-link:hover .github-icon {
+  opacity: 0.8;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  height: 46px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.toggle-btn:hover {
+  color: var(--text-dim);
+  background: var(--hover);
+  border-color: var(--border);
+}
+
+.toggle-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  min-width: 0;
+}
+
+.breadcrumb-root,
+.breadcrumb-sep {
+  color: var(--text-muted);
+}
+
+.breadcrumb-root {
+  white-space: nowrap;
+}
+
+.breadcrumb-current {
+  color: var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content-wrap {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px 48px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.content-wrap::-webkit-scrollbar {
+  width: 4px;
+}
+
+.content-wrap::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.content-area {
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.8;
+  transition: opacity 0.18s ease;
+}
+
+.content-area h1, .content-area h2, .content-area h3, .content-area h4, .content-area h5, .content-area h6 {
+  color: var(--text);
+  margin-top: 40px;
+  margin-bottom: 12px;
+  scroll-margin-top: 54px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.content-area h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 0;
+  letter-spacing: -0.02em;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.content-area h2 {
+  font-size: 18px;
+  margin-top: 44px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.content-area h2:first-child {
+  margin-top: 0;
+}
+
+.content-area h3 {
+  font-size: 15px;
+  color: var(--accent);
+  margin-top: 28px;
+}
+
+.content-area h4 {
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+.content-area h5, .content-area h6 {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.content-area p {
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.content-area ul, .content-area ol {
+  margin-bottom: 16px;
+  padding-left: 20px;
+}
+
+.content-area li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.content-area li::marker {
+  color: var(--text-muted);
+}
+
+.content-area ul ul, .content-area ol ol, .content-area ul ol, .content-area ol ul {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.content-area code {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: 12.5px;
+  color: var(--code-color);
+}
+
+.content-area pre {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.content-area pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  display: block;
+  white-space: pre;
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 1.6;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.15s, background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.content-area pre:hover .copy-btn, .copy-btn:focus-visible {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  background: var(--border);
+  color: var(--accent);
+}
+
+.copy-btn.copied {
+  opacity: 1;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.copy-btn svg {
+  width: 11px;
+  height: 11px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.content-area a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-underline);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s;
+}
+
+.content-area a:hover {
+  text-decoration-color: var(--accent-underline-hover);
+}
+
+.content-area img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 18px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.content-area p img {
+  display: inline-block;
+  margin: 0 4px;
+  vertical-align: middle;
+}
+
+.content-area video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 18px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-surface);
+  color-scheme: dark;
+}
+
+.content-area details.details-reset {
+  margin: 18px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.content-area details.details-reset > summary {
+  padding: 8px 12px;
+  background: var(--bg-surface);
+  border-radius: 7px;
+}
+
+.content-area details.details-reset[open] > summary {
+  border-radius: 7px 7px 0 0;
+}
+
+.content-area details.details-reset > summary svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0.5;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.content-area details.details-reset > summary .dropdown-caret {
+  display: none;
+}
+
+.content-area details.details-reset > video {
+  width: 100%;
+  max-height: 640px;
+  margin: 0;
+  border: none;
+  border-top: 1px solid var(--border);
+  border-radius: 0 0 7px 7px;
+}
+
+.content-area blockquote {
+  margin: 20px 0;
+  padding: 10px 16px;
+  border-left: 2px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  background: var(--accent-bg-faint);
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 13.5px;
+}
+
+.content-area blockquote p {
+  margin-bottom: 0;
+}
+
+.content-area .table-wrap {
+  margin: 20px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.content-area table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.content-area table th {
+  padding: 9px 14px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 11.5px;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.content-area table td {
+  padding: 9px 14px;
+  border-top: 1px solid var(--border);
+}
+
+.content-area table tr:hover td {
+  background: var(--hover-row);
+}
+
+.content-area hr {
+  margin: 32px 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.content-area details {
+  margin: 6px 0;
+}
+
+.content-area summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  color: var(--text-dim);
+  font-size: 13px;
+  list-style: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.content-area summary::-webkit-details-marker {
+  display: none;
+}
+
+.content-area details:not(.details-reset) > summary {
+  font-style: italic;
+}
+
+.content-area details:not(.details-reset) > summary::before, .content-area details.details-reset > summary::after {
+  content: '';
+  flex-shrink: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 6px;
+  border-color: transparent transparent transparent var(--text-muted);
+  transition: transform 0.15s;
+}
+
+.content-area details[open]:not(.details-reset) > summary::before, .content-area details.details-reset[open] > summary::after {
+  transform: rotate(90deg);
+}
+
+.content-area summary:hover {
+  color: var(--text);
+}
+
+.content-area p:empty, .content-area blockquote > br, .content-area details > br {
+  display: none;
+}
+
+.content-area input[type="checkbox"] {
+  accent-color: var(--accent);
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+/* GitHub heading anchors: zero-width float so they don't affect heading layout. */
+.content-area :is(h1,h2,h3,h4,h5,h6) > a.anchor {
+  float: left;
+  width: 0;
+  line-height: 1;
+  color: inherit;
+  text-decoration: none;
+}
+
+.content-area .markdown-alert {
+  margin: 20px 0;
+  padding: 10px 16px;
+  border-left: 2px solid var(--border);
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+
+.content-area .markdown-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  font-style: normal;
+  color: inherit;
+}
+
+.content-area .markdown-alert-title svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.content-area .markdown-alert p:last-child {
+  margin-bottom: 0;
+}
+
+.content-area .markdown-alert-note {
+  border-color: #5b9bd5;
+  background: rgba(91, 155, 213, 0.07);
+}
+
+.content-area .markdown-alert-tip {
+  border-color: #4caf7d;
+  background: rgba(76, 175, 125, 0.07);
+}
+
+.content-area .markdown-alert-important {
+  border-color: #9b6fce;
+  background: rgba(155, 111, 206, 0.07);
+}
+
+.content-area .markdown-alert-warning {
+  border-color: #c9a84c; background: rgba(201, 168,  76, 0.07);
+}
+
+.content-area .markdown-alert-caution {
+  border-color: #d0645a;
+  background: rgba(208, 100,  90, 0.07);
+}
+
+.content-area .markdown-alert p {
+  color: var(--text-dim);
+}
+
+.content-area .markdown-alert-note .markdown-alert-title {
+  color: #82b0d8;
+}
+
+.content-area .markdown-alert-tip .markdown-alert-title {
+  color: #7bcba0;
+}
+
+.content-area .markdown-alert-important .markdown-alert-title {
+  color: #b899e0;
+}
+
+.content-area .markdown-alert-warning .markdown-alert-title {
+  color: #d4b76a;
+}
+
+.content-area .markdown-alert-caution .markdown-alert-title {
+  color: #e08880;
+}
+
+.content-area details.details-reset > summary::after { margin-left: auto; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.content-area.page-enter {
+  opacity: 0;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  gap: 14px;
+  color: var(--text-muted);
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+.loading-text {
+  font-size: 12.5px;
+}
+
+.error-msg {
+  padding: 14px 18px;
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  border-radius: 8px;
+  color: var(--error-text);
+  font-size: 13.5px;
+}
+
+.error-msg a {
+  color: var(--error-text);
+  text-decoration: underline;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-top:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+</style>
+</head>
+<body>
+<aside class="sidebar" id="sidebar" aria-label="Wiki pages">
+  <div class="sidebar-header"><span class="sidebar-label">Pages</span></div>
+  <nav id="navList" aria-label="Wiki navigation"></nav>
+  <div class="sidebar-footer">
+    <a class="github-link" id="githubLink" href="https://github.com/K-Ivy/Seelen-UI-Resources/wiki" target="_blank" rel="noopener noreferrer">
+      <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+      </svg>
+      <span class="github-link-text">View on GitHub</span>
+    </a>
+  </div>
+</aside>
+<div class="main">
+  <div class="topbar">
+    <button class="toggle-btn" id="toggleBtn" title="Toggle sidebar" aria-label="Toggle sidebar" aria-expanded="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <div class="breadcrumb" id="breadcrumb"></div>
+  </div>
+  <div class="content-wrap" id="contentWrap">
+    <div id="scrollSentinel" aria-hidden="true" style="height:300px;margin-bottom:-300px;visibility:hidden;pointer-events:none"></div>
+    <div class="content-area" id="contentArea" role="main"></div>
+  </div>
+</div>
+<div id="pageAnnouncer" role="status" aria-live="polite" aria-atomic="true"
+     style="position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0"></div>
+<button class="scroll-top" id="scrollTop" title="Back to top" aria-label="Back to top">↑</button>
+<script>
+const PAGES = [
+  { title: 'Fully Customizable Dock',                slug: 'Fully-Customizable-Dock'               },
+  { title: 'Fully Customizable Dock Menus',          slug: 'Fully-Customizable-Dock-Menus'         },
+  { title: 'Fully Customizable Toolbar',             slug: 'Fully-Customizable-Toolbar'            },
+  { title: 'Fully Customizable Toolbar Menus',       slug: 'Fully-Customizable-Toolbar-Menus'      },
+  { title: 'Fully Customizable Window Manager',      slug: 'Fully-Customizable-Window-Manager'     },
+  { title: 'Fully Customizable Start Menu',          slug: 'Fully-Customizable-Start-Menu'         },
+  { title: 'Indiviual Coloring of Toolbar Modules',  slug: 'Indiviual-Coloring-of-Toolbar-Modules' },
+  { title: 'Animated Start Icons',                   slug: 'Animated-Start-Icons'                  },
+];
+
+const RAW_BASE = 'https://raw.githubusercontent.com/wiki/K-Ivy/Seelen-UI-Resources';
+const GH_REPO = 'K-Ivy/Seelen-UI-Resources';
+const GH_WIKI = 'https://github.com/K-Ivy/Seelen-UI-Resources/wiki';
+const WIKI_PREFIX = GH_WIKI + '/';
+const PAGES_BY_SLUG = new Map(PAGES.map(p => [p.slug, p]));
+
+const sidebar = document.getElementById('sidebar');
+const toggleBtn = document.getElementById('toggleBtn');
+const navList = document.getElementById('navList');
+const breadcrumb = document.getElementById('breadcrumb');
+const contentArea = document.getElementById('contentArea');
+const contentWrap = document.getElementById('contentWrap');
+const scrollTopBtn = document.getElementById('scrollTop');
+const githubLink = document.getElementById('githubLink');
+const pageAnnouncer = document.getElementById('pageAnnouncer');
+const scrollSentinel = document.getElementById('scrollSentinel');
+
+let currentPage = null;
+let pendingSlug = null;
+
+// ── Cache ──────────────────────────────────────────────────────────────────
+// Layer 1 — memCache: slug → HTML, in-memory for the session.
+// Layer 2 — sessionCache: sessionStorage, survives same-tab reloads.
+//   stale-while-revalidate: serve cached HTML immediately, then revalidate
+//   via If-None-Match in the background. 304 = unchanged; 200 = update both
+//   caches and silently re-render if still on that page.
+const memCache = new Map();
+const sessionCache = {
+  get: slug => {
+    try { return JSON.parse(sessionStorage.getItem('kslu-wiki:' + slug)); }
+    catch { return null; }
+  },
+  set: (slug, html, etag) => {
+    try { sessionStorage.setItem('kslu-wiki:' + slug, JSON.stringify({ html, etag: etag ?? null })); }
+    catch {}
+  },
+};
+
+// Falls back to the raw string on malformed percent-sequences instead of throwing.
+const safeDecode = s => { try { return decodeURIComponent(s); } catch { return s; } };
+const _escDiv = document.createElement('div');
+const escHtml = str => { _escDiv.textContent = str; return _escDiv.innerHTML; };
+
+// Matches GitHub's heading-slug algorithm.
+// Null-prototype object prevents built-in property names producing NaN IDs.
+let _slugCount = Object.create(null);
+const ghSlug = text => {
+  const base = (text.trim().toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\u00C0-\u024F\u4E00-\u9FFF-]/g, '')) || 'section';
+  const n = _slugCount[base];
+  _slugCount[base] = (n ?? -1) + 1;
+  return n == null ? base : base + '-' + (n + 1);
+};
+
+const processHTML = html => {
+  _slugCount = Object.create(null); // reset per page
+
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+
+  // Re-stamp heading IDs so fragment links always match.
+  doc.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(h => {
+    const id = ghSlug(h.textContent);
+    h.id = id;
+    const a = h.querySelector('a.anchor');
+    if (a) a.setAttribute('href', '#' + id); // keep copy-link icon in sync
+  });
+
+  // Strip #user-content- prefix so hrefs resolve against the plain IDs above.
+  doc.querySelectorAll('a[href^="#user-content-"]').forEach(a =>
+    a.setAttribute('href', '#' + a.getAttribute('href').slice(14))
+  );
+
+  doc.querySelectorAll('a[href^="http"]').forEach(a => {
+    const href = a.getAttribute('href');
+
+    // Known wiki cross-links: rewrite to a hash so the click handler uses fetchPage.
+    // Unknown wiki paths and all other external URLs fall through to the branch below.
+    if (href.startsWith(WIKI_PREFIX)) {
+      const rest = safeDecode(href.slice(WIKI_PREFIX.length));
+      const hashIdx = rest.indexOf('#');
+      const slug    = hashIdx === -1 ? rest : rest.slice(0, hashIdx);
+      const frag    = hashIdx === -1 ? ''   : rest.slice(hashIdx);
+      const page = PAGES_BY_SLUG.get(slug);
+      if (page) {
+        a.setAttribute('href', '#' + page.slug + frag);
+        return;
+      }
+    }
+
+    a.target = '_blank';
+    a.relList.add('noopener', 'noreferrer');
+  });
+
+  doc.querySelectorAll('video').forEach(v => {
+    v.controls = true;
+    v.playsInline = true;
+  });
+
+  // Wrap tables so overflow: hidden + border-radius renders correctly.
+  doc.querySelectorAll('table').forEach(table => {
+    const wrapper = doc.createElement('div');
+    wrapper.className = 'table-wrap';
+    table.replaceWith(wrapper);
+    wrapper.appendChild(table);
+  });
+
+  return doc.body.innerHTML;
+};
+
+// ── GitHub Markdown API ────────────────────────────────────────────────────
+const renderMarkdown = async (md, signal) => {
+  const res = await fetch('https://api.github.com/markdown', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/vnd.github+json',
+    },
+    body: JSON.stringify({ text: md, mode: 'gfm', context: GH_REPO }),
+    signal,
+  });
+
+  if (!res.ok) {
+    if (res.status === 403 || res.status === 429) {
+      const reset = res.headers.get('x-ratelimit-reset');
+      const resetTime = reset ? new Date(reset * 1000).toLocaleTimeString() : 'unknown';
+      throw new Error(`Rate limit reached — resets at ${resetTime}.`);
+    }
+    throw new Error('API ' + res.status);
+  }
+  return res.text();
+};
+
+// ── Copy buttons ───────────────────────────────────────────────────────────
+const ICON_COPY  = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+const ICON_CHECK = `<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`;
+const BTN_COPY_HTML  = ICON_COPY  + 'Copy';
+const BTN_CHECK_HTML = ICON_CHECK + 'Copied!';
+const BTN_FAIL_HTML  = ICON_COPY  + 'Failed';
+
+const addCopyButtons = () => {
+  contentArea.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Copy code');
+    btn.innerHTML = BTN_COPY_HTML;
+
+    let timer;
+    const resetBtn = () => {
+      btn.innerHTML = BTN_COPY_HTML;
+      btn.classList.remove('copied');
+      btn.setAttribute('aria-label', 'Copy code');
+    };
+
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      let text;
+      if (code) {
+        text = code.textContent;
+      } else {
+        const clone = pre.cloneNode(true);
+        clone.querySelector('.copy-btn')?.remove();
+        text = clone.textContent;
+      }
+
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          btn.innerHTML = BTN_CHECK_HTML;
+          btn.classList.add('copied');
+          btn.setAttribute('aria-label', 'Copied!');
+          clearTimeout(timer);
+          timer = setTimeout(resetBtn, 2000);
+        })
+        .catch(() => {
+          btn.innerHTML = BTN_FAIL_HTML;
+          btn.setAttribute('aria-label', 'Failed to copy');
+          clearTimeout(timer);
+          timer = setTimeout(resetBtn, 2000);
+        });
+    });
+
+    pre.appendChild(btn);
+  });
+};
+
+// ── Render ─────────────────────────────────────────────────────────────────
+// silent=true skips the entry animation; used by background revalidation.
+const showPage = (html, page, silent = false) => {
+  if (!silent) contentArea.classList.add('page-enter');
+  contentArea.innerHTML = html;
+  if (!silent) {
+    void contentArea.offsetWidth; // force reflow to re-trigger the fade-in
+    contentArea.classList.remove('page-enter');
+    pageAnnouncer.textContent = '';
+    requestAnimationFrame(() => { pageAnnouncer.textContent = page.title; });
+    document.title = page.title + ' — K-Ivy Seelen UI Resources Wiki';
+    currentPage = page;
+    githubLink.href = `${GH_WIKI}/${page.slug}`;
+  }
+  addCopyButtons();
+};
+
+const showHome = () => {
+  // Cancel in-flight fetches to avoid wasting GitHub API rate-limit slots.
+  abortCtrl?.abort();   abortCtrl = null;
+  bgAbortCtrl?.abort(); bgAbortCtrl = null;
+  currentPage = null;
+  pendingSlug = null;
+  contentWrap.scrollTop = 0;
+  contentArea.innerHTML = '';
+  githubLink.href = GH_WIKI;
+  document.title = 'K-Ivy Seelen UI Resources Wiki';
+  setActive('');
+  setBreadcrumb(null);
+  history.replaceState(null, '', location.pathname);
+};
+
+const NAV_BTNS = new Map();
+let _activeBtn = null;
+
+const setActive = slug => {
+  if (_activeBtn) {
+    _activeBtn.classList.remove('active');
+    _activeBtn.removeAttribute('aria-current');
+  }
+  _activeBtn = NAV_BTNS.get(slug) ?? null;
+  if (_activeBtn) {
+    _activeBtn.classList.add('active');
+    _activeBtn.setAttribute('aria-current', 'page');
+  }
+};
+
+const setBreadcrumb = page =>
+  breadcrumb.innerHTML = `<span class="breadcrumb-root">K-Ivy</span>`
+    + (page
+      ? ` <span class="breadcrumb-sep">/</span> <span class="breadcrumb-current">${escHtml(page.title)}</span>`
+      : '');
+
+// ── Fetch ──────────────────────────────────────────────────────────────────
+let abortCtrl   = null; // nav-level; cancelled on every new page request
+let bgAbortCtrl = null; // revalidation; independent lifecycle
+const fetchPage = async (page, replace = false) => {
+  if (currentPage?.slug === page.slug) { contentWrap.scrollTop = 0; return; }
+  if (pendingSlug === page.slug) return;
+
+  // Cancel any previous Layer 3 fetch.
+  abortCtrl?.abort();
+  abortCtrl = null;
+  pendingSlug = page.slug;
+
+  setActive(page.slug);
+  setBreadcrumb(page);
+  contentWrap.scrollTop = 0;
+  history[replace ? 'replaceState' : 'pushState'](null, '', '#' + page.slug);
+
+  // ── Layer 1: memory cache ──
+  if (memCache.has(page.slug)) {
+    showPage(memCache.get(page.slug), page);
+    pendingSlug = null;
+    return;
+  }
+
+  // ── Layer 2: sessionStorage cache (stale-while-revalidate) ──
+  const cached = sessionCache.get(page.slug);
+  if (cached?.html) {
+    memCache.set(page.slug, cached.html);
+    showPage(cached.html, page);
+    pendingSlug = null;
+
+    // Revalidate via conditional GET (If-None-Match). bgAbortCtrl is independent
+    // so navigating away won't cancel this; any previous bg fetch is aborted to prevent stacking.
+    bgAbortCtrl?.abort();
+    bgAbortCtrl = new AbortController();
+    const bgSignal = bgAbortCtrl.signal;
+    (async () => {
+      try {
+        const res = await fetch(`${RAW_BASE}/${page.slug}.md`,
+          cached.etag ? { signal: bgSignal, headers: { 'If-None-Match': cached.etag } } : { signal: bgSignal }
+        );
+        if (res.status === 304 || !res.ok) return;
+        const html = processHTML(await renderMarkdown(await res.text(), bgSignal));
+        memCache.set(page.slug, html);
+        sessionCache.set(page.slug, html, res.headers.get('etag'));
+        if (currentPage?.slug === page.slug) showPage(html, page, true);
+      } catch {}
+    })();
+
+    return;
+  }
+
+  // ── Layer 3: full network fetch ───────────────────────────────────────────
+  abortCtrl = new AbortController();
+  const { signal } = abortCtrl;
+  contentArea.innerHTML = `<div class="loading"><div class="spinner"></div><div class="loading-text">Loading…</div></div>`;
+  try {
+    const res = await fetch(`${RAW_BASE}/${page.slug}.md`, { signal });
+    if (!res.ok) throw new Error(`Failed to load page (${res.status})`);
+    const html = processHTML(await renderMarkdown(await res.text(), signal));
+    memCache.set(page.slug, html);
+    sessionCache.set(page.slug, html, res.headers.get('etag'));
+    if (pendingSlug === page.slug) { pendingSlug = null; showPage(html, page); }
+  } catch (err) {
+    if (err.name === 'AbortError') return;
+    if (pendingSlug === page.slug) {
+      pendingSlug = null;
+      contentArea.innerHTML =
+        `<div class="error-msg">⚠ ${escHtml(err.message)} — <a href="${GH_WIKI}/${page.slug}" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></div>`;
+      // Restore UI to the last good page so it stays re-clickable.
+      setActive(currentPage?.slug ?? '');
+      setBreadcrumb(currentPage);
+    }
+  }
+};
+
+// ── Event listeners ────────────────────────────────────────────────────────
+toggleBtn.addEventListener('click', () => {
+  const isCollapsed = sidebar.classList.toggle('collapsed');
+  toggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
+  sidebar.setAttribute('aria-hidden', String(isCollapsed));
+  if (isCollapsed && sidebar.contains(document.activeElement)) toggleBtn.focus();
+});
+
+navList.addEventListener('click', e => {
+  const btn = e.target.closest('.nav-item');
+  if (!btn) return;
+  const page = PAGES_BY_SLUG.get(btn.dataset.slug);
+  if (page) fetchPage(page);
+});
+
+// Hash links: scroll to heading if present; otherwise treat as cross-page nav.
+contentArea.addEventListener('click', e => {
+  const link = e.target.closest('a[href^="#"]');
+  if (!link) return;
+  e.preventDefault();
+
+  const raw = safeDecode(link.getAttribute('href').slice(1));
+  if (!raw) return;
+
+  const target = contentArea.querySelector('#' + CSS.escape(raw));
+  if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+
+  const hashIdx = raw.indexOf('#');
+  const slug = hashIdx === -1 ? raw : raw.slice(0, hashIdx);
+  const frag  = hashIdx === -1 ? ''  : raw.slice(hashIdx + 1);
+  const page = PAGES_BY_SLUG.get(slug);
+  if (page) {
+    // Same page + fragment: scroll directly (fetchPage resets scroll to top).
+    if (frag && currentPage?.slug === page.slug) {
+      contentArea.querySelector('#' + CSS.escape(frag))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    fetchPage(page).then(() => {
+      if (frag && currentPage?.slug === page.slug)
+        contentArea.querySelector('#' + CSS.escape(frag))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+});
+
+new IntersectionObserver(
+  ([entry]) => scrollTopBtn.classList.toggle('visible', !entry.isIntersecting),
+  { root: contentWrap }
+).observe(scrollSentinel);
+
+scrollTopBtn.addEventListener('click', () =>
+  contentWrap.scrollTo({ top: 0, behavior: 'smooth' })
+);
+
+// Handles browser back/forward between hashes. showHome() runs even when currentPage
+// is set so content and URL can't fall out of sync on back-to-bare-URL.
+window.addEventListener('hashchange', () => {
+  const slug = safeDecode(location.hash.slice(1));
+  const page = PAGES_BY_SLUG.get(slug);
+  if (page) fetchPage(page, true);
+  else showHome();
+});
+
+// ── Init ───────────────────────────────────────────────────────────────────
+navList.innerHTML = PAGES.map(p =>
+  `<button class="nav-item" data-slug="${escHtml(p.slug)}">${escHtml(p.title)}</button>`
+).join('');
+navList.querySelectorAll('.nav-item').forEach(b => NAV_BTNS.set(b.dataset.slug, b));
+
+// replaceState so the initial load doesn't push a redundant history entry.
+const initPage = PAGES_BY_SLUG.get(safeDecode(location.hash.slice(1)));
+if (initPage) fetchPage(initPage, true); else showHome();
+</script>
+</body>
+</html>
