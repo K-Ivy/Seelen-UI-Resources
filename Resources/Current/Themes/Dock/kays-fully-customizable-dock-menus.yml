@@ -1,0 +1,3079 @@
+id: "@k-ivy/full-custom-dock-menus"
+metadata:
+  displayName: "Fully Customizable Dock Menus"
+  author: "K-Ivy"
+  description: "Extensively customize the Dock Menus with ease by simply adjusting theme settings."
+  appTargetVersion:
+    - 2
+    - 5
+    - 3
+settings:
+  - group:
+      header: "★ v1.2 ─ Provide feedback & report issues on GitHub or in the #resources post in the Seelen Discord."
+      items:
+        - syntax: <string>
+          name: "--terda-ish-da"
+          label: "● Get Presets:"
+          description: "~ More to be added over time (everyone is welcome to share via discord or github and I will add to the list)."
+          initialValue: "https://k-ivy.github.io/Seelen-UI-Resources/Web/wiki.html#Fully-Customizable-Dock-Menus"
+
+  - group:
+      header: "✷ Get 'Fully Customizable Dock'"
+      items:
+        - group:
+            header: "╰ For: The Dock itself."
+            items:
+              - syntax: <string>
+                name: "--tesd-ish-aa"
+                label: " + Any future dock additions."
+                initialValue: "░░░░░░░░░░░░░░░"
+
+              - syntax: <string>
+                name: "--tsus-idgs-as"
+                label: " ● Profile:"
+                initialValue: "https://k-ivy.github.io/Seelen-UI-Resources/"
+
+  - group:
+      header: "✦ Base Layer of App Titles"
+      items:
+        - group:
+            header: "╰ This is the popup shown when hovering an unopened app."
+            items:
+              - group:
+                  header: " Position"
+                  items:
+                    - syntax: <length>
+                      name: '--dock-app-title-vert-pos'
+                      label: "● Vertical Offset"
+                      tip: "Positive = up, Negative = down"
+                      initialValue: 0
+                      initialValueUnit: 'px'
+
+              - group:
+                  header: " Padding"
+                  items:
+                    - syntax: <length>
+                      name: "--dock-app-title-padding-top"
+                      label: "● Top"
+                      initialValue: 3
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-padding-bottom"
+                      label: "● Bottom"
+                      initialValue: 3
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-padding-left"
+                      label: "● Left"
+                      initialValue: 8
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-padding-right"
+                      label: "● Right"
+                      initialValue: 8
+                      initialValueUnit: "px"
+
+              - group:
+                  header: " Background"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-app-title-background-color"
+                      label: "● Color"
+                      initialValue: "#222222CC"
+
+                    - syntax: <color>
+                      name: "--dock-app-title-background-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#222222CC"
+
+                    - syntax: <string>
+                      name: "--dock-app-title-bg-image"
+                      label: "● Graphic"
+                      tip: "● Image: url('https://example.png')   ● Gradients: Linear, Radial, Conic >    ❖ Quick Overview - Refer to CSS Doc: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ • linear-gradient(direction, color, color, ...)                             ❯ direction = 'to top', 'to right',       'to bottom', 'to left'              • radial-gradient(shape at pos, color, color, ...)                             ❯ shape: circle, ellipse               ❯ pos: 'center', 'top', 'bottom', 'left',     'right'                          • conic-gradient(from angle at pos, color)  ➔  angle: '0deg', '45deg', etc"
+                      description: "Set a image or gradiant as a background layer (adjust the transparency of the above color to be able to see it)."
+                      initialValue: "none"
+
+                    - syntax: <string>
+                      name: "--dock-app-title-bg-image-state"
+                      label: "╰・Graphic on Hover"
+                      initialValue: "none"
+
+                    - group:
+                        header: "❯ Image Focal Position :"
+                        items:
+                          - syntax: <string>
+                            name: "--dock-app-title-image-pos-vert"
+                            label: "● Vertical Area of Focus"
+                            initialValue: "50%"
+                            options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                          - syntax: <string>
+                            name: "--dock-app-title-image-pos-vert-state"
+                            label: "╰・Area on Hover"
+                            initialValue: "50%"
+                            options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                          - syntax: <string>
+                            name: "--dock-app-title-image-pos-hori"
+                            label: "● Horizontal Area of Focus"
+                            initialValue: "50%"
+                            options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                          - syntax: <string>
+                            name: "--dock-app-title-image-pos-hori-state"
+                            label: "╰・Area on Hover"
+                            initialValue: "50%"
+                            options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - group:
+                        header: "❯ Filters for the Graphic :"
+                        items:
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-grayscale"
+                            label: "● Grayscale"
+                            tip: "0 = none, 1 = grayscale"
+                            initialValue: 0
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-grayscale-state"
+                            label: "╰・Grayscale on Hover"
+                            initialValue: 0
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-brightness"
+                            label: "● Brightness"
+                            tip: "0 = dim, 2 = bright"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-brightness-state"
+                            label: "╰・Brightness on Hover"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-contrast"
+                            label: "● Contrast"
+                            tip: "0 = none, 2 = high contrast"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-contrast-state"
+                            label: "╰・Contrast on Hover"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                          - syntax: <string>
+                            name: "--dock-app-title-filter-hue-rotate"
+                            label: "● Color Hue"
+                            tip: "Rotate from 0 to 360 degrees"
+                            initialValue: "0deg"
+
+                          - syntax: <string>
+                            name: "--dock-app-title-filter-hue-rotate-state"
+                            label: "╰・Hue on Hover"
+                            initialValue: "0deg"
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-invert"
+                            label: "● Color Invert"
+                            tip: "0 = none, 1 = inverted"
+                            initialValue: 0
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-invert-state"
+                            label: "╰・Invert on Hover"
+                            initialValue: 0
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-saturate"
+                            label: "● Saturation"
+                            tip: "0 = desaturated, 2 = saturated"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-saturate-state"
+                            label: "╰・Saturation on Hover"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-sepia"
+                            label: "● Sepia"
+                            tip: "0 = none, 1 = full sepia"
+                            initialValue: 0
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-sepia-state"
+                            label: "╰・Sepia on Hover"
+                            initialValue: 0
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-opacity"
+                            label: "● Opacity"
+                            tip: "0 = transparent, 1 = opaque"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                          - syntax: <number>
+                            name: "--dock-app-title-filter-opacity-state"
+                            label: "╰・Opacity on Hover"
+                            initialValue: 1
+                            options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - group:
+                  header: " Border"
+                  items:
+                    - syntax: <length>
+                      name: "--dock-app-title-bdr-thickness"
+                      label: "● Thickness"
+                      initialValue: 2
+                      initialValueUnit: "px"
+
+                    - group:
+                        header: "❯ Top :"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-app-title-top-bdr-color"
+                            label: "● Color"
+                            initialValue: "#29292933"
+
+                          - syntax: <color>
+                            name: "--dock-app-title-top-bdr-color-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#31323366"
+
+                          - syntax: <string>
+                            name: "--dock-app-title-top-bdr-style"
+                            label: "● Style"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                          - syntax: <string>
+                            name: "--dock-app-title-top-bdr-style-state"
+                            label: "╰・Style on Hover"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - group:
+                        header: "❯ Bottom :"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-app-title-bottom-bdr-color"
+                            label: "● Color"
+                            initialValue: "#29292933"
+
+                          - syntax: <color>
+                            name: "--dock-app-title-bottom-bdr-color-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#31323366"
+
+                          - syntax: <string>
+                            name: "--dock-app-title-bottom-bdr-style"
+                            label: "● Style"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                          - syntax: <string>
+                            name: "--dock-app-title-bottom-bdr-style-state"
+                            label: "╰・Style on Hover"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - group:
+                        header: "❯ Right :"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-app-title-right-bdr-color"
+                            label: "● Color"
+                            initialValue: "#29292933"
+
+                          - syntax: <color>
+                            name: "--dock-app-title-right-bdr-color-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#31323366"
+
+                          - syntax: <string>
+                            name: "--dock-app-title-right-bdr-style"
+                            label: "● Style"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                          - syntax: <string>
+                            name: "--dock-app-title-right-bdr-style-state"
+                            label: "╰・Style on Hover"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - group:
+                        header: "❯ Left :"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-app-title-left-bdr-color"
+                            label: "● Color"
+                            initialValue: "#29292933"
+
+                          - syntax: <color>
+                            name: "--dock-app-title-left-bdr-color-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#31323366"
+
+                          - syntax: <string>
+                            name: "--dock-app-title-left-bdr-style"
+                            label: "● Style"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                          - syntax: <string>
+                            name: "--dock-app-title-left-bdr-style-state"
+                            label: "╰・Style on Hover"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: " Corner Rounding"
+                  items:
+                    - syntax: <length>
+                      name: "--dock-app-title-top-left-bdr-radius"
+                      label: "● Top Left"
+                      initialValue: 13
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-top-left-bdr-radius-state"
+                      label: "╰・Rounding on Hover"
+                      initialValue: 13
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-top-right-bdr-radius"
+                      label: "● Top Right"
+                      initialValue: 13
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-top-right-bdr-radius-state"
+                      label: "╰・Rounding on Hover"
+                      initialValue: 13
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-bottom-left-bdr-radius"
+                      label: "● Bottom Left"
+                      initialValue: 13
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-bottom-left-bdr-radius-state"
+                      label: "╰・Rounding on Hover"
+                      initialValue: 13
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-bottom-right-bdr-radius"
+                      label: "● Bottom Right"
+                      initialValue: 13
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-bottom-right-bdr-radius-state"
+                      label: "╰・Rounding on Hover"
+                      initialValue: 13
+                      initialValueUnit: "px"
+
+              - group:
+                  header: " Drop Shadow"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-app-title-shadow-color"
+                      label: "● Color"
+                      initialValue: "#00000000"
+
+                    - syntax: <color>
+                      name: "--dock-app-title-shadow-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#00000000"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-shadow-blur"
+                      label: "● Blur"
+                      tip: "0 = sharp, higher = blurred"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-shadow-blur-state"
+                      label: "╰・Blur on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-shadow-spread"
+                      label: "● Radius"
+                      tip: "Negative = shrinks, Positive = grows"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-shadow-spread-state"
+                      label: "╰・Radius on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - group:
+                        header: "❯ Position :"
+                        items:
+                          - syntax: <length>
+                            name: "--dock-app-title-shadow-x"
+                            label: "● Horizontal Offset"
+                            tip: "Negative = left, Positive = right"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-app-title-shadow-x-state"
+                            label: "╰・Offset on Hover"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-app-title-shadow-y"
+                            label: "● Vertical Offset"
+                            tip: "Negative = up, Positive = down"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-app-title-shadow-y-state"
+                            label: "╰・Offset on Hover"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+  - group:
+      header: "⧉ Transitions of the App Titles's Base Layer"
+      items:
+        - syntax: <string>
+          name: "--dock-app-title-background-color-transition"
+          label: "● Background Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-app-title-background-image-transition"
+          label: "● Background Graphic"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-app-title-filter-transition"
+          label: "● Graphic Filters"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-app-title-bdr-color-transition"
+          label: "● Border Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-app-title-bdr-radius-transition"
+          label: "● Corner Rounding"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "1.0s ease"
+
+        - syntax: <string>
+          name: "--dock-app-title-shadow-transition"
+          label: "● Drop Shadow"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+  - group:
+      header: "✦ App Titles Text"
+      items:
+        - group:
+            header: " Font"
+            items:
+              - syntax: <string>
+                name: '--dock-app-title-font'
+                label: "● Name"
+                initialValue: 'inherit'
+
+              - syntax: <string>
+                name: '--ast-kkfr-ogs'
+                label: "╰ Ex: Comic Sans MS"
+                initialValue: 'https://support.microsoft.com/en-us/windows/manage-fonts-in-windows-f12d0657-2fc8-7613-c76f-88d043b334b8'
+
+        - group:
+            header: " Styling"
+            items:
+              - syntax: <length>
+                name: "--dock-app-title-font-size"
+                label: "● Size"
+                initialValue: 12
+                initialValueUnit: "px"
+
+              - syntax: <number>
+                name: "--dock-app-title-letter-spacing"
+                label: "● Letter Spacing"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4]
+
+              - syntax: <number>
+                name: "--dock-app-title-font-weight"
+                label: "● Line Thickness"
+                initialValue: 600
+                options: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+
+              - syntax: <number>
+                name: "--dock-app-title-style-wbtxt-state"
+                label: "╰・Extra on Hover"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <string>
+                name: "--dock-app-title-style"
+                label: "● State"
+                initialValue: "normal"
+                options: [normal, italic]
+
+              - syntax: <number>
+                name: "--dock-app-title-style-ctrans-state"
+                label: "╰・State on Hover"
+                description: " 10 = Normal, -9 = Italic, 0 = No Change"
+                tip: "Uses transform for transition effect."
+                initialValue: 0
+                options: [0, -9, 10]
+
+              - syntax: <string>
+                name: "--dock-app-title-case"
+                label: "● Case"
+                initialValue: "none"
+                options: [none, uppercase, lowercase, capitalize]
+
+              - syntax: <color>
+                name: "--dock-app-title-color"
+                label: "● Color"
+                initialValue: "#cccccc"
+
+              - syntax: <color>
+                name: "--dock-app-title-color-state"
+                label: "╰・Color on Hover"
+                initialValue: "#dbd9d9"
+
+        - group:
+            header: " Drop Shadow"
+            items:
+              - syntax: <color>
+                name: "--dock-app-title-text-shadow-color"
+                label: "● Color"
+                initialValue: "#00000000"
+
+              - syntax: <color>
+                name: "--dock-app-title-text-shadow-color-state"
+                label: "╰・Color on Hover"
+                initialValue: "#00000000"
+
+              - syntax: <length>
+                name: "--dock-app-title-text-shadow-blur"
+                label: "● Blur"
+                tip: "0 = sharp, higher = blurred"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-app-title-text-shadow-blur-state"
+                label: "╰・Blur on Hover"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Position :"
+                  items:
+                    - syntax: <length>
+                      name: "--dock-app-title-text-shadow-x"
+                      label: "● Horizontal Offset"
+                      tip: "Negative = left, Positive = right"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-text-shadow-x-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-text-shadow-y"
+                      label: "● Vertical Offset"
+                      tip: "Negative = up, Positive = down"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-app-title-text-shadow-y-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+  - group:
+      header: "⧉ Transitions of the App Titles Text"
+      items:
+        - syntax: <string>
+          name: "--dock-app-title-color-transition"
+          label: "● Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-app-title-text-transform-transition"
+          label: "● Transform"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0s ease"
+
+        - syntax: <string>
+          name: "--dock-app-title-text-shadow-transition"
+          label: "● Drop Shadow"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+  - group:
+      header: "✦ Base Layer of Window Previews"
+      items:
+        - group:
+            header: " Position"
+            items:
+              - syntax: <length>
+                name: '--dock-window-prev-vertical-pos'
+                label: "● Vertical Offset"
+                tip: "Positive = up, Negative = down"
+                initialValue: 0
+                initialValueUnit: 'px'
+
+        - group:
+            header: " Background"
+            items:
+              - syntax: <color>
+                name: "--dock-window-prev-main-bg-color"
+                label: "● Color"
+                initialValue: '#222222CC'
+
+              - syntax: <color>
+                name: "--dock-window-prev-main-bg-color-state"
+                label: "╰・Color on Hover"
+                initialValue: '#222222CC'
+
+              - syntax: <string>
+                name: "--dock-window-prev-bg-image"
+                label: "● Graphic"
+                tip: "● Image: url('https://example.png')   ● Gradients: Linear, Radial, Conic >    ❖ Quick Overview - Refer to CSS Doc: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ • linear-gradient(direction, color, color, ...)                             ❯ direction = 'to top', 'to right',       'to bottom', 'to left'              • radial-gradient(shape at pos, color, color, ...)                             ❯ shape: circle, ellipse               ❯ pos: 'center', 'top', 'bottom', 'left',     'right'                          • conic-gradient(from angle at pos, color)  ➔  angle: '0deg', '45deg', etc"
+                description: "Set a image or gradiant as a background layer (adjust the transparency of the above color to be able to see it)."
+                initialValue: "none"
+
+              - syntax: <string>
+                name: "--dock-window-prev-bg-image-state"
+                label: "╰・Graphic on Hover"
+                initialValue: "none"
+
+              - group:
+                  header: "❯ Image Focal Position :"
+                  items:
+                    - syntax: <string>
+                      name: "--dock-window-prev-image-pos-vert"
+                      label: "● Vertical Area of Focus"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-image-pos-vert-state"
+                      label: "╰・Area on Hover"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-image-pos-hori"
+                      label: "● Horizontal Area of Focus"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-image-pos-hori-state"
+                      label: "╰・Area on Hover"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+              - group:
+                  header: "❯ Filters for the Graphic :"
+                  items:
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-grayscale"
+                      label: "● Grayscale"
+                      tip: "0 = none, 1 = grayscale"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-grayscale-state"
+                      label: "╰・Grayscale on Hover"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-brightness"
+                      label: "● Brightness"
+                      tip: "0 = dim, 2 = bright"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-brightness-state"
+                      label: "╰・Brightness on Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-contrast"
+                      label: "● Contrast"
+                      tip: "0 = none, 2 = high contrast"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-contrast-state"
+                      label: "╰・Contrast on Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-filter-hue-rotate"
+                      label: "● Color Hue"
+                      tip: "Rotate from 0 to 360 degrees"
+                      initialValue: "0deg"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-filter-hue-rotate-state"
+                      label: "╰・Hue on Hover"
+                      initialValue: "0deg"
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-invert"
+                      label: "● Color Invert"
+                      tip: "0 = none, 1 = inverted"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-invert-state"
+                      label: "╰・Invert on Hover"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-saturate"
+                      label: "● Saturation"
+                      tip: "0 = desaturated, 2 = saturated"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-saturate-state"
+                      label: "╰・Saturation on Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-sepia"
+                      label: "● Sepia"
+                      tip: "0 = none, 1 = full sepia"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-sepia-state"
+                      label: "╰・Sepia on Hover"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-opacity"
+                      label: "● Opacity"
+                      tip: "0 = transparent, 1 = opaque"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-filter-opacity-state"
+                      label: "╰・Opacity on Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+        - group:
+            header: " Border"
+            items:
+              - syntax: <length>
+                name: "--dock-window-prev-border-thickness"
+                label: "● Thickness"
+                initialValue: 2
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Top :"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-top-border-color"
+                      label: "● Color"
+                      initialValue: "#29292933"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-top-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#31323366"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-top-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-top-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Bottom :"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-bottom-border-color"
+                      label: "● Color"
+                      initialValue: "#29292933"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-bottom-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#31323366"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-bottom-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-bottom-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Right :"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-right-border-color"
+                      label: "● Color"
+                      initialValue: "#29292933"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-right-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#31323366"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-right-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-right-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Left :"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-left-border-color"
+                      label: "● Color"
+                      initialValue: "#29292933"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-left-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#31323366"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-left-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-left-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+        - group:
+            header: " Corner Rounding"
+            items:
+              - syntax: <length>
+                name: "--dock-window-prev-top-left-bdr-radius"
+                label: "● Top Left"
+                initialValue: 13
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-top-left-bdr-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 13
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-top-right-bdr-radius"
+                label: "● Top Right"
+                initialValue: 13
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-top-right-bdr-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 13
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-bottom-left-bdr-radius"
+                label: "● Bottom Left"
+                initialValue: 13
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-bottom-left-bdr-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 13
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-bottom-right-bdr-radius"
+                label: "● Bottom Right"
+                initialValue: 13
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-bottom-right-bdr-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 13
+                initialValueUnit: "px"
+
+        - group:
+            header: " Drop Shadow"
+            items:
+              - syntax: <color>
+                name: "--dock-window-prev-shadow-color"
+                label: "● Color"
+                initialValue: "#00000000"
+
+              - syntax: <color>
+                name: "--dock-window-prev-shadow-color-state"
+                label: "╰・Color on Hover"
+                initialValue: "#00000000"
+
+              - syntax: <length>
+                name: "--dock-window-prev-shadow-blur"
+                label: "● Blur"
+                tip: "0 = sharp, higher = blurred"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-shadow-blur-state"
+                label: "╰・Blur on Hover"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-shadow-spread"
+                label: "● Radius"
+                tip: "Negative = shrinks, Positive = grows"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-shadow-spread-state"
+                label: "╰・Radius on Hover"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Position :"
+                  items:
+                    - syntax: <length>
+                      name: "--dock-window-prev-shadow-x"
+                      label: "● Horizontal Offset"
+                      tip: "Negative = left, Positive = right"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-shadow-x-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-shadow-y"
+                      label: "● Vertical Offset"
+                      tip: "Negative = up, Positive = down"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-shadow-y-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+  - group:
+      header: "⧉ Transitions of the Window Preview's Base Layer"
+      items:
+        - syntax: <string>
+          name: "--dock-window-prev-background-color-transition"
+          label: "● Background Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-background-image-transition"
+          label: "● Background Graphic"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-filter-transition"
+          label: "● Graphic Filters"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-border-color-transition"
+          label: "● Border Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-border-radius-transition"
+          label: "● Corner Rounding"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "1.0s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-shadow-transition"
+          label: "● Drop Shadow"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+  - group:
+      header: "✦ Inner Layer of Window Previews"
+      items:
+        - syntax: <length>
+          name: "--dock-window-prev-inner-gap"
+          label: "● Gap Between Previews"
+          tip: "The space between each preview when there are multiple instances."
+          initialValue: 8
+          initialValueUnit: "px"
+
+        - group:
+            header: " Padding"
+            items:
+              - syntax: <length>
+                name: "--dock-window-prev-inner-padding-top"
+                label: "● Top"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-padding-bottom"
+                label: "● Bottom"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-padding-left"
+                label: "● Left"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-padding-right"
+                label: "● Right"
+                initialValue: 6
+                initialValueUnit: "px"
+
+        - group:
+            header: " Background"
+            items:
+              - syntax: <color>
+                name: "--dock-window-prev-inner-bg-color"
+                label: "● Color"
+                initialValue: '#3a3a3b33'
+
+              - syntax: <color>
+                name: "--dock-window-prev-inner-bg-color-state"
+                label: "╰・Color on Hover"
+                initialValue: '#3a3a3b99'
+
+              - syntax: <string>
+                name: "--dock-window-prev-inner-bg-image"
+                label: "● Graphic"
+                tip: "● Image: url('https://example.png')   ● Gradients: Linear, Radial, Conic >    ❖ Quick Overview - Refer to CSS Doc: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ • linear-gradient(direction, color, color, ...)                             ❯ direction = 'to top', 'to right',       'to bottom', 'to left'              • radial-gradient(shape at pos, color, color, ...)                             ❯ shape: circle, ellipse               ❯ pos: 'center', 'top', 'bottom', 'left',     'right'                          • conic-gradient(from angle at pos, color)  ➔  angle: '0deg', '45deg', etc"
+                description: "Set a image or gradiant as the background layer."
+                initialValue: "none"
+
+              - syntax: <string>
+                name: "--dock-window-prev-inner-bg-image-state"
+                label: "╰・Graphic on Hover"
+                initialValue: "none"
+
+              - group:
+                  header: "❯ Image Focal Position :"
+                  items:
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-image-pos-vert"
+                      label: "● Vertical Area of Focus"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-image-pos-vert-state"
+                      label: "╰・Area on Hover"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-image-pos-hori"
+                      label: "● Horizontal Area of Focus"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-image-pos-hori-state"
+                      label: "╰・Area on Hover"
+                      initialValue: "50%"
+                      options: [0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%]
+
+              - group:
+                  header: "❯ Filters for the Graphic :"
+                  items:
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-grayscale"
+                      label: "● Grayscale"
+                      tip: "0 = none, 1 = grayscale"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-grayscale-state"
+                      label: "╰・Grayscale on Hover"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-brightness"
+                      label: "● Brightness"
+                      tip: "0 = dim, 2 = bright"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-brightness-state"
+                      label: "╰・Brightness on Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-contrast"
+                      label: "● Contrast"
+                      tip: "0 = none, 2 = high contrast"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-contrast-state"
+                      label: "╰・Contrast on Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-filter-hue-rotate"
+                      label: "● Color Hue"
+                      tip: "Rotate from 0 to 360 degrees"
+                      initialValue: "0deg"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-filter-hue-rotate-state"
+                      label: "╰・Hue on Hover"
+                      initialValue: "0deg"
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-invert"
+                      label: "● Color Invert"
+                      tip: "0 = none, 1 = inverted"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-invert-state"
+                      label: "╰・Invert on Hover"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-saturate"
+                      label: "● Saturation"
+                      tip: "0 = desaturated, 2 = saturated"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-saturate-state"
+                      label: "╰・Saturation on Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-sepia"
+                      label: "● Sepia"
+                      tip: "0 = none, 1 = full sepia"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-sepia-state"
+                      label: "╰・Sepia on Hover"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-opacity"
+                      label: "● Opacity"
+                      tip: "0 = transparent, 1 = opaque"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-window-prev-inner-filter-opacity-state"
+                      label: "╰・Opacity on Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+        - group:
+            header: " Border"
+            items:
+              - syntax: <length>
+                name: "--dock-window-prev-inner-border-thickness"
+                label: "● Thickness"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Top :"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-top-border-color"
+                      label: "● Color"
+                      initialValue: "#00000000"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-top-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#00000000"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-top-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-top-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Bottom :"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-bottom-border-color"
+                      label: "● Color"
+                      initialValue: "#00000000"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-bottom-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#00000000"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-bottom-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-bottom-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Right :"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-right-border-color"
+                      label: "● Color"
+                      initialValue: "#00000000"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-right-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#00000000"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-right-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-right-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Left :"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-left-border-color"
+                      label: "● Color"
+                      initialValue: "#00000000"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-left-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#00000000"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-left-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-left-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+        - group:
+            header: " Corner Rounding"
+            items:
+              - syntax: <length>
+                name: "--dock-window-prev-inner-top-left-bdr-radius"
+                label: "● Top Left"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-top-left-bdr-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-top-right-bdr-radius"
+                label: "● Top Right"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-top-right-bdr-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-bottom-left-bdr-radius"
+                label: "● Bottom Left"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-bottom-left-bdr-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-bottom-right-bdr-radius"
+                label: "● Bottom Right"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-bottom-right-bdr-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 10
+                initialValueUnit: "px"
+
+        - group:
+            header: " Drop Shadow"
+            items:
+              - syntax: <color>
+                name: "--dock-window-prev-inner-shadow-color"
+                label: "● Color"
+                initialValue: "#00000000"
+
+              - syntax: <color>
+                name: "--dock-window-prev-inner-shadow-color-state"
+                label: "╰・Color on Hover"
+                initialValue: "#00000000"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-shadow-blur"
+                label: "● Blur"
+                tip: "0 = sharp, higher = blurred"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-shadow-blur-state"
+                label: "╰・Blur on Hover"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-shadow-spread"
+                label: "● Radius"
+                tip: "Negative = shrinks, Positive = grows"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-shadow-spread-state"
+                label: "╰・Radius on Hover"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Position :"
+                  items:
+                    - syntax: <length>
+                      name: "--dock-window-prev-inner-shadow-x"
+                      label: "● Horizontal Offset"
+                      tip: "Negative = left, Positive = right"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-inner-shadow-x-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-inner-shadow-y"
+                      label: "● Vertical Offset"
+                      tip: "Negative = up, Positive = down"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-inner-shadow-y-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+  - group:
+      header: "⧉ Transitions of the Window Preview's Inner Layer"
+      items:
+        - syntax: <string>
+          name: "--dock-window-prev-inner-background-color-transition"
+          label: "● Background Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-inner-bg-image-transition"
+          label: "● Background Graphic"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-inner-filter-transition"
+          label: "● Graphic Filters"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-inner-border-color-transition"
+          label: "● Border Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-inner-border-radius-transition"
+          label: "● Corner Rounding"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "1.0s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-inner-shadow-transition"
+          label: "● Drop Shadow"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+  - group:
+      header: "✦ Window Preview Titlebar"
+      items:
+        - group:
+            header: " Close Button"
+            items:
+              - group:
+                  header: " Padding"
+                  items:
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-padding-top"
+                      label: "● Top"
+                      initialValue: 12
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-padding-bottom"
+                      label: "● Bottom"
+                      initialValue: 12
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-padding-left"
+                      label: "● Left"
+                      initialValue: 12
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-padding-right"
+                      label: "● Right"
+                      initialValue: 12
+                      initialValueUnit: "px"
+
+              - group:
+                  header: " Background"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-close-background"
+                      label: "● Color"
+                      initialValue: '#00000000'
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-close-background-state"
+                      label: "╰・Color on Hover"
+                      initialValue: '#222222cc'
+
+              - group:
+                  header: " Mark"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-close-mark-color"
+                      label: "● Color"
+                      initialValue: '#cccccc'
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-close-mark-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: '#dbd9d9'
+
+              - group:
+                  header: " Border"
+                  items:
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-border-thickness"
+                      label: "● Thickness"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - group:
+                        header: "❯ Top :"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-window-prev-close-top-border-color"
+                            label: "● Color"
+                            initialValue: "#00000000"
+
+                          - syntax: <color>
+                            name: "--dock-window-prev-close-top-border-color-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#00000000"
+
+                          - syntax: <string>
+                            name: "--dock-window-prev-close-top-border-style"
+                            label: "● Style"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                          - syntax: <string>
+                            name: "--dock-window-prev-close-top-border-style-state"
+                            label: "╰・Style on Hover"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - group:
+                        header: "❯ Bottom :"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-window-prev-close-bottom-border-color"
+                            label: "● Color"
+                            initialValue: "#00000000"
+
+                          - syntax: <color>
+                            name: "--dock-window-prev-close-bottom-border-color-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#00000000"
+
+                          - syntax: <string>
+                            name: "--dock-window-prev-close-bottom-border-style"
+                            label: "● Style"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                          - syntax: <string>
+                            name: "--dock-window-prev-close-bottom-border-style-state"
+                            label: "╰・Style on Hover"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - group:
+                        header: "❯ Right :"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-window-prev-close-right-border-color"
+                            label: "● Color"
+                            initialValue: "#00000000"
+
+                          - syntax: <color>
+                            name: "--dock-window-prev-close-right-border-color-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#00000000"
+
+                          - syntax: <string>
+                            name: "--dock-window-prev-close-right-border-style"
+                            label: "● Style"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                          - syntax: <string>
+                            name: "--dock-window-prev-close-right-border-style-state"
+                            label: "╰・Style on Hover"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - group:
+                        header: "❯ Left :"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-window-prev-close-left-border-color"
+                            label: "● Color"
+                            initialValue: "#00000000"
+
+                          - syntax: <color>
+                            name: "--dock-window-prev-close-left-border-color-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#00000000"
+
+                          - syntax: <string>
+                            name: "--dock-window-prev-close-left-border-style"
+                            label: "● Style"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                          - syntax: <string>
+                            name: "--dock-window-prev-close-left-border-style-state"
+                            label: "╰・Style on Hover"
+                            initialValue: "solid"
+                            options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: " Corner Rounding"
+                  items:
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-top-left-bdr-radius"
+                      label: "● Top Left"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-top-left-bdr-radius-state"
+                      label: "╰・Rounding on Hover"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-top-right-bdr-radius"
+                      label: "● Top Right"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-top-right-bdr-radius-state"
+                      label: "╰・Rounding on Hover"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-bottom-left-bdr-radius"
+                      label: "● Bottom Left"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-bottom-left-bdr-radius-state"
+                      label: "╰・Rounding on Hover"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-bottom-right-bdr-radius"
+                      label: "● Bottom Right"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-bottom-right-bdr-radius-state"
+                      label: "╰・Rounding on Hover"
+                      initialValue: 10
+                      initialValueUnit: "px"
+
+              - group:
+                  header: " Drop Shadow"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-close-shadow-color"
+                      label: "● Color"
+                      initialValue: "#00000000"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-close-shadow-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#00000000"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-shadow-blur"
+                      label: "● Blur"
+                      tip: "0 = sharp, higher = blurred"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-shadow-blur-state"
+                      label: "╰・Blur on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-shadow-spread"
+                      label: "● Radius"
+                      tip: "Negative = shrinks, Positive = grows"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-close-shadow-spread-state"
+                      label: "╰・Radius on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - group:
+                        header: "❯ Position :"
+                        items:
+                          - syntax: <length>
+                            name: "--dock-window-prev-close-shadow-x"
+                            label: "● Horizontal Offset"
+                            tip: "Negative = left, Positive = right"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-window-prev-close-shadow-x-state"
+                            label: "╰・Offset on Hover"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-window-prev-close-shadow-y"
+                            label: "● Vertical Offset"
+                            tip: "Negative = up, Positive = down"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-window-prev-close-shadow-y-state"
+                            label: "╰・Offset on Hover"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+  - group:
+      header: "⧉ Transitions of the Window Preview Titlebar"
+      items:
+        - syntax: <string>
+          name: "--dock-window-prev-close-background-color-transition"
+          label: "● Background Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-close-mark-color-transition"
+          label: "● Mark Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-close-border-color-transition"
+          label: "● Border Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-close-border-radius-transition"
+          label: "● Corner Rounding"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "1.0s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-close-shadow-transition"
+          label: "● Drop Shadow"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+  - group:
+      header: "✦ Window Preview Image Container"
+      items:
+        - group:
+            header: " Padding"
+            items:
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-padding-top"
+                label: "● Top"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-padding-bottom"
+                label: "● Bottom"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-padding-left"
+                label: "● Left"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-padding-right"
+                label: "● Right"
+                initialValue: 0
+                initialValueUnit: "px"
+
+        - group:
+            header: " Background"
+            items:
+              - syntax: <color>
+                name: "--dock-window-prev-inner-im-bg-color"
+                label: "● Color"
+                initialValue: '#201f1fcc'
+
+              - syntax: <color>
+                name: "--dock-window-prev-inner-im-bg-color-state"
+                label: "╰・Color on Hover"
+                initialValue: '#201f1fcc'
+
+        - group:
+            header: " Loading Spinner"
+            items:
+              - syntax: <number>
+                name: "--dock-window-prev-spinner-filter-grayscale"
+                label: "● Grayscale"
+                tip: "0 = none, 1 = grayscale"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--dock-window-prev-spinner-filter-brightness"
+                label: "● Brightness"
+                tip: "0 = dim, 2 = bright"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+              - syntax: <number>
+                name: "--dock-window-prev-spinner-filter-contrast"
+                label: "● Contrast"
+                tip: "0 = none, 2 = high contrast"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+              - syntax: <string>
+                name: "--dock-window-prev-spinner-filter-hue-rotate"
+                label: "● Color Hue"
+                tip: "Rotate from 0 to 360 degrees"
+                initialValue: "0deg"
+
+              - syntax: <number>
+                name: "--dock-window-prev-spinner-filter-invert"
+                label: "● Color Invert"
+                tip: "0 = none, 1 = inverted"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--dock-window-prev-spinner-filter-saturate"
+                label: "● Saturation"
+                tip: "0 = desaturated, 2 saturated"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+              - syntax: <number>
+                name: "--dock-window-prev-spinner-filter-sepia"
+                label: "● Sepia"
+                tip: "0 = none, 1 = full sepia"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <number>
+                name: "--dock-window-prev-spinner-filter-opacity"
+                label: "● Opacity"
+                tip: "0 = transparent, 1 = opaque"
+                initialValue: 1
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+        - group:
+            header: " Border"
+            items:
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-border-thickness"
+                label: "● Thickness"
+                initialValue: 1
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Top :"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-im-top-border-color"
+                      label: "● Color"
+                      initialValue: "#29292933"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-im-top-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#31323366"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-im-top-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-im-top-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Bottom :"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-im-bottom-border-color"
+                      label: "● Color"
+                      initialValue: "#29292933"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-im-bottom-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#31323366"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-im-bottom-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-im-bottom-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Right :"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-im-right-border-color"
+                      label: "● Color"
+                      initialValue: "#29292933"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-im-right-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#31323366"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-im-right-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-im-right-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+              - group:
+                  header: "❯ Left :"
+                  items:
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-im-left-border-color"
+                      label: "● Color"
+                      initialValue: "#29292933"
+
+                    - syntax: <color>
+                      name: "--dock-window-prev-inner-im-left-border-color-state"
+                      label: "╰・Color on Hover"
+                      initialValue: "#31323366"
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-im-left-border-style"
+                      label: "● Style"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+                    - syntax: <string>
+                      name: "--dock-window-prev-inner-im-left-border-style-state"
+                      label: "╰・Style on Hover"
+                      initialValue: "solid"
+                      options: [solid, dashed, dotted, double, groove, ridge, inset, outset]
+
+        - group:
+            header: " Corner Rounding"
+            items:
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-top-left-bdr-radius"
+                label: "● Top Left"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-top-left-bdr-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-top-right-bdr-radius"
+                label: "● Top Right"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-top-right-bdr-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-bottom-left-bdr-radius"
+                label: "● Bottom Left"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-bottom-left-bdr-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-bottom-right-bdr-radius"
+                label: "● Bottom Right"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-bottom-right-bdr-radius-state"
+                label: "╰・Rounding on Hover"
+                initialValue: 10
+                initialValueUnit: "px"
+
+        - group:
+            header: " Drop Shadow"
+            items:
+              - syntax: <color>
+                name: "--dock-window-prev-inner-im-shadow-color"
+                label: "● Color"
+                initialValue: "#00000000"
+
+              - syntax: <color>
+                name: "--dock-window-prev-inner-im-shadow-color-state"
+                label: "╰・Color on Hover"
+                initialValue: "#00000000"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-shadow-blur"
+                label: "● Blur"
+                tip: "0 = sharp, higher = blurred"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-shadow-blur-state"
+                label: "╰・Blur on Hover"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-shadow-spread"
+                label: "● Radius"
+                tip: "Negative = shrinks, Positive = grows"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-window-prev-inner-im-shadow-spread-state"
+                label: "╰・Radius on Hover"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Position :"
+                  items:
+                    - syntax: <length>
+                      name: "--dock-window-prev-inner-im-shadow-x"
+                      label: "● Horizontal Offset"
+                      tip: "Negative = left, Positive = right"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-inner-im-shadow-x-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-inner-im-shadow-y"
+                      label: "● Vertical Offset"
+                      tip: "Negative = up, Positive = down"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-window-prev-inner-im-shadow-y-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+  - group:
+      header: "⧉ Transitions of the Window Preview's Image Container"
+      items:
+        - syntax: <string>
+          name: "--dock-window-prev-inner-im-background-color-transition"
+          label: "● Background Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-inner-im-border-color-transition"
+          label: "● Border Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-inner-im-border-radius-transition"
+          label: "● Corner Rounding"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "1.0s ease"
+
+        - syntax: <string>
+          name: "--dock-window-prev-inner-im-shadow-transition"
+          label: "● Drop Shadow"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+  - group:
+      header: "✦ Window Preview Text"
+      items:
+        - group:
+            header: " Font"
+            items:
+              - syntax: <string>
+                name: '--dock-win-prev-title-font'
+                label: "● Name"
+                initialValue: 'inherit'
+
+              - syntax: <string>
+                name: '--as-kkas-ufnazf'
+                label: "╰ Ex: Comic Sans MS"
+                initialValue: 'https://support.microsoft.com/en-us/windows/manage-fonts-in-windows-f12d0657-2fc8-7613-c76f-88d043b334b8'
+
+        - group:
+            header: " Styling"
+            items:
+              - syntax: <length>
+                name: "--dock-win-prev-title-font-size"
+                label: "● Size"
+                initialValue: 12
+                initialValueUnit: "px"
+
+              - syntax: <number>
+                name: "--dock-win-prev-title-letter-spacing"
+                label: "● Letter Spacing"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4]
+
+              - syntax: <number>
+                name: "--dock-win-prev-title-font-weight"
+                label: "● Line Thickness"
+                initialValue: 600
+                options: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+
+              - syntax: <number>
+                name: "--dock-win-prev-style-wbtxt-state"
+                label: "╰・Extra on Hover"
+                initialValue: 0
+                options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+              - syntax: <string>
+                name: "--dock-win-prev-title-style"
+                label: "● State"
+                initialValue: "normal"
+                options: [normal, italic]
+
+              - syntax: <number>
+                name: "--dock-win-prev-style-ctrans-state"
+                label: "╰・State on Hover"
+                description: " 10 = Normal, -9 = Italic, 0 = No Change"
+                tip: "Uses transform for transition effect."
+                initialValue: 0
+                options: [0, -9, 10]
+
+              - syntax: <string>
+                name: "--dock-win-prev-title-case"
+                label: "● Case"
+                initialValue: "none"
+                options: [none, uppercase, lowercase, capitalize]
+
+              - syntax: <color>
+                name: "--dock-win-prev-title-color"
+                label: "● Color"
+                initialValue: "#cccccc"
+
+              - syntax: <color>
+                name: "--dock-win-prev-title-color-state"
+                label: "╰・Color on Hover"
+                initialValue: "#dbd9d9"
+
+        - group:
+            header: " Drop Shadow"
+            items:
+              - syntax: <color>
+                name: "--dock-win-prev-title-text-shadow-color"
+                label: "● Color"
+                initialValue: "#00000000"
+
+              - syntax: <color>
+                name: "--dock-win-prev-title-text-shadow-color-state"
+                label: "╰・Color on Hover"
+                initialValue: "#00000000"
+
+              - syntax: <length>
+                name: "--dock-win-prev-title-text-shadow-blur"
+                label: "● Blur"
+                tip: "0 = sharp, higher = blurred"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-win-prev-title-text-shadow-blur-state"
+                label: "╰・Blur on Hover"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - group:
+                  header: "❯ Position :"
+                  items:
+                    - syntax: <length>
+                      name: "--dock-win-prev-title-text-shadow-x"
+                      label: "● Horizontal Offset"
+                      tip: "Negative = left, Positive = right"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-win-prev-title-text-shadow-x-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-win-prev-title-text-shadow-y"
+                      label: "● Vertical Offset"
+                      tip: "Negative = up, Positive = down"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      name: "--dock-win-prev-title-text-shadow-y-state"
+                      label: "╰・Offset on Hover"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+  - group:
+      header: "⧉ Transitions of the Window Preview Text"
+      items:
+        - syntax: <string>
+          name: "--dock-win-prev-title-color-transition"
+          label: "● Color"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+        - syntax: <string>
+          name: "--dock-win-prev-text-transform-transition"
+          label: "● Transform"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.2s ease"
+
+        - syntax: <string>
+          name: "--dock-win-prev-title-text-shadow-transition"
+          label: "● Drop Shadow"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.4s ease"
+
+styles:
+  '@seelen/weg': |
+    /* -----------------------------------------
+    ! App Title Popup
+    ----------------------------------------- */
+    .weg-item-preview-container:not(:has(.weg-item-preview-image-container)) {
+      bottom: var(--dock-app-title-vert-pos, 0px);
+      padding:
+        var(--dock-app-title-padding-top, 3px)
+        var(--dock-app-title-padding-right, 8px)
+        var(--dock-app-title-padding-bottom, 3px)
+        var(--dock-app-title-padding-left, 8px);
+
+      > .bg-layers {
+        > .bg-layer-1 {
+          background-color: transparent !important;
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* --- */
+            border-radius:
+              var(--dock-app-title-top-left-bdr-radius, 13px)
+              var(--dock-app-title-top-right-bdr-radius, 13px)
+              var(--dock-app-title-bottom-right-bdr-radius, 13px)
+              var(--dock-app-title-bottom-left-bdr-radius, 13px);
+            /* --- */
+            filter:
+              brightness(var(--dock-app-title-filter-brightness, 1))
+              contrast(var(--dock-app-title-filter-contrast, 1))
+              grayscale(var(--dock-app-title-filter-grayscale, 0))
+              hue-rotate(var(--dock-app-title-filter-hue-rotate, 0deg))
+              invert(var(--dock-app-title-filter-invert, 0))
+              opacity(var(--dock-app-title-filter-opacity, 1))
+              saturate(var(--dock-app-title-filter-saturate, 1))
+              sepia(var(--dock-app-title-filter-sepia, 0));
+            /* --- */
+            transition:
+              border-radius var(--dock-app-title-bdr-radius-transition, 1.0s ease),
+              opacity var(--dock-app-title-background-image-transition, 0.4s ease),
+              filter var(--dock-app-title-filter-transition, 0.4s ease);
+          }
+
+          &::before {
+            opacity: 1;
+            background-position:
+              var(--dock-app-title-image-pos-hori, 50%)
+              var(--dock-app-title-image-pos-vert, 50%);
+            background-image: var(--dock-app-title-bg-image, none);
+          }
+
+          &::after {
+            opacity: 0;
+            background-position:
+              var(--dock-app-title-image-pos-hori-state, 50%)
+              var(--dock-app-title-image-pos-vert-state, 50%);
+            background-image: var(--dock-app-title-bg-image-state, none);
+          }
+        }
+
+        > .bg-layer-2 {
+          background-color: var(--dock-app-title-background-color, #222222CC);
+          /* --- */
+          border-width: var(--dock-app-title-bdr-thickness, 2px);
+          border-style:
+            var(--dock-app-title-top-bdr-style, solid)
+            var(--dock-app-title-right-bdr-style, solid)
+            var(--dock-app-title-bottom-bdr-style, solid)
+            var(--dock-app-title-left-bdr-style, solid);
+          border-color:
+            var(--dock-app-title-top-bdr-color, #29292933)
+            var(--dock-app-title-right-bdr-color, #29292933)
+            var(--dock-app-title-bottom-bdr-color, #29292933)
+            var(--dock-app-title-left-bdr-color, #29292933);
+          border-radius:
+            var(--dock-app-title-top-left-bdr-radius, 13px)
+            var(--dock-app-title-top-right-bdr-radius, 13px)
+            var(--dock-app-title-bottom-right-bdr-radius, 13px)
+            var(--dock-app-title-bottom-left-bdr-radius, 13px);
+          box-shadow:
+            var(--dock-app-title-shadow-x, 0px)
+            var(--dock-app-title-shadow-y, 0px)
+            var(--dock-app-title-shadow-blur, 0px)
+            var(--dock-app-title-shadow-spread, 0px)
+            var(--dock-app-title-shadow-color, #00000000) !important;
+          /* --- */
+          transition:
+            border-radius var(--dock-app-title-bdr-radius-transition, 1.0s ease),
+            background-color var(--dock-app-title-background-color-transition, 0.4s ease),
+            border-color var(--dock-app-title-bdr-color-transition, 0.4s ease),
+            box-shadow var(--dock-app-title-shadow-transition, 0.4s ease);
+        }
+      }
+
+      &:hover {
+        > .bg-layers > .bg-layer-1 {
+          &::before {
+            opacity: 0;
+          }
+
+          &::after {
+            opacity: 1;
+            /* --- */
+            border-radius:
+              var(--dock-app-title-top-left-bdr-radius-state, 13px)
+              var(--dock-app-title-top-right-bdr-radius-state, 13px)
+              var(--dock-app-title-bottom-right-bdr-radius-state, 13px)
+              var(--dock-app-title-bottom-left-bdr-radius-state, 13px);
+            /* --- */
+            filter:
+              brightness(var(--dock-app-title-filter-brightness-state, 1))
+              contrast(var(--dock-app-title-filter-contrast-state, 1))
+              grayscale(var(--dock-app-title-filter-grayscale-state, 0))
+              hue-rotate(var(--dock-app-title-filter-hue-rotate-state, 0deg))
+              invert(var(--dock-app-title-filter-invert-state, 0))
+              opacity(var(--dock-app-title-filter-opacity-state, 1))
+              saturate(var(--dock-app-title-filter-saturate-state, 1))
+              sepia(var(--dock-app-title-filter-sepia-state, 0));
+          }
+        }
+
+        > .bg-layers > .bg-layer-2 {
+          background-color: var(--dock-app-title-background-color-state, #222222CC);
+          /* --- */
+          border-style:
+            var(--dock-app-title-top-bdr-style-state, solid)
+            var(--dock-app-title-right-bdr-style-state, solid)
+            var(--dock-app-title-bottom-bdr-style-state, solid)
+            var(--dock-app-title-left-bdr-style-state, solid);
+          border-color:
+            var(--dock-app-title-top-bdr-color-state, #31323366)
+            var(--dock-app-title-right-bdr-color-state, #31323366)
+            var(--dock-app-title-bottom-bdr-color-state, #31323366)
+            var(--dock-app-title-left-bdr-color-state, #31323366);
+          border-radius:
+            var(--dock-app-title-top-left-bdr-radius-state, 13px)
+            var(--dock-app-title-top-right-bdr-radius-state, 13px)
+            var(--dock-app-title-bottom-right-bdr-radius-state, 13px)
+            var(--dock-app-title-bottom-left-bdr-radius-state, 13px);
+          /* --- */
+          box-shadow:
+            var(--dock-app-title-shadow-x-state, 0px)
+            var(--dock-app-title-shadow-y-state, 0px)
+            var(--dock-app-title-shadow-blur-state, 0px)
+            var(--dock-app-title-shadow-spread-state, 0px)
+            var(--dock-app-title-shadow-color-state, #00000000) !important;
+        }
+      }
+    }
+
+    /* -----------------------------------------
+    ! App Title Popup Text
+    ----------------------------------------- */
+    .weg-item-display-name {
+      font-family: var(--dock-app-title-font, inherit);
+      font-size: var(--dock-app-title-font-size, 12px) !important;
+      font-weight: var(--dock-app-title-font-weight, 600) !important;
+      font-style: var(--dock-app-title-style, normal);
+      letter-spacing: calc(var(--dock-app-title-letter-spacing, 0) * 1px);
+      text-transform: var(--dock-app-title-case, none);
+      /* --- */
+      color: var(--dock-app-title-color, #cccccc) !important;
+      /* --- */
+      text-shadow:
+        var(--dock-app-title-text-shadow-x, 0px)
+        var(--dock-app-title-text-shadow-y, 0px)
+        var(--dock-app-title-text-shadow-blur, 0px)
+        var(--dock-app-title-text-shadow-color, #00000000);
+      /* --- */
+      transition:
+        color var(--dock-app-title-color-transition, 0.4s ease),
+        text-shadow var(--dock-app-title-text-shadow-transition, 0.4s ease),
+        transform var(--dock-app-title-text-transform-transition, 0s ease);
+
+      &:hover {
+        /* -9 = italic | 10 = normal | 0 = no change */
+        transform: skewX(calc(var(--dock-app-title-style-ctrans-state, 0) * 1deg));
+        -webkit-text-stroke: calc(var(--dock-app-title-style-wbtxt-state, 0) * 1px) currentColor;
+        /* --- */
+        color: var(--dock-app-title-color-state, #dbd9d9) !important;
+        /* --- */
+        text-shadow:
+          var(--dock-app-title-text-shadow-x-state, 0px)
+          var(--dock-app-title-text-shadow-y-state, 0px)
+          var(--dock-app-title-text-shadow-blur-state, 0px)
+          var(--dock-app-title-text-shadow-color-state, #00000000);
+      }
+    }
+
+
+    /* -----------------------------------------
+    ! Window Preview
+    ----------------------------------------- */
+    .weg-item-preview-container:has(.weg-item-preview-image-container) {
+      bottom: var(--dock-window-prev-vertical-pos, 0px);
+
+      > .bg-layers {
+        > .bg-layer-1 {
+          background-color: transparent !important;
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius:
+              var(--dock-window-prev-top-left-bdr-radius, 13px)
+              var(--dock-window-prev-top-right-bdr-radius, 13px)
+              var(--dock-window-prev-bottom-right-bdr-radius, 13px)
+              var(--dock-window-prev-bottom-left-bdr-radius, 13px);
+            /* --- */
+            filter:
+              brightness(var(--dock-window-prev-filter-brightness, 1))
+              contrast(var(--dock-window-prev-filter-contrast, 1))
+              grayscale(var(--dock-window-prev-filter-grayscale, 0))
+              hue-rotate(var(--dock-window-prev-filter-hue-rotate, 0deg))
+              invert(var(--dock-window-prev-filter-invert, 0))
+              opacity(var(--dock-window-prev-filter-opacity, 1))
+              saturate(var(--dock-window-prev-filter-saturate, 1))
+              sepia(var(--dock-window-prev-filter-sepia, 0));
+            /* --- */
+            transition:
+              border-radius var(--dock-window-prev-border-radius-transition, 1.0s ease),
+              opacity var(--dock-window-prev-background-image-transition, 0.4s ease),
+              filter var(--dock-window-prev-filter-transition, 0.4s ease);
+          }
+
+          &::before {
+            opacity: 1;
+            background-position:
+              var(--dock-window-prev-image-pos-hori, 50%)
+              var(--dock-window-prev-image-pos-vert, 50%);
+            background-image: var(--dock-window-prev-bg-image, none);
+          }
+
+          &::after {
+            opacity: 0;
+            background-position:
+              var(--dock-window-prev-image-pos-hori-state, 50%)
+              var(--dock-window-prev-image-pos-vert-state, 50%);
+            background-image: var(--dock-window-prev-bg-image-state, none);
+          }
+        }
+
+        > .bg-layer-2 {
+          background-color: var(--dock-window-prev-main-bg-color, #222222CC);
+          /* --- */
+          border-width: var(--dock-window-prev-border-thickness, 2px);
+          border-style:
+            var(--dock-window-prev-top-border-style, solid)
+            var(--dock-window-prev-right-border-style, solid)
+            var(--dock-window-prev-bottom-border-style, solid)
+            var(--dock-window-prev-left-border-style, solid);
+          border-color:
+            var(--dock-window-prev-top-border-color, #29292933)
+            var(--dock-window-prev-right-border-color, #29292933)
+            var(--dock-window-prev-bottom-border-color, #29292933)
+            var(--dock-window-prev-left-border-color, #29292933);
+          border-radius:
+            var(--dock-window-prev-top-left-bdr-radius, 13px)
+            var(--dock-window-prev-top-right-bdr-radius, 13px)
+            var(--dock-window-prev-bottom-right-bdr-radius, 13px)
+            var(--dock-window-prev-bottom-left-bdr-radius, 13px);
+          /* --- */
+          box-shadow:
+            var(--dock-window-prev-shadow-x, 0px)
+            var(--dock-window-prev-shadow-y, 0px)
+            var(--dock-window-prev-shadow-blur, 0px)
+            var(--dock-window-prev-shadow-spread, 0px)
+            var(--dock-window-prev-shadow-color, #00000000);
+          /* --- */
+          transition:
+            border-radius var(--dock-window-prev-border-radius-transition, 1.0s ease),
+            background-color var(--dock-window-prev-background-color-transition, 0.4s ease),
+            border-color var(--dock-window-prev-border-color-transition, 0.4s ease),
+            box-shadow var(--dock-window-prev-shadow-transition, 0.4s ease);
+        }
+      }
+
+      &:hover {
+        > .bg-layers > .bg-layer-1 {
+          &::before {
+            opacity: 0;
+          }
+
+          &::after {
+            opacity: 1;
+            /* --- */
+            border-radius:
+              var(--dock-window-prev-top-left-bdr-radius-state, 13px)
+              var(--dock-window-prev-top-right-bdr-radius-state, 13px)
+              var(--dock-window-prev-bottom-right-bdr-radius-state, 13px)
+              var(--dock-window-prev-bottom-left-bdr-radius-state, 13px);
+            /* --- */
+            filter:
+              brightness(var(--dock-window-prev-filter-brightness-state, 1))
+              contrast(var(--dock-window-prev-filter-contrast-state, 1))
+              grayscale(var(--dock-window-prev-filter-grayscale-state, 0))
+              hue-rotate(var(--dock-window-prev-filter-hue-rotate-state, 0deg))
+              invert(var(--dock-window-prev-filter-invert-state, 0))
+              opacity(var(--dock-window-prev-filter-opacity-state, 1))
+              saturate(var(--dock-window-prev-filter-saturate-state, 1))
+              sepia(var(--dock-window-prev-filter-sepia-state, 0));
+          }
+        }
+
+        > .bg-layers > .bg-layer-2 {
+          background-color: var(--dock-window-prev-main-bg-color-state, #222222CC);
+          /* --- */
+          border-style:
+            var(--dock-window-prev-top-border-style-state, solid)
+            var(--dock-window-prev-right-border-style-state, solid)
+            var(--dock-window-prev-bottom-border-style-state, solid)
+            var(--dock-window-prev-left-border-style-state, solid);
+          border-color:
+            var(--dock-window-prev-top-border-color-state, #31323366)
+            var(--dock-window-prev-right-border-color-state, #31323366)
+            var(--dock-window-prev-bottom-border-color-state, #31323366)
+            var(--dock-window-prev-left-border-color-state, #31323366);
+          border-radius:
+            var(--dock-window-prev-top-left-bdr-radius-state, 13px)
+            var(--dock-window-prev-top-right-bdr-radius-state, 13px)
+            var(--dock-window-prev-bottom-right-bdr-radius-state, 13px)
+            var(--dock-window-prev-bottom-left-bdr-radius-state, 13px);
+          /* --- */
+          box-shadow:
+            var(--dock-window-prev-shadow-x-state, 0px)
+            var(--dock-window-prev-shadow-y-state, 0px)
+            var(--dock-window-prev-shadow-blur-state, 0px)
+            var(--dock-window-prev-shadow-spread-state, 0px)
+            var(--dock-window-prev-shadow-color-state, #00000000);
+        }
+      }
+    }
+
+
+    /* -----------------------------------------
+    ! Inner Layer of Window Previews
+    ----------------------------------------- */
+    .weg-item-preview {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius:
+          var(--dock-window-prev-inner-top-left-bdr-radius, 10px)
+          var(--dock-window-prev-inner-top-right-bdr-radius, 10px)
+          var(--dock-window-prev-inner-bottom-right-bdr-radius, 10px)
+          var(--dock-window-prev-inner-bottom-left-bdr-radius, 10px);
+        /* --- */
+        filter:
+          brightness(var(--dock-window-prev-inner-filter-brightness, 1))
+          contrast(var(--dock-window-prev-inner-filter-contrast, 1))
+          grayscale(var(--dock-window-prev-inner-filter-grayscale, 0))
+          hue-rotate(var(--dock-window-prev-inner-filter-hue-rotate, 0deg))
+          invert(var(--dock-window-prev-inner-filter-invert, 0))
+          opacity(var(--dock-window-prev-inner-filter-opacity, 1))
+          saturate(var(--dock-window-prev-inner-filter-saturate, 1))
+          sepia(var(--dock-window-prev-inner-filter-sepia, 0));
+        /* --- */
+        transition:
+          border-radius var(--dock-window-prev-inner-border-radius-transition, 1.0s ease),
+          filter var(--dock-window-prev-inner-filter-transition, 0.4s ease),
+          opacity var(--dock-window-prev-inner-bg-image-transition, 0.4s ease);
+      }
+
+      &::before {
+        opacity: 1;
+        background-position:
+          var(--dock-window-prev-inner-image-pos-hori, 50%)
+          var(--dock-window-prev-inner-image-pos-vert, 50%);
+        background-image: var(--dock-window-prev-inner-bg-image, none);
+      }
+
+      &::after {
+        opacity: 0;
+        background-position:
+          var(--dock-window-prev-inner-image-pos-hori-state, 50%)
+          var(--dock-window-prev-inner-image-pos-vert-state, 50%);
+        background-image: var(--dock-window-prev-inner-bg-image-state, none);
+      }
+
+      > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      position: relative;
+      padding:
+        var(--dock-window-prev-inner-padding-top, 6px)
+        var(--dock-window-prev-inner-padding-right, 6px)
+        var(--dock-window-prev-inner-padding-bottom, 6px)
+        var(--dock-window-prev-inner-padding-left, 6px);
+      background-color: var(--dock-window-prev-inner-bg-color, #3a3a3b33);
+      /* --- */
+      border-width: var(--dock-window-prev-inner-border-thickness, 0px);
+      border-style:
+        var(--dock-window-prev-inner-top-border-style, solid)
+        var(--dock-window-prev-inner-right-border-style, solid)
+        var(--dock-window-prev-inner-bottom-border-style, solid)
+        var(--dock-window-prev-inner-left-border-style, solid);
+      border-color:
+        var(--dock-window-prev-inner-top-border-color, #00000000)
+        var(--dock-window-prev-inner-right-border-color, #00000000)
+        var(--dock-window-prev-inner-bottom-border-color, #00000000)
+        var(--dock-window-prev-inner-left-border-color, #00000000);
+      border-radius:
+        var(--dock-window-prev-inner-top-left-bdr-radius, 10px)
+        var(--dock-window-prev-inner-top-right-bdr-radius, 10px)
+        var(--dock-window-prev-inner-bottom-right-bdr-radius, 10px)
+        var(--dock-window-prev-inner-bottom-left-bdr-radius, 10px);
+      /* --- */
+      box-shadow:
+        var(--dock-window-prev-inner-shadow-x, 0px)
+        var(--dock-window-prev-inner-shadow-y, 0px)
+        var(--dock-window-prev-inner-shadow-blur, 0px)
+        var(--dock-window-prev-inner-shadow-spread, 0px)
+        var(--dock-window-prev-inner-shadow-color, #00000000);
+      /* --- */
+      transition:
+        border-radius var(--dock-window-prev-inner-border-radius-transition, 1.0s ease),
+        background-color var(--dock-window-prev-inner-background-color-transition, 0.4s ease),
+        border-color var(--dock-window-prev-inner-border-color-transition, 0.4s ease),
+        box-shadow var(--dock-window-prev-inner-shadow-transition, 0.4s ease);
+
+      &:hover {
+        &::before {
+          opacity: 0;
+        }
+
+        &::after {
+          opacity: 1;
+          /* --- */
+          border-radius:
+            var(--dock-window-prev-inner-top-left-bdr-radius-state, 10px)
+            var(--dock-window-prev-inner-top-right-bdr-radius-state, 10px)
+            var(--dock-window-prev-inner-bottom-right-bdr-radius-state, 10px)
+            var(--dock-window-prev-inner-bottom-left-bdr-radius-state, 10px);
+          /* --- */
+          filter:
+            brightness(var(--dock-window-prev-inner-filter-brightness-state, 1))
+            contrast(var(--dock-window-prev-inner-filter-contrast-state, 1))
+            grayscale(var(--dock-window-prev-inner-filter-grayscale-state, 0))
+            hue-rotate(var(--dock-window-prev-inner-filter-hue-rotate-state, 0deg))
+            invert(var(--dock-window-prev-inner-filter-invert-state, 0))
+            opacity(var(--dock-window-prev-inner-filter-opacity-state, 1))
+            saturate(var(--dock-window-prev-inner-filter-saturate-state, 1))
+            sepia(var(--dock-window-prev-inner-filter-sepia-state, 0));
+        }
+
+        background-color: var(--dock-window-prev-inner-bg-color-state, #3a3a3b99);
+        /* --- */
+        border-style:
+          var(--dock-window-prev-inner-top-border-style-state, solid)
+          var(--dock-window-prev-inner-right-border-style-state, solid)
+          var(--dock-window-prev-inner-bottom-border-style-state, solid)
+          var(--dock-window-prev-inner-left-border-style-state, solid);
+        border-color:
+          var(--dock-window-prev-inner-top-border-color-state, #00000000)
+          var(--dock-window-prev-inner-right-border-color-state, #00000000)
+          var(--dock-window-prev-inner-bottom-border-color-state, #00000000)
+          var(--dock-window-prev-inner-left-border-color-state, #00000000);
+        border-radius:
+          var(--dock-window-prev-inner-top-left-bdr-radius-state, 10px)
+          var(--dock-window-prev-inner-top-right-bdr-radius-state, 10px)
+          var(--dock-window-prev-inner-bottom-right-bdr-radius-state, 10px)
+          var(--dock-window-prev-inner-bottom-left-bdr-radius-state, 10px);
+        /* --- */
+        box-shadow:
+          var(--dock-window-prev-inner-shadow-x-state, 0px)
+          var(--dock-window-prev-inner-shadow-y-state, 0px)
+          var(--dock-window-prev-inner-shadow-blur-state, 0px)
+          var(--dock-window-prev-inner-shadow-spread-state, 0px)
+          var(--dock-window-prev-inner-shadow-color-state, #00000000);
+        /* removes default inner hover highlight */
+        filter: none !important;
+        backdrop-filter: none !important;
+      }
+    }
+
+    .weg-item-preview-scrollbar {
+      gap: var(--dock-window-prev-inner-gap, 8px);
+    }
+
+
+    /* -----------------------------------------
+    ! Window Preview Titlebar
+    ----------------------------------------- */
+    .weg-item-preview-title {
+      padding: 0px 0px 0px 5px !important;
+      /* add other opts in future */
+    }
+
+    .weg-item-preview-topbar {
+      margin: 0 0 5px 0 !important;
+      /* add other opts in future */
+    }
+
+    .weg-item-preview-close {
+      padding:
+        var(--dock-window-prev-close-padding-top, 12px)
+        var(--dock-window-prev-close-padding-right, 12px)
+        var(--dock-window-prev-close-padding-bottom, 12px)
+        var(--dock-window-prev-close-padding-left, 12px);
+      background-color: var(--dock-window-prev-close-background, #00000000);
+      color: var(--dock-window-prev-close-mark-color, #cccccc);
+      /* --- */
+      border-width: var(--dock-window-prev-close-border-thickness, 0px);
+      border-style:
+        var(--dock-window-prev-close-top-border-style, solid)
+        var(--dock-window-prev-close-right-border-style, solid)
+        var(--dock-window-prev-close-bottom-border-style, solid)
+        var(--dock-window-prev-close-left-border-style, solid);
+      border-color:
+        var(--dock-window-prev-close-top-border-color, #00000000)
+        var(--dock-window-prev-close-right-border-color, #00000000)
+        var(--dock-window-prev-close-bottom-border-color, #00000000)
+        var(--dock-window-prev-close-left-border-color, #00000000);
+      border-radius:
+        var(--dock-window-prev-close-top-left-bdr-radius, 10px)
+        var(--dock-window-prev-close-top-right-bdr-radius, 10px)
+        var(--dock-window-prev-close-bottom-right-bdr-radius, 10px)
+        var(--dock-window-prev-close-bottom-left-bdr-radius, 10px) !important;
+      /* --- */
+      box-shadow:
+        var(--dock-window-prev-close-shadow-x, 0px)
+        var(--dock-window-prev-close-shadow-y, 0px)
+        var(--dock-window-prev-close-shadow-blur, 0px)
+        var(--dock-window-prev-close-shadow-spread, 0px)
+        var(--dock-window-prev-close-shadow-color, #00000000);
+      /* --- */
+      transition:
+        border-radius var(--dock-window-prev-close-border-radius-transition, 1.0s ease),
+        background-color var(--dock-window-prev-close-background-color-transition, 0.4s ease),
+        color var(--dock-window-prev-close-mark-color-transition, 0.4s ease),
+        border-color var(--dock-window-prev-close-border-color-transition, 0.4s ease),
+        box-shadow var(--dock-window-prev-close-shadow-transition, 0.4s ease);
+
+      &:hover {
+        background-color: var(--dock-window-prev-close-background-state, #222222cc) !important;
+        color: var(--dock-window-prev-close-mark-color-state, #dbd9d9);
+        /* --- */
+        border-style:
+          var(--dock-window-prev-close-top-border-style-state, solid)
+          var(--dock-window-prev-close-right-border-style-state, solid)
+          var(--dock-window-prev-close-bottom-border-style-state, solid)
+          var(--dock-window-prev-close-left-border-style-state, solid);
+        border-color:
+          var(--dock-window-prev-close-top-border-color-state, #00000000)
+          var(--dock-window-prev-close-right-border-color-state, #00000000)
+          var(--dock-window-prev-close-bottom-border-color-state, #00000000)
+          var(--dock-window-prev-close-left-border-color-state, #00000000);
+        border-radius:
+          var(--dock-window-prev-close-top-left-bdr-radius-state, 10px)
+          var(--dock-window-prev-close-top-right-bdr-radius-state, 10px)
+          var(--dock-window-prev-close-bottom-right-bdr-radius-state, 10px)
+          var(--dock-window-prev-close-bottom-left-bdr-radius-state, 10px) !important;
+        /* --- */
+        box-shadow:
+          var(--dock-window-prev-close-shadow-x-state, 0px)
+          var(--dock-window-prev-close-shadow-y-state, 0px)
+          var(--dock-window-prev-close-shadow-blur-state, 0px)
+          var(--dock-window-prev-close-shadow-spread-state, 0px)
+          var(--dock-window-prev-close-shadow-color-state, #00000000);
+      }
+    }
+
+
+    /* -----------------------------------------
+    ! Window Preview Image Container
+    ----------------------------------------- */
+    .weg-item-preview-image-container {
+      border: none !important;
+    }
+
+    .weg-item-preview-image {
+      padding:
+        var(--dock-window-prev-inner-im-padding-top, 0px)
+        var(--dock-window-prev-inner-im-padding-right, 0px)
+        var(--dock-window-prev-inner-im-padding-bottom, 0px)
+        var(--dock-window-prev-inner-im-padding-left, 0px);
+      background-color: var(--dock-window-prev-inner-im-bg-color, #201f1fcc);
+      /* --- */
+      border-width: var(--dock-window-prev-inner-im-border-thickness, 1px);
+      border-style:
+        var(--dock-window-prev-inner-im-top-border-style, solid)
+        var(--dock-window-prev-inner-im-right-border-style, solid)
+        var(--dock-window-prev-inner-im-bottom-border-style, solid)
+        var(--dock-window-prev-inner-im-left-border-style, solid);
+      border-color:
+        var(--dock-window-prev-inner-im-top-border-color, #29292933)
+        var(--dock-window-prev-inner-im-right-border-color, #29292933)
+        var(--dock-window-prev-inner-im-bottom-border-color, #29292933)
+        var(--dock-window-prev-inner-im-left-border-color, #29292933);
+      border-radius:
+        var(--dock-window-prev-inner-im-top-left-bdr-radius, 10px)
+        var(--dock-window-prev-inner-im-top-right-bdr-radius, 10px)
+        var(--dock-window-prev-inner-im-bottom-right-bdr-radius, 10px)
+        var(--dock-window-prev-inner-im-bottom-left-bdr-radius, 10px);
+      /* --- */
+      box-shadow:
+        var(--dock-window-prev-inner-im-shadow-x, 0px)
+        var(--dock-window-prev-inner-im-shadow-y, 0px)
+        var(--dock-window-prev-inner-im-shadow-blur, 0px)
+        var(--dock-window-prev-inner-im-shadow-spread, 0px)
+        var(--dock-window-prev-inner-im-shadow-color, #00000000);
+      /* --- */
+      transition:
+        border-radius var(--dock-window-prev-inner-im-border-radius-transition, 1.0s ease),
+        background-color var(--dock-window-prev-inner-im-background-color-transition, 0.4s ease),
+        border-color var(--dock-window-prev-inner-im-border-color-transition, 0.4s ease),
+        box-shadow var(--dock-window-prev-inner-im-shadow-transition, 0.4s ease);
+
+      &:hover {
+        background-color: var(--dock-window-prev-inner-im-bg-color-state, #201f1fcc);
+        /* --- */
+        border-style:
+          var(--dock-window-prev-inner-im-top-border-style-state, solid)
+          var(--dock-window-prev-inner-im-right-border-style-state, solid)
+          var(--dock-window-prev-inner-im-bottom-border-style-state, solid)
+          var(--dock-window-prev-inner-im-left-border-style-state, solid);
+        border-color:
+          var(--dock-window-prev-inner-im-top-border-color-state, #31323366)
+          var(--dock-window-prev-inner-im-right-border-color-state, #31323366)
+          var(--dock-window-prev-inner-im-bottom-border-color-state, #31323366)
+          var(--dock-window-prev-inner-im-left-border-color-state, #31323366);
+        /* --- */
+        border-radius:
+          var(--dock-window-prev-inner-im-top-left-bdr-radius-state, 10px)
+          var(--dock-window-prev-inner-im-top-right-bdr-radius-state, 10px)
+          var(--dock-window-prev-inner-im-bottom-right-bdr-radius-state, 10px)
+          var(--dock-window-prev-inner-im-bottom-left-bdr-radius-state, 10px);
+        /* --- */
+        box-shadow:
+          var(--dock-window-prev-inner-im-shadow-x-state, 0px)
+          var(--dock-window-prev-inner-im-shadow-y-state, 0px)
+          var(--dock-window-prev-inner-im-shadow-blur-state, 0px)
+          var(--dock-window-prev-inner-im-shadow-spread-state, 0px)
+          var(--dock-window-prev-inner-im-shadow-color-state, #00000000);
+        /* removes default inner hover highlight */
+        filter: none !important;
+        backdrop-filter: none !important;
+      }
+    }
+
+    .weg-item-preview-spinner {
+      filter:
+        brightness(var(--dock-window-prev-spinner-filter-brightness, 1))
+        contrast(var(--dock-window-prev-spinner-filter-contrast, 1))
+        grayscale(var(--dock-window-prev-spinner-filter-grayscale, 0))
+        hue-rotate(var(--dock-window-prev-spinner-filter-hue-rotate, 0deg))
+        invert(var(--dock-window-prev-spinner-filter-invert, 0))
+        opacity(var(--dock-window-prev-spinner-filter-opacity, 1))
+        saturate(var(--dock-window-prev-spinner-filter-saturate, 1))
+        sepia(var(--dock-window-prev-spinner-filter-sepia, 0)) !important;
+    }
+
+
+    /* -----------------------------------------
+    ! Window Preview Text
+    ----------------------------------------- */
+    .weg-item-preview-title {
+      font-family: var(--dock-win-prev-title-font, inherit);
+      font-size: var(--dock-win-prev-title-font-size, 12px);
+      font-weight: var(--dock-win-prev-title-font-weight, 600);
+      font-style: var(--dock-win-prev-title-style, normal);
+      letter-spacing: calc(var(--dock-win-prev-title-letter-spacing, 0) * 1px);
+      text-transform: var(--dock-win-prev-title-case, none);
+      /* --- */
+      color: var(--dock-win-prev-title-color, #cccccc);
+      /* --- */
+      text-shadow:
+        var(--dock-win-prev-title-text-shadow-x, 0px)
+        var(--dock-win-prev-title-text-shadow-y, 0px)
+        var(--dock-win-prev-title-text-shadow-blur, 0px)
+        var(--dock-win-prev-title-text-shadow-color, #00000000);
+      /* --- */
+      transition:
+        color var(--dock-win-prev-title-color-transition, 0.4s ease),
+        text-shadow var(--dock-win-prev-title-text-shadow-transition, 0.4s ease),
+        transform var(--dock-win-prev-text-transform-transition, 0.2s ease);
+
+      &:hover {
+        /* -9 = italic | 10 = normal | 0 = no change */
+        transform: skewX(calc(var(--dock-win-prev-style-ctrans-state, 0) * 1deg));
+        -webkit-text-stroke: calc(var(--dock-win-prev-style-wbtxt-state, 0) * 1px) currentColor;
+        /* --- */
+        color: var(--dock-win-prev-title-color-state, #dbd9d9);
+        /* --- */
+        text-shadow:
+          var(--dock-win-prev-title-text-shadow-x-state, 0px)
+          var(--dock-win-prev-title-text-shadow-y-state, 0px)
+          var(--dock-win-prev-title-text-shadow-blur-state, 0px)
+          var(--dock-win-prev-title-text-shadow-color-state, #00000000);
+      }
+    }
