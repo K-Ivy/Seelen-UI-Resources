@@ -6,23 +6,23 @@ metadata:
   appTargetVersion:
     - 2
     - 5
-    - 0
+    - 3
 settings:
   - group:
-      header: "✦ Blur Reveal"
+      header: "✦ Reveal"
       items:
         - syntax: <string>
           name: "--wp-blur-reveal-transition"
-          label: "╰ Transition"
+          label: "● Transition"
           tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
           initialValue: "600ms ease"
 
   - group:
-      header: "✦ Blur Fade"
+      header: "✦ Fade"
       items:
         - syntax: <string>
           name: "--wp-blur-fade-transition"
-          label: "╰ Transition"
+          label: "● Transition"
           tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
           initialValue: "600ms ease"
 styles:

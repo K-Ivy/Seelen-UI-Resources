@@ -1,0 +1,215 @@
+id: "@k-ivy/win-grid-tray-la"
+metadata:
+  displayName: "Grid Style Tray - Always Show Label"
+  author: "K-Ivy"
+  description: "Changes tray to be grid-based like windows."
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 5
+    - 3
+settings:
+  - group:
+      header: "✦ Base of the Tray"
+      items:
+        - group:
+            header: " Padding"
+            items:
+              - syntax: <length>
+                name: "--tray-la-padding-top"
+                label: "● Top"
+                initialValue: 12
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--tray-la-padding-bottom"
+                label: "● Bottom"
+                initialValue: 12
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--tray-la-padding-left"
+                label: "● Left"
+                initialValue: 12
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--tray-la-padding-right"
+                label: "● Right"
+                initialValue: 12
+                initialValueUnit: "px"
+
+        - group:
+            header: " Spacing"
+            items:
+              - syntax: <length>
+                label: "● Row"
+                tip: "Space between rows"
+                name: "--tray-la-row-gap"
+                initialValue: 2
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                label: "● Column"
+                tip: "Space between columns"
+                name: "--tray-la-col-gap"
+                initialValue: 6
+                initialValueUnit: "px"
+
+        - group:
+            header: " Sizing"
+            items:
+              - syntax: <length>
+                label: "● Cell Width"
+                tip: "Width of each item"
+                name: "--tray-la-col-width"
+                initialValue: 60
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                label: "● Cell Height"
+                tip: "Height of each item"
+                name: "--tray-la-row-height"
+                initialValue: 60
+                initialValueUnit: "px"
+
+        - group:
+            header: " Control"
+            items:
+              - syntax: <number>
+                label: "● Maximum Columns"
+                tip: "How many icons before wrapping to next row"
+                name: "--tray-la-columns"
+                initialValue: 4
+
+  - group:
+      header: "✦ Label"
+      items:
+        - syntax: <length>
+          label: " ● Font Size"
+          name: "--tray-la-label-font-size"
+          initialValue: 10
+          initialValueUnit: "px"
+
+        - group:
+            header: " Spacing"
+            items:
+              - syntax: <length>
+                label: "● Row Width"
+                tip: "Max length of labels per row"
+                name: "--tray-la-label-width"
+                initialValue: 56
+                initialValueUnit: "px"
+
+              - syntax: <number>
+                label: "● Line Height"
+                tip: "Spacing between wrapped lines"
+                name: "--tray-la-label-line-height"
+                initialValue: 1.4
+
+        - group:
+            header: " Control"
+            items:
+              - syntax: <number>
+                label: "● Maximum Rows"
+                tip: "Max number of lines before the label is cut off"
+                name: "--tray-la-label-max-rows"
+                initialValue: 2
+
+              - syntax: <length>
+                label: "● Vertical Offset"
+                tip: "Vertical position of the label"
+                name: "--tray-la-label-top"
+                initialValue: 45
+                initialValueUnit: "%"
+
+  - group:
+      header: "✦ Icon"
+      items:
+        - syntax: <length>
+          label: " ● Size"
+          name: "--tray-la-app-icon-size"
+          initialValue: 18
+          initialValueUnit: "px"
+
+        - syntax: <number>
+          label: " ╰・Scale on Hover"
+          name: "--tray-la-app-icon-size-state"
+          initialValue: 1.06
+
+        - group:
+            header: " Control"
+            items:
+              - syntax: <length>
+                label: "● Vertical Offset"
+                tip: "Vertical position of the icon"
+                name: "--tray-la-icon-bottom"
+                initialValue: -45
+                initialValueUnit: "%"
+
+  - group:
+      header: "⧉ Transitions of Icons"
+      items:
+        - syntax: <string>
+          label: "● Scale"
+          name: "--tray-la-app-icon-transition"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "0.3s cubic-bezier(0.33, 1, 0.68, 1)"
+styles:
+  "@seelen/system-tray": >-
+    .system-tray {
+      display: inline-grid !important;
+      width: max-content !important;
+      max-width: calc(
+        var(--tray-la-columns, 4) * var(--tray-la-col-width, 60px) +
+        (var(--tray-la-columns, 4) - 1) * var(--tray-la-col-gap, 6px) +
+        var(--tray-la-padding-left, 12px) +
+        var(--tray-la-padding-right, 12px)
+      ) !important;
+      grid-template-columns: repeat(auto-fit, var(--tray-la-col-width, 60px)) !important;
+      grid-auto-rows: var(--tray-la-row-height, 60px) !important;
+      row-gap: var(--tray-la-row-gap, 2px) !important;
+      column-gap: var(--tray-la-col-gap, 6px) !important;
+      padding:
+        var(--tray-la-padding-top, 12px)
+        var(--tray-la-padding-right, 12px)
+        var(--tray-la-padding-bottom, 12px)
+        var(--tray-la-padding-left, 12px) !important;
+    }
+
+    .system-tray-item {
+      position: relative !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+    }
+
+    .system-tray-item-icon {
+      position: relative !important;
+      will-change: transform;
+      height: var(--tray-la-app-icon-size, 18px) !important;
+      width: var(--tray-la-app-icon-size, 18px) !important;
+      bottom: var(--tray-la-icon-bottom, -45%) !important;
+      transition:
+        transform var(--tray-la-app-icon-transition, 0.3s cubic-bezier(0.33, 1, 0.68, 1));
+    }
+
+    .system-tray-item-icon:hover {
+      transform: scale(var(--tray-la-app-icon-size-state, 1.06));
+    }
+
+    .system-tray-item-label {
+      position: absolute !important;
+      display: -webkit-box !important;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: var(--tray-la-label-max-rows, 2);
+      width: var(--tray-la-label-width, 56px) !important;
+      font-size: var(--tray-la-label-font-size, 10px) !important;
+      line-height: var(--tray-la-label-line-height, 1.4) !important;
+      text-align: center !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+      pointer-events: none;
+      top: var(--tray-la-label-top, 45%) !important;
+    }

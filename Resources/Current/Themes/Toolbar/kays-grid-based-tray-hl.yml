@@ -1,0 +1,251 @@
+id: "@k-ivy/win-grid-tray-hl"
+metadata:
+  displayName: "Grid Style Tray - Hover for Label"
+  author: "K-Ivy"
+  description: "Changes tray to be grid-based like windows."
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 5
+    - 3
+settings:
+  - group:
+      header: "✦ Base of the Tray"
+      items:
+        - group:
+            header: " Padding"
+            items:
+              - syntax: <length>
+                name: "--tray-hl-padding-top"
+                label: "● Top"
+                initialValue: 12
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--tray-hl-padding-bottom"
+                label: "● Bottom"
+                initialValue: 12
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--tray-hl-padding-left"
+                label: "● Left"
+                initialValue: 12
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--tray-hl-padding-right"
+                label: "● Right"
+                initialValue: 12
+                initialValueUnit: "px"
+
+        - group:
+            header: " Spacing"
+            items:
+              - syntax: <length>
+                label: "● Row"
+                tip: "Space between rows"
+                name: "--tray-hl-row-gap"
+                initialValue: 18
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                label: "● Column"
+                tip: "Space between columns"
+                name: "--tray-hl-col-gap"
+                initialValue: 10
+                initialValueUnit: "px"
+
+        - group:
+            header: " Sizing"
+            items:
+              - syntax: <length>
+                label: "● Cell Width"
+                tip: "Width of each item"
+                name: "--tray-hl-col-width"
+                initialValue: 36
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                label: "● Cell Height"
+                tip: "Height of each item"
+                name: "--tray-hl-row-height"
+                initialValue: 36
+                initialValueUnit: "px"
+
+        - group:
+            header: " Control"
+            items:
+              - syntax: <number>
+                label: "● Maximum Columns"
+                tip: "How many icons before wrapping to next row"
+                name: "--tray-hl-columns"
+                initialValue: 4
+
+  - group:
+      header: "✦ Label"
+      items:
+        - syntax: <string>
+          label: "╰ Visibility"
+          tip: "none = hide | -webkit-box = show"
+          name: "--tray-hl-label-visibility"
+          initialValue: "-webkit-box"
+          options: [none, -webkit-box]
+
+        - syntax: <length>
+          label: " ● Font Size"
+          name: "--tray-hl-label-font-size"
+          initialValue: 10
+          initialValueUnit: "px"
+
+        - group:
+            header: " Spacing"
+            items:
+              - syntax: <length>
+                label: "● Row Width"
+                tip: "Max length of labels per row"
+                name: "--tray-hl-label-width"
+                initialValue: 60
+                initialValueUnit: "px"
+
+              - syntax: <number>
+                label: "● Line Height"
+                tip: "Spacing between wrapped lines"
+                name: "--tray-hl-label-line-height"
+                initialValue: 1.1
+
+        - group:
+            header: " Control"
+            items:
+              - syntax: <number>
+                label: "● Maximum Rows"
+                tip: "Max number of lines before the label is cut off"
+                name: "--tray-hl-label-max-rows"
+                initialValue: 2
+
+  - group:
+      header: "⧉ Label Animation"
+      items:
+        - syntax: <length>
+          label: "∷ Start Height"
+          name: "--tray-hl-label-starty"
+          initialValue: -6
+          initialValueUnit: "px"
+
+        - syntax: <length>
+          label: "∷ End Height"
+          name: "--tray-hl-label-endy"
+          initialValue: 2
+          initialValueUnit: "px"
+
+  - group:
+      header: "✦ Icon"
+      items:
+        - syntax: <length>
+          label: "● Size"
+          name: "--tray-hl-app-icon-size"
+          initialValue: 18
+          initialValueUnit: "px"
+
+        - syntax: <number>
+          label: "╰・Scale on Hover"
+          name: "--tray-hl-app-icon-size-hover"
+          initialValue: 1.06
+
+  - group:
+      header: "⧉ Transitions of Icons"
+      items:
+        - syntax: <string>
+          label: "● Scale"
+          name: "--tray-hl-app-icon-transition"
+          tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+          initialValue: "transform 0.3s cubic-bezier(0.33, 1, 0.68, 1)"
+
+styles:
+  "@seelen/system-tray": |
+    @keyframes fadeInLabel {
+      from {
+        opacity: 0;
+        top: calc(100% + var(--tray-hl-label-starty, -6px));
+      }
+      to {
+        opacity: 1;
+        top: calc(100% + var(--tray-hl-label-endy, 2px));
+      }
+    }
+    @keyframes fadeOutLabel {
+      from {
+        opacity: 1;
+        top: calc(100% + var(--tray-hl-label-endy, 2px));
+      }
+      to {
+        opacity: 0;
+        top: calc(100% + var(--tray-hl-label-starty, -6px));
+      }
+    }
+
+    .system-tray {
+      display: inline-grid !important;
+      width: max-content !important;
+      max-width: calc(
+        var(--tray-hl-columns, 4) * var(--tray-hl-col-width, 36px) +
+        (var(--tray-hl-columns, 4) - 1) * var(--tray-hl-col-gap, 10px) +
+        var(--tray-hl-padding-left, 12px) +
+        var(--tray-hl-padding-right, 12px)
+      ) !important;
+      grid-template-columns: repeat(auto-fit, var(--tray-hl-col-width, 36px)) !important;
+      grid-auto-rows: var(--tray-hl-row-height, 36px) !important;
+      row-gap: var(--tray-hl-row-gap, 18px) !important;
+      column-gap: var(--tray-hl-col-gap, 10px) !important;
+      padding:
+        var(--tray-hl-padding-top, 12px)
+        var(--tray-hl-padding-right, 12px)
+        var(--tray-hl-padding-bottom, 12px)
+        var(--tray-hl-padding-left, 12px) !important;
+      overflow: visible !important;
+    }
+
+    .system-tray-item {
+      position: relative !important;
+      justify-content: center !important;
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+    }
+
+    .system-tray-item-icon {
+      will-change: transform;
+      height: var(--tray-hl-app-icon-size, 18px) !important;
+      width: var(--tray-hl-app-icon-size, 18px) !important;
+      transition: var(--tray-hl-app-icon-transition, transform 0.3s cubic-bezier(0.33, 1, 0.68, 1));
+    }
+
+    .system-tray-item:hover .system-tray-item-icon {
+      transform: scale(var(--tray-hl-app-icon-size-hover, 1.06));
+    }
+
+    .system-tray-item-label {
+      position: absolute !important;
+      display: var(--tray-hl-label-visibility, -webkit-box) !important;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: var(--tray-hl-label-max-rows, 2);
+      top: calc(100% + var(--tray-hl-label-starty, -6px));
+      left: 50% !important;
+      width: var(--tray-hl-label-width, 60px) !important;
+      transform: translateX(-50%) !important;
+      font-size: var(--tray-hl-label-font-size, 10px) !important;
+      line-height: var(--tray-hl-label-line-height, 1.1) !important;
+      text-align: center !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .system-tray-item:hover .system-tray-item-label {
+      animation: fadeInLabel 0.35s forwards;
+    }
+
+    .system-tray-item:not(:hover) .system-tray-item-label {
+      animation: fadeOutLabel 0.35s forwards;
+    }
