@@ -1,6 +1,6 @@
 id: '@k-ivy/custom-pref-user'
 metadata:
-  displayName: "Custom Username"
+  displayName: "Custom User"
   author: "K-Ivy"
   description: "Replace the toolbar and user menu username with a custom one."
   tags: ['toolbar']
@@ -26,10 +26,19 @@ settings:
         - syntax: <string>
           name: "--win-username-visibility"
           label: "● Window's Username Visibility"
-          tip: "none = hide | block = show"
+          description: "  none = hide | block = show"
           initialValue: 'none'
           options: [none, block]
 
+  - group:
+      header: "✦ Extra"
+      items:
+        - syntax: <string>
+          name: "--win-pfp-visibility"
+          label: "● Profile Picture Visibility"
+          description: "  none = hide | block = show"
+          initialValue: 'block'
+          options: [none, block]
 styles:
   '@seelen/fancy-toolbar': |
     /* Hide window's username */
@@ -41,6 +50,18 @@ styles:
     #\@seelen\/tb-user-menu .ft-bar-item-content::after {
       content: var(--usr-custom-username, "");
       margin-left: var(--ftbr-toolbar-username-dist-pfp, 0px);
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+
+    /* Hide pfp */
+    #\@seelen\/tb-user-menu img {
+      display: var(--win-pfp-visibility, block) !important;
+    }
+    /* Remove leftover span */
+    #\@seelen\/tb-user-menu span:first-of-type {
+      display: var(--win-pfp-visibility, block) !important;
     }
 
   '@seelen/user-menu': |

@@ -1,0 +1,650 @@
+id: "@k-ivy/ftbr-mod-color"
+metadata:
+  displayName: "Indiviual Coloring of Toolbar Modules"
+  author: "K-Ivy"
+  description: "Color every toolbar module indiviually. In addition, adds a placeholder system to be able to color custom modules from within this theme."
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 5
+    - 3
+settings:
+  - group:
+      header: "✦ Regular Modules"
+      items:
+        - syntax: <color>
+          label: "● CPU Usage"
+          name: "--custom-cpu-color"
+          initialValue: "#e49191"
+
+        - syntax: <color>
+          label: "● Keyboard Selector"
+          name: "--custom-keyboard-color"
+          initialValue: "#d6a589"
+
+        - syntax: <color>
+          label: "● Memory Usage"
+          name: "--custom-memory-color"
+          initialValue: "#e9b985"
+
+        - syntax: <color>
+          label: "● Date/Time"
+          name: "--custom-date-color"
+          initialValue: "#eccb8a"
+
+        - syntax: <color>
+          label: "● Disk Usage"
+          name: "--custom-disk-color"
+          initialValue: "#e2de93"
+
+        - syntax: <color>
+          label: "● Network Usage"
+          name: "--custom-network-usage-color"
+          initialValue: "#afe986"
+
+        - syntax: <color>
+          label: "● System Tray"
+          name: "--custom-system-tray-color"
+          initialValue: "#b0cfb5"
+
+        - syntax: <color>
+          label: "● Power Display"
+          name: "--custom-power-color"
+          initialValue: "#8ce2b2"
+
+        - syntax: <color>
+          label: "● User Display"
+          name: "--custom-user-folder-color"
+          initialValue: "#bac7c1"
+
+        - syntax: <color>
+          label: "● Notifications"
+          name: "--custom-notifications-color"
+          initialValue: "#84bcd4"
+
+        - syntax: <color>
+          label: "● Power Button"
+          name: "--custom-power-menu-color"
+          initialValue: "#64b3fd"
+
+        - syntax: <color>
+          label: "● Network Manager"
+          name: "--custom-network-color"
+          initialValue: "#9eb1e2"
+
+        - syntax: <color>
+          label: "● Focused App Title"
+          name: "--custom-focused-app-title-color"
+          initialValue: "#c6b7dc"
+
+        - syntax: <color>
+          label: "● Media Controller"
+          name: "--custom-media-color"
+          initialValue: "#c9a6f7"
+
+        - syntax: <color>
+          label: "● Focused App Name"
+          name: "--custom-focused-app-color"
+          initialValue: "#da9ad7"
+
+        - syntax: <color>
+          label: "● Quick Settings"
+          name: "--custom-quick-settings-color"
+          initialValue: "#e4b0d6"
+
+        - syntax: <color>
+          label: "● Bluetooth"
+          name: "--custom-bluetooth-color"
+          initialValue: "#e79fb9"
+
+        - syntax: <color>
+          label: "● Seperators"
+          name: "--custom-seperator-color-workaround"
+          initialValue: "#9ba7a5"
+
+  - group:
+      header: "✦ Workspace Modules"
+      items:
+        - syntax: <color>
+          label: "● Workspace 1"
+          name: "--custom-workspace-one-color"
+          initialValue: "#e49191"
+
+        - syntax: <color>
+          label: "● Workspace 2"
+          name: "--custom-workspace-two-color"
+          initialValue: "#e8a488"
+
+        - syntax: <color>
+          label: "● Workspace 3"
+          name: "--custom-workspace-three-color"
+          initialValue: "#e9b985"
+
+        - syntax: <color>
+          label: "● Workspace 4"
+          name: "--custom-workspace-four-color"
+          initialValue: "#eccb8a"
+
+        - syntax: <color>
+          label: "● Workspace 5"
+          name: "--custom-workspace-five-color"
+          initialValue: "#e2de93"
+
+        - syntax: <color>
+          label: "● Workspace 6"
+          name: "--custom-workspace-six-color"
+          initialValue: "#c6e88d"
+
+        - syntax: <color>
+          label: "● Workspace 7"
+          name: "--custom-workspace-seven-color"
+          initialValue: "#afe986"
+
+        - syntax: <color>
+          label: "● Workspace 8"
+          name: "--custom-workspace-eight-color"
+          initialValue: "#96e0a0"
+
+        - syntax: <color>
+          label: "● Workspace 9"
+          name: "--custom-workspace-nine-color"
+          initialValue: "#8ce2b2"
+
+        - syntax: <color>
+          label: "● Workspace 10"
+          name: "--custom-workspace-ten-color"
+          initialValue: "#87d4c4"
+
+        - syntax: <color>
+          label: "● Workspace 11"
+          name: "--custom-workspace-eleven-color"
+          initialValue: "#84bcd4"
+
+        - syntax: <color>
+          label: "● Workspace 12"
+          name: "--custom-workspace-twelve-color"
+          initialValue: "#79aaec"
+
+        - syntax: <color>
+          label: "● Workspace 13"
+          name: "--custom-workspace-thirteen-color"
+          initialValue: "#64b3fd"
+
+        - syntax: <color>
+          label: "● Workspace 14"
+          name: "--custom-workspace-fourthteen-color"
+          initialValue: "#9eb1e2"
+
+        - syntax: <color>
+          label: "● Workspace 15"
+          name: "--custom-workspace-fifthteen-color"
+          initialValue: "#c6b7dc"
+
+        - syntax: <color>
+          label: "● Workspace 16"
+          name: "--custom-workspace-sixteen-color"
+          initialValue: "#c9a6f7"
+
+        - syntax: <color>
+          label: "● Workspace 17"
+          name: "--custom-workspace-seventeen-color"
+          initialValue: "#da9ad7"
+
+        - syntax: <color>
+          label: "● Workspace 18"
+          name: "--custom-workspace-eighteen-color"
+          initialValue: "#e4b0d6"
+
+        - syntax: <color>
+          label: "● Workspace 19"
+          name: "--custom-workspace-nineteen-color"
+          initialValue: "#e79fb9"
+
+        - syntax: <color>
+          label: "● Workspace 20"
+          name: "--custom-workspace-twenty-color"
+          initialValue: "#e8909e"
+
+  - group:
+      header: "✦ Active Workspace Indicator"
+      items:
+        - syntax: <string>
+          label: "● Line"
+          name: "--custom-active-ws-underline"
+          initialValue: "underline"
+          options: [none, underline, underline dotted, underline dashed, underline wavy, overline, overline dotted, overline dashed, overline wavy, underline overline, underline overline dotted, underline overline dashed, underline overline wavy]
+
+        - syntax: <number>
+          label: "╰・Vertical Offset"
+          name: "--custom-active-ws-underline-offset"
+          initialValue: 2
+          options: [1, 2, 3, 4, 5]
+
+        - syntax: <length>
+          label: "╰・Thickness"
+          name: "--custom-active-ws-underline-thickness"
+          initialValue: 1
+          initialValueUnit: "px"
+
+  - group:
+      header: "✦ Placeholder System"
+      items:
+        - group:
+            header: "This is a system that allows you to color your custom modules (from plugins) from here. All you have to do is replace the ID of your plugin with one pre-defined in this theme, those corresponding to one of the below slots."
+            items:
+              - syntax: <string>
+                name: "--terv-som-okrdeosj"
+                label: "╰ List of IDS :"
+                initialValue: "https://k-ivy.github.io/Seelen-UI-Resources/Web/wiki.html#Indiviual-Coloring-of-Toolbar-Modules"
+
+        - syntax: <color>
+          label: "● Color Slot 1"
+          name: "--color-extra-one"
+          initialValue: "#BF616A"
+
+        - syntax: <color>
+          label: "● Color Slot 2"
+          name: "--color-extra-two"
+          initialValue: "#D08770"
+
+        - syntax: <color>
+          label: "● Color Slot 3"
+          name: "--color-extra-three"
+          initialValue: "#EBCB8B"
+
+        - syntax: <color>
+          label: "● Color Slot 4"
+          name: "--color-extra-four"
+          initialValue: "#A3BE8C"
+
+        - syntax: <color>
+          label: "● Color Slot 5"
+          name: "--color-extra-five"
+          initialValue: "#8FBCBB"
+
+        - syntax: <color>
+          label: "● Color Slot 6"
+          name: "--color-extra-six"
+          initialValue: "#88C0D0"
+
+        - syntax: <color>
+          label: "● Color Slot 7"
+          name: "--color-extra-seven"
+          initialValue: "#81A1C1"
+
+        - syntax: <color>
+          label: "● Color Slot 8"
+          name: "--color-extra-eigth"
+          initialValue: "#5E81AC"
+
+        - syntax: <color>
+          label: "● Color Slot 9"
+          name: "--color-extra-nine"
+          initialValue: "#b697b0"
+
+        - syntax: <color>
+          label: "● Color Slot 10"
+          name: "--color-extra-ten"
+          initialValue: "#a97abc"
+
+        - syntax: <color>
+          label: "● Color Slot 11"
+          name: "--color-extra-eleven"
+          initialValue: "#c678dd"
+
+        - syntax: <color>
+          label: "● Color Slot 12"
+          name: "--color-extra-twelve"
+          initialValue: "#d3869b"
+
+        - syntax: <color>
+          label: "● Color Slot 13"
+          name: "--color-extra-thirteen"
+          initialValue: "#e5989b"
+
+        - syntax: <color>
+          label: "● Color Slot 14"
+          name: "--color-extra-fourteen"
+          initialValue: "#f2b5a7"
+
+        - syntax: <color>
+          label: "● Color Slot 15"
+          name: "--color-extra-fifteen"
+          initialValue: "#f7d1b7"
+
+        - syntax: <color>
+          label: "● Color Slot 16"
+          name: "--color-extra-sixteen"
+          initialValue: "#e8c4a0"
+
+        - syntax: <color>
+          label: "● Color Slot 17"
+          name: "--color-extra-seventeen"
+          initialValue: "#d4a882"
+
+        - syntax: <color>
+          label: "● Color Slot 18"
+          name: "--color-extra-eighteen"
+          initialValue: "#b8a890"
+
+        - syntax: <color>
+          label: "● Color Slot 19"
+          name: "--color-extra-nineteen"
+          initialValue: "#a8b8a0"
+
+        - syntax: <color>
+          label: "● Color Slot 20"
+          name: "--color-extra-twenty"
+          initialValue: "#90a8b0"
+
+        - syntax: <color>
+          label: "● Color Slot 21"
+          name: "--color-extra-twentyone"
+          initialValue: "#a090b8"
+
+        - syntax: <color>
+          label: "● Color Slot 22"
+          name: "--color-extra-twentytwo"
+          initialValue: "#b8a0c8"
+
+        - syntax: <color>
+          label: "● Color Slot 23"
+          name: "--color-extra-twentythree"
+          initialValue: "#c8b0d8"
+
+        - syntax: <color>
+          label: "● Color Slot 24"
+          name: "--color-extra-twentyfour"
+          initialValue: "#d8c0e0"
+
+        - syntax: <color>
+          label: "● Color Slot 25"
+          name: "--color-extra-twentyfive"
+          initialValue: "#c0d8d0"
+styles:
+  '@seelen/fancy-toolbar': |
+    /* Regular Modules */
+    .ft-bar-item#\@default\/cpu-usage {
+      color: var(--custom-cpu-color, #e49191);
+    }
+    .ft-bar-item#\@seelen\/tb-keyboard-selector {
+      color: var(--custom-keyboard-color, #d6a589);
+    }
+    .ft-bar-item#\@default\/memory-usage {
+      color: var(--custom-memory-color, #e9b985);
+    }
+    .ft-bar-item#\@seelen\/tb-calendar-popup {
+      color: var(--custom-date-color, #eccb8a);
+    }
+    .ft-bar-item#\@default\/disk-usage {
+      color: var(--custom-disk-color, #e2de93);
+    }
+    .ft-bar-item#\@default\/network-usage {
+      color: var(--custom-network-usage-color, #afe986);
+    }
+    .ft-bar-item#\@seelen\/tb-system-tray {
+      color: var(--custom-system-tray-color, #b0cfb5);
+    }
+    .ft-bar-item#\@default\/power {
+      color: var(--custom-power-color, #8ce2b2);
+    }
+    .ft-bar-item#\@seelen\/tb-user-menu {
+      color: var(--custom-user-folder-color, #bac7c1);
+    }
+    .ft-bar-item#\@seelen\/tb-notifications {
+      color: var(--custom-notifications-color, #84bcd4);
+    }
+    .ft-bar-item#\@seelen\/tb-power-menu {
+      color: var(--custom-power-menu-color, #64b3fd);
+    }
+    .ft-bar-item#\@seelen\/tb-network-popup {
+      color: var(--custom-network-color, #9eb1e2);
+    }
+    .ft-bar-item#\@default\/focused-app-title {
+      color: var(--custom-focused-app-title-color, #c6b7dc);
+    }
+    .ft-bar-item#\@seelen\/tb-media-popup {
+      color: var(--custom-media-color, #c9a6f7);
+    }
+    .ft-bar-item#\@default\/focused-app {
+      color: var(--custom-focused-app-color, #da9ad7);
+    }
+    .ft-bar-item#\@seelen\/tb-quick-settings {
+      color: var(--custom-quick-settings-color, #e4b0d6);
+    }
+    .ft-bar-item#\@seelen\/tb-bluetooth-popup {
+      color: var(--custom-bluetooth-color, #e79fb9);
+    }
+    /* Separators & any unadded */
+    .ft-bar-item {
+      color: var(--custom-seperator-color-workaround, #9ba7a5);
+    }
+
+    /* Dotted Workspace */
+    #\@default\/workspaces-dotted button:nth-child(1) {
+      background-color: var(--custom-workspace-one-color, #e49191) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(2) {
+      background-color: var(--custom-workspace-two-color, #e8a488) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(3) {
+      background-color: var(--custom-workspace-three-color, #e9b985) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(4) {
+      background-color: var(--custom-workspace-four-color, #eccb8a) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(5) {
+      background-color: var(--custom-workspace-five-color, #e2de93) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(6) {
+      background-color: var(--custom-workspace-six-color, #c6e88d) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(7) {
+      background-color: var(--custom-workspace-seven-color, #afe986) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(8) {
+      background-color: var(--custom-workspace-eight-color, #96e0a0) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(9) {
+      background-color: var(--custom-workspace-nine-color, #8ce2b2) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(10) {
+      background-color: var(--custom-workspace-ten-color, #87d4c4) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(11) {
+      background-color: var(--custom-workspace-eleven-color, #84bcd4) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(12) {
+      background-color: var(--custom-workspace-twelve-color, #79aaec) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(13) {
+      background-color: var(--custom-workspace-thirteen-color, #64b3fd) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(14) {
+      background-color: var(--custom-workspace-fourthteen-color, #9eb1e2) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(15) {
+      background-color: var(--custom-workspace-fifthteen-color, #c6b7dc) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(16) {
+      background-color: var(--custom-workspace-sixteen-color, #c9a6f7) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(17) {
+      background-color: var(--custom-workspace-seventeen-color, #da9ad7) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(18) {
+      background-color: var(--custom-workspace-eighteen-color, #e4b0d6) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(19) {
+      background-color: var(--custom-workspace-nineteen-color, #e79fb9) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(20) {
+      background-color: var(--custom-workspace-twenty-color, #e8909e) !important;
+    }
+
+    /* Active Workspace Indicator */
+    #\@default\/workspaces-numbered button[style*="system-accent-color"],
+    #\@default\/workspaces-named button[style*="system-accent-color"] {
+      text-decoration: var(--custom-active-ws-underline, underline);
+      text-underline-offset: calc(var(--custom-active-ws-underline-offset, 2) * 1px);
+      text-decoration-thickness: var(--custom-active-ws-underline-thickness, 1px);
+    }
+
+    /* Numbered and Named Workspace */
+    #\@default\/workspaces-numbered button:nth-child(1),
+    #\@default\/workspaces-named button:nth-child(1) {
+      color: var(--custom-workspace-one-color, #e49191) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(2),
+    #\@default\/workspaces-named button:nth-child(2) {
+      color: var(--custom-workspace-two-color, #e8a488) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(3),
+    #\@default\/workspaces-named button:nth-child(3) {
+      color: var(--custom-workspace-three-color, #e9b985) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(4),
+    #\@default\/workspaces-named button:nth-child(4) {
+      color: var(--custom-workspace-four-color, #eccb8a) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(5),
+    #\@default\/workspaces-named button:nth-child(5) {
+      color: var(--custom-workspace-five-color, #e2de93) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(6),
+    #\@default\/workspaces-named button:nth-child(6) {
+      color: var(--custom-workspace-six-color, #c6e88d) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(7),
+    #\@default\/workspaces-named button:nth-child(7) {
+      color: var(--custom-workspace-seven-color, #afe986) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(8),
+    #\@default\/workspaces-named button:nth-child(8) {
+      color: var(--custom-workspace-eight-color, #96e0a0) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(9),
+    #\@default\/workspaces-named button:nth-child(9) {
+      color: var(--custom-workspace-nine-color, #8ce2b2) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(10),
+    #\@default\/workspaces-named button:nth-child(10) {
+      color: var(--custom-workspace-ten-color, #87d4c4) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(11),
+    #\@default\/workspaces-named button:nth-child(11) {
+      color: var(--custom-workspace-eleven-color, #84bcd4) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(12),
+    #\@default\/workspaces-named button:nth-child(12) {
+      color: var(--custom-workspace-twelve-color, #79aaec) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(13),
+    #\@default\/workspaces-named button:nth-child(13) {
+      color: var(--custom-workspace-thirteen-color, #64b3fd) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(14),
+    #\@default\/workspaces-named button:nth-child(14) {
+      color: var(--custom-workspace-fourthteen-color, #9eb1e2) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(15),
+    #\@default\/workspaces-named button:nth-child(15) {
+      color: var(--custom-workspace-fifthteen-color, #c6b7dc) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(16),
+    #\@default\/workspaces-named button:nth-child(16) {
+      color: var(--custom-workspace-sixteen-color, #c9a6f7) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(17),
+    #\@default\/workspaces-named button:nth-child(17) {
+      color: var(--custom-workspace-seventeen-color, #da9ad7) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(18),
+    #\@default\/workspaces-named button:nth-child(18) {
+      color: var(--custom-workspace-eighteen-color, #e4b0d6) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(19),
+    #\@default\/workspaces-named button:nth-child(19) {
+      color: var(--custom-workspace-nineteen-color, #e79fb9) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(20),
+    #\@default\/workspaces-named button:nth-child(20) {
+      color: var(--custom-workspace-twenty-color, #e8909e) !important;
+    }
+
+    /* Placeholder System */
+    .ft-bar-item#\@color\/color-extra-one {
+      color: var(--color-extra-one, #BF616A);
+    }
+    .ft-bar-item#\@color\/color-extra-two {
+      color: var(--color-extra-two, #D08770);
+    }
+    .ft-bar-item#\@color\/color-extra-three {
+      color: var(--color-extra-three, #EBCB8B);
+    }
+    .ft-bar-item#\@color\/color-extra-four {
+      color: var(--color-extra-four, #A3BE8C);
+    }
+    .ft-bar-item#\@color\/color-extra-five {
+      color: var(--color-extra-five, #8FBCBB);
+    }
+    .ft-bar-item#\@color\/color-extra-six {
+      color: var(--color-extra-six, #88C0D0);
+    }
+    .ft-bar-item#\@color\/color-extra-seven {
+      color: var(--color-extra-seven, #81A1C1);
+    }
+    .ft-bar-item#\@color\/color-extra-eigth {
+      color: var(--color-extra-eigth, #5E81AC);
+    }
+    .ft-bar-item#\@color\/color-extra-nine {
+      color: var(--color-extra-nine, #b697b0);
+    }
+    .ft-bar-item#\@color\/color-extra-ten {
+      color: var(--color-extra-ten, #a97abc);
+    }
+    .ft-bar-item#\@color\/color-extra-eleven {
+      color: var(--color-extra-eleven, #c678dd);
+    }
+    .ft-bar-item#\@color\/color-extra-twelve {
+      color: var(--color-extra-twelve, #d3869b);
+    }
+    .ft-bar-item#\@color\/color-extra-thirteen {
+      color: var(--color-extra-thirteen, #e5989b);
+    }
+    .ft-bar-item#\@color\/color-extra-fourteen {
+      color: var(--color-extra-fourteen, #f2b5a7);
+    }
+    .ft-bar-item#\@color\/color-extra-fifteen {
+      color: var(--color-extra-fifteen, #f7d1b7);
+    }
+    .ft-bar-item#\@color\/color-extra-sixteen {
+      color: var(--color-extra-sixteen, #e8c4a0);
+    }
+    .ft-bar-item#\@color\/color-extra-seventeen {
+      color: var(--color-extra-seventeen, #d4a882);
+    }
+    .ft-bar-item#\@color\/color-extra-eighteen {
+      color: var(--color-extra-eighteen, #b8a890);
+    }
+    .ft-bar-item#\@color\/color-extra-nineteen {
+      color: var(--color-extra-nineteen, #a8b8a0);
+    }
+    .ft-bar-item#\@color\/color-extra-twenty {
+      color: var(--color-extra-twenty, #90a8b0);
+    }
+    .ft-bar-item#\@color\/color-extra-twentyone {
+      color: var(--color-extra-twentyone, #a090b8);
+    }
+    .ft-bar-item#\@color\/color-extra-twentytwo {
+      color: var(--color-extra-twentytwo, #b8a0c8);
+    }
+    .ft-bar-item#\@color\/color-extra-twentythree {
+      color: var(--color-extra-twentythree, #c8b0d8);
+    }
+    .ft-bar-item#\@color\/color-extra-twentyfour {
+      color: var(--color-extra-twentyfour, #d8c0e0);
+    }
+    .ft-bar-item#\@color\/color-extra-twentyfive {
+      color: var(--color-extra-twentyfive, #c0d8d0);
+    }

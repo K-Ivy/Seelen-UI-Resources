@@ -10,7 +10,7 @@
 	    <td colspan="2" align="center"> Seelen Blogs ・ <a href="https://seelen.io/blog">Info / Guides</a></td>
 	</tr>
 	<tr>
-	    <td colspan="2" align="center"> My Seelen Profile ・ <a href="https://seelen.io/profile/k-ivy">K. Ivy</a></td>
+	    <td colspan="2" align="center"> My Resource Wikis ・ <a href="https://k-ivy.github.io/Seelen-UI-Resources/Web/wiki.html">All</a></td>
 	</tr>
 </table>
 <div align="left">

@@ -1,0 +1,15 @@
+id: "@k-ivy/tray-label-wrap"
+metadata:
+  displayName: "Tray Label Wrap"
+  author: "K-Ivy"
+  description: "Makes tray item labels wrap instead of being cut off."
+  tags: ['toolbar']
+  appTargetVersion:
+    - 2
+    - 5
+    - 3
+styles:
+  "@seelen/system-tray": |
+    .system-tray-item-label {
+      white-space: normal;
+    }
