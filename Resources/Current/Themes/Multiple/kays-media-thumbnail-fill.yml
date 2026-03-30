@@ -1,13 +1,13 @@
 id: "@k-ivy/media-thumb-fill"
 metadata:
   displayName: "Filled Media Thumbnails"
-  description: "Makes thumnails of media fill their container."
+  description: "Makes thumbnails fill their containers."
   author: "K-Ivy"
-  tags: ['weg', 'toolbar']
+  tags: ['weg', 'media-popup']
   appTargetVersion:
     - 2
-    - 4
-    - 7
+    - 5
+    - 6
 styles:
   "@seelen/weg": |
     .media-session {
@@ -16,7 +16,7 @@ styles:
       }
     }
 
-  "@seelen/fancy-toolbar": |
+  "@seelen/media-popup": |
     .media-session {
       .media-session-thumbnail {
         object-fit: cover !important;

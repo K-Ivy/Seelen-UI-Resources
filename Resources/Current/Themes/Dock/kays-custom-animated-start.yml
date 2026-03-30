@@ -1,0 +1,282 @@
+id: "@k-ivy/anim-custom-csrt"
+metadata:
+  displayName: "Animated Start Icon Creator"
+  author: "K-Ivy"
+  description: "Animate the start icon and/or set a custom start icon."
+  tags: ['weg']
+  appTargetVersion:
+    - 2
+    - 5
+    - 7
+settings:
+  - group:
+      header: "✦ Base"
+      items:
+        - group:
+            header: "╰ Toggle this so custom icons can apply :"
+            items:
+              - syntax: <string>
+                label: "● Default Start Icon"
+                name: "--anim-icon-csrt-def-visty"
+                description: "block = show | none = remove"
+                initialValue: "block"
+                options: [block, none]
+
+  - group:
+      header: "✦ Icon"
+      items:
+        - syntax: <string>
+          label: "● Regular"
+          name: "--anim-icon-csrt-base"
+          tip: "● Link: url('https://example.png')    ● Base64 (Recommended): url('data:image/png;base64,...')"
+          initialValue: "none"
+
+        - syntax: <string>
+          label: "● On Hover"
+          name: "--anim-icon-csrt-hover"
+          tip: "● Link: url('https://example.png')    ● Base64 (Recommended): url('data:image/png;base64,...')"
+          initialValue: "none"
+
+        - syntax: <string>
+          label: "╰・Base64 Converter (Use: Data URL) ↗"
+          name: "--anim-csrt-convert-inf"
+          initialValue: "https://base64.guru/converter/encode/image/png"
+
+        - group:
+            header: " Adjustments"
+            items:
+              - syntax: <string>
+                label: "● Size"
+                name: "--anim-icon-csrt-size"
+                initialValue: "1.0"
+
+              - syntax: <length>
+                name: '--anim-icon-csrt-pos-vert'
+                label:  "● Vertical Positon"
+                initialValue: 0
+                initialValueUnit: 'px'
+
+        - syntax: <string>
+          label: "> Demo :"
+          name: "--thsooks-ksjci-bsg"
+          initialValue: "https://github.com/user-attachments/assets/7b04f5dd-6be4-42e9-a1bd-e1a33ec8b398"
+
+  - group:
+      header: "⧉ Idle Animation (Loop)"
+      items:
+        - syntax: <string>
+          name: "--main-el-csrt-anim-idle"
+          label: "∷ Animation"
+          initialValue: "none"
+          options: [none, float, breathe, pulse, heartbeat, tada, ping, rock, pendulum, buzz, wiggle, wobble, jelly, squeeze, flip, spin, spiral, flicker, blink]
+
+        - syntax: <string>
+          name: "--main-el-csrt-idle-dur"
+          label: "╰・Speed"
+          tip: "~~ ms/s"
+          initialValue: "2s"
+
+  - group:
+      header: "⧉ State Animation"
+      items:
+        - syntax: <string>
+          name: "--main-el-csrt-anim-start"
+          label: "∷ Hover"
+          initialValue: "none"
+          options: [none, pop, pop-weak, breathe, heartbeat, tada, ping, rock, buzz, wiggle, wobble, jelly, squeeze, flicker, blink]
+
+        - syntax: <string>
+          name: "--main-el-csrt-anim-end"
+          label: "∷ Un-hover"
+          initialValue: "none"
+          options: [none, breathe, heartbeat, tada, ping, rock, buzz, wiggle, wobble, jelly, squeeze, flicker, blink]
+
+        - syntax: <string>
+          name: "--main-el-csrt-trans-dur"
+          label: "╰・Speed"
+          tip: "~~ ms/s"
+          initialValue: "1.4s"
+styles:
+  weg: |
+    .weg-item-start-icon * {
+      display: var(--anim-icon-csrt-def-visty, block) !important;
+    }
+
+    .weg-items-container {
+      overflow: visible !important;
+    }
+
+    .weg-item-start-icon {
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+      bottom: var(--anim-icon-csrt-pos-vert, 0px) !important;
+      scale: var(--anim-icon-csrt-size, 1.0) !important;
+      animation:
+        var(--main-el-csrt-anim-idle, none)
+        var(--main-el-csrt-idle-dur, 2s) linear infinite;
+    }
+
+    .weg-item-start-icon:hover {
+      background-image: var(--anim-icon-csrt-hover, none);
+      animation:
+        var(--main-el-csrt-anim-idle, none)
+          var(--main-el-csrt-idle-dur, 2s) linear infinite,
+        var(--main-el-csrt-anim-start, none)
+          var(--main-el-csrt-trans-dur, 1.4s) linear 1 normal none;
+    }
+
+    .weg-item-start:not(:hover) .weg-item-start-icon {
+      animation:
+        var(--main-el-csrt-anim-idle, none)
+          var(--main-el-csrt-idle-dur, 2s) linear infinite,
+        var(--main-el-csrt-anim-end, none)
+          var(--main-el-csrt-trans-dur, 1.4s) linear 1 normal none;
+    }
+
+    .weg-item-start-icon,
+    .weg-item-start-icon:active {
+      background-image: var(--anim-icon-csrt-base, none);
+    }
+
+    @keyframes float {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -12%; }
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.07); }
+    }
+
+    @keyframes pendulum {
+      0%, 100% { rotate: 0deg; }
+      25% { rotate: -12deg; }
+      75% { rotate: 12deg; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      30% { transform: scale(1.09); }
+      55% { transform: scale(1.04); }
+      75% { transform: scale(1.07); }
+    }
+
+    @keyframes heartbeat {
+      0%, 56%, 100% { transform: scale(1); }
+      14% { transform: scale(1.1); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.06); }
+    }
+
+    @keyframes rock {
+      0%, 100% { rotate: 0deg; }
+      33% { rotate: -8deg; }
+      66% { rotate: 8deg; }
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      40% { opacity: 0.6; }
+      70% { opacity: 0.88; }
+    }
+
+    @keyframes blink {
+      0%, 40%, 100% { opacity: 1; }
+      20% { opacity: 0.15; }
+    }
+
+    @keyframes pop {
+      0%, 100% { transform: scale(1.13); }
+    }
+
+    @keyframes pop-weak {
+      0%, 100% { transform: scale(1.08); }
+    }
+
+    @keyframes wiggle {
+      0%, 100% { rotate: 0deg; }
+      12% { rotate: -10deg; }
+      30% { rotate: 10deg; }
+      48% { rotate: -7deg; }
+      64% { rotate: 7deg; }
+      80% { rotate: -3deg; }
+      92% { rotate: 2deg; }
+    }
+
+    @keyframes jelly {
+      0% { transform: scale(1, 1); }
+      18% { transform: scale(0.85, 1.15); }
+      40% { transform: scale(1.16, 0.86); }
+      58% { transform: scale(0.93, 1.07); }
+      76% { transform: scale(1.05, 0.96); }
+      90% { transform: scale(0.98, 1.02); }
+      100% { transform: scale(1, 1); }
+    }
+
+    @keyframes tada {
+      0%   { transform: scale(1);    rotate: 0deg; }
+      8%   { transform: scale(0.93); rotate: -4deg; }
+      22%  { transform: scale(1.14); rotate: 4deg; }
+      36%  { transform: scale(1.14); rotate: -4deg; }
+      50%  { transform: scale(1.14); rotate: 4deg; }
+      65%  { transform: scale(1.06); rotate: -2deg; }
+      80%  { transform: scale(1.02); rotate: 1deg; }
+      100% { transform: scale(1);    rotate: 0deg; }
+    }
+
+    @keyframes ping {
+      0% { transform: scale(1); }
+      22% { transform: scale(1.15); }
+      48% { transform: scale(0.9); }
+      68% { transform: scale(1.1); }
+      84% { transform: scale(0.96); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes buzz {
+      0%, 100% { rotate: 0deg; }
+      8%  { rotate: -8deg; }
+      18% { rotate: 8deg; }
+      28% { rotate: -7deg; }
+      38% { rotate: 7deg; }
+      50% { rotate: -5deg; }
+      62% { rotate: 4deg; }
+      76% { rotate: -2deg; }
+      90% { rotate: 1deg; }
+    }
+
+    @keyframes flip {
+      to { rotate: y 360deg; }
+    }
+
+    @keyframes squeeze {
+      0%   { transform: scale(1, 1); }
+      18%  { transform: scale(1.28, 0.74); }
+      38%  { transform: scale(0.82, 1.18); }
+      58%  { transform: scale(1.1, 0.92); }
+      76%  { transform: scale(0.96, 1.04); }
+      90%  { transform: scale(1.02, 0.99); }
+      100% { transform: scale(1, 1); }
+    }
+
+    @keyframes spiral {
+      0%   { rotate: 0deg; }
+      35%  { rotate: 180deg; }
+      65%  { rotate: 310deg; }
+      100% { rotate: 360deg; }
+    }
+
+    @keyframes spin {
+      to { rotate: 360deg; }
+    }
+
+    @keyframes wobble {
+      0%   { rotate: 0deg; }
+      15%  { rotate: -12deg; }
+      30%  { rotate: 10deg; }
+      45%  { rotate: -8deg; }
+      60%  { rotate: 6deg; }
+      75%  { rotate: -3deg; }
+      90%  { rotate: 1.5deg; }
+      100% { rotate: 0deg; }
+    }

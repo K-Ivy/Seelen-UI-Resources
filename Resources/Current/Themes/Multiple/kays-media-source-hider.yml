@@ -3,19 +3,18 @@ metadata:
   displayName: "Hide Media Source Icons"
   author: "K-Ivy"
   description: "Removes the source icons from the media players."
-  tags: ['weg', 'toolbar']
+  tags: ['weg', 'media-popup']
   appTargetVersion:
     - 2
-    - 4
-    - 7
+    - 5
+    - 6
 styles:
   "@seelen/weg": |
-    .media-session-container-horizontal .media-session-app-icon,
-    .media-session-container-vertical .media-session-app-icon {
+    .media-session-app-icon {
       display: none !important;
     }
 
-  "@seelen/fancy-toolbar": |
+  "@seelen/media-popup": |
     .media-session-app-icon {
       display: none !important;
     }
