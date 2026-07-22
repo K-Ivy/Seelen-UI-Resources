@@ -1,0 +1,62 @@
+id: '@k-ivy/wp-anim-zm-fade'
+metadata:
+  displayName: "Zoom - Wallpaper Switch Animation"
+  author: "K-Ivy"
+  tags: ['wallpaper-manager']
+  appTargetVersion:
+    - 2
+    - 8
+    - 0
+settings:
+  - group:
+      header: "✦ Zoom"
+      items:
+        - syntax: <string>
+          name: "--wp-zoom-lvl-choice"
+          label: "╰─ Amount"
+          initialValue: "LOW-zoom"
+          options: [LOW-zoom, MID-zoom, HIGH-zoom]
+
+        - syntax: <number>
+          name: "--wp-zoom-transition"
+          label: "╰・Duration (ms)"
+          initialValue: 600
+          options: [200, 300, 400, 500, 600, 700, 800, 900, 1000]
+styles:
+  "@seelen/wallpaper-manager": |
+    .wallpaper-container {
+      &.rendering {
+        animation: var(--wp-zoom-lvl-choice, LOW-zoom) calc(var(--wp-zoom-transition, 600) * 1ms) ease forwards !important;
+      }
+    }
+
+    @keyframes LOW-zoom {
+      from {
+        transform: scale(1.2);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    @keyframes MID-zoom {
+      from {
+        transform: scale(1.6);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    @keyframes HIGH-zoom {
+      from {
+        transform: scale(2.0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }

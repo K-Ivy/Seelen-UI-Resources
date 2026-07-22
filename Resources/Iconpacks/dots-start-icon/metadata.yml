@@ -1,0 +1,14 @@
+id: '@k-ivy/dots-start'
+metadata:
+  displayName: "Dots Start Icon"
+  appTargetVersion:
+    - 2
+    - 8
+    - 0
+entries:
+  - type: custom
+    key: '@seelen/weg::start-menu'
+    icon:
+      light: dots-dark.png
+      dark: dots-light.png
+      mask: null

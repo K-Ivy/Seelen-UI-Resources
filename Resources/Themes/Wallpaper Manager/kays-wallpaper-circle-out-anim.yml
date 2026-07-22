@@ -1,0 +1,36 @@
+id: '@k-ivy/wp-anim-cir-out'
+metadata:
+  displayName: "Cicle Out - Wallpaper Switch Animation"
+  author: "K-Ivy"
+  tags: ['wallpaper-manager']
+  appTargetVersion:
+    - 2
+    - 8
+    - 0
+settings:
+  - group:
+      header: "✦ Circle Out"
+      items:
+        - syntax: <number>
+          name: "--wp-cir-out-transition"
+          label: "╰・Duration (ms)"
+          initialValue: 1000
+          options: [600, 700, 800, 900, 1000]
+styles:
+  "@seelen/wallpaper-manager": |
+    .wallpaper-container {
+      will-change: clip-path !important;
+
+      &.rendering {
+        animation: Cir-Out calc(var(--wp-cir-out-transition, 1000) * 1ms) cubic-bezier(0.65, 0, 0.35, 1) forwards !important;
+      }
+    }
+
+    @keyframes Cir-Out {
+      from {
+        clip-path: circle(0% at 50% 50%);
+      }
+      to {
+        clip-path: circle(150% at 50% 50%);
+      }
+    }

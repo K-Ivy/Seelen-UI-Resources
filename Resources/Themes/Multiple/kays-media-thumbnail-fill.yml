@@ -1,0 +1,17 @@
+id: "@k-ivy/media-thumb-fill"
+metadata:
+  displayName: "Media Thumbnail Fill"
+  description: "Makes player thumbnail fill the container."
+  author: "K-Ivy"
+  tags: ['weg', 'media-popup']
+  appTargetVersion:
+    - 2
+    - 8
+    - 0
+styles:
+  "@seelen/weg": |
+    .media-session {
+      .media-session-thumbnail {
+        object-fit: cover !important;
+      }
+    }

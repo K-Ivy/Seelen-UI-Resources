@@ -1,0 +1,150 @@
+{
+  "resources": [
+    {
+      "title": "Fully Customizable Dock Player",
+      "desc": "Extensively customize the dock player through settings",
+      "img": "LOGO.png",
+      "url": "https://seelen.io/resources/k-ivy/dock-comp-media"
+    },
+    {
+      "title": "Grid Style Tray (Hover for Label)",
+      "desc": "Windows-like tray, labels shown on hover",
+      "img": "tray-hl-showcase-logo.png",
+      "url": "https://seelen.io/resources/k-ivy/win-grid-tray-hl"
+    },
+    {
+      "title": "Grid Style Tray (Always Show Label)",
+      "desc": "Windows-like tray, labels always shown",
+      "img": "tray-la-showcase-logo.png",
+      "url": "https://seelen.io/resources/k-ivy/win-grid-tray-la"
+    },
+    {
+      "title": "Custom User",
+      "desc": "Overrides Windows username",
+      "img": "customusrlogo.png",
+      "url": "https://seelen.io/resources/k-ivy/custom-pref-user"
+    },
+    {
+      "title": "Individual Coloring of Toolbar Modules",
+      "desc": "Customize each toolbar module individually",
+      "img": "toolvolr-logo.png",
+      "url": "https://seelen.io/resources/k-ivy/ftbr-mod-color"
+    },
+    {
+      "title": "Filled Window Previews",
+      "desc": "Preview thumbnails fully fit the available space",
+      "img": "previre-ff.png",
+      "url": "https://seelen.io/resources/k-ivy/window-prev-ff"
+    },
+    {
+      "title": "Filled Media Thumbnails",
+      "desc": "Media thumbnails fully fit the available space",
+      "img": "media-thumb-fill.png",
+      "url": "https://seelen.io/resources/k-ivy/media-thumb-fill"
+    },
+    {
+      "title": "Hide Media Source Icons",
+      "desc": "Removes the media source icon from the player",
+      "img": "LOGO-v2.png",
+      "url": "https://seelen.io/resources/k-ivy/hide-media-app-icon"
+    },
+    {
+      "title": "Slide - Wallpaper Switch Animation",
+      "desc": "Sliding animation for wallpaper switching",
+      "img": "slidelogo.png",
+      "url": "https://seelen.io/resources/k-ivy/wp-anim-slide"
+    },
+    {
+      "title": "Zoom - Wallpaper Switch Animation",
+      "desc": "Zoom animation for wallpaper switching",
+      "img": "zoomlogo.png",
+      "url": "https://seelen.io/resources/k-ivy/wp-anim-zm-fade"
+    },
+    {
+      "title": "Blur - Wallpaper Switch Animation",
+      "desc": "Blur animation for wallpaper switching",
+      "img": "blurlogo.png",
+      "url": "https://seelen.io/resources/k-ivy/wp-anim-blur"
+    },
+    {
+      "title": "Fade - Wallpaper Switch Animation",
+      "desc": "Fade animation for wallpaper switching",
+      "img": "fadelogo.png",
+      "url": "https://seelen.io/resources/k-ivy/wp-anim-fade"
+    },
+    {
+      "title": "Win 10 - Animated Start Icon",
+      "desc": "Win 10 icon animated",
+      "img": "win10anim.png",
+      "url": "https://seelen.io/resources/k-ivy/anim-win-ten-syn"
+    },
+    {
+      "title": "Win 7 Whiteout - Animated Start Icon",
+      "desc": "Win 7 icon variant animated",
+      "img": "win7whiteout.png",
+      "url": "https://seelen.io/resources/k-ivy/anim-whiteout-syn"
+    },
+    {
+      "title": "XP - Animated Start Icon",
+      "desc": "Win XP icon animated",
+      "img": "xpanim.png",
+      "url": "https://seelen.io/resources/k-ivy/anim-winxp-syn"
+    },
+    {
+      "title": "Vista - Animated Start Icon",
+      "desc": "Win Vista icon animated",
+      "img": "vistaanim.png",
+      "url": "https://seelen.io/resources/k-ivy/anim-vista-syn"
+    },
+    {
+      "title": "Win 11 - Start Icon",
+      "desc": "Win 11 icon",
+      "img": "win11.png",
+      "url": "https://seelen.io/resources/k-ivy/start-icon-faq"
+    },
+    {
+      "title": "Win 12 Concept - Start Icon",
+      "desc": "Win 12 concept icon",
+      "img": "win12concept.png",
+      "url": "https://seelen.io/resources/k-ivy/win-start-alt"
+    },
+    {
+      "title": "Dots - Start Icon",
+      "desc": "Dots icon",
+      "img": "dots.png",
+      "url": "https://seelen.io/resources/k-ivy/dots-start"
+    },
+    {
+      "title": "NixOS - Start Icon",
+      "desc": "NixOS icon",
+      "img": "nix.png",
+      "url": "https://seelen.io/resources/k-ivy/nixos-start"
+    },
+    {
+      "title": "Apple - Start Icon",
+      "desc": "Apple icon",
+      "img": "apple.png",
+      "url": "https://seelen.io/resources/k-ivy/apple-start"
+    },
+    {
+      "title": "Warp - Start Icon",
+      "desc": "Warp icon",
+      "img": "warp.png",
+      "url": "https://seelen.io/resources/k-ivy/warp-start"
+    }
+  ],
+  "wikiPages": [
+    {
+      "title": "Fully Customizable Start Menu",
+      "slug": "Fully-Customizable-Start-Menu"
+    },
+    {
+      "title": "Indiviual Coloring of Toolbar Modules",
+      "slug": "Indiviual-Coloring-of-Toolbar-Modules"
+    },
+    {
+      "title": "Animated Start Icons",
+      "slug": "Animated-Start-Icons"
+    }
+  ]
+}

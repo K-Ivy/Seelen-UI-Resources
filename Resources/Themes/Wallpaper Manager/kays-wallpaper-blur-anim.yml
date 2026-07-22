@@ -1,0 +1,38 @@
+id: '@k-ivy/wp-anim-blur'
+metadata:
+  displayName: "Blur - Wallpaper Switch Animation"
+  author: "K-Ivy"
+  tags: ['wallpaper-manager']
+  appTargetVersion:
+    - 2
+    - 8
+    - 0
+settings:
+  - group:
+      header: "✦ Blur"
+      items:
+        - syntax: <number>
+          name: "--wp-blur-transition"
+          label: "╰・Duration (ms)"
+          initialValue: 600
+          options: [200, 300, 400, 500, 600, 700, 800, 900, 1000]
+styles:
+  "@seelen/wallpaper-manager": |
+    .wallpaper-container {
+      will-change: opacity, filter !important;
+
+      &.rendering {
+        animation: BlurK calc(var(--wp-blur-transition, 600) * 1ms) ease-out forwards !important;
+      }
+    }
+
+    @keyframes BlurK {
+      from {
+        opacity: 0;
+        filter: blur(12px);
+      }
+      to {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }

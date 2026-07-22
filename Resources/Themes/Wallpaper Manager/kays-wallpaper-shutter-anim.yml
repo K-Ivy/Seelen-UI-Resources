@@ -1,0 +1,80 @@
+id: '@k-ivy/wp-anim-shutter'
+metadata:
+  displayName: "Shutter - Wallpaper Switch Animation"
+  author: "K-Ivy"
+  tags: ['wallpaper-manager']
+  appTargetVersion:
+    - 2
+    - 8
+    - 0
+settings:
+  - group:
+      header: "✦ Shutter"
+      items:
+        - syntax: <color>
+          name: "--wp-shutter-color"
+          label: "╰─ Color"
+          initialValue: "#0a0a0a"
+
+        - syntax: <string>
+          name: '--wp-shutter-image'
+          label: "╰─ Graphic"
+          tip: "● Image: url('https://example.png')   ● Gradients: Linear, Radial, Conic >    ❖ Quick Overview - Refer to CSS Doc: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ • linear-gradient(direction, color, color, ...)                             ❯ direction = 'to top', 'to right',       'to bottom', 'to left'              • radial-gradient(shape at pos, color, color, ...)                             ❯ shape: circle, ellipse               ❯ pos: 'center', 'top', 'bottom', 'left',     'right'                          • conic-gradient(from angle at pos, color)  ➔  angle: '0deg', '45deg', etc"
+          description: "Set a image or gradient as the shutter background."
+          initialValue: 'none'
+
+        - syntax: <number>
+          name: "--wp-shutter-transition"
+          label: "╰・Duration (ms)"
+          initialValue: 700
+          options: [200, 300, 400, 500, 600, 700, 800, 900, 1000]
+styles:
+  "@seelen/wallpaper-manager": |
+    .wallpaper-container {
+      position: relative;
+ 
+      &.rendering {
+        animation: none !important;
+      }
+ 
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50.5%;
+        z-index: 2;
+        pointer-events: none;
+        will-change: transform;
+        transform: translateX(0%);
+        background:
+          var(--wp-shutter-image, none) no-repeat 50% 50% / cover
+          var(--wp-shutter-color, #0a0a0a);
+      }
+ 
+      &::before {
+        left: 0;
+        --wp-shutter-dir: -1;
+      }
+      &::after {
+        right: 0;
+        --wp-shutter-dir: 1;
+      }
+ 
+      &.rendering::before,
+      &.rendering::after {
+        animation: Shutter calc(var(--wp-shutter-transition, 700) * 1ms) cubic-bezier(0.65, 0, 0.35, 1) forwards !important;
+      }
+ 
+      &.will-unrender::before,
+      &.will-unrender::after {
+        animation: none;
+        transform: translateX(0%);
+      }
+    }
+ 
+    @keyframes Shutter {
+      from { transform: translateX(0%); }
+      to   { transform: translateX(calc(var(--wp-shutter-dir, 1) * 100%)); }
+    }

@@ -1,0 +1,341 @@
+id: "@k-ivy/win-grid-tray-hl-ex"
+metadata:
+  displayName: "Grid Style Tray (Experimental Version) - Hover for Label"
+  author: "K-Ivy"
+  description: "Changes tray to be grid-based like windows."
+  tags: ['fancy-toolbar']
+  appTargetVersion:
+    - 2
+    - 7
+    - 4
+settings:
+  - group:
+      header: "✦ Base of the Tray"
+      items:
+        - group:
+            header: " Padding"
+            items:
+              - syntax: <length>
+                name: "--tray-hl-padding-top"
+                label: "● Top"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--tray-hl-padding-bottom"
+                label: "● Bottom"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--tray-hl-padding-left"
+                label: "● Left"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--tray-hl-padding-right"
+                label: "● Right"
+                initialValue: 6
+                initialValueUnit: "px"
+
+        - group:
+            header: " Spacing"
+            items:
+              - syntax: <length>
+                label: "● Row"
+                tip: "Distance between rows"
+                name: "--tray-hl-row-gap"
+                initialValue: 6
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                label: "● Column"
+                tip: "Distance between columns"
+                name: "--tray-hl-col-gap"
+                initialValue: 6
+                initialValueUnit: "px"
+
+        - group:
+            header: " Constraints"
+            items:
+              - syntax: <number>
+                label: "● Maximum Columns"
+                tip: "How many items (cells) before wrapping to next row"
+                name: "--tray-hl-columns"
+                initialValue: 4
+
+  - group:
+      header: "✦ Tray Items"
+      items:
+        - group:
+            header: " Sizing"
+            items:
+              - syntax: <length>
+                label: "● Cell Width"
+                name: "--tray-hl-col-width"
+                initialValue: 36
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                label: "● Cell Height"
+                name: "--tray-hl-row-height"
+                initialValue: 36
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                label: "● Icon Scale"
+                name: "--tray-hl-app-icon-size"
+                initialValue: 18
+                initialValueUnit: "px"
+
+              - syntax: <number>
+                label: "╰・Scale on Hover"
+                name: "--tray-hl-app-icon-size-hover"
+                initialValue: 1.06
+
+  - group:
+      header: "✦ Item Labels"
+      items:
+        - group:
+            header: " Typography"
+            items:
+              - syntax: <length>
+                label: "● Letter Size"
+                name: "--tray-hl-label-font-size"
+                initialValue: 10
+                initialValueUnit: "px"
+
+              - syntax: <number>
+                name: "--tray-hl-label-font-weight"
+                label: "● Letter Thickness"
+                initialValue: 600
+                options: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+
+              - syntax: <string>
+                name: "--tray-hl-case"
+                label: "● Letter Case"
+                initialValue: "none"
+                options: [none, uppercase, lowercase, capitalize]
+
+              - syntax: <number>
+                label: "● Line Seperation"
+                tip: "Distance between lines/rows"
+                name: "--tray-hl-label-line-height"
+                initialValue: 1.4
+
+        - group:
+            header: " Appearance"
+            items:
+              - group:
+                  header: "> Light Mode"
+                  items:
+                    - syntax: <color>
+                      label: "● Text Color"
+                      name: "--tray-hl-label-color-light"
+                      initialValue: '#121212'
+
+                    - syntax: <color>
+                      label: "● Background Color"
+                      name: "--tray-hl-label-bg-light"
+                      initialValue: '#f2f2f2'
+
+                    - syntax: <color>
+                      label: "● Border Color"
+                      name: "--tray-hl-label-border-color-light"
+                      initialValue: '#00000000'
+
+              - group:
+                  header: "> Dark Mode"
+                  items:
+                    - syntax: <color>
+                      label: "● Text Color"
+                      name: "--tray-hl-label-color-dark"
+                      initialValue: '#e4e4e4'
+
+                    - syntax: <color>
+                      label: "● Background Color"
+                      name: "--tray-hl-label-bg-dark"
+                      initialValue: '#181818'
+
+                    - syntax: <color>
+                      label: "● Border Color"
+                      name: "--tray-hl-label-border-color-dark"
+                      initialValue: '#00000000'
+
+              - group:
+                  header: "> General"
+                  items:
+                    - syntax: <length>
+                      label: "● Corner Rounding"
+                      name: "--tray-hl-label-border-radius"
+                      initialValue: 6
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      label: "● Border Width"
+                      name: "--tray-hl-label-border-width"
+                      initialValue: 0
+                      initialValueUnit: "px"
+
+                    - syntax: <length>
+                      label: "● Padding"
+                      name: "--tray-hl-label-padding"
+                      initialValue: 6
+                      initialValueUnit: "px"
+
+        - group:
+            header: " Constraints"
+            items:
+              - syntax: <length>
+                label: "● Maximum Line Length"
+                tip: "Wrap to next line/row after this amount"
+                name: "--tray-hl-label-width"
+                initialValue: 160
+                initialValueUnit: "px"
+
+              - syntax: <number>
+                label: "● Maximum Lines"
+                tip: "Increase if needed (by 1), otherwise leave alone"
+                name: "--tray-hl-label-max-rows"
+                initialValue: 4
+                options: [1, 2, 3, 4, 5, 6]
+
+  - group:
+      header: "✦ Animation"
+      items:
+        - syntax: <length>
+          label: "∷ Label Start"
+          name: "--tray-hl-label-starty"
+          initialValue: -6
+          initialValueUnit: "px"
+
+        - syntax: <length>
+          label: "∷ Label End"
+          name: "--tray-hl-label-endy"
+          initialValue: 2
+          initialValueUnit: "px"
+styles:
+  "@seelen/system-tray": |
+    @media (prefers-color-scheme: light) {
+      :root {
+        --tray-hl-label-bg-resolved: var(--tray-hl-label-bg-light, #f2f2f2);
+        --tray-hl-label-color-resolved: var(--tray-hl-label-color-light, #121212);
+        --tray-hl-label-border-color-resolved: var(--tray-hl-label-border-color-light, #00000000);
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --tray-hl-label-bg-resolved: var(--tray-hl-label-bg-dark, #181818);
+        --tray-hl-label-color-resolved: var(--tray-hl-label-color-dark, #e4e4e4);
+        --tray-hl-label-border-color-resolved: var(--tray-hl-label-border-color-dark, #00000000);
+      }
+    }
+ 
+    .system-tray {
+      /* Popout room reserved as always-present padding, so no clipping. */
+      --tray-hl-h-safety: max(0px, calc((var(--tray-hl-label-width, 160px) - var(--tray-hl-col-width, 36px)) / 2));
+      --tray-hl-v-safety: calc(
+        (var(--tray-hl-label-max-rows, 4) * var(--tray-hl-label-font-size, 10px) * var(--tray-hl-label-line-height, 1.4)) +
+        (var(--tray-hl-label-padding, 6px) * 2) +
+        var(--tray-hl-label-endy, 2px)
+      );
+ 
+      position: relative !important;
+      background-color: transparent !important;
+      background-image: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border: none !important;
+      box-shadow: none !important;
+
+      display: inline-grid !important;
+      width: max-content !important;
+      max-width: calc(
+        var(--tray-hl-columns, 4) * var(--tray-hl-col-width, 36px) +
+        (var(--tray-hl-columns, 4) - 1) * var(--tray-hl-col-gap, 6px) +
+        var(--tray-hl-padding-left, 6px) + var(--tray-hl-h-safety) +
+        var(--tray-hl-padding-right, 6px) + var(--tray-hl-h-safety)
+      ) !important;
+      grid-template-columns: repeat(auto-fit, var(--tray-hl-col-width, 36px)) !important;
+      grid-auto-rows: var(--tray-hl-row-height, 36px) !important;
+      row-gap: var(--tray-hl-row-gap, 6px) !important;
+      column-gap: var(--tray-hl-col-gap, 6px) !important;
+      padding:
+        var(--tray-hl-padding-top, 6px)
+        calc(var(--tray-hl-padding-right, 6px) + var(--tray-hl-h-safety))
+        calc(var(--tray-hl-padding-bottom, 6px) + var(--tray-hl-v-safety))
+        calc(var(--tray-hl-padding-left, 6px) + var(--tray-hl-h-safety)) !important;
+      overflow: visible !important;
+    }
+ 
+    .system-tray::before {
+      /* The real visible tray box */
+      content: "";
+      position: absolute;
+      inset: 0 var(--tray-hl-h-safety) var(--tray-hl-v-safety) var(--tray-hl-h-safety);
+      background-color: var(--slu-std-bg-color);
+      border-radius: 10px;
+      box-shadow: var(--shadow-m);
+      pointer-events: none;
+    }
+ 
+    .system-tray-item {
+      position: relative !important;
+      justify-content: center !important;
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+    }
+ 
+    .system-tray-item:hover {
+      z-index: 10;
+    }
+ 
+    .system-tray-item-icon {
+      will-change: transform;
+      height: var(--tray-hl-app-icon-size, 18px) !important;
+      width: var(--tray-hl-app-icon-size, 18px) !important;
+      transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1) !important;
+    }
+ 
+    .system-tray-item:hover .system-tray-item-icon {
+      transform: scale(var(--tray-hl-app-icon-size-hover, 1.06)) !important;
+    }
+ 
+    .system-tray-item-label {
+      position: absolute !important;
+      box-sizing: content-box !important;
+      z-index: 20; /* So paints above icons */
+      pointer-events: none !important; /* Prevents a nasty "shift" issue */
+      /* --- */
+      left: 50% !important;
+      top: calc(100% + var(--tray-hl-label-starty, -6px)) !important;
+      transform: translateX(-50%) !important;
+      opacity: 0 !important;
+      transition: opacity 0.35s ease, top 0.35s ease !important;
+      /* --- */
+      text-align: center !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+      width: max-content !important;
+      max-width: var(--tray-hl-label-width, 160px) !important;
+      font-size: var(--tray-hl-label-font-size, 10px) !important;
+      font-weight: var(--tray-hl-label-font-weight, 600) !important;
+      text-transform: var(--tray-hl-case, none) !important;
+      line-height: var(--tray-hl-label-line-height, 1.4) !important;
+      /* --- */
+      padding: var(--tray-hl-label-padding, 6px) !important;
+      color: var(--tray-hl-label-color-resolved) !important;
+      background-color: var(--tray-hl-label-bg-resolved) !important;
+      border-color: var(--tray-hl-label-border-color-resolved) !important;
+      border-width: var(--tray-hl-label-border-width, 0px) !important;
+      border-radius: var(--tray-hl-label-border-radius, 6px) !important;
+      border-style: solid !important;
+      box-shadow: var(--shadow-m) !important;
+    }
+ 
+    .system-tray-item:hover .system-tray-item-label {
+      opacity: 1 !important;
+      top: calc(100% + var(--tray-hl-label-endy, 2px)) !important;
+    }

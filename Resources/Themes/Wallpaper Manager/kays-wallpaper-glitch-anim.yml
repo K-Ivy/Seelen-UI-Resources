@@ -1,0 +1,55 @@
+id: '@k-ivy/wp-anim-glitch'
+metadata:
+  displayName: "Glitch - Wallpaper Switch Animation"
+  author: "K-Ivy"
+  tags: ['wallpaper-manager']
+  appTargetVersion:
+    - 2
+    - 8
+    - 0
+settings:
+  - group:
+      header: "✦ Glitch"
+      items:
+        - syntax: <number>
+          name: "--wp-glitch-amt"
+          label: "╰─ Intensity"
+          initialValue: 2
+          options: [1, 2, 3, 4]
+
+        - syntax: <number>
+          name: "--wp-glitch-transition"
+          label: "╰・Duration (ms)"
+          initialValue: 500
+          options: [200, 300, 400, 500, 600, 700, 800, 900, 1000]
+styles:
+  "@seelen/wallpaper-manager": |
+    .wallpaper-container {
+      will-change: transform, filter, opacity !important;
+
+      &.rendering {
+        animation: Glitch calc(var(--wp-glitch-transition, 500) * 1ms) steps(1, end) forwards !important;
+      }
+    }
+
+    @keyframes Glitch {
+      0% {
+        opacity: 0.75;
+        transform: translateX(calc(var(--wp-glitch-amt, 2) * -1.5%)) skewX(calc(var(--wp-glitch-amt, 2) * -1.5deg));
+        filter: hue-rotate(40deg) contrast(1.3) drop-shadow(calc(var(--wp-glitch-amt, 2) * 2px) 0 0 rgba(255, 0, 80, 0.3));
+      }
+      35% {
+        opacity: 1;
+        transform: translateX(calc(var(--wp-glitch-amt, 2) * 1%)) skewX(calc(var(--wp-glitch-amt, 2) * 1deg));
+        filter: hue-rotate(-25deg) contrast(1.15) drop-shadow(calc(var(--wp-glitch-amt, 2) * -1.5px) 0 0 rgba(0, 230, 255, 0.25));
+      }
+      65% {
+        transform: translateX(calc(var(--wp-glitch-amt, 2) * -0.4%)) skewX(0deg);
+        filter: hue-rotate(8deg) contrast(1.05);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) skewX(0);
+        filter: hue-rotate(0) contrast(1);
+      }
+    }
