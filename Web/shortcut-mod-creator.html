@@ -7,24 +7,40 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css">
 <style>
 :root {
-  --bg-main: #272e33;
-  --bg-surface: #2d353b;
-  --bg-dark: #242b2f;
-  --border: #3d484d;
-  --text: #d3c6aa;
-  --text-muted: #9da9a0;
-  --accent: #a7c080;
-  --accent-text: #1e2a23;
+  --bg: #fff;
+  --surface: #f5f5f5;
+  --surface-dim: #ececec;
+  --border: #e0e0e0;
+  --text: #1a1a1a;
+  --text-dim: #666;
+  --accent: #2563eb;
+  --accent-text: #fff;
+  --hover: rgba(0, 0, 0, .05);
 }
 
-* {
-  box-sizing: border-box;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a1a;
+    --surface: #242424;
+    --surface-dim: #202020;
+    --border: #3a3a3a;
+    --text: #e5e5e5;
+    --text-dim: #a0a0a0;
+    --accent: #4f8fef;
+    --accent-text: #0a0a0a;
+    --hover: rgba(255, 255, 255, .08);
+  }
+}
+
+*, *::before, *::after {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--bg-main);
+  background: var(--bg);
   color: var(--text);
   padding: 24px;
 }
@@ -41,7 +57,7 @@ header {
 
 .subtitle {
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-dim);
   margin-bottom: 4px;
 }
 
@@ -54,11 +70,11 @@ h1 {
 }
 
 h1:hover {
-  color: #b8d292;
+  filter: brightness(1.15);
 }
 
 .container {
-  background: var(--bg-surface);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px;
@@ -80,7 +96,7 @@ h1:hover {
 }
 
 .modal-content {
-  background: var(--bg-surface);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 14px;
@@ -129,7 +145,7 @@ h1:hover {
 }
 
 .btn-toggle {
-  background: var(--bg-surface);
+  background: var(--surface);
   border: 2px solid var(--border);
   color: var(--text);
 }
@@ -179,7 +195,7 @@ input {
   width: 100%;
   padding: 10px;
   border-radius: 8px;
-  background: var(--bg-dark);
+  background: var(--surface-dim);
   border: 2px solid var(--border);
   color: inherit;
   font-family: inherit;
@@ -192,7 +208,7 @@ input:focus {
 }
 
 input::placeholder {
-  color: var(--text-muted);
+  color: var(--text-dim);
 }
 
 .toggle-switch {
@@ -200,7 +216,7 @@ input::placeholder {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-dim);
 }
 
 .switch {
@@ -233,7 +249,7 @@ input::placeholder {
 .card-surface {
   padding: 10px;
   border-radius: 8px;
-  background: var(--bg-dark);
+  background: var(--surface-dim);
   border: 2px solid var(--border);
 }
 
@@ -288,12 +304,12 @@ input::placeholder {
 }
 
 .icon-display {
-  color: #f8f8f8;
+  color: var(--text);
 }
 
 .icon-label {
   flex: 1;
-  color: var(--text-muted);
+  color: var(--text-dim);
 }
 
 .icon-label small {
@@ -323,7 +339,7 @@ input::placeholder {
 }
 
 .dropdown-item:hover {
-  background: var(--bg-dark);
+  background: var(--surface-dim);
 }
 
 .color-modal-content {
@@ -394,7 +410,7 @@ input::placeholder {
 }
 
 .code-block {
-  background: var(--bg-dark);
+  background: var(--surface-dim);
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 10px 12px;
@@ -442,7 +458,7 @@ input::placeholder {
 }
 
 .icon-tile:hover {
-  background: var(--bg-dark);
+  background: var(--surface-dim);
 }
 
 .custom-icon {
@@ -461,7 +477,7 @@ input::placeholder {
   display: block;
   margin-top: 6px;
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--text-dim);
 }
 
 .custom-icon a {
@@ -475,7 +491,7 @@ input::placeholder {
 
 .preview-label {
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-dim);
   margin-bottom: 10px;
   text-align: center;
   font-weight: 600;
@@ -487,7 +503,7 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   padding: 8px;
-  background: var(--bg-dark);
+  background: var(--surface-dim);
   border: 1px solid var(--border);
   border-radius: 8px;
 }
@@ -499,7 +515,7 @@ input::placeholder {
   justify-content: center;
   gap: 6px;
   padding: 6px 12px;
-  background: var(--bg-dark);
+  background: var(--surface-dim);
   border: 1px solid var(--border);
   border-radius: 16px;
   font-size: 13px;
@@ -770,61 +786,18 @@ const state = {
 
 const colorState = { h: 0, s: 0, b: 0.97 };
 
-const $ = id => document.getElementById(id);
-const el = {
-  titleLabel: $('titleLabel'),
-  titleInput: $('titleInput'),
-  iconOnlyToggle: $('iconOnlyToggle'),
-  noIconsToggle: $('noIconsToggle'),
-  advancedFields: $('advancedFields'),
-  fontField: $('fontField'),
-  fontInput: $('fontInput'),
-  thicknessField: $('thicknessField'),
-  thicknessBtn: $('thicknessBtn'),
-  thicknessLabel: $('thicknessLabel'),
-  spacingField: $('spacingField'),
-  spacingBtn: $('spacingBtn'),
-  spacingLabel: $('spacingLabel'),
-  colorField: $('colorField'),
-  colorBtn: $('colorBtn'),
-  colorPreview: $('colorPreview'),
-  colorLabel: $('colorLabel'),
-  tooltipInput: $('tooltipInput'),
-  iconPickerField: $('iconPickerField'),
-  iconBtn: $('iconBtn'),
-  iconPreview: $('iconPreview'),
-  iconLabel: $('iconLabel'),
-  urlLabel: $('urlLabel'),
-  urlInput: $('urlInput'),
-  createBtn: $('createBtn'),
-  previewCard: $('previewCard'),
-  preview: $('preview'),
-  editBtn: $('editBtn'),
-  downloadBtn: $('downloadBtn'),
-  livePreview: $('livePreview'),
-  infoCard: $('infoCard'),
-  iconModal: $('iconModal'),
-  iconGrid: $('iconGrid'),
-  customIcon: $('customIcon'),
-  emojiGrid: $('emojiGrid'),
-  alertModal: $('alertModal'),
-  alertMessage: $('alertMessage'),
-  alertBtn: $('alertBtn'),
-  dropdownModal: $('dropdownModal'),
-  dropdownTitle: $('dropdownTitle'),
-  dropdownMenu: $('dropdownMenu'),
-  colorModal: $('colorModal'),
-  colorArea: $('colorArea'),
-  colorCursor: $('colorCursor'),
-  hueSlider: $('hueSlider'),
-  hueHandle: $('hueHandle'),
-  hexInput: $('hexInput'),
-  colorResetBtn: $('colorResetBtn'),
-  previewArea: document.querySelector('.preview-area')
-};
+const el = Object.fromEntries(
+  [...document.querySelectorAll('[id]')].map(node => [node.id, node])
+);
+el.previewArea = document.querySelector('.preview-area');
 
-const clamp = (v, min, max) => Math.max(min, Math.min(v, max));
+const pulseButton = btn => {
+  btn.classList.add('btn-anim');
+  setTimeout(() => btn.classList.remove('btn-anim'), 300);
+};
 const sanitize = t => t.replace(/["'\\]/g, '');
+const _escDiv = document.createElement('div');
+const escHtml = str => { _escDiv.textContent = str; return _escDiv.innerHTML; };
 const toKebab = n => n.replace(/^Ti/, '').toLowerCase();
 const slugify = s => s.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
 const debounce = (fn, delay) => {
@@ -876,15 +849,16 @@ const showAlert = msg => {
 
 const getIconData = () => {
   const { iconType, iconValue } = state;
-  const iconName = toKebab(iconValue);
-  
+  const templateCode = `Icon({ name: '${iconValue}' })`;
+
   if (iconType === 'typicon') {
+    const iconName = toKebab(iconValue);
     return {
       preview: `<i class="typcn typcn-${iconName} icon-display"></i>`,
       label: iconValue,
       showPreview: true,
       liveIcon: `<i class="typcn typcn-${iconName} icon icon-display"></i>`,
-      templateCode: `Icon({ name: '${iconValue}' })`,
+      templateCode,
       metaIcon: iconValue
     };
   }
@@ -902,10 +876,10 @@ const getIconData = () => {
   
   return {
     preview: '',
-    label: `${iconValue}<br><small>~ Preview not available. But as long as the name is correct, it will work.</small>`,
+    label: `${escHtml(iconValue)}<br><small>~ Preview not available. But as long as the name is correct, it will work.</small>`,
     showPreview: false,
     liveIcon: null,
-    templateCode: `Icon({ name: '${iconValue}' })`,
+    templateCode,
     metaIcon: iconValue
   };
 };
@@ -923,8 +897,8 @@ const updateUI = () => {
   }
   
   el.previewArea.classList.remove('hidden');
-  const title = el.titleInput.value.trim() || 'My Shortcut';
-  const titleSpan = `<span class="text" style="font-family:${state.font || 'inherit'};font-weight:${state.lineThickness};letter-spacing:${state.letterSpacing}px;color:${state.color}">${title}</span>`;
+  const title = escHtml(el.titleInput.value.trim() || 'My Shortcut');
+  const titleSpan = `<span class="text" style="font-family:${escHtml(state.font) || 'inherit'};font-weight:${state.lineThickness};letter-spacing:${state.letterSpacing}px;color:${state.color}">${title}</span>`;
   
   if (state.noIconsMode) el.livePreview.innerHTML = titleSpan;
   else if (state.iconOnlyMode) el.livePreview.innerHTML = iconData.liveIcon;
@@ -939,12 +913,15 @@ const updateColor = hex => {
   updateUI();
 };
 
+const GRADIENT_W = 240;
+const GRADIENT_H = 180;
+
 const updateColorPicker = () => {
   const { h, s, b } = colorState;
   el.colorArea.style.background = hsbToHex(h, 1, 1);
-  el.colorCursor.style.left = s * 240 + 'px';
-  el.colorCursor.style.top = (1 - b) * 180 + 'px';
-  el.hueHandle.style.left = h * 240 + 'px';
+  el.colorCursor.style.left = s * GRADIENT_W + 'px';
+  el.colorCursor.style.top = (1 - b) * GRADIENT_H + 'px';
+  el.hueHandle.style.left = h * GRADIENT_W + 'px';
 };
 
 const toggleAdvancedFields = () => {
@@ -999,15 +976,15 @@ const setupDrag = (element, handler) => {
 
 setupDrag(el.colorArea, e => {
   const rect = el.colorArea.getBoundingClientRect();
-  colorState.s = clamp(e.clientX - rect.left, 0, 240) / 240;
-  colorState.b = 1 - clamp(e.clientY - rect.top, 0, 180) / 180;
+  colorState.s = clamp(e.clientX - rect.left, 0, GRADIENT_W) / GRADIENT_W;
+  colorState.b = 1 - clamp(e.clientY - rect.top, 0, GRADIENT_H) / GRADIENT_H;
   updateColor(hsbToHex(colorState.h, colorState.s, colorState.b));
   updateColorPicker();
 });
 
 setupDrag(el.hueSlider, e => {
   const rect = el.hueSlider.getBoundingClientRect();
-  colorState.h = clamp(e.clientX - rect.left, 0, 240) / 240;
+  colorState.h = clamp(e.clientX - rect.left, 0, GRADIENT_W) / GRADIENT_W;
   updateColor(hsbToHex(colorState.h, colorState.s, colorState.b));
   updateColorPicker();
 });
@@ -1061,10 +1038,12 @@ const createPlugin = () => {
   const styleSection = styleLines.length ? `  style:\n    flexShrink: 0\n${styleLines.join('\n')}` : `  style:\n    flexShrink: 0`;
   const tooltip = el.tooltipInput.value.trim();
   const tooltipSection = tooltip ? `  tooltip: |-\n    return ['${sanitize(tooltip)}'];\n` : '';
-  
+  const description = sanitize(tooltip || `Toolbar shortcut for ${title}.`);
+
   el.preview.textContent = `id: '@shortcut/${pluginId}'
 metadata:
   displayName: "${safeTitle}"
+  description: "${description}"
 icon: '${iconData.metaIcon}'
 target: '@seelen/fancy-toolbar'
 plugin:
@@ -1081,8 +1060,7 @@ ${styleSection}`;
   el.editBtn.textContent = 'Edit Code';
   el.editBtn.classList.remove('hidden');
   state.isEditing = false;
-  el.createBtn.classList.add('btn-anim');
-  setTimeout(() => el.createBtn.classList.remove('btn-anim'), 300);
+  pulseButton(el.createBtn);
 };
 
 const toggleEdit = () => {
@@ -1124,7 +1102,7 @@ document.addEventListener('keydown', e => {
     document.querySelectorAll('.modal.show').forEach(closeModal);
   } else if (e.key === 'Enter' && e.target === el.customIcon) {
     e.preventDefault();
-    const value = e.target.value.trim();
+    const value = sanitize(e.target.value.trim());
     if (value) {
       state.iconType = 'custom';
       state.iconValue = value;
@@ -1144,30 +1122,37 @@ el.fontInput.addEventListener('input', debounce(() => {
   updateUI();
 }, 300));
 
-el.thicknessBtn.addEventListener('click', () => {
-  const values = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-  const labels = values.map(v => v === DEFAULTS.lineThickness ? `${v} (default)` : v.toString());
-  showDropdown('Line Thickness', values, labels, v => {
-    state.lineThickness = parseInt(v);
-    el.thicknessLabel.textContent = v;
-    updateUI();
+const bindNumericDropdown = (btn, label, title, key, values, format, parse) => {
+  btn.addEventListener('click', () => {
+    const defaultStr = format(DEFAULTS[key]);
+    const labels = values.map(v => v === defaultStr ? `${v} (default)` : v);
+    showDropdown(title, values, labels, v => {
+      state[key] = parse(v);
+      label.textContent = v;
+      updateUI();
+    });
   });
-});
+};
 
-el.spacingBtn.addEventListener('click', () => {
-  const values = Array.from({ length: 31 }, (_, i) => (i / 10).toFixed(1));
-  const defaultStr = DEFAULTS.letterSpacing.toFixed(1);
-  const labels = values.map(v => v === defaultStr ? `${v} (default)` : v);
-  showDropdown('Letter Spacing', values, labels, v => {
-    state.letterSpacing = parseFloat(v);
-    el.spacingLabel.textContent = v;
-    updateUI();
-  });
-});
+bindNumericDropdown(
+  el.thicknessBtn, el.thicknessLabel, 'Line Thickness', 'lineThickness',
+  [100, 200, 300, 400, 500, 600, 700, 800, 900].map(String),
+  String, Number
+);
+
+bindNumericDropdown(
+  el.spacingBtn, el.spacingLabel, 'Letter Spacing', 'letterSpacing',
+  Array.from({ length: 31 }, (_, i) => (i / 10).toFixed(1)),
+  v => v.toFixed(1), v => parseFloat(v)
+);
+
+const syncColorPicker = hex => {
+  Object.assign(colorState, hexToHsb(hex));
+  updateColorPicker();
+};
 
 el.colorBtn.addEventListener('click', () => {
-  Object.assign(colorState, hexToHsb(state.color));
-  updateColorPicker();
+  syncColorPicker(state.color);
   openModal(el.colorModal);
 });
 
@@ -1175,16 +1160,14 @@ el.hexInput.addEventListener('input', debounce(e => {
   let value = e.target.value.trim();
   if (!value.startsWith('#')) value = '#' + value;
   if (/^#[0-9A-Fa-f]{6}$/.test(value)) {
-    Object.assign(colorState, hexToHsb(value));
     updateColor(value);
-    updateColorPicker();
+    syncColorPicker(value);
   }
 }, 300));
 
 el.colorResetBtn.addEventListener('click', () => {
-  Object.assign(colorState, hexToHsb(DEFAULTS.color));
   updateColor(DEFAULTS.color);
-  updateColorPicker();
+  syncColorPicker(DEFAULTS.color);
 });
 
 el.iconBtn.addEventListener('click', () => openModal(el.iconModal));
@@ -1218,34 +1201,32 @@ document.querySelector('.toggle-container').addEventListener('click', e => {
     : 'e.g., https://google.com';
 });
 
-el.iconOnlyToggle.addEventListener('click', () => {
-  state.iconOnlyMode = !state.iconOnlyMode;
-  el.iconOnlyToggle.classList.toggle('active');
-  
-  if (state.iconOnlyMode && state.noIconsMode) {
-    state.noIconsMode = false;
-    el.noIconsToggle.classList.remove('active');
+const setExclusiveToggle = (activeKey, otherKey, activeToggle, otherToggle) => {
+  state[activeKey] = !state[activeKey];
+  activeToggle.classList.toggle('active');
+  if (state[activeKey] && state[otherKey]) {
+    state[otherKey] = false;
+    otherToggle.classList.remove('active');
   }
-  
-  el.titleLabel.textContent = state.iconOnlyMode ? 'Menu Displayname' : 'Title';
-  el.titleInput.placeholder = state.iconOnlyMode 
-    ? '~ Used for id and list name' 
+  return state[activeKey];
+};
+
+el.iconOnlyToggle.addEventListener('click', () => {
+  const isActive = setExclusiveToggle('iconOnlyMode', 'noIconsMode', el.iconOnlyToggle, el.noIconsToggle);
+
+  el.titleLabel.textContent = isActive ? 'Menu Displayname' : 'Title';
+  el.titleInput.placeholder = isActive
+    ? '~ Used for id and list name'
     : '~ Used for id, list name, and module text';
-  
-  if (state.iconOnlyMode) resetAdvancedFields();
+
+  if (isActive) resetAdvancedFields();
   toggleAdvancedFields();
   updateUI();
 });
 
 el.noIconsToggle.addEventListener('click', () => {
-  state.noIconsMode = !state.noIconsMode;
-  el.noIconsToggle.classList.toggle('active');
-  
-  if (state.noIconsMode && state.iconOnlyMode) {
-    state.iconOnlyMode = false;
-    el.iconOnlyToggle.classList.remove('active');
-  }
-  
+  setExclusiveToggle('noIconsMode', 'iconOnlyMode', el.noIconsToggle, el.iconOnlyToggle);
+
   el.titleLabel.textContent = 'Title';
   el.titleInput.placeholder = '~ Used for id, list name, and module text';
   toggleAdvancedFields();
@@ -1266,8 +1247,7 @@ el.downloadBtn.addEventListener('click', () => {
   link.download = el.downloadBtn.dataset.filename || 'shortcut.yaml';
   link.click();
   URL.revokeObjectURL(link.href);
-  el.downloadBtn.classList.add('btn-anim');
-  setTimeout(() => el.downloadBtn.classList.remove('btn-anim'), 300);
+  pulseButton(el.downloadBtn);
 });
 
 el.alertBtn.addEventListener('click', () => closeModal(el.alertModal));

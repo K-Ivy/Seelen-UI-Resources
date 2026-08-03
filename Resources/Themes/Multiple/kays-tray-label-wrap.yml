@@ -7,7 +7,7 @@ metadata:
   appTargetVersion:
     - 2
     - 8
-    - 0
+    - 1
 styles:
   "@seelen/system-tray": |
     .system-tray-item-label {

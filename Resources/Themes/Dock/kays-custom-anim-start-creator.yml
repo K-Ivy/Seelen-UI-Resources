@@ -58,6 +58,12 @@ settings:
           tip: "● Link: url('https://example.png')    ● Base64 (Recommended): url('data:image/png;base64,...')"
           initialValue: "none"
 
+        - syntax: <string>
+          label: "● When Pressed/Held"
+          name: "--anim-icon-csrt-active"
+          tip: "● Link: url('https://example.png')    ● Base64 (Recommended): url('data:image/png;base64,...')"
+          initialValue: "none"
+
   - group:
       header: "⧉ Idle Animation (Loop)"
       items:
@@ -95,17 +101,22 @@ settings:
           initialValue: "1.4s"
 styles:
   '@seelen/weg': |
-    .weg-item-start-icon * {
-      display: var(--anim-icon-csrt-def-visty, block) !important;
-    }
-
-    .weg-items-container {
+    /* Out of bounds */
+    .weg-items-container,
+    .weg-item[data-tooltip="Start Menu"] {
       overflow: visible !important;
     }
 
-    .weg-item-start-icon {
+    .weg-item[data-tooltip="Start Menu"] .weg-item-icon img {
+      display: var(--anim-icon-csrt-def-visty, block) !important;
+    }
+
+    .weg-item[data-tooltip="Start Menu"] .weg-item-icon {
+      position: relative;
+      overflow: visible !important;
       background-size: contain !important;
       background-repeat: no-repeat !important;
+      background-position: center !important;
       bottom: var(--anim-icon-csrt-pos-vert, 0px) !important;
       scale: var(--anim-icon-csrt-size, 1.0) !important;
       animation:
@@ -113,8 +124,7 @@ styles:
         var(--main-el-csrt-idle-dur, 2s) linear infinite;
     }
 
-    .weg-item-start-icon:hover {
-      background-image: var(--anim-icon-csrt-hover, none);
+    .weg-item[data-tooltip="Start Menu"]:hover .weg-item-icon {
       animation:
         var(--main-el-csrt-anim-idle, none)
           var(--main-el-csrt-idle-dur, 2s) linear infinite,
@@ -122,7 +132,7 @@ styles:
           var(--main-el-csrt-trans-dur, 1.4s) linear 1 normal none;
     }
 
-    .weg-item-start:not(:hover) .weg-item-start-icon {
+    .weg-item[data-tooltip="Start Menu"]:not(:hover) .weg-item-icon {
       animation:
         var(--main-el-csrt-anim-idle, none)
           var(--main-el-csrt-idle-dur, 2s) linear infinite,
@@ -130,9 +140,19 @@ styles:
           var(--main-el-csrt-trans-dur, 1.4s) linear 1 normal none;
     }
 
-    .weg-item-start-icon,
-    .weg-item-start-icon:active {
+    /* Default State: */
+    .weg-item[data-tooltip="Start Menu"] .weg-item-icon {
       background-image: var(--anim-icon-csrt-base, none);
+    }
+
+    /* Hover State: */
+    .weg-item[data-tooltip="Start Menu"]:hover .weg-item-icon {
+      background-image: var(--anim-icon-csrt-hover, none);
+    }
+
+    /* Pressed/Held State: */
+    .weg-item[data-tooltip="Start Menu"]:active .weg-item-icon {
+      background-image: var(--anim-icon-csrt-active, none);
     }
 
     @keyframes float {

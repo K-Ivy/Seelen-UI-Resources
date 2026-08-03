@@ -1,0 +1,842 @@
+id: "@k-ivy/dock-comp-media"
+metadata:
+  displayName: "Customizable Dock Player"
+  description: "Allows customizing the Dock Player in various ways."
+  author: "K-Ivy"
+  tags: ['weg']
+  appTargetVersion:
+    - 2
+    - 8
+    - 1
+settings:
+  - group:
+      header: "★ v1.4 ─ Provide feedback/report issues on GitHub or in #resources :"
+      items:
+        - syntax: <string>
+          name: "--hpm-placeholder-1"
+          label: "Github"
+          initialValue: "https://github.com/K-Ivy/Seelen-UI-Resources"
+
+        - syntax: <string>
+          name: "--hpm-placeholder-2"
+          label: "Discord"
+          tip: "Seelen UI"
+          initialValue: "https://discord.com/channels/751144791596597561/1384908698350256188"
+
+  - group:
+      header: "Dock Player"
+      items:
+        - group:
+            header: "❯ Sizing"
+            items:
+              - syntax: <length>
+                name: "--dock-mediapl-standard-size-cal"
+                label: "● Width"
+                initialValue: 0
+                initialValueUnit: "px"
+
+              - syntax: <length>
+                name: "--dock-mediapl-added-size"
+                label: "╰・On Hover"
+                initialValue: 106
+                initialValueUnit: "px"
+
+  - group:
+      header: "Dock Player"
+      items:
+        - group:
+            header: "Basic Styling >"
+            items:
+              - group:
+                  header: "1. Filters"
+                  items:
+                    - syntax: <number>
+                      name: "--dock-mediapl-brightness"
+                      label: "● Brightness"
+                      tip: "0 = dim, 2 = bright"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-brightness-state"
+                      label: "╰・On Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-contrast"
+                      label: "● Contrast"
+                      tip: "0 = none, 2 = high contrast"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-contrast-state"
+                      label: "╰・On Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-grayscale"
+                      label: "● Grayscale"
+                      tip: "0 = none, 1 = full grayscale"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-grayscale-state"
+                      label: "╰・On Hover"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-hue-rotate"
+                      label: "● Color Hue"
+                      tip: "Rotate from 0 to 360 degrees"
+                      initialValue: "0deg"
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-hue-rotate-state"
+                      label: "╰・On Hover"
+                      initialValue: "0deg"
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-invert"
+                      label: "● Color Invert"
+                      tip: "0 = none, 1 = inverted"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-invert-state"
+                      label: "╰・On Hover"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-saturate"
+                      label: "● Saturation"
+                      tip: "0 = desaturated, 2 = saturated"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-saturate-state"
+                      label: "╰・On Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-sepia"
+                      label: "● Sepia"
+                      tip: "0 = none, 1 = full sepia"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-sepia-state"
+                      label: "╰・On Hover"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-opacity"
+                      label: "● Opacity"
+                      tip: "0 = transparent, 1 = opaque"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-opacity-state"
+                      label: "╰・On Hover"
+                      initialValue: 1
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+  - group:
+      header: "Dock Player"
+      items:
+        - group:
+            header: "Advanced Styling >"
+            items:
+              - group:
+                  header: "1. Transitions"
+                  items:
+                    - syntax: <string>
+                      name: "--dock-mediapl-width-transition"
+                      label: "● Width"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "400ms ease"
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-filter-transition"
+                      label: "● Filters"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "0.4s ease"
+
+  - group:
+      header: "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+      items:
+        - syntax: <string>
+          name: "--pml-seperator-1"
+          label: "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+          initialValue: "✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕"
+
+  - group:
+      header: "Player Buttons"
+      items:
+        - group:
+            header: "Basic Styling >"
+            items:
+              - group:
+                  header: "1. Icon"
+                  items:
+                    - group:
+                        header: "❯ When the Thumbnail is Dark"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-mediapl-btn-color-light"
+                            label: "● Color"
+                            initialValue: "#cccccc"
+
+                          - syntax: <color>
+                            name: "--dock-mediapl-btn-color-light-state"
+                            label: "╰・On Hover"
+                            initialValue: "#dbd9d9"
+
+                    - group:
+                        header: "❯ When the Thumbnail is Light"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-mediapl-btn-color-dark"
+                            label: "● Color"
+                            initialValue: "#0e0e0e"
+
+                          - syntax: <color>
+                            name: "--dock-mediapl-btn-color-dark-state"
+                            label: "╰・On Hover"
+                            initialValue: "#101010"
+
+                    - group:
+                        header: "❯ Sizing"
+                        items:
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-width"
+                            label: "● Width"
+                            initialValue: 14
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-height"
+                            label: "● Height"
+                            initialValue: 14
+                            initialValueUnit: "px"
+
+        - group:
+            header: "　"
+            items:
+              - group:
+                  header: "2. Background"
+                  items:
+                    - group:
+                        header: "❯ When the Thumbnail is Dark"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-mediapl-btn-bg-color-on-dark"
+                            label: "● Color"
+                            initialValue: "#00000000"
+
+                          - syntax: <color>
+                            name: "--dock-mediapl-btn-bg-color-on-dark-state"
+                            label: "╰・On Hover"
+                            initialValue: "#ffffff4d"
+
+                    - group:
+                        header: "❯ When the Thumbnail is Light"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-mediapl-btn-bg-color-on-light"
+                            label: "● Color"
+                            initialValue: "#00000000"
+
+                          - syntax: <color>
+                            name: "--dock-mediapl-btn-bg-color-on-light-state"
+                            label: "╰・On Hover"
+                            initialValue: "#0000004d"
+
+                    - group:
+                        header: "❯ Rounding"
+                        items:
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-top-left-border-radius"
+                            label: "● Top Left"
+                            initialValue: 10
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-top-left-border-radius-state"
+                            label: "╰・On Hover"
+                            initialValue: 10
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-top-right-border-radius"
+                            label: "● Top Right"
+                            initialValue: 10
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-top-right-border-radius-state"
+                            label: "╰・On Hover"
+                            initialValue: 10
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-bottom-left-border-radius"
+                            label: "● Bottom Left"
+                            initialValue: 10
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-bottom-left-border-radius-state"
+                            label: "╰・On Hover"
+                            initialValue: 10
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-bottom-right-border-radius"
+                            label: "● Bottom Right"
+                            initialValue: 10
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-bottom-right-border-radius-state"
+                            label: "╰・On Hover"
+                            initialValue: 10
+                            initialValueUnit: "px"
+
+        - group:
+            header: "　"
+            items:
+              - group:
+                  header: "3. Drop Shadow"
+                  items:
+                    - group:
+                        header: "❯ When the Thumbnail is Dark"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-mediapl-btn-shadow-color-on-dark"
+                            label: "● Color"
+                            initialValue: "#00000000"
+
+                          - syntax: <color>
+                            name: "--dock-mediapl-btn-shadow-color-on-dark-state"
+                            label: "╰・On Hover"
+                            initialValue: "#00000000"
+
+                    - group:
+                        header: "❯ When the Thumbnail is Light"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-mediapl-btn-shadow-color-on-light"
+                            label: "● Color"
+                            initialValue: "#00000000"
+
+                          - syntax: <color>
+                            name: "--dock-mediapl-btn-shadow-color-on-light-state"
+                            label: "╰・On Hover"
+                            initialValue: "#00000000"
+
+                    - group:
+                        header: "❯ Control"
+                        items:
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-shadow-blur"
+                            label: "● Blur"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-shadow-blur-state"
+                            label: "╰・On Hover"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-shadow-spread"
+                            label: "● Spread"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-shadow-spread-state"
+                            label: "╰・On Hover"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-shadow-x"
+                            label: "● Horizontal Offset"
+                            tip: "Negative = left, Positive = right"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-shadow-x-state"
+                            label: "╰・On Hover"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-shadow-y"
+                            label: "● Vertical Offset"
+                            tip: "Negative = up, Positive = down"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                          - syntax: <length>
+                            name: "--dock-mediapl-btn-shadow-y-state"
+                            label: "╰・On Hover"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+  - group:
+      header: "Player Buttons"
+      items:
+        - group:
+            header: "Advanced Styling >"
+            items:
+              - group:
+                  header: "1. Transitions"
+                  items:
+                    - syntax: <string>
+                      name: "--dock-mediapl-btn-color-transition"
+                      label: "● Button Color"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "0.4s ease"
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-btn-bg-transition"
+                      label: "● Background Color"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "0.4s ease"
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-btn-border-radius-transition"
+                      label: "● Corner Rounding"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "1.0s ease"
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-btn-shadow-transition"
+                      label: "● Drop Shadow"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "0.4s ease"
+
+  - group:
+      header: "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+      items:
+        - syntax: <string>
+          name: "--pml-seperator-2"
+          label: "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+          initialValue: "✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕"
+
+  - group:
+      header: "Player Title"
+      items:
+        - group:
+            header: "Basic Styling >"
+            items:
+              - group:
+                  header: "1. Font"
+                  items:
+                    - syntax: <string>
+                      name: '--dock-mediapl-title-font'
+                      label: "● Name"
+                      initialValue: 'inherit'
+
+                    - syntax: <string>
+                      name: '--tyud-iyshjj-sua'
+                      label: "╰ Ex: Comic Sans MS"
+                      initialValue: 'https://support.microsoft.com/en-us/windows/manage-fonts-in-windows-f12d0657-2fc8-7613-c76f-88d043b334b8'
+
+        - group:
+            header: "　"
+            items:
+              - group:
+                  header: "2. Typography"
+                  items:
+                    - syntax: <length>
+                      name: "--dock-mediapl-title-font-size"
+                      label: "● Size"
+                      initialValue: 11
+                      initialValueUnit: "px"
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-title-letter-spacing"
+                      label: "● Letter Spacing"
+                      initialValue: 0
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4]
+
+                    - syntax: <number>
+                      name: "--dock-mediapl-title-font-weight"
+                      label: "● Line Thickness"
+                      initialValue: 600
+                      options: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-title-style"
+                      label: "● State"
+                      initialValue: "normal"
+                      options: [normal, italic]
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-title-style-state"
+                      label: "╰・On Hover"
+                      initialValue: "normal"
+                      options: [normal, italic]
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-title-text-transform"
+                      label: "● Case"
+                      initialValue: "none"
+                      options: [none, uppercase, lowercase, capitalize]
+
+        - group:
+            header: "　"
+            items:
+              - group:
+                  header: "3. Color"
+                  items:
+                    - group:
+                        header: "❯ When the Thumbnail is Dark"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-mediapl-title-color-light"
+                            label: "● Color"
+                            initialValue: "#cccccc"
+
+                          - syntax: <color>
+                            name: "--dock-mediapl-title-color-light-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#dbd9d9"
+
+                    - group:
+                        header: "❯ When the Thumbnail is Light"
+                        items:
+                          - syntax: <color>
+                            name: "--dock-mediapl-title-color-dark"
+                            label: "● Color"
+                            initialValue: "#0e0e0e"
+
+                          - syntax: <color>
+                            name: "--dock-mediapl-title-color-dark-state"
+                            label: "╰・Color on Hover"
+                            initialValue: "#101010"
+
+  - group:
+      header: "Player Title"
+      items:
+        - group:
+            header: "Advanced Styling >"
+            items:
+              - group:
+                  header: "1. Transitions"
+                  items:
+                    - syntax: <string>
+                      name: "--dock-mediapl-title-color-transition"
+                      label: "● Color"
+                      tip: "~~ ms/s ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2)"
+                      initialValue: "0.4s ease"
+
+  - group:
+      header: "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+      items:
+        - syntax: <string>
+          name: "--pml-seperator-3"
+          label: "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+          initialValue: "✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕"
+
+  - group:
+      header: "Player Behaviors"
+      items:
+        - group:
+            header: "Auto Hide >"
+            items:
+              - group:
+                  header: "Hide the player when no media is playing."
+                  items:
+                    - syntax: <string>
+                      name: "--dock-mediapl-no-media-hide"
+                      label: "● Mode"
+                      tip: "none = hide | block = dont hiding"
+                      initialValue: "block"
+                      options: [none, block]
+
+        - group:
+            header: "Width by Title >"
+            items:
+              - group:
+                  header: "Makes it so the player width is based on the length of titles."
+                  items:
+                    - syntax: <string>
+                      name: "--dock-mediapl-width"
+                      label: "● Mode"
+                      initialValue: "var(--fixed-wth-base)"
+                      options: [max-content, var(--fixed-wth-base)]
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-width-state"
+                      label: "╰・On Hover"
+                      initialValue: "var(--fixed-wth-state)"
+                      options: [max-content, var(--fixed-wth-state)]
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-max-width"
+                      label: "● Width Cap"
+                      description: "Limits how wide the player can actually get."
+                      tip: "unset = no limit | #px = max limit (ex: 200px)"
+                      initialValue: "unset"
+ 
+        - group:
+            header: "Title Scroll (Marquee) >"
+            items:
+              - group:
+                  header: "Consider it experimental. Janky."
+                  items:
+                    - syntax: <string>
+                      name: "--dock-mediapl-marquee-toggle"
+                      label: "● Mode"
+                      initialValue: "none"
+                      options: [none, var(--title-marquee)]
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-marquee-dist"
+                      label: "● Scroll Distance"
+                      description: "How far before looping."
+                      tip: "If too small, you'll see overlap, but the larger this is, the longer it will take before the next text appears. There is no real good default as title lengths vary greatly."
+                      initialValue: "75ch"
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-marquee-time"
+                      label: "● Duration of a Cycle"
+                      description: "This also adjusts the speed."
+                      initialValue: "18s"
+
+                    - syntax: <string>
+                      name: "--dock-mediapl-title-overflow"
+                      label: "● Full Title Visibility"
+                      tip: "hidden = clipped | visible = full content"
+                      description: "Make it so the title is not clipped and shows it's full content."
+                      initialValue: "hidden"
+                      options: [hidden, visible]
+
+                    - syntax: <string>
+                      name: "--dodst-fnhr-sjsh"
+                      label: "〜 Demo"
+                      initialValue: "https://github.com/user-attachments/assets/bf9f4f08-1533-40ac-a3da-f931dcf3eccb"
+styles:
+  "@seelen/weg": |
+    :root {
+      --fixed-wth-base: calc(var(--config-item-size) + var(--dock-mediapl-standard-size-cal, 0px));
+      --fixed-wth-state: calc(var(--config-item-size) + var(--dock-mediapl-added-size, 106px));
+      --title-marquee: marquee var(--dock-mediapl-marquee-time, 18s) linear infinite;
+    }
+
+    .horizontal .weg-item.media-session-container {
+      width: var(--dock-mediapl-width, var(--fixed-wth-base)) !important;
+      min-width: unset;
+      max-width: var(--dock-mediapl-max-width, unset) !important;
+      /* --- */
+      transition:
+        width var(--dock-mediapl-width-transition, 400ms ease) !important;
+
+      &:hover {
+        width: var(--dock-mediapl-width-state, var(--fixed-wth-state)) !important;
+      }
+    }
+
+    .vertical .weg-item.media-session-container {
+      height: var(--dock-mediapl-width, var(--fixed-wth-base)) !important;
+      min-height: unset;
+      max-height: var(--dock-mediapl-max-width, unset) !important;
+      /* --- */
+      transition:
+        height var(--dock-mediapl-width-transition, 400ms ease) !important;
+
+      &:hover {
+        height: var(--dock-mediapl-width-state, var(--fixed-wth-state)) !important;
+      }
+    }
+
+    .media-session {
+      filter:
+        brightness(var(--dock-mediapl-brightness, 1))
+        contrast(var(--dock-mediapl-contrast, 1))
+        grayscale(var(--dock-mediapl-grayscale, 0))
+        hue-rotate(var(--dock-mediapl-hue-rotate, 0deg))
+        invert(var(--dock-mediapl-invert, 0))
+        saturate(var(--dock-mediapl-saturate, 1))
+        sepia(var(--dock-mediapl-sepia, 0)) !important;
+      opacity: var(--dock-mediapl-opacity, 1);
+      /* --- */
+      transition:
+        filter var(--dock-mediapl-filter-transition, 0.4s ease),
+        opacity var(--dock-mediapl-filter-transition, 0.4s ease);
+
+      &:hover {
+        filter:
+          brightness(var(--dock-mediapl-brightness-state, 1))
+          contrast(var(--dock-mediapl-contrast-state, 1))
+          grayscale(var(--dock-mediapl-grayscale-state, 0))
+          hue-rotate(var(--dock-mediapl-hue-rotate-state, 0deg))
+          invert(var(--dock-mediapl-invert-state, 0))
+          saturate(var(--dock-mediapl-saturate-state, 1))
+          sepia(var(--dock-mediapl-sepia-state, 0)) !important;
+        opacity: var(--dock-mediapl-opacity-state, 1);
+      }
+    }
+
+    /* -----------------------------------------
+    ! Player Button
+    ----------------------------------------- */
+    .media-session-actions button {
+      background-color: var(--dock-mediapl-btn-bg-color-on-dark, #00000000) !important;
+      /* --- */
+      border-radius:
+        var(--dock-mediapl-btn-top-left-border-radius, 10px)
+        var(--dock-mediapl-btn-top-right-border-radius, 10px)
+        var(--dock-mediapl-btn-bottom-right-border-radius, 10px)
+        var(--dock-mediapl-btn-bottom-left-border-radius, 10px) !important;
+      box-shadow:
+        var(--dock-mediapl-btn-shadow-x, 0px)
+        var(--dock-mediapl-btn-shadow-y, 0px)
+        var(--dock-mediapl-btn-shadow-blur, 0px)
+        var(--dock-mediapl-btn-shadow-spread, 0px)
+        var(--dock-mediapl-btn-shadow-color-on-dark, #00000000) !important;
+      /* --- */
+      transition:
+        background-color var(--dock-mediapl-btn-bg-transition, 0.4s ease),
+        border-radius var(--dock-mediapl-btn-border-radius-transition, 1.0s ease),
+        box-shadow var(--dock-mediapl-btn-shadow-transition, 0.4s ease) !important;
+
+      &:hover {
+        transform: translateY(-0.5px);
+        background-color: var(--dock-mediapl-btn-bg-color-on-dark-state, #ffffff4d) !important;
+        /* --- */
+        border-radius:
+          var(--dock-mediapl-btn-top-left-border-radius-state, 10px)
+          var(--dock-mediapl-btn-top-right-border-radius-state, 10px)
+          var(--dock-mediapl-btn-bottom-right-border-radius-state, 10px)
+          var(--dock-mediapl-btn-bottom-left-border-radius-state, 10px) !important;
+        box-shadow:
+          var(--dock-mediapl-btn-shadow-x-state, 0px)
+          var(--dock-mediapl-btn-shadow-y-state, 0px)
+          var(--dock-mediapl-btn-shadow-blur-state, 0px)
+          var(--dock-mediapl-btn-shadow-spread-state, 0px)
+          var(--dock-mediapl-btn-shadow-color-on-dark-state, #00000000) !important;
+      }
+    }
+
+    .media-session:has(.media-session-title[style*="color: rgb(34, 34, 34)"]) .media-session-actions button {
+      background-color: var(--dock-mediapl-btn-bg-color-on-light, #00000000) !important;
+      box-shadow:
+        var(--dock-mediapl-btn-shadow-x, 0px)
+        var(--dock-mediapl-btn-shadow-y, 0px)
+        var(--dock-mediapl-btn-shadow-blur, 0px)
+        var(--dock-mediapl-btn-shadow-spread, 0px)
+        var(--dock-mediapl-btn-shadow-color-on-light, #00000000) !important;
+
+      &:hover {
+        background-color: var(--dock-mediapl-btn-bg-color-on-light-state, #0000004d) !important;
+        box-shadow:
+          var(--dock-mediapl-btn-shadow-x-state, 0px)
+          var(--dock-mediapl-btn-shadow-y-state, 0px)
+          var(--dock-mediapl-btn-shadow-blur-state, 0px)
+          var(--dock-mediapl-btn-shadow-spread-state, 0px)
+          var(--dock-mediapl-btn-shadow-color-on-light-state, #00000000) !important;
+      }
+    }
+
+    .media-session .media-session-actions button i svg {
+      width: var(--dock-mediapl-btn-width, 14px) !important;
+      height: var(--dock-mediapl-btn-height, 14px) !important;
+      transform: translateY(-1px);
+      /* --- */
+      transition:
+        color var(--dock-mediapl-btn-color-transition, 0.4s ease) !important;
+    }
+
+    .media-session-actions button i[style*="color: rgb(34, 34, 34)"] {
+      color: var(--dock-mediapl-btn-color-dark, #0e0e0e) !important;
+
+      &:hover {
+        color: var(--dock-mediapl-btn-color-dark-state, #101010) !important;
+      }
+    }
+
+    .media-session-actions button i[style*="color: rgb(239, 239, 239)"] {
+      color: var(--dock-mediapl-btn-color-light, #cccccc) !important;
+
+      &:hover {
+        color: var(--dock-mediapl-btn-color-light-state, #dbd9d9) !important;
+      }
+    }
+
+    /* -----------------------------------------
+    ! Player Title
+    ----------------------------------------- */
+    .media-session-title {
+      display: inline-block !important;
+      overflow: var(--dock-mediapl-title-overflow, hidden) !important;
+      font-family: var(--dock-mediapl-title-font, inherit) !important;
+      font-size: var(--dock-mediapl-title-font-size, 11px) !important;
+      font-weight: var(--dock-mediapl-title-font-weight, 600) !important;
+      font-style: var(--dock-mediapl-title-style, normal) !important;
+      letter-spacing: calc(var(--dock-mediapl-title-letter-spacing, 0) * 1px) !important;
+      text-transform: var(--dock-mediapl-title-text-transform, none) !important;
+      /* --- */
+      text-shadow:
+        var(--dock-mediapl-marquee-dist, 75ch) 0 currentColor, calc(var(--dock-mediapl-marquee-dist, 75ch) * 2) 0 currentColor;
+      will-change: transform;
+      animation: var(--dock-mediapl-marquee-toggle, none);
+      /* --- */
+      transition:
+        color var(--dock-mediapl-title-color-transition, 0.4s ease) !important;
+
+      &:hover {
+        font-style: var(--dock-mediapl-title-style-state, normal) !important;
+      }
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-1 * var(--dock-mediapl-marquee-dist, 75ch))); }
+    }
+
+    .media-session-title[style*="color: rgb(34, 34, 34)"] {
+      color: var(--dock-mediapl-title-color-dark, #0e0e0e) !important;
+
+      &:hover {
+        color: var(--dock-mediapl-title-color-dark-state, #101010) !important;
+      }
+    }
+
+    .media-session-title[style*="color: rgb(239, 239, 239)"] {
+      color: var(--dock-mediapl-title-color-light, #cccccc) !important;
+
+      &:hover {
+        color: var(--dock-mediapl-title-color-light-state, #dbd9d9) !important;
+      }
+    }
+
+    /* ensures no titles show on vertical orientation (as is default) */
+    .vertical .weg-item.media-session-container .media-session-title {
+      display: none !important;
+    }
+
+    /* -----------------------------------------
+    ! Player Auto Hide
+    ----------------------------------------- */
+    .weg-item-drag-container:has(.media-session-title-default) {
+      display: var(--dock-mediapl-no-media-hide, block) !important;
+    }
