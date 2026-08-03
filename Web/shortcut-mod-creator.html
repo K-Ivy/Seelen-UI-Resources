@@ -477,6 +477,10 @@ small a:hover {
   padding-left: 38px;
 }
 
+.has-icon-picker.no-field-preview input {
+  padding-left: 10px;
+}
+
 .field-icon-preview {
   position: absolute;
   left: 4px;
@@ -753,7 +757,7 @@ small a:hover {
 
       <div class="field" id="iconPickerField">
         <label>Icon</label>
-        <div class="has-icon-picker">
+        <div class="has-icon-picker" id="iconInputWrap">
           <div class="field-icon-preview" id="fieldIconPreview"></div>
           <input id="iconInput" placeholder="Pick a typicon/emoji, or type a custom name" autocomplete="off">
           <button type="button" class="icon-picker-toggle" id="iconPickerToggle">▼</button>
@@ -978,7 +982,9 @@ const updateUI = () => {
     el.iconInput.value = iconData.inputValue;
   }
 
-  el.fieldIconPreview.innerHTML = (iconData.liveIcon && state.iconType !== 'emoji') ? iconData.liveIcon : '';
+  const showFieldPreview = iconData.liveIcon && state.iconType !== 'emoji';
+  el.fieldIconPreview.innerHTML = showFieldPreview ? iconData.liveIcon : '';
+  el.iconInputWrap.classList.toggle('no-field-preview', !showFieldPreview);
 
   if (!iconData.showPreview) {
     el.previewArea.classList.add('hidden');
