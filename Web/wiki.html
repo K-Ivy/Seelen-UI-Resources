@@ -235,6 +235,12 @@ body {
 .breadcrumb-root {
   white-space: nowrap;
   cursor: pointer;
+  transition: color 0.2s ease, filter 0.2s ease;
+}
+
+.breadcrumb-root:hover {
+  color: var(--accent);
+  filter: brightness(1.15);
 }
 
 .breadcrumb-current {

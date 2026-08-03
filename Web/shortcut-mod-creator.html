@@ -16,6 +16,9 @@
   --accent: #2563eb;
   --accent-text: #fff;
   --hover: rgba(0, 0, 0, .05);
+  --bubble-bg: #2a2a2a;
+  --bubble-border: #3a3a3a;
+  --bubble-icon: #f5f5f5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,6 +32,9 @@
     --accent: #4f8fef;
     --accent-text: #0a0a0a;
     --hover: rgba(255, 255, 255, .08);
+    --bubble-bg: #e8e8e8;
+    --bubble-border: #d0d0d0;
+    --bubble-icon: #1a1a1a;
   }
 }
 
@@ -55,18 +61,12 @@ header {
   margin-bottom: 12px;
 }
 
-.subtitle {
-  font-size: 12px;
-  color: var(--text-dim);
-  margin-bottom: 4px;
-}
-
 h1 {
   font-size: 26px;
   font-weight: 700;
   color: var(--accent);
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: filter 0.2s ease;
 }
 
 h1:hover {
@@ -455,38 +455,95 @@ input::placeholder {
   justify-content: center;
   border-radius: 6px;
   font-size: 18px;
+  cursor: pointer;
+  transition: background 0.15s ease;
 }
 
 .icon-tile:hover {
   background: var(--surface-dim);
 }
 
-.custom-icon {
-  margin-top: 22px;
-  text-align: center;
+.has-icon-picker {
+  position: relative;
 }
 
-.custom-icon label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
+.has-icon-picker input {
+  padding-right: 40px;
+}
+
+.icon-picker-toggle {
+  position: absolute;
+  right: 4px;
+  top: 0;
+  bottom: 0;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.icon-picker-toggle:hover {
   color: var(--accent);
 }
 
-.custom-icon small {
+.icon-picker-toggle.active {
+  transform: rotate(180deg);
+}
+
+.icon-picker-panel {
+  margin-bottom: 14px;
+  padding: 12px;
+  background: var(--surface-dim);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  max-height: 240px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.icon-picker-panel::-webkit-scrollbar {
+  display: none;
+}
+
+.icon-picker-section {
+  margin-bottom: 12px;
+}
+
+.icon-picker-section:last-child {
+  margin-bottom: 0;
+}
+
+.icon-picker-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.icon-picker-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+.icon-picker-custom small {
   display: block;
   margin-top: 6px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-dim);
 }
 
-.custom-icon a {
+.icon-picker-custom a {
   color: var(--accent);
   text-decoration: none;
-}
-
-.custom-icon input {
-  text-align: center;
 }
 
 .preview-label {
@@ -515,10 +572,15 @@ input::placeholder {
   justify-content: center;
   gap: 6px;
   padding: 6px 12px;
-  background: var(--surface-dim);
-  border: 1px solid var(--border);
+  background: var(--bubble-bg);
+  border: 1px solid var(--bubble-border);
   border-radius: 16px;
   font-size: 13px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.shortcut-bubble .icon-display {
+  color: var(--bubble-icon);
 }
 
 .shortcut-bubble .icon {
@@ -530,7 +592,7 @@ input::placeholder {
 }
 
 .shortcut-bubble .text {
-  color: var(--text);
+  color: var(--bubble-icon);
   display: block;
   line-height: 1;
   transform: translateY(-0.6px);
@@ -584,7 +646,6 @@ input::placeholder {
 <body>
   <div class="wrap">
     <header>
-      <div class="subtitle">Seelen UI</div>
       <h1>Shortcut Module Creator</h1>
     </header>
 
@@ -596,10 +657,7 @@ input::placeholder {
     <div class="container preview-area">
       <div class="preview-label">Live Preview</div>
       <div class="toolbar-preview">
-        <div class="shortcut-bubble" id="livePreview">
-          <i class="typcn typcn-pin icon icon-display"></i>
-          <span class="text">My Shortcut</span>
-        </div>
+        <div class="shortcut-bubble" id="livePreview"></div>
       </div>
     </div>
 
@@ -655,7 +713,7 @@ input::placeholder {
           <div class="field-with-action">
             <div class="card-surface icon-select" id="colorBtn">
               <div class="color-preview" id="colorPreview"></div>
-              <div class="icon-label" id="colorLabel">#f8f8f8</div>
+              <div class="icon-label" id="colorLabel"></div>
             </div>
             <button class="btn btn-icon" id="colorResetBtn" title="Reset to default">
               <i class="typcn typcn-refresh"></i>
@@ -670,10 +728,34 @@ input::placeholder {
       </div>
 
       <div class="field" id="iconPickerField">
-        <label>Icon Picker</label>
-        <div class="card-surface icon-select" id="iconBtn">
-          <div class="icon-preview" id="iconPreview"></div>
-          <div class="icon-label" id="iconLabel"></div>
+        <label>Icon</label>
+        <div class="has-icon-picker">
+          <input id="iconInput" placeholder="Pick a typicon/emoji, or type a custom name" autocomplete="off">
+          <button type="button" class="icon-picker-toggle" id="iconPickerToggle">▼</button>
+        </div>
+      </div>
+
+      <div class="icon-picker-panel hidden" id="iconPickerPanel">
+        <div class="icon-picker-section">
+          <div class="icon-picker-label">Typicons</div>
+          <div class="icons-grid" id="iconGrid"></div>
+        </div>
+
+        <div class="icon-picker-divider"></div>
+
+        <div class="icon-picker-section">
+          <div class="icon-picker-label">Emojis</div>
+          <div class="icons-grid" id="emojiGrid"></div>
+        </div>
+
+        <div class="icon-picker-divider"></div>
+
+        <div class="icon-picker-section icon-picker-custom">
+          <div class="icon-picker-label">Other Icon Name</div>
+          <input id="customIcon" placeholder="e.g., FcAbout, Gi3dGlasses">
+          <small>
+            Find at: <a href="https://react-icons.github.io/react-icons" target="_blank">react-icons.github.io/react-icons</a>
+          </small>
         </div>
       </div>
 
@@ -699,24 +781,6 @@ input::placeholder {
       <p>After downloading, move the file to:</p>
       <div class="code-block"><span style="color: var(--accent)">C:\Users\USER\AppData\Roaming\com.seelen.seelen-ui\plugins</span></div>
       <p>Then right click the toolbar and hover the "Modules" option. From the list that appears, select the new module.</p>
-    </div>
-  </div>
-
-  <div class="modal" id="iconModal">
-    <div class="modal-content">
-      <div class="modal-title">Select a Typicon</div>
-      <div class="icons-grid" id="iconGrid"></div>
-      <div class="custom-icon">
-        <label>Other Icon Name</label>
-        <input id="customIcon" placeholder="e.g., FcAbout, Gi3dGlasses">
-        <small>
-          Find at: <a href="https://react-icons.github.io/react-icons" target="_blank">react-icons.github.io/react-icons</a>
-        </small>
-      </div>
-      <div class="custom-icon">
-        <label>Emoji Icon</label>
-        <div class="icons-grid" id="emojiGrid"></div>
-      </div>
     </div>
   </div>
 
@@ -810,8 +874,8 @@ const debounce = (fn, delay) => {
 
 const sanitizeUrl = url => {
   let clean = url.replace(/[\x00-\x1F\x7F\s]/g, '');
-  if (!clean.match(/^(\w+):\/\//)) clean = `https://${clean}`;
-  return clean.match(/^(\w+):\/\/.+/) ? clean.replace(/ /g, '%20') : null;
+  if (!/^https?:\/\//i.test(clean)) clean = `https://${clean}`;
+  return /^https?:\/\/.+/i.test(clean) ? clean.replace(/ /g, '%20') : null;
 };
 
 const sanitizePath = path => {
@@ -849,48 +913,46 @@ const showAlert = msg => {
 
 const getIconData = () => {
   const { iconType, iconValue } = state;
-  const templateCode = `Icon({ name: '${iconValue}' })`;
+  const safeIconValue = sanitize(iconValue);
+  const templateCode = `Icon({ name: '${safeIconValue}' })`;
 
   if (iconType === 'typicon') {
     const iconName = toKebab(iconValue);
     return {
-      preview: `<i class="typcn typcn-${iconName} icon-display"></i>`,
-      label: iconValue,
+      inputValue: iconValue,
       showPreview: true,
       liveIcon: `<i class="typcn typcn-${iconName} icon icon-display"></i>`,
       templateCode,
-      metaIcon: iconValue
+      metaIcon: safeIconValue
     };
   }
   
   if (iconType === 'emoji') {
     return {
-      preview: iconValue,
-      label: 'Emoji',
+      inputValue: iconValue,
       showPreview: true,
       liveIcon: `<span class="icon icon-display">${iconValue}</span>`,
-      templateCode: `'${iconValue}'`,
+      templateCode: `'${safeIconValue}'`,
       metaIcon: 'TiPin'
     };
   }
   
   return {
-    preview: '',
-    label: `${escHtml(iconValue)}<br><small>~ Preview not available. But as long as the name is correct, it will work.</small>`,
+    inputValue: iconValue,
     showPreview: false,
     liveIcon: null,
     templateCode,
-    metaIcon: iconValue
+    metaIcon: safeIconValue
   };
 };
 
 const updateUI = () => {
   const iconData = getIconData();
-  
-  el.iconPreview.className = iconData.showPreview ? 'icon-preview' : 'icon-preview hidden';
-  el.iconPreview.innerHTML = iconData.preview;
-  el.iconLabel.innerHTML = iconData.label;
-  
+
+  if (document.activeElement !== el.iconInput) {
+    el.iconInput.value = iconData.inputValue;
+  }
+
   if (!iconData.showPreview) {
     el.previewArea.classList.add('hidden');
     return;
@@ -930,6 +992,7 @@ const toggleAdvancedFields = () => {
   
   el.advancedFields.classList.toggle('hidden', !hasTitle);
   el.iconPickerField.classList.toggle('hidden', state.noIconsMode);
+  if (state.noIconsMode) closeIconPicker();
   
   [el.fontField, el.thicknessField, el.spacingField, el.colorField].forEach(f => 
     f.classList.toggle('hidden', !shouldShowTextStyling)
@@ -943,6 +1006,7 @@ const resetAdvancedFields = () => {
   el.spacingLabel.textContent = DEFAULTS.letterSpacing;
   el.colorLabel.textContent = DEFAULTS.color;
   el.colorPreview.style.background = DEFAULTS.color;
+  syncColorPicker(DEFAULTS.color);
 };
 
 const showDropdown = (title, values, labels, callback) => {
@@ -961,29 +1025,51 @@ const showDropdown = (title, values, labels, callback) => {
   };
 };
 
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+const pointerPos = e => e.touches ? e.touches[0] : e;
+
+// After a drag, the browser still fires a synthetic 'click' on mouseup wherever
+// the cursor ends up (possibly the modal backdrop) — swallow that one click so
+// dragging past the picker's edge doesn't also close the modal.
+let suppressNextClick = false;
+document.addEventListener('click', e => {
+  if (suppressNextClick) {
+    suppressNextClick = false;
+    e.stopPropagation();
+  }
+}, true);
+
 const setupDrag = (element, handler) => {
-  element.addEventListener('mousedown', e => {
-    handler(e);
-    const onMove = me => handler(me);
-    const onUp = () => {
+  const onStart = e => {
+    e.preventDefault();
+    const rect = element.getBoundingClientRect();
+    handler(pointerPos(e), rect);
+    const onMove = me => { me.preventDefault(); handler(pointerPos(me), rect); };
+    const onEnd = () => {
+      suppressNextClick = true;
       document.removeEventListener('mousemove', onMove);
-      document.removeEventListener('mouseup', onUp);
+      document.removeEventListener('mouseup', onEnd);
+      document.removeEventListener('touchmove', onMove);
+      document.removeEventListener('touchend', onEnd);
     };
     document.addEventListener('mousemove', onMove);
-    document.addEventListener('mouseup', onUp);
-  });
+    document.addEventListener('mouseup', onEnd);
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('touchend', onEnd);
+  };
+  element.addEventListener('mousedown', onStart);
+  element.addEventListener('touchstart', onStart, { passive: false });
 };
 
-setupDrag(el.colorArea, e => {
-  const rect = el.colorArea.getBoundingClientRect();
+setupDrag(el.colorArea, (e, rect) => {
   colorState.s = clamp(e.clientX - rect.left, 0, GRADIENT_W) / GRADIENT_W;
   colorState.b = 1 - clamp(e.clientY - rect.top, 0, GRADIENT_H) / GRADIENT_H;
   updateColor(hsbToHex(colorState.h, colorState.s, colorState.b));
   updateColorPicker();
 });
 
-setupDrag(el.hueSlider, e => {
-  const rect = el.hueSlider.getBoundingClientRect();
+setupDrag(el.hueSlider, (e, rect) => {
   colorState.h = clamp(e.clientX - rect.left, 0, GRADIENT_W) / GRADIENT_W;
   updateColor(hsbToHex(colorState.h, colorState.s, colorState.b));
   updateColorPicker();
@@ -1100,6 +1186,7 @@ document.querySelectorAll('.modal').forEach(m => {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     document.querySelectorAll('.modal.show').forEach(closeModal);
+    closeIconPicker();
   } else if (e.key === 'Enter' && e.target === el.customIcon) {
     e.preventDefault();
     const value = sanitize(e.target.value.trim());
@@ -1107,7 +1194,8 @@ document.addEventListener('keydown', e => {
       state.iconType = 'custom';
       state.iconValue = value;
       updateUI();
-      closeModal(el.iconModal);
+      closeIconPicker();
+      e.target.value = '';
     }
   }
 });
@@ -1165,25 +1253,58 @@ el.hexInput.addEventListener('input', debounce(e => {
   }
 }, 300));
 
+el.hexInput.addEventListener('blur', () => {
+  el.hexInput.value = state.color;
+});
+
 el.colorResetBtn.addEventListener('click', () => {
   updateColor(DEFAULTS.color);
   syncColorPicker(DEFAULTS.color);
 });
 
-el.iconBtn.addEventListener('click', () => openModal(el.iconModal));
+const openIconPicker = () => {
+  el.iconPickerPanel.classList.remove('hidden');
+  el.iconPickerToggle.classList.add('active');
+};
 
-el.iconModal.addEventListener('click', e => {
+const closeIconPicker = () => {
+  el.iconPickerPanel.classList.add('hidden');
+  el.iconPickerToggle.classList.remove('active');
+};
+
+el.iconPickerToggle.addEventListener('click', e => {
+  e.stopPropagation();
+  el.iconPickerPanel.classList.contains('hidden') ? openIconPicker() : closeIconPicker();
+});
+
+el.iconPickerPanel.addEventListener('click', e => {
   const tile = e.target.closest('#iconGrid .icon-tile') || e.target.closest('#emojiGrid .icon-tile');
-  if (tile) {
-    if (tile.dataset.icon) {
-      state.iconType = 'typicon';
-      state.iconValue = tile.dataset.icon;
-    } else {
-      state.iconType = 'emoji';
-      state.iconValue = tile.textContent;
-    }
+  if (!tile) return;
+  if (tile.dataset.icon) {
+    state.iconType = 'typicon';
+    state.iconValue = tile.dataset.icon;
+  } else {
+    state.iconType = 'emoji';
+    state.iconValue = tile.textContent;
+  }
+  updateUI();
+  closeIconPicker();
+});
+
+el.iconInput.addEventListener('focus', openIconPicker);
+
+el.iconInput.addEventListener('input', debounce(() => {
+  const value = sanitize(el.iconInput.value.trim());
+  if (value) {
+    state.iconType = 'custom';
+    state.iconValue = value;
     updateUI();
-    closeModal(el.iconModal);
+  }
+}, 300));
+
+document.addEventListener('click', e => {
+  if (!el.iconPickerField.contains(e.target) && !el.iconPickerPanel.contains(e.target)) {
+    closeIconPicker();
   }
 });
 
@@ -1260,7 +1381,10 @@ el.emojiGrid.innerHTML = EMOJIS.map(emoji =>
   `<div class="icon-tile icon-display">${emoji}</div>`
 ).join('');
 
+el.colorLabel.textContent = DEFAULTS.color;
 el.colorPreview.style.background = DEFAULTS.color;
+el.hexInput.value = DEFAULTS.color;
+syncColorPicker(DEFAULTS.color);
 updateUI();
 
 document.querySelector('h1').addEventListener('click', () => {
