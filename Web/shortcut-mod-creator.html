@@ -18,7 +18,6 @@
   --hover: rgba(0, 0, 0, .05);
   --bubble-bg: #2a2a2a;
   --bubble-border: #3a3a3a;
-  --bubble-icon: #f5f5f5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,9 +31,6 @@
     --accent: #4f8fef;
     --accent-text: #0a0a0a;
     --hover: rgba(255, 255, 255, .08);
-    --bubble-bg: #e8e8e8;
-    --bubble-border: #d0d0d0;
-    --bubble-icon: #1a1a1a;
   }
 }
 
@@ -463,12 +459,36 @@ input::placeholder {
   background: var(--surface-dim);
 }
 
+small a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+small a:hover {
+  text-decoration: underline;
+}
+
 .has-icon-picker {
   position: relative;
 }
 
 .has-icon-picker input {
   padding-right: 40px;
+  padding-left: 38px;
+}
+
+.field-icon-preview {
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--text);
+  pointer-events: none;
 }
 
 .icon-picker-toggle {
@@ -580,7 +600,7 @@ input::placeholder {
 }
 
 .shortcut-bubble .icon-display {
-  color: var(--bubble-icon);
+  color: #f8f8f8;
 }
 
 .shortcut-bubble .icon {
@@ -592,7 +612,6 @@ input::placeholder {
 }
 
 .shortcut-bubble .text {
-  color: var(--bubble-icon);
   display: block;
   line-height: 1;
   transform: translateY(-0.6px);
@@ -680,7 +699,7 @@ input::placeholder {
             </div>
           </div>
         </div>
-        <input id="titleInput" placeholder="~ Used for id, list name, and module text">
+        <input id="titleInput" placeholder="~ Used for id and name">
       </div>
 
       <div class="hidden" id="advancedFields">
@@ -689,7 +708,7 @@ input::placeholder {
           <input id="fontInput" placeholder="~ All system installed fonts are useable, just type in the full name (Ex: Comic Sans MS)">
           <small class="custom-icon">
             <a href="https://support.microsoft.com/en-us/windows/manage-fonts-in-windows-f12d0657-2fc8-7613-c76f-88d043b334b8" target="_blank">
-              > Learn how to manage windows fonts
+              Learn how to manage windows fonts
             </a>
           </small>
         </div>
@@ -724,12 +743,18 @@ input::placeholder {
 
       <div class="field">
         <label>Tooltip</label>
-        <input id="tooltipInput" placeholder="~ To be shown when hovering the module">
+        <input id="tooltipInput">
+      </div>
+
+      <div class="field">
+        <label>Description</label>
+        <input id="descriptionInput">
       </div>
 
       <div class="field" id="iconPickerField">
         <label>Icon</label>
         <div class="has-icon-picker">
+          <div class="field-icon-preview" id="fieldIconPreview"></div>
           <input id="iconInput" placeholder="Pick a typicon/emoji, or type a custom name" autocomplete="off">
           <button type="button" class="icon-picker-toggle" id="iconPickerToggle">▼</button>
         </div>
@@ -953,6 +978,8 @@ const updateUI = () => {
     el.iconInput.value = iconData.inputValue;
   }
 
+  el.fieldIconPreview.innerHTML = (iconData.liveIcon && state.iconType !== 'emoji') ? iconData.liveIcon : '';
+
   if (!iconData.showPreview) {
     el.previewArea.classList.add('hidden');
     return;
@@ -961,10 +988,11 @@ const updateUI = () => {
   el.previewArea.classList.remove('hidden');
   const title = escHtml(el.titleInput.value.trim() || 'My Shortcut');
   const titleSpan = `<span class="text" style="font-family:${escHtml(state.font) || 'inherit'};font-weight:${state.lineThickness};letter-spacing:${state.letterSpacing}px;color:${state.color}">${title}</span>`;
-  
+  const liveIcon = iconData.liveIcon ? iconData.liveIcon.replace('icon-display', 'icon-display" style="color:' + state.color) : iconData.liveIcon;
+
   if (state.noIconsMode) el.livePreview.innerHTML = titleSpan;
-  else if (state.iconOnlyMode) el.livePreview.innerHTML = iconData.liveIcon;
-  else el.livePreview.innerHTML = iconData.liveIcon + titleSpan;
+  else if (state.iconOnlyMode) el.livePreview.innerHTML = liveIcon;
+  else el.livePreview.innerHTML = liveIcon + titleSpan;
 };
 
 const updateColor = hex => {
@@ -1124,7 +1152,7 @@ const createPlugin = () => {
   const styleSection = styleLines.length ? `  style:\n    flexShrink: 0\n${styleLines.join('\n')}` : `  style:\n    flexShrink: 0`;
   const tooltip = el.tooltipInput.value.trim();
   const tooltipSection = tooltip ? `  tooltip: |-\n    return ['${sanitize(tooltip)}'];\n` : '';
-  const description = sanitize(tooltip || `Toolbar shortcut for ${title}.`);
+  const description = sanitize(el.descriptionInput.value.trim() || title);
 
   el.preview.textContent = `id: '@shortcut/${pluginId}'
 metadata:
@@ -1335,11 +1363,6 @@ const setExclusiveToggle = (activeKey, otherKey, activeToggle, otherToggle) => {
 el.iconOnlyToggle.addEventListener('click', () => {
   const isActive = setExclusiveToggle('iconOnlyMode', 'noIconsMode', el.iconOnlyToggle, el.noIconsToggle);
 
-  el.titleLabel.textContent = isActive ? 'Menu Displayname' : 'Title';
-  el.titleInput.placeholder = isActive
-    ? '~ Used for id and list name'
-    : '~ Used for id, list name, and module text';
-
   if (isActive) resetAdvancedFields();
   toggleAdvancedFields();
   updateUI();
@@ -1349,7 +1372,6 @@ el.noIconsToggle.addEventListener('click', () => {
   setExclusiveToggle('noIconsMode', 'iconOnlyMode', el.noIconsToggle, el.iconOnlyToggle);
 
   el.titleLabel.textContent = 'Title';
-  el.titleInput.placeholder = '~ Used for id, list name, and module text';
   toggleAdvancedFields();
   updateUI();
 });
