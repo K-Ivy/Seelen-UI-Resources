@@ -7,8 +7,22 @@ metadata:
   appTargetVersion:
     - 2
     - 8
-    - 0
+    - 2
 settings:
+  - group:
+      header: "★ v1.2 ─ Provide feedback/report issues on GitHub or in #resources :"
+      items:
+        - syntax: <string>
+          name: "--hpst-placeholder-1"
+          label: "Github"
+          initialValue: "https://github.com/K-Ivy/Seelen-UI-Resources"
+
+        - syntax: <string>
+          name: "--hpst-placeholder-2"
+          label: "Discord"
+          tip: "Seelen UI"
+          initialValue: "https://discord.com/channels/751144791596597561/1533619443089801246"
+
   - group:
       header: "✦ Tools"
       items:
@@ -20,15 +34,15 @@ settings:
         - syntax: <string>
           label: "╰・Video Demonstration ↗"
           name: "--anim-csrt-convert-dem"
-          initialValue: "https://github.com/user-attachments/assets/7b04f5dd-6be4-42e9-a1bd-e1a33ec8b398"
+          initialValue: "https://k-ivy.github.io/Seelen-UI-Resources/Web/wiki.html#Animated-Start-Icons"
 
   - group:
       header: "✦ Base"
       items:
         - syntax: <string>
-          label: "● Default Icon Visibility"
+          label: "● Default Icon"
           name: "--anim-icon-csrt-def-visty"
-          description: "block = show | none = remove"
+          tip: "block = show, none = remove"
           initialValue: "block"
           options: [block, none]
 

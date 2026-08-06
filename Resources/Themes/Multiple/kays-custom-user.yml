@@ -7,8 +7,22 @@ metadata:
   appTargetVersion:
     - 2
     - 8
-    - 0
+    - 2
 settings:
+  - group:
+      header: "★ v1.2 ─ Provide feedback/report issues on GitHub or in #resources :"
+      items:
+        - syntax: <string>
+          name: "--hpcur-placeholder-1"
+          label: "Github"
+          initialValue: "https://github.com/K-Ivy/Seelen-UI-Resources"
+
+        - syntax: <string>
+          name: "--hpcur-placeholder-2"
+          label: "Discord"
+          tip: "Seelen UI"
+          initialValue: "https://discord.com/channels/751144791596597561/1533619443089801246"
+
   - group:
       header: "✦ Custom User"
       items:
@@ -25,30 +39,30 @@ settings:
   - group:
       header: "✦ Tweaks"
       items:
+        - syntax: <string>
+          name: "--win-username-visibility"
+          label: "● Window's Username Visibility"
+          tip: "none = hide, block = show"
+          initialValue: 'none'
+          options: [none, block]
+
         - syntax: <length>
           name: "--ftbr-toolbar-username-dist-pfp"
-          label: "● Username Distance from the Toolbar's Profile Picture"
+          label: "● Username Distance from Profile Picture (Toolbar)"
           initialValue: 0
           initialValueUnit: "px"
 
         - syntax: <string>
-          name: "--win-username-visibility"
-          label: "● Window's Username Visibility"
-          description: "  none = hide | block = show"
-          initialValue: 'none'
-          options: [none, block]
-
-        - syntax: <string>
           name: "--ftbr-pfp-visibility"
           label: "● Toolbar Profile Picture Visibility"
-          description: "  none = hide | block = show"
+          tip: "none = hide, block = show"
           initialValue: 'block'
           options: [none, block]
 
         - syntax: <string>
           name: "--pwrmn-pfp-visibility"
           label: "● Power Menu Profile Picture Visibility"
-          description: "  none = hide | block = show"
+          tip: "none = hide, block = show"
           initialValue: 'block'
           options: [none, block]
 styles:

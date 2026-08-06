@@ -1,0 +1,12 @@
+id: '@launch/custom-start'
+metadata:
+  displayName: "Custom Start Module"
+target: '@seelen/weg'
+plugin:
+  noCanvas: true
+  render: |-
+    return '@seelen/weg::start-menu'
+  tooltip: |-
+    return 'Start';
+  onClick: |-
+    trigger("@seelen/apps-menu");

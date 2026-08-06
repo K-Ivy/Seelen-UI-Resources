@@ -7,7 +7,7 @@ metadata:
   appTargetVersion:
     - 2
     - 8
-    - 1
+    - 2
 settings:
   - group:
       header: "★ v1.4 ─ Provide feedback/report issues on GitHub or in #resources :"
@@ -21,7 +21,7 @@ settings:
           name: "--hpm-placeholder-2"
           label: "Discord"
           tip: "Seelen UI"
-          initialValue: "https://discord.com/channels/751144791596597561/1384908698350256188"
+          initialValue: "https://discord.com/channels/751144791596597561/1533619443089801246"
 
   - group:
       header: "Dock Player"
@@ -89,16 +89,22 @@ settings:
                       initialValue: 0
                       options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
 
-                    - syntax: <string>
+                    - syntax: <number>
                       name: "--dock-mediapl-hue-rotate"
                       label: "● Color Hue"
-                      tip: "Rotate from 0 to 360 degrees"
-                      initialValue: "0deg"
+                      tip: "rotate from 0 to 360 degrees"
+                      initialValue: 0
+                      min: 0
+                      max: 360
+                      step: 1
 
-                    - syntax: <string>
+                    - syntax: <number>
                       name: "--dock-mediapl-hue-rotate-state"
                       label: "╰・On Hover"
-                      initialValue: "0deg"
+                      initialValue: 0
+                      min: 0
+                      max: 360
+                      step: 1
 
                     - syntax: <number>
                       name: "--dock-mediapl-invert"
@@ -376,7 +382,7 @@ settings:
                           - syntax: <length>
                             name: "--dock-mediapl-btn-shadow-x"
                             label: "● Horizontal Offset"
-                            tip: "Negative = left, Positive = right"
+                            tip: "negative = left, positive = right"
                             initialValue: 0
                             initialValueUnit: "px"
 
@@ -389,7 +395,7 @@ settings:
                           - syntax: <length>
                             name: "--dock-mediapl-btn-shadow-y"
                             label: "● Vertical Offset"
-                            tip: "Negative = up, Positive = down"
+                            tip: "negative = up, positive = down"
                             initialValue: 0
                             initialValueUnit: "px"
 
@@ -517,7 +523,7 @@ settings:
 
                           - syntax: <color>
                             name: "--dock-mediapl-title-color-light-state"
-                            label: "╰・Color on Hover"
+                            label: "╰・On Hover"
                             initialValue: "#dbd9d9"
 
                     - group:
@@ -530,7 +536,7 @@ settings:
 
                           - syntax: <color>
                             name: "--dock-mediapl-title-color-dark-state"
-                            label: "╰・Color on Hover"
+                            label: "╰・On Hover"
                             initialValue: "#101010"
 
   - group:
@@ -560,80 +566,92 @@ settings:
       header: "Player Behaviors"
       items:
         - group:
-            header: "Auto Hide >"
+            header: "Basic >"
             items:
               - group:
-                  header: "Hide the player when no media is playing."
+                  header: "1. Auto Hide"
                   items:
-                    - syntax: <string>
-                      name: "--dock-mediapl-no-media-hide"
-                      label: "● Mode"
-                      tip: "none = hide | block = dont hiding"
-                      initialValue: "block"
-                      options: [none, block]
+                    - group:
+                        header: "Hide the player when no media is playing."
+                        items:
+                          - syntax: <string>
+                            name: "--dock-mediapl-no-media-hide"
+                            label: "● Mode"
+                            tip: "none = hide, block = dont hide"
+                            initialValue: "block"
+                            options: [none, block]
+
+  - group:
+      header: "Player Behaviors"
+      items:
+        - group:
+            header: "Advanced >"
+            items:
+              - group:
+                  header: "1. Width by Title"
+                  items:
+                    - group:
+                        header: "Makes it so the player width is based on the length of titles."
+                        items:
+                          - syntax: <string>
+                            name: "--dock-mediapl-width"
+                            label: "● Mode"
+                            initialValue: "var(--fixed-wth-base)"
+                            options: [max-content, var(--fixed-wth-base)]
+
+                          - syntax: <string>
+                            name: "--dock-mediapl-width-state"
+                            label: "╰・On Hover"
+                            initialValue: "var(--fixed-wth-state)"
+                            options: [max-content, var(--fixed-wth-state)]
+
+                          - syntax: <string>
+                            name: "--dock-mediapl-max-width"
+                            label: "● Width Cap"
+                            description: "Limits how wide the player can actually get."
+                            tip: "unset = no limit, #px = max limit (ex: 200px)"
+                            initialValue: "unset"
 
         - group:
-            header: "Width by Title >"
+            header: "　"
             items:
               - group:
-                  header: "Makes it so the player width is based on the length of titles."
+                  header: "2. Title Scroll (Marquee)"
                   items:
-                    - syntax: <string>
-                      name: "--dock-mediapl-width"
-                      label: "● Mode"
-                      initialValue: "var(--fixed-wth-base)"
-                      options: [max-content, var(--fixed-wth-base)]
+                    - group:
+                        header: "Consider it experimental. Janky."
+                        items:
+                          - syntax: <string>
+                            name: "--dock-mediapl-marquee-toggle"
+                            label: "● Mode"
+                            initialValue: "none"
+                            options: [none, var(--title-marquee)]
 
-                    - syntax: <string>
-                      name: "--dock-mediapl-width-state"
-                      label: "╰・On Hover"
-                      initialValue: "var(--fixed-wth-state)"
-                      options: [max-content, var(--fixed-wth-state)]
+                          - syntax: <string>
+                            name: "--dock-mediapl-marquee-dist"
+                            label: "● Scroll Distance"
+                            description: "How far before looping."
+                            tip: "If too small, you'll see overlap, but the larger this is, the longer it will take before the next text appears. There is no real good default as title lengths vary greatly."
+                            initialValue: "75ch"
 
-                    - syntax: <string>
-                      name: "--dock-mediapl-max-width"
-                      label: "● Width Cap"
-                      description: "Limits how wide the player can actually get."
-                      tip: "unset = no limit | #px = max limit (ex: 200px)"
-                      initialValue: "unset"
- 
-        - group:
-            header: "Title Scroll (Marquee) >"
-            items:
-              - group:
-                  header: "Consider it experimental. Janky."
-                  items:
-                    - syntax: <string>
-                      name: "--dock-mediapl-marquee-toggle"
-                      label: "● Mode"
-                      initialValue: "none"
-                      options: [none, var(--title-marquee)]
+                          - syntax: <string>
+                            name: "--dock-mediapl-marquee-time"
+                            label: "● Duration of a Cycle"
+                            description: "This also adjusts the speed."
+                            initialValue: "18s"
 
-                    - syntax: <string>
-                      name: "--dock-mediapl-marquee-dist"
-                      label: "● Scroll Distance"
-                      description: "How far before looping."
-                      tip: "If too small, you'll see overlap, but the larger this is, the longer it will take before the next text appears. There is no real good default as title lengths vary greatly."
-                      initialValue: "75ch"
+                          - syntax: <string>
+                            name: "--dock-mediapl-title-overflow"
+                            label: "● Full Title Visibility"
+                            tip: "hidden = clipped, visible = full content"
+                            description: "Make it so the title is not clipped and shows it's full content."
+                            initialValue: "hidden"
+                            options: [hidden, visible]
 
-                    - syntax: <string>
-                      name: "--dock-mediapl-marquee-time"
-                      label: "● Duration of a Cycle"
-                      description: "This also adjusts the speed."
-                      initialValue: "18s"
-
-                    - syntax: <string>
-                      name: "--dock-mediapl-title-overflow"
-                      label: "● Full Title Visibility"
-                      tip: "hidden = clipped | visible = full content"
-                      description: "Make it so the title is not clipped and shows it's full content."
-                      initialValue: "hidden"
-                      options: [hidden, visible]
-
-                    - syntax: <string>
-                      name: "--dodst-fnhr-sjsh"
-                      label: "〜 Demo"
-                      initialValue: "https://github.com/user-attachments/assets/bf9f4f08-1533-40ac-a3da-f931dcf3eccb"
+                          - syntax: <string>
+                            name: "--dodst-fnhr-sjsh"
+                            label: "〜 Demo"
+                            initialValue: "https://github.com/user-attachments/assets/bf9f4f08-1533-40ac-a3da-f931dcf3eccb"
 styles:
   "@seelen/weg": |
     :root {
@@ -673,7 +691,7 @@ styles:
         brightness(var(--dock-mediapl-brightness, 1))
         contrast(var(--dock-mediapl-contrast, 1))
         grayscale(var(--dock-mediapl-grayscale, 0))
-        hue-rotate(var(--dock-mediapl-hue-rotate, 0deg))
+        hue-rotate(calc(var(--dock-mediapl-hue-rotate, 0) * 1deg))
         invert(var(--dock-mediapl-invert, 0))
         saturate(var(--dock-mediapl-saturate, 1))
         sepia(var(--dock-mediapl-sepia, 0)) !important;
@@ -688,7 +706,7 @@ styles:
           brightness(var(--dock-mediapl-brightness-state, 1))
           contrast(var(--dock-mediapl-contrast-state, 1))
           grayscale(var(--dock-mediapl-grayscale-state, 0))
-          hue-rotate(var(--dock-mediapl-hue-rotate-state, 0deg))
+          hue-rotate(calc(var(--dock-mediapl-hue-rotate-state, 0) * 1deg))
           invert(var(--dock-mediapl-invert-state, 0))
           saturate(var(--dock-mediapl-saturate-state, 1))
           sepia(var(--dock-mediapl-sepia-state, 0)) !important;

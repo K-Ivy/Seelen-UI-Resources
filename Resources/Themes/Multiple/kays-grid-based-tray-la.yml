@@ -6,9 +6,23 @@ metadata:
   tags: ['fancy-toolbar']
   appTargetVersion:
     - 2
-    - 7
-    - 4
+    - 8
+    - 2
 settings:
+  - group:
+      header: "★ v1.3 ─ Provide feedback/report issues on GitHub or in #resources :"
+      items:
+        - syntax: <string>
+          name: "--hptral-placeholder-1"
+          label: "Github"
+          initialValue: "https://github.com/K-Ivy/Seelen-UI-Resources"
+
+        - syntax: <string>
+          name: "--hptral-placeholder-2"
+          label: "Discord"
+          tip: "Seelen UI"
+          initialValue: "https://discord.com/channels/751144791596597561/1533619443089801246"
+
   - group:
       header: "✦ Base of the Tray"
       items:

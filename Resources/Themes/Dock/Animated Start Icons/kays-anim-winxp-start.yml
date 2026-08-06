@@ -7,8 +7,22 @@ metadata:
   appTargetVersion:
     - 2
     - 8
-    - 0
+    - 2
 settings:
+  - group:
+      header: "★ v1.1 ─ Provide feedback/report issues on GitHub or in #resources :"
+      items:
+        - syntax: <string>
+          name: "--hpxp-placeholder-1"
+          label: "Github"
+          initialValue: "https://github.com/K-Ivy/Seelen-UI-Resources"
+
+        - syntax: <string>
+          name: "--hpxp-placeholder-2"
+          label: "Discord"
+          tip: "Seelen UI"
+          initialValue: "https://discord.com/channels/751144791596597561/1533619443089801246"
+
   - group:
       header: "✦ Base"
       items:

@@ -1,0 +1,17 @@
+id: '@launch/site-dock'
+metadata:
+  displayName: "Custom Website Module (Dock)"
+icon: 'TiPin'
+target: '@seelen/weg'
+plugin:
+  render: |-
+    const ctx = canvas.getContext('2d');
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = `${canvas.height * 0.7}px sans-serif`;
+    ctx.fillText('🌐', canvas.width / 2, canvas.height / 1.8);
+  tooltip: |-
+    return 'Site 1';
+  onClick: |-
+    /* Make sure to properly escape the path */
+    invoke(SeelenCommand.OpenFile, { path: 'https://google.com' });

@@ -1,0 +1,1500 @@
+id: "@k-ivy/ftbr-mod-color"
+metadata:
+  displayName: "Indiviual Coloring of Toolbar Modules"
+  author: "K-Ivy"
+  description: "Color every toolbar module indiviually. In addition, adds a placeholder system to be able to color custom modules from within this theme."
+  tags: ['fancy-toolbar']
+  appTargetVersion:
+    - 2
+    - 8
+    - 2
+settings:
+  - group:
+      header: "★ v1.3 ─ Provide feedback/report issues on GitHub or in #resources :"
+      items:
+        - syntax: <string>
+          name: "--hpadf-placeholder-1"
+          label: "Github"
+          initialValue: "https://github.com/K-Ivy/Seelen-UI-Resources"
+
+        - syntax: <string>
+          name: "--hpadf-placeholder-2"
+          label: "Discord"
+          tip: "Seelen UI"
+          initialValue: "https://discord.com/channels/751144791596597561/1533619443089801246"
+
+  - group:
+      header: "Fancy Toolbar"
+      items:
+        - group:
+            header: "Module Coloring >"
+            items:
+              - group:
+                  header: "1. Regular"
+                  items:
+                    - group:
+                        header: "❯ Dark Mode"
+                        items:
+                          - syntax: <color>
+                            label: "● CPU Usage"
+                            name: "--tba-c-cpu-dark"
+                            initialValue: "#e49191"
+
+                          - syntax: <color>
+                            label: "● Keyboard Selector"
+                            name: "--tba-c-keyboard-dark"
+                            initialValue: "#d6a589"
+
+                          - syntax: <color>
+                            label: "● Memory Usage"
+                            name: "--tba-c-memory-dark"
+                            initialValue: "#e9b985"
+
+                          - syntax: <color>
+                            label: "● Date/Time"
+                            name: "--tba-c-date-dark"
+                            initialValue: "#eccb8a"
+
+                          - syntax: <color>
+                            label: "● Disk Usage"
+                            name: "--tba-c-disk-dark"
+                            initialValue: "#e2de93"
+
+                          - syntax: <color>
+                            label: "● Network Usage"
+                            name: "--tba-c-network-usage-dark"
+                            initialValue: "#afe986"
+
+                          - syntax: <color>
+                            label: "● System Tray"
+                            name: "--tba-c-systray-dark"
+                            initialValue: "#b0cfb5"
+
+                          - syntax: <color>
+                            label: "● Power Display"
+                            name: "--tba-c-power-dark"
+                            initialValue: "#8ce2b2"
+
+                          - syntax: <color>
+                            label: "● User Display"
+                            name: "--tba-c-user-dark"
+                            initialValue: "#bac7c1"
+
+                          - syntax: <color>
+                            label: "● Notifications"
+                            name: "--tba-c-notifications-dark"
+                            initialValue: "#84bcd4"
+
+                          - syntax: <color>
+                            label: "● Power Button"
+                            name: "--tba-c-power-menu-dark"
+                            initialValue: "#64b3fd"
+
+                          - syntax: <color>
+                            label: "● Network Manager"
+                            name: "--tba-c-network-dark"
+                            initialValue: "#9eb1e2"
+
+                          - syntax: <color>
+                            label: "● Focused App Title"
+                            name: "--tba-c-focused-title-dark"
+                            initialValue: "#c6b7dc"
+
+                          - syntax: <color>
+                            label: "● Media Controller"
+                            name: "--tba-c-media-dark"
+                            initialValue: "#c9a6f7"
+
+                          - syntax: <color>
+                            label: "● Focused App Name"
+                            name: "--tba-c-focused-app-dark"
+                            initialValue: "#da9ad7"
+
+                          - syntax: <color>
+                            label: "● Quick Settings"
+                            name: "--tba-c-quick-settings-dark"
+                            initialValue: "#e4b0d6"
+
+                          - syntax: <color>
+                            label: "● Bluetooth"
+                            name: "--tba-c-bluetooth-dark"
+                            initialValue: "#e79fb9"
+
+                          - syntax: <color>
+                            label: "● Seperators"
+                            name: "--tba-c-separator-dark"
+                            initialValue: "#9ba7a5"
+
+              - group:
+                  header: "　"
+                  items:
+                    - group:
+                        header: "❯ Light Mode"
+                        items:
+                          - syntax: <color>
+                            label: "● CPU Usage"
+                            name: "--tba-c-cpu-light"
+                            initialValue: "#d22c2c"
+
+                          - syntax: <color>
+                            label: "● Keyboard Selector"
+                            name: "--tba-c-keyboard-light"
+                            initialValue: "#b06237"
+
+                          - syntax: <color>
+                            label: "● Memory Usage"
+                            name: "--tba-c-memory-light"
+                            initialValue: "#ad6519"
+
+                          - syntax: <color>
+                            label: "● Date/Time"
+                            name: "--tba-c-date-light"
+                            initialValue: "#9c6e13"
+
+                          - syntax: <color>
+                            label: "● Disk Usage"
+                            name: "--tba-c-disk-light"
+                            initialValue: "#7e791d"
+
+                          - syntax: <color>
+                            label: "● Network Usage"
+                            name: "--tba-c-network-usage-light"
+                            initialValue: "#438613"
+
+                          - syntax: <color>
+                            label: "● System Tray"
+                            name: "--tba-c-systray-light"
+                            initialValue: "#4c8255"
+
+                          - syntax: <color>
+                            label: "● Power Display"
+                            name: "--tba-c-power-light"
+                            initialValue: "#1d874c"
+
+                          - syntax: <color>
+                            label: "● User Display"
+                            name: "--tba-c-user-light"
+                            initialValue: "#637c71"
+
+                          - syntax: <color>
+                            label: "● Notifications"
+                            name: "--tba-c-notifications-light"
+                            initialValue: "#327ea0"
+
+                          - syntax: <color>
+                            label: "● Power Button"
+                            name: "--tba-c-power-menu-light"
+                            initialValue: "#0075e3"
+
+                          - syntax: <color>
+                            label: "● Network Manager"
+                            name: "--tba-c-network-light"
+                            initialValue: "#3a63cb"
+
+                          - syntax: <color>
+                            label: "● Focused App Title"
+                            name: "--tba-c-focused-title-light"
+                            initialValue: "#815db5"
+
+                          - syntax: <color>
+                            label: "● Media Controller"
+                            name: "--tba-c-media-light"
+                            initialValue: "#7e25f4"
+
+                          - syntax: <color>
+                            label: "● Focused App Name"
+                            name: "--tba-c-focused-app-light"
+                            initialValue: "#be3fb8"
+
+                          - syntax: <color>
+                            label: "● Quick Settings"
+                            name: "--tba-c-quick-settings-light"
+                            initialValue: "#c541a1"
+
+                          - syntax: <color>
+                            label: "● Bluetooth"
+                            name: "--tba-c-bluetooth-light"
+                            initialValue: "#d4356f"
+
+                          - syntax: <color>
+                            label: "● Seperators"
+                            name: "--tba-c-separator-light"
+                            initialValue: "#667573"
+
+        - group:
+            header: "　"
+            items:
+              - group:
+                  header: "2. Workspaces"
+                  items:
+                    - group:
+                        header: "❯ Dark Mode"
+                        items:
+                          - syntax: <color>
+                            label: "● Workspace 1"
+                            name: "--tba-ws-1-dark"
+                            initialValue: "#e49191"
+
+                          - syntax: <color>
+                            label: "● Workspace 2"
+                            name: "--tba-ws-2-dark"
+                            initialValue: "#e8a488"
+
+                          - syntax: <color>
+                            label: "● Workspace 3"
+                            name: "--tba-ws-3-dark"
+                            initialValue: "#e9b985"
+
+                          - syntax: <color>
+                            label: "● Workspace 4"
+                            name: "--tba-ws-4-dark"
+                            initialValue: "#eccb8a"
+
+                          - syntax: <color>
+                            label: "● Workspace 5"
+                            name: "--tba-ws-5-dark"
+                            initialValue: "#e2de93"
+
+                          - syntax: <color>
+                            label: "● Workspace 6"
+                            name: "--tba-ws-6-dark"
+                            initialValue: "#c6e88d"
+
+                          - syntax: <color>
+                            label: "● Workspace 7"
+                            name: "--tba-ws-7-dark"
+                            initialValue: "#afe986"
+
+                          - syntax: <color>
+                            label: "● Workspace 8"
+                            name: "--tba-ws-8-dark"
+                            initialValue: "#96e0a0"
+
+                          - syntax: <color>
+                            label: "● Workspace 9"
+                            name: "--tba-ws-9-dark"
+                            initialValue: "#8ce2b2"
+
+                          - syntax: <color>
+                            label: "● Workspace 10"
+                            name: "--tba-ws-10-dark"
+                            initialValue: "#87d4c4"
+
+                          - syntax: <color>
+                            label: "● Workspace 11"
+                            name: "--tba-ws-11-dark"
+                            initialValue: "#84bcd4"
+
+                          - syntax: <color>
+                            label: "● Workspace 12"
+                            name: "--tba-ws-12-dark"
+                            initialValue: "#79aaec"
+
+                          - syntax: <color>
+                            label: "● Workspace 13"
+                            name: "--tba-ws-13-dark"
+                            initialValue: "#64b3fd"
+
+                          - syntax: <color>
+                            label: "● Workspace 14"
+                            name: "--tba-ws-14-dark"
+                            initialValue: "#9eb1e2"
+
+                          - syntax: <color>
+                            label: "● Workspace 15"
+                            name: "--tba-ws-15-dark"
+                            initialValue: "#c6b7dc"
+
+                          - syntax: <color>
+                            label: "● Workspace 16"
+                            name: "--tba-ws-16-dark"
+                            initialValue: "#c9a6f7"
+
+                          - syntax: <color>
+                            label: "● Workspace 17"
+                            name: "--tba-ws-17-dark"
+                            initialValue: "#da9ad7"
+
+                          - syntax: <color>
+                            label: "● Workspace 18"
+                            name: "--tba-ws-18-dark"
+                            initialValue: "#e4b0d6"
+
+                          - syntax: <color>
+                            label: "● Workspace 19"
+                            name: "--tba-ws-19-dark"
+                            initialValue: "#e79fb9"
+
+                          - syntax: <color>
+                            label: "● Workspace 20"
+                            name: "--tba-ws-20-dark"
+                            initialValue: "#e8909e"
+
+                          - syntax: <color>
+                            label: "● Workspace 21"
+                            name: "--tba-ws-21-dark"
+                            initialValue: "#e88ab0"
+
+                          - syntax: <color>
+                            label: "● Workspace 22"
+                            name: "--tba-ws-22-dark"
+                            initialValue: "#e485c2"
+
+                          - syntax: <color>
+                            label: "● Workspace 23"
+                            name: "--tba-ws-23-dark"
+                            initialValue: "#d485da"
+
+                          - syntax: <color>
+                            label: "● Workspace 24"
+                            name: "--tba-ws-24-dark"
+                            initialValue: "#b98ce8"
+
+                          - syntax: <color>
+                            label: "● Workspace 25"
+                            name: "--tba-ws-25-dark"
+                            initialValue: "#9b95ea"
+
+                          - syntax: <color>
+                            label: "● Workspace 26"
+                            name: "--tba-ws-26-dark"
+                            initialValue: "#8aa8e0"
+
+                          - syntax: <color>
+                            label: "● Workspace 27"
+                            name: "--tba-ws-27-dark"
+                            initialValue: "#84c2d4"
+
+                          - syntax: <color>
+                            label: "● Workspace 28"
+                            name: "--tba-ws-28-dark"
+                            initialValue: "#8ad6c0"
+
+                          - syntax: <color>
+                            label: "● Workspace 29"
+                            name: "--tba-ws-29-dark"
+                            initialValue: "#a3e0a0"
+
+                          - syntax: <color>
+                            label: "● Workspace 30"
+                            name: "--tba-ws-30-dark"
+                            initialValue: "#c7e08a"
+
+              - group:
+                  header: "　"
+                  items:
+                    - group:
+                        header: "❯ Light Mode"
+                        items:
+                          - syntax: <color>
+                            label: "● Workspace 1"
+                            name: "--tba-ws-1-light"
+                            initialValue: "#d22c2c"
+
+                          - syntax: <color>
+                            label: "● Workspace 2"
+                            name: "--tba-ws-2-light"
+                            initialValue: "#c85120"
+
+                          - syntax: <color>
+                            label: "● Workspace 3"
+                            name: "--tba-ws-3-light"
+                            initialValue: "#ad6519"
+
+                          - syntax: <color>
+                            label: "● Workspace 4"
+                            name: "--tba-ws-4-light"
+                            initialValue: "#9c6e13"
+
+                          - syntax: <color>
+                            label: "● Workspace 5"
+                            name: "--tba-ws-5-light"
+                            initialValue: "#7e791d"
+
+                          - syntax: <color>
+                            label: "● Workspace 6"
+                            name: "--tba-ws-6-light"
+                            initialValue: "#5a8216"
+
+                          - syntax: <color>
+                            label: "● Workspace 7"
+                            name: "--tba-ws-7-light"
+                            initialValue: "#438613"
+
+                          - syntax: <color>
+                            label: "● Workspace 8"
+                            name: "--tba-ws-8-light"
+                            initialValue: "#238831"
+
+                          - syntax: <color>
+                            label: "● Workspace 9"
+                            name: "--tba-ws-9-light"
+                            initialValue: "#1d874c"
+
+                          - syntax: <color>
+                            label: "● Workspace 10"
+                            name: "--tba-ws-10-light"
+                            initialValue: "#2b8472"
+
+                          - syntax: <color>
+                            label: "● Workspace 11"
+                            name: "--tba-ws-11-light"
+                            initialValue: "#327ea0"
+
+                          - syntax: <color>
+                            label: "● Workspace 12"
+                            name: "--tba-ws-12-light"
+                            initialValue: "#176bdc"
+
+                          - syntax: <color>
+                            label: "● Workspace 13"
+                            name: "--tba-ws-13-light"
+                            initialValue: "#0075e3"
+
+                          - syntax: <color>
+                            label: "● Workspace 14"
+                            name: "--tba-ws-14-light"
+                            initialValue: "#3a63cb"
+
+                          - syntax: <color>
+                            label: "● Workspace 15"
+                            name: "--tba-ws-15-light"
+                            initialValue: "#815db5"
+
+                          - syntax: <color>
+                            label: "● Workspace 16"
+                            name: "--tba-ws-16-light"
+                            initialValue: "#7e25f4"
+
+                          - syntax: <color>
+                            label: "● Workspace 17"
+                            name: "--tba-ws-17-light"
+                            initialValue: "#be3fb8"
+
+                          - syntax: <color>
+                            label: "● Workspace 18"
+                            name: "--tba-ws-18-light"
+                            initialValue: "#c541a1"
+
+                          - syntax: <color>
+                            label: "● Workspace 19"
+                            name: "--tba-ws-19-light"
+                            initialValue: "#d4356f"
+
+                          - syntax: <color>
+                            label: "● Workspace 20"
+                            name: "--tba-ws-20-light"
+                            initialValue: "#da2642"
+
+                          - syntax: <color>
+                            label: "● Workspace 21"
+                            name: "--tba-ws-21-light"
+                            initialValue: "#d2266e"
+
+                          - syntax: <color>
+                            label: "● Workspace 22"
+                            name: "--tba-ws-22-light"
+                            initialValue: "#c22690"
+
+                          - syntax: <color>
+                            label: "● Workspace 23"
+                            name: "--tba-ws-23-light"
+                            initialValue: "#a026b8"
+
+                          - syntax: <color>
+                            label: "● Workspace 24"
+                            name: "--tba-ws-24-light"
+                            initialValue: "#7e30d4"
+
+                          - syntax: <color>
+                            label: "● Workspace 25"
+                            name: "--tba-ws-25-light"
+                            initialValue: "#5c40e0"
+
+                          - syntax: <color>
+                            label: "● Workspace 26"
+                            name: "--tba-ws-26-light"
+                            initialValue: "#3a5cd8"
+
+                          - syntax: <color>
+                            label: "● Workspace 27"
+                            name: "--tba-ws-27-light"
+                            initialValue: "#257bbe"
+
+                          - syntax: <color>
+                            label: "● Workspace 28"
+                            name: "--tba-ws-28-light"
+                            initialValue: "#198384"
+
+                          - syntax: <color>
+                            label: "● Workspace 29"
+                            name: "--tba-ws-29-light"
+                            initialValue: "#29874a"
+
+                          - syntax: <color>
+                            label: "● Workspace 30"
+                            name: "--tba-ws-30-light"
+                            initialValue: "#5c821b"
+
+  - group:
+      header: "Fancy Toolbar"
+      items:
+        - group:
+            header: "Workspace Clarity >"
+            items:
+              - group:
+                  header: "1. Dim Inactive Workspaces"
+                  items:
+                    - syntax: <number>
+                      label: "● Numbered / Named"
+                      name: "--tba-ws-inactive-opacity"
+                      tip: "Opacity applied to workspaces you're not currently on. 0 = invisible, 1 = full brightness."
+                      initialValue: 0.8
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+                    - syntax: <number>
+                      label: "● Dotted"
+                      name: "--tba-ws-dotted-inactive-opacity"
+                      tip: "Opacity applied to workspaces you're not currently on. 0 = invisible, 1 = full brightness."
+                      initialValue: 0.9
+                      options: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
+        - group:
+            header: "　"
+            items:
+              - group:
+                  header: "2. Mark the Active Workspace"
+                  items:
+                    - group:
+                        header: "❯ Background Color"
+                        items:
+                          - syntax: <color>
+                            label: "● Dark Mode"
+                            name: "--tba-ws-active-bg-dark"
+                            initialValue: "transparent"
+
+                          - syntax: <color>
+                            label: "● Light Mode"
+                            name: "--tba-ws-active-bg-light"
+                            initialValue: "transparent"
+
+                    - group:
+                        header: "❯ Border"
+                        items:
+                          - syntax: <length>
+                            label: "● Thickness"
+                            name: "--tba-ws-active-glow-spread"
+                            initialValue: 0
+                            initialValueUnit: "px"
+
+                    - group:
+                        header: "❯ Text Effects"
+                        items:
+                          - syntax: <string>
+                            label: "● Style"
+                            name: "--tba-ws-active-underline"
+                            initialValue: "underline"
+                            options: [none, underline]
+
+  - group:
+      header: "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+      items:
+        - syntax: <string>
+          name: "--pladf-separator-1"
+          label: "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+          initialValue: "✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕"
+
+  - group:
+      header: "✦ Placeholder System"
+      items:
+        - group:
+            header: "This is a system that allows you to color your custom modules from here. All you have to do is replace the ID of your plugin with one pre-defined in this theme, those corresponding to one of the below slots."
+            items:
+              - syntax: <string>
+                name: "--tba-placeholder-ids"
+                label: "List of IDS :"
+                initialValue: "https://k-ivy.github.io/Seelen-UI-Resources/Web/wiki.html#Individual-Coloring-of-Toolbar-Modules"
+
+  - group:
+      header: "Fancy Toolbar"
+      items:
+        - group:
+            header: "Custom Module Coloring >"
+            items:
+              - group:
+                  header: "1. Primary"
+                  items:
+                    - group:
+                        header: "❯ Dark Mode"
+                        items:
+                          - syntax: <color>
+                            label: "● Color Slot 1"
+                            name: "--tba-x-1-dark"
+                            initialValue: "#e49191"
+
+                          - syntax: <color>
+                            label: "● Color Slot 2"
+                            name: "--tba-x-2-dark"
+                            initialValue: "#e8a488"
+
+                          - syntax: <color>
+                            label: "● Color Slot 3"
+                            name: "--tba-x-3-dark"
+                            initialValue: "#e9b985"
+
+                          - syntax: <color>
+                            label: "● Color Slot 4"
+                            name: "--tba-x-4-dark"
+                            initialValue: "#eccb8a"
+
+                          - syntax: <color>
+                            label: "● Color Slot 5"
+                            name: "--tba-x-5-dark"
+                            initialValue: "#e2de93"
+
+                          - syntax: <color>
+                            label: "● Color Slot 6"
+                            name: "--tba-x-6-dark"
+                            initialValue: "#c6e88d"
+
+                          - syntax: <color>
+                            label: "● Color Slot 7"
+                            name: "--tba-x-7-dark"
+                            initialValue: "#afe986"
+
+                          - syntax: <color>
+                            label: "● Color Slot 8"
+                            name: "--tba-x-8-dark"
+                            initialValue: "#96e0a0"
+
+                          - syntax: <color>
+                            label: "● Color Slot 9"
+                            name: "--tba-x-9-dark"
+                            initialValue: "#8ce2b2"
+
+                          - syntax: <color>
+                            label: "● Color Slot 10"
+                            name: "--tba-x-10-dark"
+                            initialValue: "#87d4c4"
+
+                          - syntax: <color>
+                            label: "● Color Slot 11"
+                            name: "--tba-x-11-dark"
+                            initialValue: "#84bcd4"
+
+                          - syntax: <color>
+                            label: "● Color Slot 12"
+                            name: "--tba-x-12-dark"
+                            initialValue: "#79aaec"
+
+                          - syntax: <color>
+                            label: "● Color Slot 13"
+                            name: "--tba-x-13-dark"
+                            initialValue: "#64b3fd"
+
+                          - syntax: <color>
+                            label: "● Color Slot 14"
+                            name: "--tba-x-14-dark"
+                            initialValue: "#9eb1e2"
+
+                          - syntax: <color>
+                            label: "● Color Slot 15"
+                            name: "--tba-x-15-dark"
+                            initialValue: "#c6b7dc"
+
+                          - syntax: <color>
+                            label: "● Color Slot 16"
+                            name: "--tba-x-16-dark"
+                            initialValue: "#c9a6f7"
+
+                          - syntax: <color>
+                            label: "● Color Slot 17"
+                            name: "--tba-x-17-dark"
+                            initialValue: "#da9ad7"
+
+                          - syntax: <color>
+                            label: "● Color Slot 18"
+                            name: "--tba-x-18-dark"
+                            initialValue: "#e4b0d6"
+
+                          - syntax: <color>
+                            label: "● Color Slot 19"
+                            name: "--tba-x-19-dark"
+                            initialValue: "#e79fb9"
+
+                          - syntax: <color>
+                            label: "● Color Slot 20"
+                            name: "--tba-x-20-dark"
+                            initialValue: "#e8909e"
+
+                          - syntax: <color>
+                            label: "● Color Slot 21"
+                            name: "--tba-x-21-dark"
+                            initialValue: "#e88ab0"
+
+                          - syntax: <color>
+                            label: "● Color Slot 22"
+                            name: "--tba-x-22-dark"
+                            initialValue: "#e485c2"
+
+                          - syntax: <color>
+                            label: "● Color Slot 23"
+                            name: "--tba-x-23-dark"
+                            initialValue: "#d485da"
+
+                          - syntax: <color>
+                            label: "● Color Slot 24"
+                            name: "--tba-x-24-dark"
+                            initialValue: "#b98ce8"
+
+                          - syntax: <color>
+                            label: "● Color Slot 25"
+                            name: "--tba-x-25-dark"
+                            initialValue: "#9b95ea"
+
+                          - syntax: <color>
+                            label: "● Color Slot 26"
+                            name: "--tba-x-26-dark"
+                            initialValue: "#8aa8e0"
+
+                          - syntax: <color>
+                            label: "● Color Slot 27"
+                            name: "--tba-x-27-dark"
+                            initialValue: "#84c2d4"
+
+                          - syntax: <color>
+                            label: "● Color Slot 28"
+                            name: "--tba-x-28-dark"
+                            initialValue: "#8ad6c0"
+
+                          - syntax: <color>
+                            label: "● Color Slot 29"
+                            name: "--tba-x-29-dark"
+                            initialValue: "#a3e0a0"
+
+                          - syntax: <color>
+                            label: "● Color Slot 30"
+                            name: "--tba-x-30-dark"
+                            initialValue: "#c7e08a"
+
+              - group:
+                  header: "　"
+                  items:
+                    - group:
+                        header: "❯ Light Mode"
+                        items:
+                          - syntax: <color>
+                            label: "● Color Slot 1"
+                            name: "--tba-x-1-light"
+                            initialValue: "#d22c2c"
+
+                          - syntax: <color>
+                            label: "● Color Slot 2"
+                            name: "--tba-x-2-light"
+                            initialValue: "#c85120"
+
+                          - syntax: <color>
+                            label: "● Color Slot 3"
+                            name: "--tba-x-3-light"
+                            initialValue: "#ad6519"
+
+                          - syntax: <color>
+                            label: "● Color Slot 4"
+                            name: "--tba-x-4-light"
+                            initialValue: "#9c6e13"
+
+                          - syntax: <color>
+                            label: "● Color Slot 5"
+                            name: "--tba-x-5-light"
+                            initialValue: "#7e791d"
+
+                          - syntax: <color>
+                            label: "● Color Slot 6"
+                            name: "--tba-x-6-light"
+                            initialValue: "#5a8216"
+
+                          - syntax: <color>
+                            label: "● Color Slot 7"
+                            name: "--tba-x-7-light"
+                            initialValue: "#438613"
+
+                          - syntax: <color>
+                            label: "● Color Slot 8"
+                            name: "--tba-x-8-light"
+                            initialValue: "#238831"
+
+                          - syntax: <color>
+                            label: "● Color Slot 9"
+                            name: "--tba-x-9-light"
+                            initialValue: "#1d874c"
+
+                          - syntax: <color>
+                            label: "● Color Slot 10"
+                            name: "--tba-x-10-light"
+                            initialValue: "#2b8472"
+
+                          - syntax: <color>
+                            label: "● Color Slot 11"
+                            name: "--tba-x-11-light"
+                            initialValue: "#327ea0"
+
+                          - syntax: <color>
+                            label: "● Color Slot 12"
+                            name: "--tba-x-12-light"
+                            initialValue: "#176bdc"
+
+                          - syntax: <color>
+                            label: "● Color Slot 13"
+                            name: "--tba-x-13-light"
+                            initialValue: "#0075e3"
+
+                          - syntax: <color>
+                            label: "● Color Slot 14"
+                            name: "--tba-x-14-light"
+                            initialValue: "#3a63cb"
+
+                          - syntax: <color>
+                            label: "● Color Slot 15"
+                            name: "--tba-x-15-light"
+                            initialValue: "#815db5"
+
+                          - syntax: <color>
+                            label: "● Color Slot 16"
+                            name: "--tba-x-16-light"
+                            initialValue: "#7e25f4"
+
+                          - syntax: <color>
+                            label: "● Color Slot 17"
+                            name: "--tba-x-17-light"
+                            initialValue: "#be3fb8"
+
+                          - syntax: <color>
+                            label: "● Color Slot 18"
+                            name: "--tba-x-18-light"
+                            initialValue: "#c541a1"
+
+                          - syntax: <color>
+                            label: "● Color Slot 19"
+                            name: "--tba-x-19-light"
+                            initialValue: "#d4356f"
+
+                          - syntax: <color>
+                            label: "● Color Slot 20"
+                            name: "--tba-x-20-light"
+                            initialValue: "#da2642"
+
+                          - syntax: <color>
+                            label: "● Color Slot 21"
+                            name: "--tba-x-21-light"
+                            initialValue: "#d2266e"
+
+                          - syntax: <color>
+                            label: "● Color Slot 22"
+                            name: "--tba-x-22-light"
+                            initialValue: "#c22690"
+
+                          - syntax: <color>
+                            label: "● Color Slot 23"
+                            name: "--tba-x-23-light"
+                            initialValue: "#a026b8"
+
+                          - syntax: <color>
+                            label: "● Color Slot 24"
+                            name: "--tba-x-24-light"
+                            initialValue: "#7e30d4"
+
+                          - syntax: <color>
+                            label: "● Color Slot 25"
+                            name: "--tba-x-25-light"
+                            initialValue: "#5c40e0"
+
+                          - syntax: <color>
+                            label: "● Color Slot 26"
+                            name: "--tba-x-26-light"
+                            initialValue: "#3a5cd8"
+
+                          - syntax: <color>
+                            label: "● Color Slot 27"
+                            name: "--tba-x-27-light"
+                            initialValue: "#257bbe"
+
+                          - syntax: <color>
+                            label: "● Color Slot 28"
+                            name: "--tba-x-28-light"
+                            initialValue: "#198384"
+
+                          - syntax: <color>
+                            label: "● Color Slot 29"
+                            name: "--tba-x-29-light"
+                            initialValue: "#29874a"
+
+                          - syntax: <color>
+                            label: "● Color Slot 30"
+                            name: "--tba-x-30-light"
+                            initialValue: "#5c821b"
+styles:
+  '@seelen/fancy-toolbar': |
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --tba-resolved-cpu: var(--tba-c-cpu-dark);
+        --tba-resolved-keyboard: var(--tba-c-keyboard-dark);
+        --tba-resolved-memory: var(--tba-c-memory-dark);
+        --tba-resolved-date: var(--tba-c-date-dark);
+        --tba-resolved-disk: var(--tba-c-disk-dark);
+        --tba-resolved-network-usage: var(--tba-c-network-usage-dark);
+        --tba-resolved-system-tray: var(--tba-c-systray-dark);
+        --tba-resolved-power: var(--tba-c-power-dark);
+        --tba-resolved-user-folder: var(--tba-c-user-dark);
+        --tba-resolved-notifications: var(--tba-c-notifications-dark);
+        --tba-resolved-power-menu: var(--tba-c-power-menu-dark);
+        --tba-resolved-network: var(--tba-c-network-dark);
+        --tba-resolved-focused-app-title: var(--tba-c-focused-title-dark);
+        --tba-resolved-media: var(--tba-c-media-dark);
+        --tba-resolved-focused-app: var(--tba-c-focused-app-dark);
+        --tba-resolved-quick-settings: var(--tba-c-quick-settings-dark);
+        --tba-resolved-bluetooth: var(--tba-c-bluetooth-dark);
+        --tba-resolved-separator: var(--tba-c-separator-dark);
+        --tba-resolved-ws-1: var(--tba-ws-1-dark);
+        --tba-resolved-ws-2: var(--tba-ws-2-dark);
+        --tba-resolved-ws-3: var(--tba-ws-3-dark);
+        --tba-resolved-ws-4: var(--tba-ws-4-dark);
+        --tba-resolved-ws-5: var(--tba-ws-5-dark);
+        --tba-resolved-ws-6: var(--tba-ws-6-dark);
+        --tba-resolved-ws-7: var(--tba-ws-7-dark);
+        --tba-resolved-ws-8: var(--tba-ws-8-dark);
+        --tba-resolved-ws-9: var(--tba-ws-9-dark);
+        --tba-resolved-ws-10: var(--tba-ws-10-dark);
+        --tba-resolved-ws-11: var(--tba-ws-11-dark);
+        --tba-resolved-ws-12: var(--tba-ws-12-dark);
+        --tba-resolved-ws-13: var(--tba-ws-13-dark);
+        --tba-resolved-ws-14: var(--tba-ws-14-dark);
+        --tba-resolved-ws-15: var(--tba-ws-15-dark);
+        --tba-resolved-ws-16: var(--tba-ws-16-dark);
+        --tba-resolved-ws-17: var(--tba-ws-17-dark);
+        --tba-resolved-ws-18: var(--tba-ws-18-dark);
+        --tba-resolved-ws-19: var(--tba-ws-19-dark);
+        --tba-resolved-ws-20: var(--tba-ws-20-dark);
+        --tba-resolved-ws-21: var(--tba-ws-21-dark);
+        --tba-resolved-ws-22: var(--tba-ws-22-dark);
+        --tba-resolved-ws-23: var(--tba-ws-23-dark);
+        --tba-resolved-ws-24: var(--tba-ws-24-dark);
+        --tba-resolved-ws-25: var(--tba-ws-25-dark);
+        --tba-resolved-ws-26: var(--tba-ws-26-dark);
+        --tba-resolved-ws-27: var(--tba-ws-27-dark);
+        --tba-resolved-ws-28: var(--tba-ws-28-dark);
+        --tba-resolved-ws-29: var(--tba-ws-29-dark);
+        --tba-resolved-ws-30: var(--tba-ws-30-dark);
+        --tba-resolved-ws-active-bg: var(--tba-ws-active-bg-dark);
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --tba-resolved-cpu: var(--tba-c-cpu-light);
+        --tba-resolved-keyboard: var(--tba-c-keyboard-light);
+        --tba-resolved-memory: var(--tba-c-memory-light);
+        --tba-resolved-date: var(--tba-c-date-light);
+        --tba-resolved-disk: var(--tba-c-disk-light);
+        --tba-resolved-network-usage: var(--tba-c-network-usage-light);
+        --tba-resolved-system-tray: var(--tba-c-systray-light);
+        --tba-resolved-power: var(--tba-c-power-light);
+        --tba-resolved-user-folder: var(--tba-c-user-light);
+        --tba-resolved-notifications: var(--tba-c-notifications-light);
+        --tba-resolved-power-menu: var(--tba-c-power-menu-light);
+        --tba-resolved-network: var(--tba-c-network-light);
+        --tba-resolved-focused-app-title: var(--tba-c-focused-title-light);
+        --tba-resolved-media: var(--tba-c-media-light);
+        --tba-resolved-focused-app: var(--tba-c-focused-app-light);
+        --tba-resolved-quick-settings: var(--tba-c-quick-settings-light);
+        --tba-resolved-bluetooth: var(--tba-c-bluetooth-light);
+        --tba-resolved-separator: var(--tba-c-separator-light);
+        --tba-resolved-ws-1: var(--tba-ws-1-light);
+        --tba-resolved-ws-2: var(--tba-ws-2-light);
+        --tba-resolved-ws-3: var(--tba-ws-3-light);
+        --tba-resolved-ws-4: var(--tba-ws-4-light);
+        --tba-resolved-ws-5: var(--tba-ws-5-light);
+        --tba-resolved-ws-6: var(--tba-ws-6-light);
+        --tba-resolved-ws-7: var(--tba-ws-7-light);
+        --tba-resolved-ws-8: var(--tba-ws-8-light);
+        --tba-resolved-ws-9: var(--tba-ws-9-light);
+        --tba-resolved-ws-10: var(--tba-ws-10-light);
+        --tba-resolved-ws-11: var(--tba-ws-11-light);
+        --tba-resolved-ws-12: var(--tba-ws-12-light);
+        --tba-resolved-ws-13: var(--tba-ws-13-light);
+        --tba-resolved-ws-14: var(--tba-ws-14-light);
+        --tba-resolved-ws-15: var(--tba-ws-15-light);
+        --tba-resolved-ws-16: var(--tba-ws-16-light);
+        --tba-resolved-ws-17: var(--tba-ws-17-light);
+        --tba-resolved-ws-18: var(--tba-ws-18-light);
+        --tba-resolved-ws-19: var(--tba-ws-19-light);
+        --tba-resolved-ws-20: var(--tba-ws-20-light);
+        --tba-resolved-ws-21: var(--tba-ws-21-light);
+        --tba-resolved-ws-22: var(--tba-ws-22-light);
+        --tba-resolved-ws-23: var(--tba-ws-23-light);
+        --tba-resolved-ws-24: var(--tba-ws-24-light);
+        --tba-resolved-ws-25: var(--tba-ws-25-light);
+        --tba-resolved-ws-26: var(--tba-ws-26-light);
+        --tba-resolved-ws-27: var(--tba-ws-27-light);
+        --tba-resolved-ws-28: var(--tba-ws-28-light);
+        --tba-resolved-ws-29: var(--tba-ws-29-light);
+        --tba-resolved-ws-30: var(--tba-ws-30-light);
+        --tba-resolved-ws-active-bg: var(--tba-ws-active-bg-light);
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --tba-resolved-x-1: var(--tba-x-1-dark);
+        --tba-resolved-x-2: var(--tba-x-2-dark);
+        --tba-resolved-x-3: var(--tba-x-3-dark);
+        --tba-resolved-x-4: var(--tba-x-4-dark);
+        --tba-resolved-x-5: var(--tba-x-5-dark);
+        --tba-resolved-x-6: var(--tba-x-6-dark);
+        --tba-resolved-x-7: var(--tba-x-7-dark);
+        --tba-resolved-x-8: var(--tba-x-8-dark);
+        --tba-resolved-x-9: var(--tba-x-9-dark);
+        --tba-resolved-x-10: var(--tba-x-10-dark);
+        --tba-resolved-x-11: var(--tba-x-11-dark);
+        --tba-resolved-x-12: var(--tba-x-12-dark);
+        --tba-resolved-x-13: var(--tba-x-13-dark);
+        --tba-resolved-x-14: var(--tba-x-14-dark);
+        --tba-resolved-x-15: var(--tba-x-15-dark);
+        --tba-resolved-x-16: var(--tba-x-16-dark);
+        --tba-resolved-x-17: var(--tba-x-17-dark);
+        --tba-resolved-x-18: var(--tba-x-18-dark);
+        --tba-resolved-x-19: var(--tba-x-19-dark);
+        --tba-resolved-x-20: var(--tba-x-20-dark);
+        --tba-resolved-x-21: var(--tba-x-21-dark);
+        --tba-resolved-x-22: var(--tba-x-22-dark);
+        --tba-resolved-x-23: var(--tba-x-23-dark);
+        --tba-resolved-x-24: var(--tba-x-24-dark);
+        --tba-resolved-x-25: var(--tba-x-25-dark);
+        --tba-resolved-x-26: var(--tba-x-26-dark);
+        --tba-resolved-x-27: var(--tba-x-27-dark);
+        --tba-resolved-x-28: var(--tba-x-28-dark);
+        --tba-resolved-x-29: var(--tba-x-29-dark);
+        --tba-resolved-x-30: var(--tba-x-30-dark);
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --tba-resolved-x-1: var(--tba-x-1-light);
+        --tba-resolved-x-2: var(--tba-x-2-light);
+        --tba-resolved-x-3: var(--tba-x-3-light);
+        --tba-resolved-x-4: var(--tba-x-4-light);
+        --tba-resolved-x-5: var(--tba-x-5-light);
+        --tba-resolved-x-6: var(--tba-x-6-light);
+        --tba-resolved-x-7: var(--tba-x-7-light);
+        --tba-resolved-x-8: var(--tba-x-8-light);
+        --tba-resolved-x-9: var(--tba-x-9-light);
+        --tba-resolved-x-10: var(--tba-x-10-light);
+        --tba-resolved-x-11: var(--tba-x-11-light);
+        --tba-resolved-x-12: var(--tba-x-12-light);
+        --tba-resolved-x-13: var(--tba-x-13-light);
+        --tba-resolved-x-14: var(--tba-x-14-light);
+        --tba-resolved-x-15: var(--tba-x-15-light);
+        --tba-resolved-x-16: var(--tba-x-16-light);
+        --tba-resolved-x-17: var(--tba-x-17-light);
+        --tba-resolved-x-18: var(--tba-x-18-light);
+        --tba-resolved-x-19: var(--tba-x-19-light);
+        --tba-resolved-x-20: var(--tba-x-20-light);
+        --tba-resolved-x-21: var(--tba-x-21-light);
+        --tba-resolved-x-22: var(--tba-x-22-light);
+        --tba-resolved-x-23: var(--tba-x-23-light);
+        --tba-resolved-x-24: var(--tba-x-24-light);
+        --tba-resolved-x-25: var(--tba-x-25-light);
+        --tba-resolved-x-26: var(--tba-x-26-light);
+        --tba-resolved-x-27: var(--tba-x-27-light);
+        --tba-resolved-x-28: var(--tba-x-28-light);
+        --tba-resolved-x-29: var(--tba-x-29-light);
+        --tba-resolved-x-30: var(--tba-x-30-light);
+      }
+    }
+
+    /* Module colors */
+    .ft-bar-item#\@default\/cpu-usage {
+      color: var(--tba-resolved-cpu) !important;
+    }
+    .ft-bar-item#\@seelen\/tb-keyboard-selector {
+      color: var(--tba-resolved-keyboard) !important;
+    }
+    .ft-bar-item#\@default\/memory-usage {
+      color: var(--tba-resolved-memory) !important;
+    }
+    .ft-bar-item#\@seelen\/tb-calendar-popup {
+      color: var(--tba-resolved-date) !important;
+    }
+    .ft-bar-item#\@default\/disk-usage {
+      color: var(--tba-resolved-disk) !important;
+    }
+    .ft-bar-item#\@default\/network-usage {
+      color: var(--tba-resolved-network-usage) !important;
+    }
+    .ft-bar-item#\@seelen\/tb-system-tray {
+      color: var(--tba-resolved-system-tray) !important;
+    }
+    .ft-bar-item#\@default\/power {
+      color: var(--tba-resolved-power) !important;
+    }
+    .ft-bar-item#\@seelen\/tb-user-menu {
+      color: var(--tba-resolved-user-folder) !important;
+    }
+    .ft-bar-item#\@seelen\/tb-notifications {
+      color: var(--tba-resolved-notifications) !important;
+    }
+    .ft-bar-item#\@seelen\/tb-power-menu {
+      color: var(--tba-resolved-power-menu) !important;
+    }
+    .ft-bar-item#\@seelen\/tb-network-popup {
+      color: var(--tba-resolved-network) !important;
+    }
+    .ft-bar-item#\@default\/focused-app-title {
+      color: var(--tba-resolved-focused-app-title) !important;
+    }
+    .ft-bar-item#\@seelen\/tb-media-popup {
+      color: var(--tba-resolved-media) !important;
+    }
+    .ft-bar-item#\@default\/focused-app {
+      color: var(--tba-resolved-focused-app) !important;
+    }
+    .ft-bar-item#\@seelen\/tb-quick-settings {
+      color: var(--tba-resolved-quick-settings) !important;
+    }
+    .ft-bar-item#\@seelen\/tb-bluetooth-popup {
+      color: var(--tba-resolved-bluetooth) !important;
+    }
+    /* Separators & any unadded */
+    .ft-bar-item {
+      color: var(--tba-resolved-separator) !important;
+    }
+
+    /* Workspace dots */
+    #\@default\/workspaces-dotted button:nth-child(1) {
+      background-color: var(--tba-resolved-ws-1) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(2) {
+      background-color: var(--tba-resolved-ws-2) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(3) {
+      background-color: var(--tba-resolved-ws-3) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(4) {
+      background-color: var(--tba-resolved-ws-4) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(5) {
+      background-color: var(--tba-resolved-ws-5) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(6) {
+      background-color: var(--tba-resolved-ws-6) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(7) {
+      background-color: var(--tba-resolved-ws-7) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(8) {
+      background-color: var(--tba-resolved-ws-8) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(9) {
+      background-color: var(--tba-resolved-ws-9) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(10) {
+      background-color: var(--tba-resolved-ws-10) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(11) {
+      background-color: var(--tba-resolved-ws-11) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(12) {
+      background-color: var(--tba-resolved-ws-12) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(13) {
+      background-color: var(--tba-resolved-ws-13) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(14) {
+      background-color: var(--tba-resolved-ws-14) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(15) {
+      background-color: var(--tba-resolved-ws-15) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(16) {
+      background-color: var(--tba-resolved-ws-16) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(17) {
+      background-color: var(--tba-resolved-ws-17) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(18) {
+      background-color: var(--tba-resolved-ws-18) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(19) {
+      background-color: var(--tba-resolved-ws-19) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(20) {
+      background-color: var(--tba-resolved-ws-20) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(21) {
+      background-color: var(--tba-resolved-ws-21) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(22) {
+      background-color: var(--tba-resolved-ws-22) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(23) {
+      background-color: var(--tba-resolved-ws-23) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(24) {
+      background-color: var(--tba-resolved-ws-24) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(25) {
+      background-color: var(--tba-resolved-ws-25) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(26) {
+      background-color: var(--tba-resolved-ws-26) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(27) {
+      background-color: var(--tba-resolved-ws-27) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(28) {
+      background-color: var(--tba-resolved-ws-28) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(29) {
+      background-color: var(--tba-resolved-ws-29) !important;
+    }
+    #\@default\/workspaces-dotted button:nth-child(30) {
+      background-color: var(--tba-resolved-ws-30) !important;
+    }
+
+    /* Numbered & named workspaces */
+    #\@default\/workspaces-numbered button:nth-child(1),
+    #\@default\/workspaces-named button:nth-child(1) {
+      color: var(--tba-resolved-ws-1) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(2),
+    #\@default\/workspaces-named button:nth-child(2) {
+      color: var(--tba-resolved-ws-2) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(3),
+    #\@default\/workspaces-named button:nth-child(3) {
+      color: var(--tba-resolved-ws-3) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(4),
+    #\@default\/workspaces-named button:nth-child(4) {
+      color: var(--tba-resolved-ws-4) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(5),
+    #\@default\/workspaces-named button:nth-child(5) {
+      color: var(--tba-resolved-ws-5) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(6),
+    #\@default\/workspaces-named button:nth-child(6) {
+      color: var(--tba-resolved-ws-6) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(7),
+    #\@default\/workspaces-named button:nth-child(7) {
+      color: var(--tba-resolved-ws-7) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(8),
+    #\@default\/workspaces-named button:nth-child(8) {
+      color: var(--tba-resolved-ws-8) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(9),
+    #\@default\/workspaces-named button:nth-child(9) {
+      color: var(--tba-resolved-ws-9) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(10),
+    #\@default\/workspaces-named button:nth-child(10) {
+      color: var(--tba-resolved-ws-10) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(11),
+    #\@default\/workspaces-named button:nth-child(11) {
+      color: var(--tba-resolved-ws-11) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(12),
+    #\@default\/workspaces-named button:nth-child(12) {
+      color: var(--tba-resolved-ws-12) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(13),
+    #\@default\/workspaces-named button:nth-child(13) {
+      color: var(--tba-resolved-ws-13) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(14),
+    #\@default\/workspaces-named button:nth-child(14) {
+      color: var(--tba-resolved-ws-14) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(15),
+    #\@default\/workspaces-named button:nth-child(15) {
+      color: var(--tba-resolved-ws-15) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(16),
+    #\@default\/workspaces-named button:nth-child(16) {
+      color: var(--tba-resolved-ws-16) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(17),
+    #\@default\/workspaces-named button:nth-child(17) {
+      color: var(--tba-resolved-ws-17) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(18),
+    #\@default\/workspaces-named button:nth-child(18) {
+      color: var(--tba-resolved-ws-18) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(19),
+    #\@default\/workspaces-named button:nth-child(19) {
+      color: var(--tba-resolved-ws-19) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(20),
+    #\@default\/workspaces-named button:nth-child(20) {
+      color: var(--tba-resolved-ws-20) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(21),
+    #\@default\/workspaces-named button:nth-child(21) {
+      color: var(--tba-resolved-ws-21) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(22),
+    #\@default\/workspaces-named button:nth-child(22) {
+      color: var(--tba-resolved-ws-22) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(23),
+    #\@default\/workspaces-named button:nth-child(23) {
+      color: var(--tba-resolved-ws-23) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(24),
+    #\@default\/workspaces-named button:nth-child(24) {
+      color: var(--tba-resolved-ws-24) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(25),
+    #\@default\/workspaces-named button:nth-child(25) {
+      color: var(--tba-resolved-ws-25) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(26),
+    #\@default\/workspaces-named button:nth-child(26) {
+      color: var(--tba-resolved-ws-26) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(27),
+    #\@default\/workspaces-named button:nth-child(27) {
+      color: var(--tba-resolved-ws-27) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(28),
+    #\@default\/workspaces-named button:nth-child(28) {
+      color: var(--tba-resolved-ws-28) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(29),
+    #\@default\/workspaces-named button:nth-child(29) {
+      color: var(--tba-resolved-ws-29) !important;
+    }
+    #\@default\/workspaces-numbered button:nth-child(30),
+    #\@default\/workspaces-named button:nth-child(30) {
+      color: var(--tba-resolved-ws-30) !important;
+    }
+
+    /* Workspace Prominence */
+    #\@default\/workspaces-numbered button,
+    #\@default\/workspaces-named button {
+      opacity: var(--tba-ws-inactive-opacity, 0.8) !important;
+    }
+    #\@default\/workspaces-dotted button {
+      opacity: var(--tba-ws-dotted-inactive-opacity, 0.9) !important;
+    }
+    #\@default\/workspaces-dotted button[style*="system-accent-color"] {
+      opacity: 1 !important;
+    }
+
+    /* Active Workspace Indicator */
+    #\@default\/workspaces-numbered button[style*="system-accent-color"],
+    #\@default\/workspaces-named button[style*="system-accent-color"] {
+      opacity: 1 !important;
+      box-shadow:
+        0 0 0 var(--tba-ws-active-glow-spread, 0px) currentColor,
+        inset 0 0 0 999px var(--tba-resolved-ws-active-bg) !important;
+      text-decoration: var(--tba-ws-active-underline, underline) !important;
+      text-underline-offset: 2px !important;
+      text-decoration-thickness: 1px !important;
+    }
+
+    /* Placeholders */
+    .ft-bar-item#\@color\/color-extra-one {
+      color: var(--tba-resolved-x-1);
+    }
+    .ft-bar-item#\@color\/color-extra-two {
+      color: var(--tba-resolved-x-2);
+    }
+    .ft-bar-item#\@color\/color-extra-three {
+      color: var(--tba-resolved-x-3);
+    }
+    .ft-bar-item#\@color\/color-extra-four {
+      color: var(--tba-resolved-x-4);
+    }
+    .ft-bar-item#\@color\/color-extra-five {
+      color: var(--tba-resolved-x-5);
+    }
+    .ft-bar-item#\@color\/color-extra-six {
+      color: var(--tba-resolved-x-6);
+    }
+    .ft-bar-item#\@color\/color-extra-seven {
+      color: var(--tba-resolved-x-7);
+    }
+    .ft-bar-item#\@color\/color-extra-eight {
+      color: var(--tba-resolved-x-8);
+    }
+    .ft-bar-item#\@color\/color-extra-nine {
+      color: var(--tba-resolved-x-9);
+    }
+    .ft-bar-item#\@color\/color-extra-ten {
+      color: var(--tba-resolved-x-10);
+    }
+    .ft-bar-item#\@color\/color-extra-eleven {
+      color: var(--tba-resolved-x-11);
+    }
+    .ft-bar-item#\@color\/color-extra-twelve {
+      color: var(--tba-resolved-x-12);
+    }
+    .ft-bar-item#\@color\/color-extra-thirteen {
+      color: var(--tba-resolved-x-13);
+    }
+    .ft-bar-item#\@color\/color-extra-fourteen {
+      color: var(--tba-resolved-x-14);
+    }
+    .ft-bar-item#\@color\/color-extra-fifteen {
+      color: var(--tba-resolved-x-15);
+    }
+    .ft-bar-item#\@color\/color-extra-sixteen {
+      color: var(--tba-resolved-x-16);
+    }
+    .ft-bar-item#\@color\/color-extra-seventeen {
+      color: var(--tba-resolved-x-17);
+    }
+    .ft-bar-item#\@color\/color-extra-eighteen {
+      color: var(--tba-resolved-x-18);
+    }
+    .ft-bar-item#\@color\/color-extra-nineteen {
+      color: var(--tba-resolved-x-19);
+    }
+    .ft-bar-item#\@color\/color-extra-twenty {
+      color: var(--tba-resolved-x-20);
+    }
+    .ft-bar-item#\@color\/color-extra-twentyone {
+      color: var(--tba-resolved-x-21);
+    }
+    .ft-bar-item#\@color\/color-extra-twentytwo {
+      color: var(--tba-resolved-x-22);
+    }
+    .ft-bar-item#\@color\/color-extra-twentythree {
+      color: var(--tba-resolved-x-23);
+    }
+    .ft-bar-item#\@color\/color-extra-twentyfour {
+      color: var(--tba-resolved-x-24);
+    }
+    .ft-bar-item#\@color\/color-extra-twentyfive {
+      color: var(--tba-resolved-x-25);
+    }
+    .ft-bar-item#\@color\/color-extra-twentysix {
+      color: var(--tba-resolved-x-26);
+    }
+    .ft-bar-item#\@color\/color-extra-twentyseven {
+      color: var(--tba-resolved-x-27);
+    }
+    .ft-bar-item#\@color\/color-extra-twentyeight {
+      color: var(--tba-resolved-x-28);
+    }
+    .ft-bar-item#\@color\/color-extra-twentynine {
+      color: var(--tba-resolved-x-29);
+    }
+    .ft-bar-item#\@color\/color-extra-thirty {
+      color: var(--tba-resolved-x-30);
+    }
